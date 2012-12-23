@@ -114,6 +114,31 @@ public class GraphMLObject {
 
 		return key;
 	}
+	
+	
+	/**
+	 * Generates a map of class vars -> ids for easy  settings
+	 * @return
+	 */
+	public HashMap<String, String> getNodeKeyRegister() {
+		HashMap<String, String> keyMap = new HashMap<String, String>();
+		for(XMLNodeKey key : nodeKeyRegister)
+		{
+			keyMap.put(key.getAttrName(), key.getID());
+		}
+		return keyMap;
+		
+	}
+	
+	
+	public HashMap<String, String> getEdgeKeyRegister() {
+		HashMap<String, String> keyMap = new HashMap<String, String>();
+		for(XMLEdgeKey key : edgeKeyRegister)
+		{
+			keyMap.put(key.getAttrName(), key.getID());
+		}
+		return keyMap;
+	}
 }
 
 @XmlRootElement(name="graph")
@@ -186,210 +211,5 @@ class Graph
 }
 
 
-@XmlRootElement(name="edge")
-public class Edge 
-{
-	@XmlAttribute
-	String id;
-	@XmlAttribute
-	String source;
-	@XmlAttribute
-	String target;
-	@XmlAttribute
-	boolean directed;
-
-	@XmlElement(name="data")
-	ArrayList<XMLAttribute> attrList = new ArrayList<XMLAttribute>();
-	
-	Edge()
-	{
-		this.id = null;
-		this.source = null;
-		this.target = null;
-		this.directed = true;
-		
-	}
-	Edge(String id, String source, String target)
-	{
-		this.id = id;
-		this.source = source;
-		this.target = target;
-		this.directed = true;
-	}
-	Edge(String id, String source, String target, boolean directed)
-	{
-		this.id = id;
-		this.source = source;
-		this.target = target;
-		this.directed = directed;
-	}
-	Edge(String id, String source, String target, HashMap<String, Object> attrs)
-	{
-		this.id = id;
-		this.source = source;
-		this.target = target;
-		this.directed = true;
-		
-		Iterator iter = attrs.entrySet().iterator();
-		while(iter.hasNext())
-		{
-			Map.Entry pair = (Map.Entry)iter.next();
-			//System.out.println("Adding KEY:" + pair.getKey() + " VAL:" + pair.getValue());
-			attrList.add(new XMLAttribute((String)pair.getKey(), pair.getValue()));
-		}
-	}
-	
-	Edge(String id, String source, String target, boolean directed, HashMap<String, Object> attrs)
-	{
-		this.id = id;
-		this.source = source;
-		this.target = target;
-		this.directed = directed;
-		Iterator iter = attrs.entrySet().iterator();
-		while(iter.hasNext())
-		{
-			Map.Entry pair = (Map.Entry)iter.next();
-			attrList.add(new XMLAttribute((String)pair.getKey(), pair.getValue()));
-		}
-	}
-}
-
-@XmlRootElement(name="node")
-class XMLNode
-{
-	@XmlAttribute
-	String id;
-	@XmlElement(name="data")
-	ArrayList<XMLAttribute> attrList = new ArrayList<XMLAttribute>();
-	
-	XMLNode()
-	{
-		this.id = null;
-		
-	}
-	XMLNode(String id)
-	{
-		this.id = id;
-	}
-	XMLNode(String id, HashMap<String, Object> attrs)
-	{
-		this.id = id;
-		Iterator iter = attrs.entrySet().iterator();
-		while(iter.hasNext())
-		{
-			Map.Entry pair = (Map.Entry)iter.next();
-			attrList.add(new XMLAttribute((String)pair.getKey(), pair.getValue()));
-		}
-	}
-}
 
 
-/*@XmlRootElement(name="data")*/
-class XMLAttribute
-{
-	@XmlAttribute
-	String key;
-	@XmlElement
-	String value;
-	
-	XMLAttribute()
-	{
-		this.key = null;
-		this.value = null;
-	}
-	
-	XMLAttribute(String key, Object value)
-	{
-		this.key = key;
-		if(value instanceof Double)
-			this.value = Double.toString((Double)value);
-		else if(value instanceof Integer)
-			this.value = Integer.toString((Integer)value);
-		else if(value instanceof Long)
-			this.value = Long.toString((Long)value);
-		else
-			this.value = value.toString();
-	}
-}
-
-
-class XMLKey
-{
-	@XmlAttribute
-	String id;
-	@XmlElement(name="default")
-	String defaultString;
-	@XmlAttribute(name="attr.name")
-	String attrName;
-	@XmlAttribute(name="attr.type")
-	String attrType;
-	
-	XMLKey()
-	{
-		this.id = null;
-		this.attrName = null;
-		this.attrType = null;
-	}
-	
-	XMLKey(String key, String attrName, String attrType)
-	{
-		this.id = key;
-		this.attrName = attrName;
-		this.attrType = attrType;
-	}
-	
-	XMLKey(String key, String attrName, String attrType, String defaultString)
-	{
-		this.id = key;
-		this.attrName = attrName;
-		this.attrType = attrType;
-		this.defaultString = defaultString;
-	}
-		
-	public String getKey()
-	{
-		return this.id;
-	}
-}
-
-@XmlRootElement(name="key")
-class XMLNodeKey extends XMLKey
-{
-	@XmlAttribute(name="for")
-	String forAttr = "node";
-	
-	XMLNodeKey()
-	{
-		super();
-	}
-	
-	XMLNodeKey(String key, String attrName, String attrType)
-	{
-		super(key, attrName, attrType);
-	}
-	
-	XMLNodeKey(String key, String attrName, String attrType, String defaultString)
-	{
-		super(key, attrName, attrType, defaultString);
-	}
-}
-@XmlRootElement(name="key")
-class XMLEdgeKey extends XMLKey
-{
-	@XmlAttribute(name="for")
-	String forAttr = "edge";
-	
-	XMLEdgeKey()
-	{
-		super();
-	}
-	XMLEdgeKey(String key, String attrName, String attrType)
-	{
-		super(key, attrName, attrType);
-	}
-	
-	XMLEdgeKey(String key, String attrName, String attrType, String defaultString)
-	{
-		super(key, attrName, attrType, defaultString);
-	}
-}

@@ -1,6 +1,7 @@
 package builders;
 
 import java.util.ArrayList;
+import java.util.Iterator;
 
 import org.apache.poi.hssf.record.formula.functions.T;
 import agents.BaseHuman;
@@ -19,6 +20,7 @@ import repast.simphony.util.collections.IndexedIterable;
 import graphtools.generators.ScaleFree;
 import graphtools.generators.SmallWorld;
 import graphtools.io.converters.*;
+import graphtools.io.importers.GraphMLImporter;
 import graphtools.samplers.GeneralTools;
 public class ModelDevBuilder implements ContextBuilder<Object> {
 
@@ -36,7 +38,15 @@ public class ModelDevBuilder implements ContextBuilder<Object> {
 		}
 		else
 		{
-			network = SmallWorld.generateRSW(context, "TestNet", 100, 0.5, 5);
+			//network = SmallWorld.generateRSW(context, "TestNet", 100, 0.5, 5);
+			RepastSummary rs = GraphMLImporter.GraphMLToRepast("sample-1356266483049-SW.graphml", "TestNet", context);
+			context = rs.getContext();
+			network = rs.getNetwork();
+			
+			Iterable<RepastEdge<BaseHuman>> sdf = network.getEdges();
+			Iterator<RepastEdge<BaseHuman>> asda = sdf.iterator();
+			while(asda.hasNext())
+				System.out.println(asda.next().getWeight());
 		}
 		
 		

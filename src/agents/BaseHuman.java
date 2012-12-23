@@ -14,6 +14,8 @@ import repast.simphony.space.graph.Network;
 import repast.simphony.space.graph.RepastEdge;
 
 import graphtools.generators.*;
+import graphtools.io.graphML.XMLAttribute;
+import graphtools.io.graphML.XMLNodeKey;
 
 public class BaseHuman{
 	String id;
@@ -51,12 +53,26 @@ public class BaseHuman{
 	}
 	
 	/**
-	 * Sets the network of the node. Should only be used after a small world generation
+	 * Constructor for graphML importer
+	 */
+	public BaseHuman(Context context, String id, HashMap<String, String> attrList, HashMap<String, String> keyMap)
+	{
+		this.id = id;
+		this.context = context;
+		String keyID = "";
+		
+		keyID = keyMap.get("smoker");
+		smoker = Boolean.parseBoolean(attrList.get(keyID));
+	}
+	
+	/**
+	 * Sets the network of the node. Should only be used after a small world generation/GraphML
+	 * importing
 	 * @param network
 	 */
 	public void setNetwork(Network<BaseHuman> network)
 	{
-		
+		this.network = network;
 	}
 	
 	
@@ -80,6 +96,7 @@ public class BaseHuman{
 		return rtnList;
 	}
 	
+
 
 
 	

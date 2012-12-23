@@ -6,6 +6,12 @@ import repast.simphony.space.graph.Network;
 public class RepastSummary {
 	Context context;
 	Network network;
+	
+	public RepastSummary() {
+		context = null;
+		network = null;
+	}
+	
 	public Context getContext() {
 		return context;
 	}
