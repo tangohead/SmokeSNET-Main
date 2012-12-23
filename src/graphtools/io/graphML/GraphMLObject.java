@@ -15,13 +15,13 @@ import javax.xml.bind.annotation.XmlRootElement;
  * 
  * @author Matt Smith
  * 
- *	This class is used to marshal/unmarshal 
+ *	This class is used to marshal/unmarshal GraphML
  */
 @XmlRootElement(name = "graphml")
 public class GraphMLObject {
 
-	@XmlAttribute(name="xmlns")
-	String xmlns = "http://graphml.graphdrawing.org/xmlns";
+	/*@XmlAttribute(name="xmlns")
+	String xmlns = "http://graphml.graphdrawing.org/xmlns";*/
 	
 	//Stores full detail on keys 
 	@XmlElement(name="key", type = XMLNodeKey.class)
@@ -59,6 +59,10 @@ public class GraphMLObject {
 	{
 		graph.addEdge(id, source, target, directed, attrs);
 	}
+	public ArrayList<Edge> getEdges()
+	{
+		return graph.getEdges();
+	}
 	
 	
 	
@@ -70,6 +74,11 @@ public class GraphMLObject {
 	public void addXMLNode(String id, HashMap<String, Object> attrs)
 	{
 		graph.addXMLNode(id, attrs);
+	}
+	
+	public ArrayList<XMLNode> getXMLNodes() 
+	{
+		return graph.getXMLNodes();
 	}
 	
 	/**
@@ -129,6 +138,8 @@ class Graph
 		this.edgedefault = "directed";
 	}
 	
+	
+
 	Graph(String id, String edgedefault)
 	{
 		this.id = id;
@@ -151,6 +162,10 @@ class Graph
 	{
 		edges.add(new Edge(id, source, target, directed, attrs));
 	}
+	public ArrayList<Edge> getEdges() {
+		// TODO Auto-generated method stub
+		return edges;
+	}
 	
 	
 	
@@ -163,11 +178,16 @@ class Graph
 	{
 		nodes.add(new XMLNode(id, attrs));
 	}
+	
+	public ArrayList<XMLNode> getXMLNodes()
+	{
+		return nodes;
+	}
 }
 
 
 @XmlRootElement(name="edge")
-class Edge 
+public class Edge 
 {
 	@XmlAttribute
 	String id;
@@ -288,7 +308,7 @@ class XMLAttribute
 		else if(value instanceof Long)
 			this.value = Long.toString((Long)value);
 		else
-			this.value = (String)value;
+			this.value = value.toString();
 	}
 }
 

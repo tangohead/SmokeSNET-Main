@@ -26,7 +26,7 @@ public class StanfordParser {
 	private Graph<String, Long> graphRep = new SparseMultigraph<String, Long>();
 	
 	
-	StanfordParser(String filePath)
+	public StanfordParser(String filePath)
 	{
 		this.filePath = filePath;
 	}

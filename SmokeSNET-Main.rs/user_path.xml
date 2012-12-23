@@ -1,0 +1,6 @@
+<model name="SmokeSNET-Main">
+	<classpath>
+		<agents path="../bin" />
+		<entry path="../lib" />
+	</classpath>
+</model>
