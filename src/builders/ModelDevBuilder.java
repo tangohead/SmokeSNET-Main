@@ -30,11 +30,13 @@ public class ModelDevBuilder implements ContextBuilder<Object> {
 		context.setId("SmokeSNET-Main");
 		Network<BaseHuman> network;
 		
-		boolean generateOnAddition = false;
+		boolean generateOnAddition = true;
 		if(generateOnAddition)
 		{
-			network = ScaleFree.createRSF(context, "TestNet", 4, 100, true, 0.8);
-			network = GeneralTools.trimNodesByDegree(context, network, 0);
+			network = ScaleFree.createRSF(context, "TestNet", 4, 100, true, 0.8, true);
+			RepastSummary rs = GeneralTools.trimNodesByDegree(context, network, 0);
+			context = rs.getContext();
+			network = rs.getNetwork();
 		}
 		else
 		{

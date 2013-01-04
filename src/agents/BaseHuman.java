@@ -80,7 +80,11 @@ public class BaseHuman{
 	public void step() {
 		//insert decisions, etc
 		//decide actions
+		
+		
 		//reconfigure networks
+		//we probabably want to get nodes within a local network (2 or 3 hops)
+		//to see if anyone random is worth picking.
 		
 	}
 

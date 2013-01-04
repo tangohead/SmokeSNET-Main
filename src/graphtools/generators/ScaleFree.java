@@ -73,7 +73,7 @@ public class ScaleFree {
 	 * @param reciprocateChance the chance of reciprocating an edge
 	 * @return
 	 */
-	public static Network<BaseHuman> createRSF(Context<Object> context, String networkName, int startWith, int numNodes, boolean reciprocate, double reciprocateChance)
+	public static Network<BaseHuman> createRSF(Context<Object> context, String networkName, int startWith, int numNodes, boolean reciprocate, double reciprocateChance, boolean removeOutliers)
 	{
 		NetworkBuilder<BaseHuman> builder = new NetworkBuilder(networkName, context, true);
 		Network<BaseHuman> network = builder.buildNetwork();
