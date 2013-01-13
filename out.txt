@@ -1,75 +1,250 @@
-WARN  [AWT-EventQueue-0] 2013-01-05 23:29:24,675 repast.simphony.scenario.ScenarioCPInitializer - Warning while parsing classpath: Empty or non-existent path '/Users/matt/git/SmokeSNET-Main/lib'.
-WARN  [AWT-EventQueue-0] 2013-01-05 23:29:24,778 repast.simphony.scenario.ScenarioLoader - While initializing classpath: Empty or non-existent path '/Users/matt/git/SmokeSNET-Main/lib'.
-n36 has 23 nodes within 3 hops.
-n80 has 24 nodes within 3 hops.
-n8 has 20 nodes within 3 hops.
-n92 has 17 nodes within 3 hops.
-n57 has 12 nodes within 3 hops.
-n13 has 17 nodes within 3 hops.
-n39 has 14 nodes within 3 hops.
-n20 has 37 nodes within 3 hops.
-n60 has 4 nodes within 3 hops.
-n73 has 15 nodes within 3 hops.
-n74 has 28 nodes within 3 hops.
-n50 has 28 nodes within 3 hops.
-n4 has 32 nodes within 3 hops.
-n46 has 34 nodes within 3 hops.
-n64 has 39 nodes within 3 hops.
-n9 has 53 nodes within 3 hops.
-n49 has 34 nodes within 3 hops.
-n32 has 34 nodes within 3 hops.
-n90 has 46 nodes within 3 hops.
-n5 has 15 nodes within 3 hops.
-n30 has 40 nodes within 3 hops.
-n69 has 37 nodes within 3 hops.
-n94 has 33 nodes within 3 hops.
-n58 has 34 nodes within 3 hops.
-n89 has 10 nodes within 3 hops.
-n99 has 39 nodes within 3 hops.
-n12 has 37 nodes within 3 hops.
-n48 has 5 nodes within 3 hops.
-n3 has 37 nodes within 3 hops.
-n34 has 39 nodes within 3 hops.
-n84 has 18 nodes within 3 hops.
-n15 has 46 nodes within 3 hops.
-n2 has 20 nodes within 3 hops.
-n67 has 3 nodes within 3 hops.
-n59 has 22 nodes within 3 hops.
-n35 has 34 nodes within 3 hops.
-n45 has 23 nodes within 3 hops.
-n47 has 38 nodes within 3 hops.
-n11 has 49 nodes within 3 hops.
-n25 has 17 nodes within 3 hops.
-n31 has 33 nodes within 3 hops.
-n14 has 36 nodes within 3 hops.
-n10 has 13 nodes within 3 hops.
-n96 has 33 nodes within 3 hops.
-n0 has 17 nodes within 3 hops.
-n41 has 25 nodes within 3 hops.
-n6 has 51 nodes within 3 hops.
-n62 has 18 nodes within 3 hops.
-n75 has 40 nodes within 3 hops.
-n43 has 47 nodes within 3 hops.
-n79 has 18 nodes within 3 hops.
-n24 has 17 nodes within 3 hops.
-n28 has 17 nodes within 3 hops.
-n40 has 18 nodes within 3 hops.
-n27 has 47 nodes within 3 hops.
-n68 has 23 nodes within 3 hops.
-n7 has 49 nodes within 3 hops.
-n61 has 11 nodes within 3 hops.
-n55 has 16 nodes within 3 hops.
-n81 has 21 nodes within 3 hops.
-n72 has 32 nodes within 3 hops.
-n85 has 43 nodes within 3 hops.
-n95 has 8 nodes within 3 hops.
-n18 has 48 nodes within 3 hops.
-n38 has 45 nodes within 3 hops.
-n88 has 12 nodes within 3 hops.
-n22 has 39 nodes within 3 hops.
-n29 has 39 nodes within 3 hops.
-n93 has 43 nodes within 3 hops.
+WARN  [AWT-EventQueue-0] 2013-01-12 22:10:08,795 repast.simphony.scenario.ScenarioCPInitializer - Warning while parsing classpath: Empty or non-existent path 'G:\My Documents\3rd Year Project\SmokeSNET-Main\lib'.
+WARN  [AWT-EventQueue-0] 2013-01-12 22:10:10,033 repast.simphony.scenario.ScenarioLoader - While initializing classpath: Empty or non-existent path 'G:\My Documents\3rd Year Project\SmokeSNET-Main\lib'.
+n27 has 22 nodes within 3 hops.
+Node n27 has an ideal smoker value of -0.02358998657415793 has a willpower of 2.414903844588004, health of 2.3518636486834006 and smokes 17
+Node n27 has true for smoker, willpower of 0.061351489775999524 and health of 0.3758734712596288 smoking 16
+Node n27 has an ideal smoker value of -0.02358998657415793 has a willpower of 0.109768356572182, health of 0.10690289312197275 and smokes 0
+n75 has 22 nodes within 3 hops.
+Node n75 has an ideal smoker value of -0.018300772943501204 has a willpower of 1.873447736024019, health of 1.8245420570005388 and smokes 14
+Node n75 has true for smoker, willpower of 0.7219497823580284 and health of 0.40060654206410273 smoking 16
+Node n75 has an ideal smoker value of -0.018300772943501204 has a willpower of 0.08515671527381904, health of 0.08293372986366086 and smokes 0
+n49 has 39 nodes within 3 hops.
+Node n49 has an ideal smoker value of 0.012960307718923087 has a willpower of 10.273186210287301, health of 12.188170259642538 and smokes 126
+Node n49 has true for smoker, willpower of 0.8657157531168831 and health of 0.5632104920409526 smoking 13
+Node n49 has an ideal smoker value of 0.012960307718923087 has a willpower of 0.26341503103300773, health of 0.31251718614468044 and smokes 3
+n41 has 40 nodes within 3 hops.
+Node n41 has an ideal smoker value of -0.06001120156395601 has a willpower of 7.159463504720246, health of 7.668298873640424 and smokes 63
+Node n41 has false for smoker, willpower of 0.45877887262359424 and health of 0.8137486984132771 smoking 0
+Node n41 has an ideal smoker value of -0.06001120156395601 has a willpower of 0.17898658761800615, health of 0.1917074718410106 and smokes 1
+n12 has 43 nodes within 3 hops.
+Node n12 has an ideal smoker value of 0.05925358664264268 has a willpower of 6.3654065596820075, health of 7.5085210918536305 and smokes 92
+Node n12 has false for smoker, willpower of 0.9786729664292719 and health of 0.8088143755723183 smoking 0
+Node n12 has an ideal smoker value of 0.05925358664264268 has a willpower of 0.14803271069027923, health of 0.1746167695779914 and smokes 2
+n19 has 48 nodes within 3 hops.
+Node n19 has an ideal smoker value of -0.05047380398700294 has a willpower of 10.443820423366805, health of 12.802078226253393 and smokes 115
+Node n19 has true for smoker, willpower of 0.7564987783550144 and health of 0.7872273610271976 smoking 15
+Node n19 has an ideal smoker value of -0.05047380398700294 has a willpower of 0.2175795921534751, health of 0.26670996304694566 and smokes 2
+n85 has 27 nodes within 3 hops.
+Node n85 has an ideal smoker value of -0.07733885246366523 has a willpower of 9.55618140870623, health of 9.40757774992749 and smokes 85
+Node n85 has true for smoker, willpower of 0.9484952574471781 and health of 0.6010689458211909 smoking 15
+Node n85 has an ideal smoker value of -0.07733885246366523 has a willpower of 0.3539326447668974, health of 0.34842880555287004 and smokes 3
+n83 has 42 nodes within 3 hops.
+Node n83 has an ideal smoker value of 0.00788547254454014 has a willpower of 4.339293415180937, health of 5.000763095523858 and smokes 48
+Node n83 has true for smoker, willpower of 0.8505649346657018 and health of 0.6242579406958008 smoking 14
+Node n83 has an ideal smoker value of 0.00788547254454014 has a willpower of 0.10331650988526041, health of 0.1190657879886633 and smokes 1
+n71 has 25 nodes within 3 hops.
+Node n71 has an ideal smoker value of -0.19285084695132215 has a willpower of 7.007500072857885, health of 7.70062983429818 and smokes 48
+Node n71 has false for smoker, willpower of 0.24621547627116935 and health of 0.4031159203055321 smoking 0
+Node n71 has an ideal smoker value of -0.19285084695132215 has a willpower of 0.2803000029143154, health of 0.3080251933719272 and smokes 1
+n11 has 41 nodes within 3 hops.
+Node n11 has an ideal smoker value of 0.011230151068539633 has a willpower of 4.076096523520752, health of 4.601736221063656 and smokes 45
+Node n11 has false for smoker, willpower of 0.8270850880330822 and health of 0.49980438198785093 smoking 0
+Node n11 has an ideal smoker value of 0.011230151068539633 has a willpower of 0.09941698837855492, health of 0.11223746880643064 and smokes 1
+n66 has 40 nodes within 3 hops.
+Node n66 has an ideal smoker value of -0.07491575860877803 has a willpower of 6.885328304496431, health of 7.494302562112128 and smokes 56
+Node n66 has true for smoker, willpower of 0.5927713012282587 and health of 0.37369387104792473 smoking 15
+Node n66 has an ideal smoker value of -0.07491575860877803 has a willpower of 0.17213320761241077, health of 0.18735756405280318 and smokes 1
+n69 has 45 nodes within 3 hops.
+Node n69 has an ideal smoker value of 0.006626472423827103 has a willpower of 8.515341484368076, health of 9.510818377926698 and smokes 97
+Node n69 has true for smoker, willpower of 0.8789109047301071 and health of 0.6688568333476055 smoking 15
+Node n69 has an ideal smoker value of 0.006626472423827103 has a willpower of 0.18922981076373502, health of 0.2113515195094822 and smokes 2
+n35 has 47 nodes within 3 hops.
+Node n35 has an ideal smoker value of -0.07876928695855868 has a willpower of 5.393317801663324, health of 6.46571076634723 and smokes 37
+Node n35 has false for smoker, willpower of 0.8326753309711583 and health of 0.7070770650609183 smoking 0
+Node n35 has an ideal smoker value of -0.07876928695855868 has a willpower of 0.11475144258858136, health of 0.13756831417760063 and smokes 0
+n62 has 36 nodes within 3 hops.
+Node n62 has an ideal smoker value of 0.08540713432027097 has a willpower of 6.153262020044134, health of 7.049351751222063 and smokes 91
+Node n62 has true for smoker, willpower of 0.46030657948167264 and health of 0.6445847736024828 smoking 15
+Node n62 has an ideal smoker value of 0.08540713432027097 has a willpower of 0.17092394500122596, health of 0.19581532642283508 and smokes 2
+n5 has 54 nodes within 3 hops.
+Node n5 has an ideal smoker value of -0.010862875730077591 has a willpower of 14.460913691361785, health of 16.828841812478633 and smokes 168
+Node n5 has false for smoker, willpower of 0.3129809513327614 and health of 0.6376235307465121 smoking 0
+Node n5 has an ideal smoker value of -0.010862875730077591 has a willpower of 0.26779469798818123, health of 0.3116452187496043 and smokes 3
+n51 has 52 nodes within 3 hops.
+Node n51 has an ideal smoker value of -0.00700619051141047 has a willpower of 10.562765262127495, health of 12.521755723414795 and smokes 122
+Node n51 has true for smoker, willpower of 0.24532351879062075 and health of 0.6615135741124548 smoking 15
+Node n51 has an ideal smoker value of -0.00700619051141047 has a willpower of 0.20313010119475952, health of 0.24080299468105376 and smokes 2
+n50 has 43 nodes within 3 hops.
+Node n50 has an ideal smoker value of -0.05774671739011168 has a willpower of 9.525770553213597, health of 11.040164719031825 and smokes 98
+Node n50 has false for smoker, willpower of 0.3289757564038208 and health of 0.299322773769155 smoking 0
+Node n50 has an ideal smoker value of -0.05774671739011168 has a willpower of 0.22152954774915343, health of 0.25674801672167036 and smokes 2
+n78 has 42 nodes within 3 hops.
+Node n78 has an ideal smoker value of 0.005642035752756526 has a willpower of 3.104753513738797, health of 3.5780334046748505 and smokes 30
+Node n78 has false for smoker, willpower of 0.04484913433705645 and health of 0.5735391190422658 smoking 0
+Node n78 has an ideal smoker value of 0.005642035752756526 has a willpower of 0.0739227027080666, health of 0.08519127153987739 and smokes 0
+n90 has 49 nodes within 3 hops.
+Node n90 has an ideal smoker value of 0.01696185560540163 has a willpower of 10.472777697993735, health of 11.943388466217064 and smokes 127
+Node n90 has false for smoker, willpower of 0.8526446305380884 and health of 0.9076816926967014 smoking 0
+Node n90 has an ideal smoker value of 0.01696185560540163 has a willpower of 0.21373015710191295, health of 0.2437426217595319 and smokes 2
+n3 has 51 nodes within 3 hops.
+Node n3 has an ideal smoker value of -0.014532006242106427 has a willpower of 10.529663389330992, health of 11.613632335419535 and smokes 112
+Node n3 has false for smoker, willpower of 0.8506019365615709 and health of 0.48292866102086557 smoking 0
+Node n3 has an ideal smoker value of -0.014532006242106427 has a willpower of 0.2064639880260979, health of 0.22771828108665754 and smokes 2
+n64 has 36 nodes within 3 hops.
+Node n64 has an ideal smoker value of -0.05174590482704471 has a willpower of 3.1498306779235867, health of 3.949186844280955 and smokes 25
+Node n64 has false for smoker, willpower of 0.10167033425463823 and health of 0.9210736145060314 smoking 0
+Node n64 has an ideal smoker value of -0.05174590482704471 has a willpower of 0.08749529660898853, health of 0.10969963456335986 and smokes 0
 n65 has 10 nodes within 3 hops.
-n91 has 32 nodes within 3 hops.
-n1 has 31 nodes within 3 hops.
-n53 has 38 nodes within 3 hops.
+Node n65 has an ideal smoker value of 0.17228454132898993 has a willpower of 1.5841499142201547, health of 2.1258524325165693 and smokes 34
+Node n65 has false for smoker, willpower of 0.5481640229366592 and health of 0.6071173409441355 smoking 0
+Node n65 has an ideal smoker value of 0.17228454132898993 has a willpower of 0.15841499142201548, health of 0.21258524325165692 and smokes 3
+n53 has 53 nodes within 3 hops.
+Node n53 has an ideal smoker value of -0.0037331183241541784 has a willpower of 12.971425772557113, health of 14.88099905513719 and smokes 152
+Node n53 has false for smoker, willpower of 0.6206625482634669 and health of 0.7237250405936911 smoking 0
+Node n53 has an ideal smoker value of -0.0037331183241541784 has a willpower of 0.24474388250107762, health of 0.28077356707806017 and smokes 2
+n82 has 39 nodes within 3 hops.
+Node n82 has an ideal smoker value of 0.06176155651244533 has a willpower of 7.776566349377351, health of 8.858558208670287 and smokes 106
+Node n82 has true for smoker, willpower of 0.8428915703765258 and health of 0.5072163270799183 smoking 15
+Node n82 has an ideal smoker value of 0.06176155651244533 has a willpower of 0.1993991371635218, health of 0.22714251817103298 and smokes 2
+n2 has 54 nodes within 3 hops.
+Node n2 has an ideal smoker value of 0.017171952762306222 has a willpower of 11.98679382584821, health of 14.06833998554652 and smokes 151
+Node n2 has true for smoker, willpower of 0.8058018625252319 and health of 0.4787500988746364 smoking 14
+Node n2 has an ideal smoker value of 0.017171952762306222 has a willpower of 0.22197766344163353, health of 0.2605248145471578 and smokes 2
+n8 has 36 nodes within 3 hops.
+Node n8 has an ideal smoker value of 0.014589423301428178 has a willpower of 5.8965657260934465, health of 6.281798127003512 and smokes 63
+Node n8 has false for smoker, willpower of 0.14994881447602892 and health of 0.5332454598995909 smoking 0
+Node n8 has an ideal smoker value of 0.014589423301428178 has a willpower of 0.16379349239148464, health of 0.17449439241676423 and smokes 1
+n58 has 51 nodes within 3 hops.
+Node n58 has an ideal smoker value of -0.018193209054259543 has a willpower of 13.868813900072315, health of 15.75346704306667 and smokes 154
+Node n58 has false for smoker, willpower of 0.5805196855844673 and health of 0.8693984176481254 smoking 0
+Node n58 has an ideal smoker value of -0.018193209054259543 has a willpower of 0.27193752745239835, health of 0.3088915106483661 and smokes 3
+n33 has 41 nodes within 3 hops.
+Node n33 has an ideal smoker value of -0.01763391450988792 has a willpower of 8.559075108531513, health of 10.346777655092934 and smokes 100
+Node n33 has true for smoker, willpower of 0.7651887710526186 and health of 0.9399394111552823 smoking 16
+Node n33 has an ideal smoker value of -0.01763391450988792 has a willpower of 0.20875792947637836, health of 0.2523604306120228 and smokes 2
+n88 has 42 nodes within 3 hops.
+Node n88 has an ideal smoker value of 0.02775306434680561 has a willpower of 5.516085650594113, health of 6.161206875297871 and smokes 65
+Node n88 has false for smoker, willpower of 0.7886832613764896 and health of 0.7993411146709144 smoking 0
+Node n88 has an ideal smoker value of 0.02775306434680561 has a willpower of 0.13133537263319317, health of 0.14669540179280643 and smokes 1
+n55 has 23 nodes within 3 hops.
+Node n55 has an ideal smoker value of -0.012158098390611622 has a willpower of 3.9281507114182177, health of 4.074662256025938 and smokes 36
+Node n55 has true for smoker, willpower of 0.7101155523509335 and health of 0.8054096337237048 smoking 14
+Node n55 has an ideal smoker value of -0.012158098390611622 has a willpower of 0.17078916136600947, health of 0.1771592285228669 and smokes 1
+n59 has 34 nodes within 3 hops.
+Node n59 has an ideal smoker value of -0.09353704660879142 has a willpower of 6.85126927728175, health of 8.443368068530805 and smokes 67
+Node n59 has true for smoker, willpower of 0.4555571914024596 and health of 0.3807895625402964 smoking 13
+Node n59 has an ideal smoker value of -0.09353704660879142 has a willpower of 0.20150791992005146, health of 0.2483343549567884 and smokes 1
+n45 has 33 nodes within 3 hops.
+Node n45 has an ideal smoker value of -0.010212315417731694 has a willpower of 8.413856140601942, health of 9.642255620054634 and smokes 96
+Node n45 has true for smoker, willpower of 0.1629462556959292 and health of 0.7705101317256524 smoking 15
+Node n45 has an ideal smoker value of -0.010212315417731694 has a willpower of 0.25496533759399825, health of 0.2921895642440798 and smokes 2
+n9 has 50 nodes within 3 hops.
+Node n9 has an ideal smoker value of -0.027861495397853805 has a willpower of 13.664411725392803, health of 16.291366258663988 and smokes 159
+Node n9 has true for smoker, willpower of 0.9625711515784436 and health of 0.4853858906560864 smoking 17
+Node n9 has an ideal smoker value of -0.027861495397853805 has a willpower of 0.27328823450785605, health of 0.3258273251732798 and smokes 3
+n30 has 38 nodes within 3 hops.
+Node n30 has an ideal smoker value of 0.013053944399034399 has a willpower of 7.453796151448185, health of 8.94895430673787 and smokes 93
+Node n30 has true for smoker, willpower of 0.12772541351190897 and health of 0.7222336988214145 smoking 15
+Node n30 has an ideal smoker value of 0.013053944399034399 has a willpower of 0.19615253030126803, health of 0.2354987975457334 and smokes 2
+n21 has 52 nodes within 3 hops.
+Node n21 has an ideal smoker value of -0.011868762261232789 has a willpower of 8.167766677764915, health of 10.010965740086537 and smokes 89
+Node n21 has false for smoker, willpower of 0.7136028749986005 and health of 0.6972029457136116 smoking 0
+Node n21 has an ideal smoker value of -0.011868762261232789 has a willpower of 0.15707243611086374, health of 0.1925185719247411 and smokes 1
+n4 has 36 nodes within 3 hops.
+Node n4 has an ideal smoker value of 0.01181485990977937 has a willpower of 4.7751783304402915, health of 5.087148636286093 and smokes 54
+Node n4 has true for smoker, willpower of 0.24442394952123603 and health of 0.7954377579314155 smoking 16
+Node n4 has an ideal smoker value of 0.01181485990977937 has a willpower of 0.13264384251223033, health of 0.14130968434128036 and smokes 1
+n48 has 25 nodes within 3 hops.
+Node n48 has an ideal smoker value of -0.06572994800859881 has a willpower of 4.876266413918149, health of 4.742250616913581 and smokes 38
+Node n48 has true for smoker, willpower of 0.7452145155403791 and health of 0.5256755071709747 smoking 14
+Node n48 has an ideal smoker value of -0.06572994800859881 has a willpower of 0.19505065655672596, health of 0.18969002467654325 and smokes 1
+n0 has 52 nodes within 3 hops.
+Node n0 has an ideal smoker value of -0.004565813862453789 has a willpower of 13.604605140627703, health of 15.340961462511109 and smokes 158
+Node n0 has true for smoker, willpower of 0.5194620638838667 and health of 0.4691050519058002 smoking 14
+Node n0 has an ideal smoker value of -0.004565813862453789 has a willpower of 0.26162702193514814, health of 0.29501848966367517 and smokes 3
+n77 has 51 nodes within 3 hops.
+Node n77 has an ideal smoker value of -0.038112383937832596 has a willpower of 15.230130336919347, health of 17.55022919178175 and smokes 166
+Node n77 has true for smoker, willpower of 0.6332357414852716 and health of 0.6562840049505888 smoking 15
+Node n77 has an ideal smoker value of -0.038112383937832596 has a willpower of 0.2986300066062617, health of 0.3441221410153284 and smokes 3
+n18 has 25 nodes within 3 hops.
+Node n18 has an ideal smoker value of -0.0902746443682733 has a willpower of 6.6971484034009725, health of 6.5130887961617345 and smokes 56
+Node n18 has true for smoker, willpower of 0.8754354634343045 and health of 0.6963460466004621 smoking 15
+Node n18 has an ideal smoker value of -0.0902746443682733 has a willpower of 0.2678859361360389, health of 0.26052355184646936 and smokes 2
+n17 has 22 nodes within 3 hops.
+Node n17 has an ideal smoker value of -0.008346420378185367 has a willpower of 0.854421964017035, health of 0.8321175860942701 and smokes 4
+Node n17 has false for smoker, willpower of 0.44707265146768527 and health of 0.7285893093392174 smoking 0
+Node n17 has an ideal smoker value of -0.008346420378185367 has a willpower of 0.03883736200077432, health of 0.03782352664064864 and smokes 0
+n98 has 33 nodes within 3 hops.
+Node n98 has an ideal smoker value of 0.010070272540623409 has a willpower of 6.674451109022815, health of 6.871873741104262 and smokes 75
+Node n98 has true for smoker, willpower of 0.4742966594081423 and health of 0.8869901529991859 smoking 15
+Node n98 has an ideal smoker value of 0.010070272540623409 has a willpower of 0.20225609421281257, health of 0.20823859821528068 and smokes 2
+n81 has 33 nodes within 3 hops.
+Node n81 has an ideal smoker value of 0.025966524329910666 has a willpower of 7.562172781626244, health of 8.643477283114812 and smokes 97
+Node n81 has true for smoker, willpower of 0.27190124580770125 and health of 0.9310980424013546 smoking 15
+Node n81 has an ideal smoker value of 0.025966524329910666 has a willpower of 0.22915675095837104, health of 0.2619235540337822 and smokes 2
+n36 has 46 nodes within 3 hops.
+Node n36 has an ideal smoker value of -0.026703824470759488 has a willpower of 10.297325142333172, health of 12.115446146841093 and smokes 120
+Node n36 has false for smoker, willpower of 0.3569801695696502 and health of 0.8593019805315018 smoking 0
+Node n36 has an ideal smoker value of -0.026703824470759488 has a willpower of 0.22385489439854722, health of 0.2633792640617629 and smokes 2
+n87 has 41 nodes within 3 hops.
+Node n87 has an ideal smoker value of 0.01863437797401818 has a willpower of 6.763535309035207, health of 7.635738073039242 and smokes 82
+Node n87 has true for smoker, willpower of 0.1993354189790642 and health of 0.5432805441958443 smoking 15
+Node n87 has an ideal smoker value of 0.01863437797401818 has a willpower of 0.16496427583012702, health of 0.18623751397656688 and smokes 2
+n26 has 42 nodes within 3 hops.
+Node n26 has an ideal smoker value of 0.01843919821052148 has a willpower of 10.146898733612682, health of 11.693663429983161 and smokes 124
+Node n26 has false for smoker, willpower of 0.4033485719048686 and health of 0.8830386700671048 smoking 0
+Node n26 has an ideal smoker value of 0.01843919821052148 has a willpower of 0.24159282699077814, health of 0.2784205578567419 and smokes 2
+n96 has 47 nodes within 3 hops.
+Node n96 has an ideal smoker value of 0.015111204357552227 has a willpower of 11.607427685959697, health of 13.309566716022625 and smokes 140
+Node n96 has false for smoker, willpower of 0.5996509385690316 and health of 0.43322864088680674 smoking 0
+Node n96 has an ideal smoker value of 0.015111204357552227 has a willpower of 0.2469665465097808, health of 0.28318227055367284 and smokes 2
+n23 has 30 nodes within 3 hops.
+Node n23 has an ideal smoker value of -0.024987042066868713 has a willpower of 4.8774065855452715, health of 6.174145978687366 and smokes 54
+Node n23 has true for smoker, willpower of 0.13356333542546017 and health of 0.6382319763223965 smoking 15
+Node n23 has an ideal smoker value of -0.024987042066868713 has a willpower of 0.16258021951817572, health of 0.20580486595624553 and smokes 1
+n15 has 25 nodes within 3 hops.
+Node n15 has an ideal smoker value of -0.08059404123338858 has a willpower of 5.978979572247571, health of 5.814657600346746 and smokes 49
+Node n15 has false for smoker, willpower of 0.5000320906349991 and health of 0.8710472717818913 smoking 0
+Node n15 has an ideal smoker value of -0.08059404123338858 has a willpower of 0.23915918288990284, health of 0.23258630401386984 and smokes 1
+n94 has 42 nodes within 3 hops.
+Node n94 has an ideal smoker value of 0.02995496096092252 has a willpower of 9.10716724799049, health of 10.430988052571971 and smokes 114
+Node n94 has false for smoker, willpower of 0.3542429189326842 and health of 0.4869354494809567 smoking 0
+Node n94 has an ideal smoker value of 0.02995496096092252 has a willpower of 0.21683731542834503, health of 0.24835685839457072 and smokes 2
+n97 has 50 nodes within 3 hops.
+Node n97 has an ideal smoker value of 0.007997173581972179 has a willpower of 13.481418751382897, health of 14.820435079780097 and smokes 159
+Node n97 has true for smoker, willpower of 0.9708718265017813 and health of 0.5568380757241088 smoking 14
+Node n97 has an ideal smoker value of 0.007997173581972179 has a willpower of 0.26962837502765796, health of 0.29640870159560195 and smokes 3
+n47 has 38 nodes within 3 hops.
+Node n47 has an ideal smoker value of -0.1157410596798597 has a willpower of 5.61237217023132, health of 6.348741449822138 and smokes 36
+Node n47 has false for smoker, willpower of 0.0771923115649702 and health of 0.7191859881774467 smoking 0
+Node n47 has an ideal smoker value of -0.1157410596798597 has a willpower of 0.14769400447977157, health of 0.16707214341637205 and smokes 0
+n61 has 42 nodes within 3 hops.
+Node n61 has an ideal smoker value of 0.012809783862990497 has a willpower of 7.0490906477193604, health of 8.123634194634766 and smokes 81
+Node n61 has true for smoker, willpower of 0.642027873416255 and health of 0.27082409757024933 smoking 14
+Node n61 has an ideal smoker value of 0.012809783862990497 has a willpower of 0.16783549161236572, health of 0.19341986177701825 and smokes 1
+n1 has 52 nodes within 3 hops.
+Node n1 has an ideal smoker value of -0.02535975390327605 has a willpower of 10.346474687531728, health of 11.136537593058751 and smokes 103
+Node n1 has false for smoker, willpower of 0.48617793945570364 and health of 0.7687202379560769 smoking 0
+Node n1 has an ideal smoker value of -0.02535975390327605 has a willpower of 0.19897066706791786, health of 0.21416418448189906 and smokes 1
+n22 has 26 nodes within 3 hops.
+Node n22 has an ideal smoker value of -0.04849130546779501 has a willpower of 5.648118312947375, health of 6.028097598196083 and smokes 53
+Node n22 has false for smoker, willpower of 0.0853380054280114 and health of 0.7184797691264897 smoking 0
+Node n22 has an ideal smoker value of -0.04849130546779501 has a willpower of 0.21723531972874519, health of 0.23184990762292626 and smokes 2
+n40 has 42 nodes within 3 hops.
+Node n40 has an ideal smoker value of 0.00809116631289392 has a willpower of 4.452484553634559, health of 5.1312087726792495 and smokes 49
+Node n40 has true for smoker, willpower of 0.8856367419360371 and health of 0.7820892326641131 smoking 15
+Node n40 has an ideal smoker value of 0.00809116631289392 has a willpower of 0.10601153699129902, health of 0.12217163744474403 and smokes 1
+n86 has 16 nodes within 3 hops.
+Node n86 has an ideal smoker value of -0.08270946341004058 has a willpower of 2.7171268871346053, health of 3.0728242608684697 and smokes 25
+Node n86 has false for smoker, willpower of 0.32963409529631127 and health of 0.7196171727588972 smoking 0
+Node n86 has an ideal smoker value of -0.08270946341004058 has a willpower of 0.16982043044591283, health of 0.19205151630427936 and smokes 1
+n79 has 47 nodes within 3 hops.
+Node n79 has an ideal smoker value of -0.03303377138760238 has a willpower of 11.159385817213094, health of 13.038823761099692 and smokes 123
+Node n79 has false for smoker, willpower of 0.6134532051441712 and health of 0.5636557528964797 smoking 0
+Node n79 has an ideal smoker value of -0.03303377138760238 has a willpower of 0.23743374079176796, health of 0.2774217821510573 and smokes 2
+n70 has 43 nodes within 3 hops.
+Node n70 has an ideal smoker value of 0.002529140777717071 has a willpower of 7.688228695137462, health of 9.18765387329246 and smokes 90
+Node n70 has false for smoker, willpower of 0.8392464026024593 and health of 0.2705875499285383 smoking 0
+Node n70 has an ideal smoker value of 0.002529140777717071 has a willpower of 0.17879601616598748, health of 0.21366636914633627 and smokes 2
+n24 has 54 nodes within 3 hops.
+Node n24 has an ideal smoker value of 0.03947863832607809 has a willpower of 14.151908835021384, health of 16.622937814049305 and smokes 186
+Node n24 has true for smoker, willpower of 0.7970524305891429 and health of 0.4637458439233211 smoking 14
+Node n24 has an ideal smoker value of 0.03947863832607809 has a willpower of 0.2620723858337293, health of 0.3078321817416538 and smokes 3
+n7 has 52 nodes within 3 hops.
+Node n7 has an ideal smoker value of 0.010602348576111467 has a willpower of 10.680778725167935, health of 12.2668230661754 and smokes 127
+Node n7 has true for smoker, willpower of 0.4625915972948071 and health of 0.388835121500682 smoking 14
+Node n7 has an ideal smoker value of 0.010602348576111467 has a willpower of 0.20539959086861412, health of 0.23590044358029616 and smokes 2
+n13 has 31 nodes within 3 hops.
+Node n13 has an ideal smoker value of -0.04679592342479318 has a willpower of 7.77347385987551, health of 9.154506400091288 and smokes 87
+Node n13 has false for smoker, willpower of 0.7846257281446254 and health of 0.6479464039103119 smoking 0
+Node n13 has an ideal smoker value of -0.04679592342479318 has a willpower of 0.2507572212863068, health of 0.29530665806746087 and smokes 2

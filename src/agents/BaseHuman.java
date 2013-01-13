@@ -17,6 +17,9 @@ import repast.simphony.space.graph.RepastEdge;
 
 import org.apache.commons.math.distribution.NormalDistributionImpl;
 
+import probtools.Distributions;
+import probtools.NDParams;
+
 import graphtools.generators.*;
 import graphtools.io.graphML.XMLAttribute;
 import graphtools.io.graphML.XMLNodeKey;
@@ -27,10 +30,11 @@ public class BaseHuman implements Comparable{
 	private Context<?> context;
 	private Network<BaseHuman> network;
 	
-	boolean isSmoker;
-	double willpower;
-	double health;
-	int smokedPerDay;
+	private boolean isSmoker;
+	private double willpower;
+	private double health;
+	private int smokedPerDay;
+	private boolean isChanging;
 	
 	
 	/**
@@ -42,21 +46,28 @@ public class BaseHuman implements Comparable{
 	 * @param reciprocate
 	 * @param reciprocateChance
 	 */
-	public BaseHuman(String id, Context<?> context, Network<BaseHuman> network, boolean generateOnAddition, boolean reciprocate, double reciprocateChance)
+	public BaseHuman(String id, Context<?> context, Network<BaseHuman> network, boolean generateOnAddition, boolean reciprocate, double reciprocateChance, NDParams nd)
 	{
 		this.id = id;
 		this.context = context;
 		this.network = network;
-		this.isSmoker = false;
-		//this.willpower = new NormalDistributionImpl(0.7, 0.2).cumulativeProbability(arg0);
-		this.willpower = Math.random();
-		this.health = Math.random();
+		if(Math.random() < 0.5)
+			this.isSmoker = false;
+		else
+			this.isSmoker = true;
+		if(Math.random() < 0.5)
+			this.isChanging = false;
+		else
+			this.isChanging = true;
+		this.willpower = Distributions.getNDWithLimits(0.5, 0.8, 0, 1);
+		this.health = Distributions.getNDWithLimits(0.7, 0.2, 0, 1);
 		if(isSmoker)
-			this.smokedPerDay = (int)Math.random() * 20;
+			this.smokedPerDay = Distributions.getIntNDWithLimits(15, 0.8, 0, 40);
 		else
 			this.smokedPerDay = 0;
 		//Insert code for adding to network
-		ScaleFree.addToRSF(this, context, network, reciprocate, reciprocateChance);
+		if(generateOnAddition)
+			ScaleFree.addToRSF(this, context, network, reciprocate, reciprocateChance, nd);
 	}
 	
 	/**
@@ -102,18 +113,79 @@ public class BaseHuman implements Comparable{
 		//reconfigure networks
 		//we probabably want to get nodes within a local network (2 or 3 hops)
 		//to see if anyone random is worth picking.
-		HashSet<BaseHuman> localNeighborhood = GeneralTools.getWithinHops(context, network, this, 3, true);
+		HashSet<NeighborStore> localNeighborhood = GeneralTools.getUniqueWithinHops(context, network, this, 3, true);
 		System.out.println(id + " has " + localNeighborhood.size() + " nodes within 3 hops.");
-		boolean idealIsSmoker;
-		double calcIdealIsSmoker;
-		double idealWillpower, idealHealth;
-		int idealSmokedPerDay;
+		boolean idealIsSmoker = false;
+		double calcIdealIsSmoker = 0;
+		double idealWillpower = 0, idealHealth = 0;
+		int idealSmokedPerDay = 0;
 		
-		for(BaseHuman bh : localNeighborhood)
+		for(NeighborStore ns : localNeighborhood)
 		{
+			//System.out.println("Influence for neighbor " + ns.getNeighbor().getID() + " is " + ns.getRelativeInfluence());
+			if(ns.getNeighbor().isSmoker())
+				calcIdealIsSmoker += ns.getRelativeInfluence() * 1;
+			else
+				calcIdealIsSmoker += ns.getRelativeInfluence() * -1;
 			
+			idealWillpower += ns.getRelativeInfluence() * ns.getNeighbor().getWillpower();
+			idealHealth += ns.getRelativeInfluence() * ns.getNeighbor().getHealth();
+			idealSmokedPerDay += ns.getRelativeInfluence() * ns.getNeighbor().getSmokedPerDay();
+			//System.out.println("\t" + ns.getNeighbor().getID());
 		}
 		
+		if(localNeighborhood.size() > 0)
+		{
+			calcIdealIsSmoker /= localNeighborhood.size();
+			if(calcIdealIsSmoker < 0)
+				idealIsSmoker = false;
+			else
+				idealIsSmoker = true;
+			System.out.println("Node " + id + " has an ideal smoker value of " + calcIdealIsSmoker + " has a willpower of " + idealWillpower + ", health of " + idealHealth + " and smokes " + idealSmokedPerDay  );
+			idealWillpower /= localNeighborhood.size();
+			idealHealth /= localNeighborhood.size();
+			idealSmokedPerDay /= localNeighborhood.size();
+		}
+		System.out.println("Node " + id + " has " + isSmoker + " for smoker, willpower of " + willpower + " and health of " + health + " smoking " + smokedPerDay);
+		System.out.println("Node " + id + " has an ideal smoker value of " + calcIdealIsSmoker + " has a willpower of " + idealWillpower + ", health of " + idealHealth + " and smokes " + idealSmokedPerDay  );
+		
+		
+		if(idealIsSmoker != isSmoker && (health * 1.5 < idealHealth) && (Math.random() < willpower))
+			System.out.println("Node " + id + " says 'I'm changing!'");
+		
+		
+	}
+
+	public boolean isSmoker() {
+		return isSmoker;
+	}
+
+	public void setSmoker(boolean isSmoker) {
+		this.isSmoker = isSmoker;
+	}
+
+	public double getWillpower() {
+		return willpower;
+	}
+
+	public void setWillpower(double willpower) {
+		this.willpower = willpower;
+	}
+
+	public double getHealth() {
+		return health;
+	}
+
+	public void setHealth(double health) {
+		this.health = health;
+	}
+
+	public int getSmokedPerDay() {
+		return smokedPerDay;
+	}
+
+	public void setSmokedPerDay(int smokedPerDay) {
+		this.smokedPerDay = smokedPerDay;
 	}
 
 	public String getID() {

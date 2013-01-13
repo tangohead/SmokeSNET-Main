@@ -4,6 +4,9 @@ import java.util.ArrayList;
 import java.util.Iterator;
 
 import org.apache.poi.hssf.record.formula.functions.T;
+
+import probtools.Distributions;
+import probtools.NDParams;
 import agents.BaseHuman;
 
 import edu.uci.ics.jung.graph.Graph;
@@ -33,7 +36,8 @@ public class ModelDevBuilder implements ContextBuilder<Object> {
 		boolean generateOnAddition = true;
 		if(generateOnAddition)
 		{
-			network = ScaleFree.createRSF(context, "TestNet", 4, 100, true, 0.8, true);
+			NDParams nd = new NDParams(0.8, 0.4, 0, 1);
+			network = ScaleFree.createRSF(context, "TestNet", 4, 100, true, 0.8, true, nd);
 			RepastSummary rs = GeneralTools.trimNodesByDegree(context, network, 0);
 			context = rs.getContext();
 			network = rs.getNetwork();

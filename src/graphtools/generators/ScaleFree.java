@@ -9,7 +9,8 @@ import repast.simphony.context.space.graph.NetworkBuilder;
 import repast.simphony.space.graph.Network;
 import repast.simphony.util.collections.IndexedIterable;
 import agents.BaseHuman;
-
+import probtools.Distributions;
+import probtools.NDParams;
 
 public class ScaleFree {
 	
@@ -21,7 +22,7 @@ public class ScaleFree {
 	 * @param reciprocate - whether to automatically reciprocate with the node that this instance connects to.
 	 * @param reciprocateChance - the chance of an edge being reciprocated
 	 */
-	public static void addToRSF(BaseHuman humanInstance, Context<?> context, Network<BaseHuman> network, boolean reciprocate, double reciprocateChance)
+	public static void addToRSF(BaseHuman humanInstance, Context<?> context, Network<BaseHuman> network, boolean reciprocate, double reciprocateChance, NDParams nd)
 	{
 		//Add to scale-free network
 		Iterable<BaseHuman> nodes = network.getNodes();
@@ -59,7 +60,12 @@ public class ScaleFree {
 		
 		for(ArrayList<BaseHuman> pair : newEdges)
 		{
-			network.addEdge(pair.get(0), pair.get(1));
+			//check if we have NDParams, if not, no weights.
+			//System.out.println("Adding an edge...");
+			if(nd == null)
+				network.addEdge(pair.get(0), pair.get(1));
+			else
+				network.addEdge(pair.get(0), pair.get(1), Distributions.getND(nd));
 		}
 	}
 	
@@ -73,7 +79,10 @@ public class ScaleFree {
 	 * @param reciprocateChance the chance of reciprocating an edge
 	 * @return
 	 */
-	public static Network<BaseHuman> createRSF(Context<Object> context, String networkName, int startWith, int numNodes, boolean reciprocate, double reciprocateChance, boolean removeOutliers)
+	public static Network<BaseHuman> createRSF(Context<Object> context, 
+			String networkName, int startWith, int numNodes, 
+			boolean reciprocate, double reciprocateChance, boolean removeOutliers,
+			NDParams nd)
 	{
 		NetworkBuilder<BaseHuman> builder = new NetworkBuilder(networkName, context, true);
 		Network<BaseHuman> network = builder.buildNetwork();
@@ -85,7 +94,7 @@ public class ScaleFree {
 		for(int i = 0; i < startWith; i++)
 		{
 			//note params don't matter since this is the base
-			context.add(new BaseHuman("n" + i, context, network, false, false, 0));
+			context.add(new BaseHuman("n" + i, context, network, false, false, 0, null));
 		}
 
 		IndexedIterable<Object> startNodes = context.getObjects(BaseHuman.class);
@@ -104,8 +113,15 @@ public class ScaleFree {
 				source = (int) Math.round(Math.random() * (startWith));
 				dest = (int) Math.round(Math.random() * startWith);
 			}
-			network.addEdge((BaseHuman)startNodes.get(source-1), (BaseHuman)startNodes.get(dest-1));
 			
+			//check if we have NDParams, if not, no weights.
+			//System.out.println("Adding an edge...");
+			if(nd == null)
+				network.addEdge((BaseHuman)startNodes.get(source-1), (BaseHuman)startNodes.get(dest-1));
+			else
+				network.addEdge((BaseHuman)startNodes.get(source-1), 
+						(BaseHuman)startNodes.get(dest-1), 
+						Distributions.getND(nd));
 			//check for all degrees being >= 1
 			Iterable<BaseHuman> nodes = network.getNodes();
 			Iterator<BaseHuman> iter = nodes.iterator();
@@ -123,7 +139,7 @@ public class ScaleFree {
 		
 		//Now add the rest onto the base network
 		for( int i = startWith; i < numNodes ; i ++) {
-			context.add(new BaseHuman("n" + i, context, network, true, reciprocate, reciprocateChance));
+			context.add(new BaseHuman("n" + i, context, network, true, reciprocate, reciprocateChance, nd));
 		}
 		
 		return network;

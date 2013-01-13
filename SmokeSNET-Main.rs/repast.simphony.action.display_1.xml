@@ -16,7 +16,7 @@
   <netStyles>
     <entry>
       <string>TestNet</string>
-      <string>repast.simphony.visualizationOGL2D.DefaultEdgeStyleOGL2D</string>
+      <string>simmods.EdgeStyle2D</string>
     </entry>
   </netStyles>
   <editedNetStyles>
