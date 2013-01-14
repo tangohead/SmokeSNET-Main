@@ -37,7 +37,7 @@ public class ModelDevBuilder implements ContextBuilder<Object> {
 		if(generateOnAddition)
 		{
 			NDParams nd = new NDParams(0.8, 0.4, 0, 1);
-			network = ScaleFree.createRSF(context, "TestNet", 4, 100, true, 0.8, true, nd);
+			network = ScaleFree.createRSF(context, "TestNet", 4, 250, true, 0.8, true, nd);
 			RepastSummary rs = GeneralTools.trimNodesByDegree(context, network, 0);
 			context = rs.getContext();
 			network = rs.getNetwork();

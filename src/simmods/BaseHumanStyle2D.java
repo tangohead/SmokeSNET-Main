@@ -13,21 +13,21 @@ import repast.simphony.visualizationOGL2D.DefaultStyleOGL2D;
 public class BaseHumanStyle2D extends DefaultStyleOGL2D 
 { 
         //@Override 
-        /*public Color getColor(Object o) 
+        public Color getColor(Object o) 
         { 
                 if(o instanceof BaseHuman) { 
                 	BaseHuman agent = (BaseHuman) o; 
                         if(agent.isSmoker()) { 
-                                return Color.RED; 
+                                return Color.BLACK; 
                         } 
                         else { 
-                                return Color.CYAN; 
+                                return Color.MAGENTA; 
                         } 
                 } 
                 else { 
                         return null; 
                 } 
-        }*/
+        }
         
         @Override
         public String getLabel(Object o)

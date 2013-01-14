@@ -9,9 +9,9 @@
     <int>3</int>
     <string>SettingsFileName</string>
     <string>Repast.settings</string>
-    <string>LastLoadedScenario</string>
-    <string>G:\My Documents\3rd Year Project\SmokeSNET-Main\SmokeSNET-Main.rs</string>
     <string>SettingsRegistryId</string>
     <string>Repast.registry</string>
+    <string>LastLoadedScenario</string>
+    <string>G:\My Documents\3rd Year Project\SmokeSNET-Main\SmokeSNET-Main.rs</string>
   </hashtable>
 </simphony.settings.SettingsRegistry>

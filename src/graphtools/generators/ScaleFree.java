@@ -38,6 +38,7 @@ public class ScaleFree {
 			}
 			
 			double prob = iDegree / jSumDegree;
+			prob = prob * humanInstance.compatProb(current);
 			/*if(this.isSmoker() != current.isSmoker())
 				prob = prob * 0.5;*/
 			
