@@ -34,10 +34,15 @@ public class BaseHuman implements Comparable{
 	private double willpower;
 	private double health;
 	private int smokedPerDay;
-	private boolean isChanging;
+	
+	private boolean givingUp;
+	private int stepsSinceGiveUp;
 	
 	private double influenceability;
 	private double sociable;
+	
+	
+	
 	
 	
 	/**
@@ -55,13 +60,28 @@ public class BaseHuman implements Comparable{
 		this.context = context;
 		this.network = network;
 		if(Math.random() < 0.5)
+		{
 			this.isSmoker = false;
+			//Some people are giving up
+			if(Math.random() < 0.5)
+				this.givingUp = false;
+			else
+			{
+				this.givingUp = true;
+				this.stepsSinceGiveUp = (int) Math.random() * 100;
+			}
+		}
 		else
+		{
 			this.isSmoker = true;
-		if(Math.random() < 0.5)
-			this.isChanging = false;
-		else
-			this.isChanging = true;
+			this.givingUp = false;
+			this.stepsSinceGiveUp = 0;
+		}
+		
+		
+		
+		
+		
 		this.willpower = Distributions.getNDWithLimits(0.5, 0.8, 0, 1);
 		this.health = Distributions.getNDWithLimits(0.7, 0.2, 0, 1);
 		this.sociable = Distributions.getNDWithLimits(0.6, 0.4, 0, 1);
@@ -74,6 +94,14 @@ public class BaseHuman implements Comparable{
 			ScaleFree.addToRSF(this, context, network, reciprocate, reciprocateChance, nd);
 	}
 	
+	public boolean isGivingUp() {
+		return givingUp;
+	}
+
+	public int getStepsSinceGiveUp() {
+		return stepsSinceGiveUp;
+	}
+
 	/**
 	 * Constructor for small world networks
 	 */
@@ -118,114 +146,76 @@ public class BaseHuman implements Comparable{
 		//we probabably want to get nodes within a local network (2 or 3 hops)
 		//to see if anyone random is worth picking.
 		HashSet<NeighborStore> localNeighborhood = GeneralTools.getUniqueWithinHops(context, network, this, 3, true);
-		//System.out.println(id + " has " + localNeighborhood.size() + " nodes within 3 hops.");
-		boolean idealIsSmoker = false;
-		double calcIdealIsSmoker = 0;
-		double idealWillpower = 0, idealHealth = 0;
-		int idealSmokedPerDay = 0;
+
+		NeighborMetrics nm = new NeighborMetrics(localNeighborhood);
 		
-		double influenceSum = 0;
-		
-		for(NeighborStore ns : localNeighborhood)
-		{
-			//System.out.println("Influence for neighbor " + ns.getNeighbor().getID() + " is " + ns.getRelativeInfluence());
-			if(ns.getNeighbor().isSmoker())
-				calcIdealIsSmoker += ns.getRelativeInfluence() * 1;
-			else
-				calcIdealIsSmoker += ns.getRelativeInfluence() * -1;
-			
-			idealWillpower +=  ns.getRelativeInfluence() * ns.getNeighbor().getWillpower();
-			idealHealth += ns.getRelativeInfluence() * ns.getNeighbor().getHealth();
-			idealSmokedPerDay += ns.getRelativeInfluence() * ns.getNeighbor().getSmokedPerDay();
-			
-			influenceSum += ns.getRelativeInfluence();
-			//System.out.println("\t" + ns.getNeighbor().getID());
-		}
-		
-		if(localNeighborhood.size() > 0)
-		{
-			//calcIdealIsSmoker /= localNeighborhood.size();
-			calcIdealIsSmoker /= influenceSum;
-			if(calcIdealIsSmoker < 0)
-				idealIsSmoker = false;
-			else
-				idealIsSmoker = true;
-			//System.out.println("Node " + id + " has an ideal smoker value of " + calcIdealIsSmoker + " has a willpower of " + idealWillpower + ", health of " + idealHealth + " and smokes " + idealSmokedPerDay  );
-			//idealWillpower /= localNeighborhood.size();
-			//idealHealth /= localNeighborhood.size();
-			//idealSmokedPerDay /= localNeighborhood.size();
-			
-			idealWillpower /= influenceSum;
-			idealHealth /= influenceSum;
-			idealSmokedPerDay /= influenceSum;
-		}
-		//System.out.println("Node " + id + " has " + isSmoker + " for smoker, willpower of " + willpower + " and health of " + health + " smoking " + smokedPerDay);
-		//System.out.println("Node " + id + " has an ideal smoker value of " + calcIdealIsSmoker + " has a willpower of " + idealWillpower + ", health of " + idealHealth + " and smokes " + idealSmokedPerDay  );
-		
-		
-		//if(idealIsSmoker != isSmoker && (health * 1.5 < idealHealth) && (Math.random() < willpower))
-			//System.out.println("Node " + id + " says 'I'm changing!'");
-		
-		//basis for decision tree stuff is going here
-		//System.out.println("I'm node " + id);
 		double smoker = 0;
-		for(NeighborStore ns: localNeighborhood)
-		{
-			//We'll look for people with attributes similar to the ideal
-			BaseHuman candidate = ns.getNeighbor();
-			
-			//need to come up with some scoring model for the other person!
-			//should incorporate self and ideal person.
-			
-			if(candidate.isSmoker() == idealIsSmoker && ( health > candidate.getHealth() * 0.995 && health < candidate.getHealth() * 1.005))
-			{
-				//System.out.println("Node " + candidate.getID() + " is reasonably close to " + id + " with healths being " + health + " " + candidate.getHealth());
-				//check if they're being influenced already, if not, add edge
-				RepastEdge<BaseHuman> ed1 = network.getEdge(candidate, this);
-				
-				if(ed1 == null && Math.random() < sociable)
-				{
-					network.addEdge(candidate, this, Distributions.getND(new NDParams(0.7, 0.5, 0, 1)));
-				}
-			}
-			//also look for removals
-			else if(( health < candidate.getHealth() * 0.9 || health > candidate.getHealth() * 1.1))
-			{
-				RepastEdge<BaseHuman> ed1 = network.getEdge(candidate, this);
-				if(ed1 != null)
-					network.removeEdge(ed1);
-			}
-			
-			
-		}
+//		for(NeighborStore ns: localNeighborhood)
+//		{
+//			//We'll look for people with attributes similar to the ideal
+//			BaseHuman candidate = ns.getNeighbor();
+//			
+//			//need to come up with some scoring model for the other person!
+//			//should incorporate self and ideal person.
+//			
+//			if(candidate.isSmoker() == idealIsSmoker && ( health > candidate.getHealth() * 0.995 && health < candidate.getHealth() * 1.005))
+//			{
+//				//System.out.println("Node " + candidate.getID() + " is reasonably close to " + id + " with healths being " + health + " " + candidate.getHealth());
+//				//check if they're being influenced already, if not, add edge
+//				RepastEdge<BaseHuman> ed1 = network.getEdge(candidate, this);
+//				
+//				if(ed1 == null && Math.random() < sociable)
+//				{
+//					network.addEdge(candidate, this, Distributions.getND(new NDParams(0.7, 0.5, 0, 1)));
+//				}
+//			}
+//			//also look for removals
+//			else if(( health < candidate.getHealth() * 0.9 || health > candidate.getHealth() * 1.1))
+//			{
+//				RepastEdge<BaseHuman> ed1 = network.getEdge(candidate, this);
+//				if(ed1 != null)
+//					network.removeEdge(ed1);
+//			}
+//			
+//			
+//		}
 		
 		for(BaseHuman bh : network.getNodes())
 		{
 			if(bh.isSmoker())
 				smoker++;
 		}
-		if(network.size() > 0)
-			System.out.println("Current smoker rate: " + (smoker / network.size()) * 100 + "%");
+		if(network.size() > 0){}
+			//System.out.println("Current smoker rate: " + (smoker / network.size()) * 100 + "%");
 		
-		//We now need to permute our own attributes relative to everyone else
-		double permuteHealth = health - idealHealth;
-		health = health + (0.1 * idealHealth);
-		
-		if(Math.random() < willpower)
-		{
-			isSmoker = idealIsSmoker;
-			if(isSmoker)
-				System.out.println("NODE " + id + ": I just became a smoker!");
-			else
-				System.out.println("NODE " + id + ": I just gave up smoking!");
-		}
-		
+		decisionTree(nm);
 	}
 	
-	private void decisionTree()
+	private void decisionTree(NeighborMetrics nm)
 	{
-		
+		if(isSmoker)
+		{
+			//calculate the
+			//should I stop?
+			//low health == higher prob
+			
+			double yesProb = (1 - health) + nm.getInfIsSmokerVal() + nm.getPcGivingUp();
+			yesProb = Math.abs(yesProb) / 3;
+			//System.out.println(id + ": My stop probability is " + yesProb);
+			if(Math.random() < yesProb)
+			{
+				isSmoker = false;
+				System.out.println(id + ": I gave up smoking!");
+			}
+			
+		}
+		else
+		{
+			//should I start?
+		}
 	}
+	
+	 
 	
 	//Used to modify the scale free algorithm's connection probability
 	public double compatProb(BaseHuman oth)
