@@ -22,6 +22,7 @@ public class NeighborMetrics {
 	NeighborMetrics(HashSet<NeighborStore> neighborhood)
 	{
 		double influenceSum = 0;
+		double smokerInfluenceSum = 0, nonSmokerInfluenceSum = 0;
 		for(NeighborStore ns : neighborhood)
 		{
 			if(ns.getNeighbor().isSmoker())
@@ -35,7 +36,12 @@ public class NeighborMetrics {
 			influenceSum += ns.getRelativeInfluence();
 			
 			if(ns.getNeighbor().isSmoker())
+			{
 				pcSmokes++;
+				smokerInfluenceSum += ns.getRelativeInfluence();
+			}
+			else
+				nonSmokerInfluenceSum += ns.getRelativeInfluence();
 			if(ns.getNeighbor().isGivingUp())
 				pcGivingUp++;
 		}
@@ -51,7 +57,8 @@ public class NeighborMetrics {
 			
 			infWillpower /= influenceSum;
 			infHealth /= influenceSum;
-			infCigPerDay /= influenceSum;
+			
+			infCigPerDay /= smokerInfluenceSum;
 			
 			pcSmokes /= neighborhood.size();
 			pcGivingUp /= neighborhood.size();
