@@ -41,7 +41,7 @@ public class BaseHuman implements Comparable{
 	private double influenceability;
 	private double sociable;
 	
-	
+	private int maxDegree = 5;
 	
 	
 	
@@ -267,15 +267,36 @@ public class BaseHuman implements Comparable{
 		{
 			NeighborStore other = iter.next();
 			double score = scoreAgainst(other.getNeighbor());
-			if(score > 0.5)
+			//System.out.println(id + ": My score against " + other.getNeighbor().getID() + " is " + score);
+			if(score > 0.3)
 			{
-				RepastEdge<BaseHuman> ed1 = network.getEdge(other.getNeighbor(), this);
-				if(ed1 == null && Math.random() < sociable)
+				if(network.getDegree(this) >= maxDegree)
 				{
-					double nd = Distributions.getND(new NDParams((score - 0.5)*2, 0.3, 0, 1));
-					network.addEdge(other.getNeighbor(), this, nd);
-					System.out.println(id + ": I attached to " + other.getNeighbor().getID() + " with influence " + nd /*+ " and prob " + prob + " and points " + points*/);
+					RepastEdge<BaseHuman> removalCandidate = getMinInfluence(network.getInEdges(this));
+					//lower influence nodes more likely to be binned
+					if(Math.random() < (1 - removalCandidate.getWeight()) && removalCandidate != null)
+					{
+						RepastEdge<BaseHuman> ed1 = network.getEdge(other.getNeighbor(), this);
+						if(ed1 == null && Math.random() < sociable)
+						{
+							double nd = Distributions.getND(new NDParams((score - 0.5)*2, 0.3, 0, 1));
+							network.addEdge(other.getNeighbor(), this, nd);
+							System.out.println(id + ": I attached to " + other.getNeighbor().getID() + " with influence " + nd /*+ " and prob " + prob + " and points " + points*/);
+							network.removeEdge(removalCandidate);
+						}
+					}
 				}
+				else
+				{
+					RepastEdge<BaseHuman> ed1 = network.getEdge(other.getNeighbor(), this);
+					if(ed1 == null && Math.random() < sociable)
+					{
+						double nd = Distributions.getND(new NDParams((score - 0.5)*2, 0.3, 0, 1));
+						network.addEdge(other.getNeighbor(), this, nd);
+						System.out.println(id + ": I attached to " + other.getNeighbor().getID() + " with influence " + nd /*+ " and prob " + prob + " and points " + points*/);
+					}
+				}
+				
 			}
 			else
 			{
@@ -289,6 +310,25 @@ public class BaseHuman implements Comparable{
 			//System.out.println(id + ": My score against " + other.getNeighbor().getID() + " is " + scoreAgainst(other.getNeighbor()));
 		}
 			
+	}
+	
+	private RepastEdge<BaseHuman> getMinInfluence(Iterable<RepastEdge<BaseHuman>> edges)
+	{
+		Iterator<RepastEdge<BaseHuman>> edgesIterator = edges.iterator();
+		RepastEdge<BaseHuman> min = null;
+		
+		while(edgesIterator.hasNext())
+		{
+			if(min == null)
+				min = edgesIterator.next();
+			else
+			{
+				RepastEdge<BaseHuman> current = edgesIterator.next();
+				if(current.getWeight() < min.getWeight())
+					min = current;
+			}
+		}
+		return min;
 	}
 	
 	public double scoreAgainst(BaseHuman other)
