@@ -41,7 +41,7 @@ public class BaseHuman implements Comparable{
 	private double influenceability;
 	private double sociable;
 	
-	private int maxDegree = 5;
+	private int maxDegree = 10;
 	
 	
 	
