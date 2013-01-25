@@ -3,14 +3,14 @@
   <hashtable>
     <default>
       <loadFactor>0.75</loadFactor>
-      <threshold>8</threshold>
+      <threshold>3</threshold>
     </default>
     <int>5</int>
     <int>5</int>
     <string>SettingsFileName</string>
     <string>Repast.settings</string>
     <string>LastLoadedScenario</string>
-    <string>/Users/matt/git/SmokeSNET-Main/SmokeSNET-Main.rs</string>
+    <string>G:\My Documents\3rd Year Project\SmokeSNET-Main\SmokeSNET-Main.rs</string>
     <string>*ORA.home</string>
     <string>/Applications/ORA/</string>
     <string>SettingsRegistryId</string>

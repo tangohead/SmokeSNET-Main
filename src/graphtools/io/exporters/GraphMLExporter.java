@@ -30,7 +30,17 @@ public class GraphMLExporter {
 	{
 		System.out.println("Creating "  + filename + " ...");
 		GraphMLObject template = new GraphMLObject();
-		Iterable<BaseHuman> nodes = network.getNodes();
+		
+		Iterable init = network.getNodes();
+		ArrayList<BaseHuman> nodes = new ArrayList<BaseHuman>();
+		for(Object o : init)
+		{
+			if(o instanceof BaseHuman)
+				nodes.add((BaseHuman) o);
+			
+		}
+		
+		
 		HashMap<String, String> keyMap = new HashMap<String, String>();
 		
 		//Go through the fields of the BaseHuman, adding them as keys

@@ -8,6 +8,7 @@ import org.apache.poi.hssf.record.formula.functions.T;
 import probtools.Distributions;
 import probtools.NDParams;
 import agents.BaseHuman;
+import agents.Watchman;
 
 import edu.uci.ics.jung.graph.Graph;
 
@@ -37,7 +38,7 @@ public class ModelDevBuilder implements ContextBuilder<Object> {
 		if(generateOnAddition)
 		{
 			NDParams nd = new NDParams(0.8, 0.4, 0, 1);
-			network = ScaleFree.createRSF(context, "TestNet", 4, 250, true, 0.8, true, nd);
+			network = ScaleFree.createRSF(context, "TestNet", 4, 500, true, 0.8, true, nd);
 			RepastSummary rs = GeneralTools.trimNodesByDegree(context, network, 0);
 			context = rs.getContext();
 			network = rs.getNetwork();
@@ -55,7 +56,9 @@ public class ModelDevBuilder implements ContextBuilder<Object> {
 				System.out.println(asda.next().getWeight());
 		}
 		
-		
+		Watchman watch = new Watchman(100, true, "testrun", context, network);
+		context.add(watch);
+				
 		//GraphConverter.repastNetworkToGraphML(context, net, "sample-"+ System.currentTimeMillis() +"-SW.graphml");
 		
 		return context;

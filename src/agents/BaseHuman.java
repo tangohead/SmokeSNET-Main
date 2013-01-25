@@ -44,7 +44,27 @@ public class BaseHuman implements Comparable{
 	private int maxDegree = 10;
 	
 	
-	
+	/*
+	 * 
+	 * ADD ATTRIBUTES INTO KEY MAP!!
+	 * 
+	 * 
+	 * 
+	 * 
+	 * 
+	 * 
+	 * 
+	 * 
+	 * 
+	 * 
+	 * 
+	 * 
+	 * 
+	 * 
+	 * 
+	 * 
+	 * 
+	 */
 	/**
 	 * Constructor for scale free networks
 	 * @param id
@@ -180,7 +200,16 @@ public class BaseHuman implements Comparable{
 //			
 //		}
 		
-		for(BaseHuman bh : network.getNodes())
+		Iterable init = network.getNodes();
+		ArrayList<BaseHuman> nodes = new ArrayList<BaseHuman>();
+		for(Object o : init)
+		{
+			if(o instanceof BaseHuman)
+				nodes.add((BaseHuman) o);
+			
+		}
+		
+		for(BaseHuman bh : nodes)
 		{
 			if(bh.isSmoker())
 				smoker++;
@@ -213,7 +242,7 @@ public class BaseHuman implements Comparable{
 			if(Math.random() < yesProb)
 			{
 				isSmoker = false;
-				System.out.println(id + ": I gave up smoking!");
+				//System.out.println(id + ": I gave up smoking!");
 				
 				this.givingUp = true;
 				this.stepsSinceGiveUp = 0;
@@ -229,7 +258,7 @@ public class BaseHuman implements Comparable{
 					
 					double zeroedChange = nm.getInfCigPerDay() - this.smokedPerDay;
 					this.smokedPerDay += zeroedChange * this.influenceability;
-					System.out.println(id + ": Changed to " + this.smokedPerDay + " cigs per day, with change " + zeroedChange);
+					//System.out.println(id + ": Changed to " + this.smokedPerDay + " cigs per day, with change " + zeroedChange);
 				}
 			}
 			
@@ -244,11 +273,14 @@ public class BaseHuman implements Comparable{
 			if(Math.random() < yesProb)
 			{
 				isSmoker = true;
-				System.out.println(id + ": I began up smoking!");
+				//System.out.println(id + ": I began up smoking!");
 				//how many?
-				smokedPerDay = (int) Math.abs(nm.getInfCigPerDay());
+				if(nm.getInfCigPerDay() < 0)
+					smokedPerDay = 5;
+				else
+					smokedPerDay = (int) Math.round(nm.getInfCigPerDay());
 				
-				System.out.println("My influence val is " + nm.getInfCigPerDay());
+				//System.out.println("My influence val is " + nm.getInfCigPerDay());
 			}
 			else
 			{
@@ -270,18 +302,18 @@ public class BaseHuman implements Comparable{
 			//System.out.println(id + ": My score against " + other.getNeighbor().getID() + " is " + score);
 			if(score > 0.3)
 			{
-				if(network.getDegree(this) >= maxDegree)
+				if(network.getInDegree(this) >= maxDegree)
 				{
 					RepastEdge<BaseHuman> removalCandidate = getMinInfluence(network.getInEdges(this));
 					//lower influence nodes more likely to be binned
 					if(Math.random() < (1 - removalCandidate.getWeight()) && removalCandidate != null)
 					{
 						RepastEdge<BaseHuman> ed1 = network.getEdge(other.getNeighbor(), this);
-						if(ed1 == null && Math.random() < sociable)
+						if(ed1 == null /*&& Math.random() < sociable*/)
 						{
 							double nd = Distributions.getND(new NDParams((score - 0.5)*2, 0.3, 0, 1));
 							network.addEdge(other.getNeighbor(), this, nd);
-							System.out.println(id + ": I attached to " + other.getNeighbor().getID() + " with influence " + nd /*+ " and prob " + prob + " and points " + points*/);
+							//System.out.println(id + ": I attached to " + other.getNeighbor().getID() + " with influence " + nd /*+ " and prob " + prob + " and points " + points*/);
 							network.removeEdge(removalCandidate);
 						}
 					}
@@ -293,7 +325,7 @@ public class BaseHuman implements Comparable{
 					{
 						double nd = Distributions.getND(new NDParams((score - 0.5)*2, 0.3, 0, 1));
 						network.addEdge(other.getNeighbor(), this, nd);
-						System.out.println(id + ": I attached to " + other.getNeighbor().getID() + " with influence " + nd /*+ " and prob " + prob + " and points " + points*/);
+						//System.out.println(id + ": I attached to " + other.getNeighbor().getID() + " with influence " + nd /*+ " and prob " + prob + " and points " + points*/);
 					}
 				}
 				
@@ -304,7 +336,7 @@ public class BaseHuman implements Comparable{
 				if(ed1 != null /*&& Math.random() < sociable*/)
 				{
 					network.removeEdge(ed1);
-					System.out.println(id + ": I detached from " + other.getNeighbor().getID() /*+ " with prob " + prob*/);
+					//System.out.println(id + ": I detached from " + other.getNeighbor().getID() /*+ " with prob " + prob*/);
 				}
 			}
 			//System.out.println(id + ": My score against " + other.getNeighbor().getID() + " is " + scoreAgainst(other.getNeighbor()));
@@ -446,7 +478,15 @@ public class BaseHuman implements Comparable{
 	public HashMap<String, Object> generateAttrList(HashMap<String, String> keyMap)
 	{
 		HashMap<String, Object> rtnList = new HashMap<String, Object>();
-		rtnList.put(keyMap.get("smoker"), this.isSmoker);
+		rtnList.put(keyMap.get("isSmoker"), this.isSmoker);
+		rtnList.put(keyMap.get("willpower"), this.willpower);
+		rtnList.put(keyMap.get("health"), this.health);
+		rtnList.put(keyMap.get("smokedPerDay"), this.smokedPerDay);
+		rtnList.put(keyMap.get("givingUp"), this.givingUp);
+		rtnList.put(keyMap.get("stepsSinceGiveUp"), this.stepsSinceGiveUp);
+		rtnList.put(keyMap.get("influenceability"), this.influenceability);
+		rtnList.put(keyMap.get("sociable"), this.sociable);
+
 		
 		return rtnList;
 	}
