@@ -42,6 +42,7 @@ public class BaseHuman implements Comparable{
 	private double sociable;
 	
 	private int maxDegree = 10;
+	private int cigLimit = 70;
 	
 	
 	/*
@@ -105,8 +106,9 @@ public class BaseHuman implements Comparable{
 		this.willpower = Distributions.getNDWithLimits(0.5, 0.8, 0, 1);
 		this.health = Distributions.getNDWithLimits(0.7, 0.2, 0, 1);
 		this.sociable = Distributions.getNDWithLimits(0.6, 0.4, 0, 1);
+		this.influenceability = Distributions.getNDWithLimits(0.5, 0.4, 0, 1);
 		if(isSmoker)
-			this.smokedPerDay = Distributions.getIntNDWithLimits(15, 0.8, 0, 40);
+			this.smokedPerDay = Distributions.getIntNDWithLimits(12, 0.8, 0, 40);
 		else
 			this.smokedPerDay = 0;
 		//Insert code for adding to network
@@ -257,7 +259,8 @@ public class BaseHuman implements Comparable{
 				{
 					
 					double zeroedChange = nm.getInfCigPerDay() - this.smokedPerDay;
-					this.smokedPerDay += zeroedChange * this.influenceability;
+					if(zeroedChange + this.smokedPerDay < cigLimit)
+						this.smokedPerDay += zeroedChange * this.influenceability;
 					//System.out.println(id + ": Changed to " + this.smokedPerDay + " cigs per day, with change " + zeroedChange);
 				}
 			}
@@ -278,8 +281,11 @@ public class BaseHuman implements Comparable{
 				if(nm.getInfCigPerDay() < 0)
 					smokedPerDay = 5;
 				else
+				{
 					smokedPerDay = (int) Math.round(nm.getInfCigPerDay());
-				
+					if(smokedPerDay < 0 || smokedPerDay > cigLimit)
+						smokedPerDay = Distributions.getIntNDWithLimits(12, 0.5, 0, cigLimit);
+				}
 				//System.out.println("My influence val is " + nm.getInfCigPerDay());
 			}
 			else

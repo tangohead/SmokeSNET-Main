@@ -24,6 +24,7 @@ import repast.simphony.util.collections.IndexedIterable;
 import graphtools.generators.ScaleFree;
 import graphtools.generators.SmallWorld;
 import graphtools.io.converters.*;
+import graphtools.io.exporters.CSVExporter;
 import graphtools.io.importers.GraphMLImporter;
 import graphtools.samplers.GeneralTools;
 public class ModelDevBuilder implements ContextBuilder<Object> {
@@ -56,9 +57,10 @@ public class ModelDevBuilder implements ContextBuilder<Object> {
 				System.out.println(asda.next().getWeight());
 		}
 		
-		Watchman watch = new Watchman(100, true, "testrun", context, network);
+		Watchman watch = new Watchman(100, true, true, "testrun", context, network);
 		context.add(watch);
-				
+		
+		//CSVExporter.exportToCSV(network.getNodes(), "test");
 		//GraphConverter.repastNetworkToGraphML(context, net, "sample-"+ System.currentTimeMillis() +"-SW.graphml");
 		
 		return context;
