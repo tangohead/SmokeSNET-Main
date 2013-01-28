@@ -39,7 +39,10 @@ public class BaseHuman implements Comparable{
 	private int stepsSinceGiveUp;
 	
 	private double influenceability;
+	private double persuasiveness;
 	private double sociable;
+	
+	//new attrs - leadership?
 	
 	private int maxDegree = 10;
 	private int cigLimit = 70;
@@ -107,6 +110,9 @@ public class BaseHuman implements Comparable{
 		this.health = Distributions.getNDWithLimits(0.7, 0.2, 0, 1);
 		this.sociable = Distributions.getNDWithLimits(0.6, 0.4, 0, 1);
 		this.influenceability = Distributions.getNDWithLimits(0.5, 0.4, 0, 1);
+		
+		this.persuasiveness = Distributions.getNDWithLimits(0.5, 0.4, 0, 1);
+		
 		if(isSmoker)
 			this.smokedPerDay = Distributions.getIntNDWithLimits(12, 0.8, 0, 40);
 		else
@@ -219,35 +225,41 @@ public class BaseHuman implements Comparable{
 		if(network.size() > 0){}
 			//System.out.println("Current smoker rate: " + (smoker / network.size()) * 100 + "%");
 		
-		decisionTree(nm);
-		connectionAdjust(localNeighborhood, nm, network);
+		if(decisionTree(nm))
+			connectionAdjust(localNeighborhood, nm, network);
 		if(this.isGivingUp())
 			this.stepsSinceGiveUp++;
 			
 		
 	}
 	
-	private void decisionTree(NeighborMetrics nm)
+	private boolean decisionTree(NeighborMetrics nm)
 	{
 		double yesProb;
+		boolean changeMade = false;
 		//am I a smoker?
 		if(isSmoker)
 		{
 			//calculate the
 			//should I stop?
 			//low health == higher prob
+			if(this.health - this.health * 0.01 > 0)
+				this.health -= this.health * 0.01;
 			
 			//I'm concerned about the smoker val - it's being mixed with probabilities
-			yesProb = (1 - health) * /*nm.getInfIsSmokerVal() +*/ nm.getPcGivingUp();
+			yesProb = (1 - health) * /*nm.getInfIsSmokerVal() +*/ nm.getPcGivingUp() * this.willpower;
 			//yesProb = Math.abs(yesProb) / 2;
 			//System.out.println(id + ": My stop probability is " + yesProb);
 			if(Math.random() < yesProb)
 			{
 				isSmoker = false;
-				//System.out.println(id + ": I gave up smoking!");
+				System.out.println(id + ": I gave up smoking!");
 				
 				this.givingUp = true;
 				this.stepsSinceGiveUp = 0;
+				changeMade = true;
+				
+				this.willpower = (1 - this.influenceability) * nm.getPcSmokes();
 				
 				//what effect does this have on my health?
 				
@@ -255,13 +267,14 @@ public class BaseHuman implements Comparable{
 			else
 			{
 				//should I smoke more?
-				if(!(this.smokedPerDay * 0.9 > nm.getInfCigPerDay() && this.smokedPerDay * 1.1 < nm.getInfCigPerDay()))
+				if(!(this.smokedPerDay * 0.9 > nm.getInfCigPerDay() && this.smokedPerDay * 1.1 < nm.getInfCigPerDay()) &&
+						this.health * 0.9 > nm.getInfHealth() && this.health * 1.1 < nm.getInfHealth())
 				{
-					
+					changeMade = true;
 					double zeroedChange = nm.getInfCigPerDay() - this.smokedPerDay;
 					if(zeroedChange + this.smokedPerDay < cigLimit)
 						this.smokedPerDay += zeroedChange * this.influenceability;
-					//System.out.println(id + ": Changed to " + this.smokedPerDay + " cigs per day, with change " + zeroedChange);
+					System.out.println(id + ": Changed to " + this.smokedPerDay + " cigs per day, with change " + zeroedChange);
 				}
 			}
 			
@@ -269,14 +282,17 @@ public class BaseHuman implements Comparable{
 		else
 		{
 			//should I start?
-			yesProb = health * /*nm.getInfIsSmokerVal() +*/ nm.getPcSmokes() * nm.getPcGivingUp();
-			
+			yesProb = health * /*nm.getInfIsSmokerVal() +*/ nm.getPcSmokes() * nm.getPcGivingUp() * this.influenceability;
+			if(this.health + this.health * 0.01 < 1)
+				this.health += this.health * 0.01;
 			//yesProb = Math.abs(yesProb) / 3;
 			//System.out.println(id + ": My start probability is " + yesProb);
 			if(Math.random() < yesProb)
 			{
 				isSmoker = true;
-				//System.out.println(id + ": I began up smoking!");
+				this.influenceability -= this.influenceability * 0.001;
+				System.out.println(id + ": I began up smoking!");
+				changeMade = true;
 				//how many?
 				if(nm.getInfCigPerDay() < 0)
 					smokedPerDay = 5;
@@ -291,22 +307,25 @@ public class BaseHuman implements Comparable{
 			else
 			{
 				//how should I give up?
+				this.influenceability += this.influenceability * 0.001;
+				
 			}
-		}		
+		}
+		return changeMade;
 	}
 	
 	private void connectionAdjust(HashSet<NeighborStore> neighbors, NeighborMetrics nm, Network network)
 	{
 		//First see if we want to add anyone
 		Iterator<NeighborStore> iter = neighbors.iterator();
-		
+		boolean canAdd = true;
 		//We want to look for similar people or role models
-		while(iter.hasNext())
+		while(iter.hasNext() && canAdd)
 		{
 			NeighborStore other = iter.next();
 			double score = scoreAgainst(other.getNeighbor());
 			//System.out.println(id + ": My score against " + other.getNeighbor().getID() + " is " + score);
-			if(score > 0.3)
+			if(score > 0.7)
 			{
 				if(network.getInDegree(this) >= maxDegree)
 				{
@@ -321,22 +340,25 @@ public class BaseHuman implements Comparable{
 							network.addEdge(other.getNeighbor(), this, nd);
 							//System.out.println(id + ": I attached to " + other.getNeighbor().getID() + " with influence " + nd /*+ " and prob " + prob + " and points " + points*/);
 							network.removeEdge(removalCandidate);
+							if(!canAdd)
+								canAdd = true;
 						}
 					}
 				}
 				else
 				{
 					RepastEdge<BaseHuman> ed1 = network.getEdge(other.getNeighbor(), this);
-					if(ed1 == null && Math.random() < sociable)
+					if(ed1 == null && !other.getNeighbor().equals(this) && Math.random() < sociable)
 					{
 						double nd = Distributions.getND(new NDParams((score - 0.5)*2, 0.3, 0, 1));
 						network.addEdge(other.getNeighbor(), this, nd);
+						canAdd = false;
 						//System.out.println(id + ": I attached to " + other.getNeighbor().getID() + " with influence " + nd /*+ " and prob " + prob + " and points " + points*/);
 					}
 				}
 				
 			}
-			else
+			else if(score < 0.3)
 			{
 				RepastEdge<BaseHuman> ed1 = network.getEdge(other.getNeighbor(), this);
 				if(ed1 != null /*&& Math.random() < sociable*/)
@@ -345,7 +367,7 @@ public class BaseHuman implements Comparable{
 					//System.out.println(id + ": I detached from " + other.getNeighbor().getID() /*+ " with prob " + prob*/);
 				}
 			}
-			//System.out.println(id + ": My score against " + other.getNeighbor().getID() + " is " + scoreAgainst(other.getNeighbor()));
+			System.out.println(id + ": My score against " + other.getNeighbor().getID() + " is " + scoreAgainst(other.getNeighbor()));
 		}
 			
 	}
@@ -377,8 +399,16 @@ public class BaseHuman implements Comparable{
 		{
 			score++;
 			if(this.isGivingUp() == true && this.isGivingUp() == other.isGivingUp())
+			{
 				score =+ 2;
 			
+				if(this.getStepsSinceGiveUp() * 1.5 < other.getStepsSinceGiveUp())
+					score += 5;
+				else
+					score += 2;
+			}
+			
+						
 			if(this.isSmoker())
 			{
 				
@@ -387,39 +417,40 @@ public class BaseHuman implements Comparable{
 				if(pctSPD > 1)
 					score = 0;
 				else
-					score = 5 - pctSPD * 5;
+					score += 5 - pctSPD * 5;
 				
 				//want to get % diff
-				/*
-				zeroedSPD = Math.abs(zeroedSPD / this.getSmokedPerDay());
-				
-				if(zeroedSPD == 0)
-					score += 5;
-				else
-					score = (1/zeroedSPD) * 5;*/
-				/*double l = 5 - pctDiff(other.getSmokedPerDay(), this.getSmokedPerDay()) * 5;
-				if(l < 0)
-					System.out.println("Zeroed SPD " + l);*/
+
 			}
 			
 		}
-		
-		//double pctHealth = Math(other.);
-		
-		/*if(zeroedHealth == 0)
-			score += 5;
-		else*/
+
 		double pctHealth = pctDiff(other.getHealth(), this.getHealth());
 		if(pctHealth > 1)
-			score = 0;
+			score += 0;
 		else
-			score = 5 - pctHealth * 5;
+			score += 5 - pctHealth * 5;
+		//maybe change to make influenceable people stick with those who aren't influenced?
+		score += this.influenceability * 3;
+		score += this.persuasiveness * 5;
+		
+		double pctWill = pctDiff(other.willpower, this.willpower);
+		if(pctWill > 1)
+			score += 0;
+		else
+			score += 5 - pctWill * 5;
+		
+		double pctSoc = pctDiff(other.sociable, this.sociable);
+		if(pctSoc > 1)
+			score += 0;
+		else
+			score += 2 - pctSoc * 2;
 		//score = 5 - pctDiff(other.getHealth(), this.getHealth()) * 5;
-		//System.out.println("Zeroed Health " + zeroedHealth + " " + (1/zeroedHealth) * 5);
+		//System.out.println("Social " + pctSoc);
 		
 		
 		
-		return score/13;
+		return score/33;
 	}
 	
 	private double pctDiff(double num1, double num2)
