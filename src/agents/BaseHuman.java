@@ -44,31 +44,10 @@ public class BaseHuman implements Comparable{
 	
 	//new attrs - leadership?
 	
-	private int maxDegree = 10;
+	private int maxInDegree = 10;
+	private int maxOutDegree = 10;
 	private int cigLimit = 70;
 	
-	
-	/*
-	 * 
-	 * ADD ATTRIBUTES INTO KEY MAP!!
-	 * 
-	 * 
-	 * 
-	 * 
-	 * 
-	 * 
-	 * 
-	 * 
-	 * 
-	 * 
-	 * 
-	 * 
-	 * 
-	 * 
-	 * 
-	 * 
-	 * 
-	 */
 	/**
 	 * Constructor for scale free networks
 	 * @param id
@@ -173,58 +152,31 @@ public class BaseHuman implements Comparable{
 		//reconfigure networks
 		//we probabably want to get nodes within a local network (2 or 3 hops)
 		//to see if anyone random is worth picking.
-		HashSet<NeighborStore> localNeighborhood = GeneralTools.getUniqueWithinHops(context, network, this, 3, true);
-
+		
+		HashSet<NeighborStore> localNeighborhood = GeneralTools.getUniqueWithinHops(context, network, this, 2, true);
+		
 		NeighborMetrics nm = new NeighborMetrics(localNeighborhood);
 		
-		double smoker = 0;
-//		for(NeighborStore ns: localNeighborhood)
-//		{
-//			//We'll look for people with attributes similar to the ideal
-//			BaseHuman candidate = ns.getNeighbor();
-//			
-//			//need to come up with some scoring model for the other person!
-//			//should incorporate self and ideal person.
-//			
-//			if(candidate.isSmoker() == idealIsSmoker && ( health > candidate.getHealth() * 0.995 && health < candidate.getHealth() * 1.005))
-//			{
-//				//System.out.println("Node " + candidate.getID() + " is reasonably close to " + id + " with healths being " + health + " " + candidate.getHealth());
-//				//check if they're being influenced already, if not, add edge
-//				RepastEdge<BaseHuman> ed1 = network.getEdge(candidate, this);
-//				
-//				if(ed1 == null && Math.random() < sociable)
-//				{
-//					network.addEdge(candidate, this, Distributions.getND(new NDParams(0.7, 0.5, 0, 1)));
-//				}
-//			}
-//			//also look for removals
-//			else if(( health < candidate.getHealth() * 0.9 || health > candidate.getHealth() * 1.1))
-//			{
-//				RepastEdge<BaseHuman> ed1 = network.getEdge(candidate, this);
-//				if(ed1 != null)
-//					network.removeEdge(ed1);
-//			}
-//			
-//			
-//		}
-		
-		Iterable init = network.getNodes();
+		//double smoker = 0;
+	
+		/*Iterable init = network.getNodes();
 		ArrayList<BaseHuman> nodes = new ArrayList<BaseHuman>();
+		System.out.println("Filtering nodes")
 		for(Object o : init)
 		{
 			if(o instanceof BaseHuman)
 				nodes.add((BaseHuman) o);
-			
-		}
+			*/
+		//}
 		
-		for(BaseHuman bh : nodes)
-		{
-			if(bh.isSmoker())
-				smoker++;
-		}
-		if(network.size() > 0){}
-			//System.out.println("Current smoker rate: " + (smoker / network.size()) * 100 + "%");
-		
+//		for(BaseHuman bh : nodes)
+//		{
+//			if(bh.isSmoker())
+//				smoker++;
+//		}
+//		if(network.size() > 0){}
+//			//System.out.println("Current smoker rate: " + (smoker / network.size()) * 100 + "%");
+//		
 		if(decisionTree(nm))
 			connectionAdjust(localNeighborhood, nm, network);
 		if(this.isGivingUp())
@@ -253,7 +205,7 @@ public class BaseHuman implements Comparable{
 			if(Math.random() < yesProb)
 			{
 				isSmoker = false;
-				System.out.println(id + ": I gave up smoking!");
+				//System.out.println(id + ": I gave up smoking!");
 				
 				this.givingUp = true;
 				this.stepsSinceGiveUp = 0;
@@ -274,7 +226,7 @@ public class BaseHuman implements Comparable{
 					double zeroedChange = nm.getInfCigPerDay() - this.smokedPerDay;
 					if(zeroedChange + this.smokedPerDay < cigLimit)
 						this.smokedPerDay += zeroedChange * this.influenceability;
-					System.out.println(id + ": Changed to " + this.smokedPerDay + " cigs per day, with change " + zeroedChange);
+					//System.out.println(id + ": Changed to " + this.smokedPerDay + " cigs per day, with change " + zeroedChange);
 				}
 			}
 			
@@ -291,7 +243,7 @@ public class BaseHuman implements Comparable{
 			{
 				isSmoker = true;
 				this.influenceability -= this.influenceability * 0.001;
-				System.out.println(id + ": I began up smoking!");
+				//System.out.println(id + ": I began up smoking!");
 				changeMade = true;
 				//how many?
 				if(nm.getInfCigPerDay() < 0)
@@ -320,14 +272,14 @@ public class BaseHuman implements Comparable{
 		Iterator<NeighborStore> iter = neighbors.iterator();
 		boolean canAdd = true;
 		//We want to look for similar people or role models
-		while(iter.hasNext() && canAdd)
+		while(iter.hasNext())
 		{
 			NeighborStore other = iter.next();
 			double score = scoreAgainst(other.getNeighbor());
 			//System.out.println(id + ": My score against " + other.getNeighbor().getID() + " is " + score);
 			if(score > 0.7)
 			{
-				if(network.getInDegree(this) >= maxDegree)
+				if(network.getInDegree(this) >= maxInDegree )
 				{
 					RepastEdge<BaseHuman> removalCandidate = getMinInfluence(network.getInEdges(this));
 					//lower influence nodes more likely to be binned
@@ -345,10 +297,12 @@ public class BaseHuman implements Comparable{
 						}
 					}
 				}
-				else
+				else if(canAdd)
 				{
+					//also check if the influencer has reached their maxOutDegree
+
 					RepastEdge<BaseHuman> ed1 = network.getEdge(other.getNeighbor(), this);
-					if(ed1 == null && !other.getNeighbor().equals(this) && Math.random() < sociable)
+					if(ed1 == null && !other.getNeighbor().equals(this) && Math.random() < sociable && network.getOutDegree(other.getNeighbor()) < maxOutDegree)
 					{
 						double nd = Distributions.getND(new NDParams((score - 0.5)*2, 0.3, 0, 1));
 						network.addEdge(other.getNeighbor(), this, nd);
@@ -367,7 +321,7 @@ public class BaseHuman implements Comparable{
 					//System.out.println(id + ": I detached from " + other.getNeighbor().getID() /*+ " with prob " + prob*/);
 				}
 			}
-			System.out.println(id + ": My score against " + other.getNeighbor().getID() + " is " + scoreAgainst(other.getNeighbor()));
+			//System.out.println(id + ": My score against " + other.getNeighbor().getID() + " is " + scoreAgainst(other.getNeighbor()));
 		}
 			
 	}
@@ -536,132 +490,5 @@ public class BaseHuman implements Comparable{
 		
 		return this.getID().compareTo(b0.getID());
 	}
-	
-/*
- * int points = 0;
-			NeighborStore current = addIter.next();
-			if(current.getNeighbor().isSmoker() == this.isSmoker)
-			{
-				if(this.isSmoker == false)
-				{
-					//If they're both giving up, call in giving up together effect
-					if(this.isGivingUp() == current.getNeighbor().isGivingUp())
-					{
-						points += 5;
-					}
-					else 
-					{
-						points++;
-					}
-				}
-				else
-				{
-					if(this.smokedPerDay * 0.9 > current.getNeighbor().getSmokedPerDay() && this.smokedPerDay * 1.1 < current.getNeighbor().getSmokedPerDay())
-					{
-						points += 5;
-					}
-					else
-					{
-						points++;
-					}
-				}
-				
-				if(this.health * 0.95 < current.getNeighbor().getHealth() && this.health * 1.05 > current.getNeighbor().getHealth())
-				{
-					points++;
-				}
-				else if(this.health * 0.9 > current.getNeighbor().getHealth() )
-				{
-					points--;
-				}
-				else 
-				{
-					points += 5;
-				}
-				
-				
-				
-			}
-			double prob = ((double)points) / 15;
-			prob *= sociable;
-			//System.out.println(id + ": My attatch prob to " + current.getNeighbor().getID() + " is " + prob + " and I have " + points + ".");
-			if(Math.random() < prob)
-			{
-				RepastEdge<BaseHuman> ed1 = network.getEdge(current.getNeighbor(), this);
-				if(ed1 == null && Math.random() < sociable)
-				{
-					double nd = Distributions.getND(new NDParams(prob, 0.3, 0, 1));
-					network.addEdge(current.getNeighbor(), this, nd );
-					System.out.println(id + ": I attached to " + current.getNeighbor().getID() + " with influence " + nd + " and prob " + prob + " and points " + points);
-				}
-			}
-			
-		}
 		
-		
-		//Then see if we want to remove anyone
-	
-		Iterator<NeighborStore> remIter = neighbors.iterator();
-		while(remIter.hasNext())
-		{
-			int points = 0;
-			NeighborStore current = remIter.next();
-			if(current.getNeighbor().isSmoker() != this.isSmoker)
-			{
-				if(this.isSmoker == false)
-				{
-					//If I am giving up and the other person isn't, then super-avoid
-					if(this.isGivingUp() != current.getNeighbor().isGivingUp())
-					{
-						points += 2;
-					}
-					else 
-					{
-						points++;
-					}
-				}
-			}
-			else
-			{
-				if(this.smokedPerDay * 0.8 > current.getNeighbor().getSmokedPerDay() && this.smokedPerDay * 1.2 < current.getNeighbor().getSmokedPerDay())
-				{
-					points--;
-				}
-				else
-				{
-					points++;
-				}
-			}
-				
-			if(this.health * 0.9 < current.getNeighbor().getHealth() && this.health * 1.1 > current.getNeighbor().getHealth())
-			{
-				points--;
-			}
-			//not sure about this
-			else if(this.health * 0.9 < current.getNeighbor().getHealth() )
-			{
-				points++;
-			}
-			else 
-			{
-				points -= 2;
-			}
-			
-			double prob = ((double)points) / 5;
-			prob *= sociable;
-			System.out.println(id + ": My dettatch prob to " + current.getNeighbor().getID() + " is " + prob + " and I have " + points + ".");
-			if(Math.random() < Math.abs(prob))
-			{
-				RepastEdge<BaseHuman> ed1 = network.getEdge(current.getNeighbor(), this);
-				if(ed1 != null /*&& Math.random() < sociable)
-				{
-					network.removeEdge(ed1);
-					System.out.println(id + ": I detached from " + current.getNeighbor().getID() + " with prob " + prob);
-				}
-			}
-		}*/
- 
-
-
-	
 }

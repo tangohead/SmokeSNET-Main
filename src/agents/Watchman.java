@@ -1,9 +1,19 @@
 package agents;
 
+import java.util.HashMap;
+import java.util.Map;
+import java.util.Map.Entry;
+import java.util.Set;
+
+import org.apache.commons.math.util.OpenIntToDoubleHashMap.Iterator;
+
+import edu.uci.ics.jung.graph.Graph;
+import graphtools.io.converters.GraphFormat;
 import graphtools.io.exporters.CSVExporter;
 import graphtools.io.exporters.GraphMLExporter;
 import repast.simphony.context.Context;
 import repast.simphony.engine.schedule.ScheduledMethod;
+import repast.simphony.jung.statistics.RepastJungGraphStatistics;
 import repast.simphony.space.graph.Network;
 
 public class Watchman {
@@ -31,6 +41,7 @@ public class Watchman {
 			GraphMLExporter.repastNetworkToGraphML(context, network, name + "-step-0" + ext);
 		if(dumpAttrs)
 			CSVExporter.exportToCSV(network.getNodes(), name + "-step-0");
+		GraphFormat.RepastToJUNG(network);
 	}
 	
 	public void checkWatch()
@@ -57,6 +68,8 @@ public class Watchman {
 		{
 			CSVExporter.exportToCSV(network.getNodes(), name + "-step-" + turnCount);
 		}
+		
+
 	}
 	
 	@ScheduledMethod(start = 1, interval = 100)

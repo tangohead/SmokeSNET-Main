@@ -12,6 +12,7 @@ public class CSVExporter {
 
 	public static void exportToCSV(Iterable<BaseHuman> nodes, String filename)
 	{
+		System.out.println("Writing to CSV - " + filename);
 		Field[] nodeFields = BaseHuman.class.getDeclaredFields();
 		FileWriter fw;
 
@@ -49,17 +50,7 @@ public class CSVExporter {
 					{
 						Object o = f.get(b);
 						Object tempVal = null;
-						
-	//					if(o instanceof Integer)
-	//						Integer tempVal = (Integer) o;
-	//					else if (o instanceof Long)
-	//						Long tempVal = (Long) o;
-	//					else if (o instanceof Double)
-	//						Double tempVal = (Double) o;
-	//					else if(o instanceof Boolean)
-	//						Boolean tempVal = (Boolean) o;
-	//					else if(o instanceof String)
-	//						String tempVal = (String) o;
+
 						if(o instanceof Integer)
 							tempVal = (Integer) o;
 						else if (o instanceof Long)
@@ -79,7 +70,7 @@ public class CSVExporter {
 			}
 			
 			fw.close();
-			//System.out.println(writeLine);
+			System.out.println("CSV Created.");
 		} catch (IOException e) {
 			// TODO Auto-generated catch block
 			System.out.println("*********** ERROR: File writer could not be created ***********");
