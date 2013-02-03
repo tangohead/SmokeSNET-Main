@@ -11,6 +11,8 @@ import java.util.Iterator;
 import java.util.LinkedList;
 import java.util.List;
 
+import com.sun.tools.javac.code.Type;
+
 import agents.BaseHuman;
 import agents.NeighborStore;
 import repast.simphony.context.Context;
@@ -18,6 +20,22 @@ import repast.simphony.space.graph.Network;
 import repast.simphony.space.graph.RepastEdge;
 
 public class GeneralTools {
+	
+	
+	public static LinkedList<BaseHuman> getBaseHumans(Network network)
+	{
+		Iterable iter = network.getNodes();
+		LinkedList<BaseHuman> list = new LinkedList<BaseHuman>();
+	
+		for(Object o : iter)
+		{
+			if(o instanceof BaseHuman)
+			{
+				list.add((BaseHuman) o);
+			}
+		}
+		return list;
+	}
 	/**
 	 * Gets rid of all nodes with less than or equal to the degree threshold
 	 * @param context

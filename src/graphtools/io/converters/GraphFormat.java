@@ -1,8 +1,11 @@
 package graphtools.io.converters;
 
+import java.util.LinkedList;
+
 import agents.BaseHuman;
 import edu.uci.ics.jung.graph.DirectedSparseMultigraph;
 import edu.uci.ics.jung.graph.util.Pair;
+import graphtools.samplers.GeneralTools;
 import repast.simphony.space.graph.Network;
 import repast.simphony.space.graph.RepastEdge;
 
@@ -12,20 +15,20 @@ public class GraphFormat {
 	 * Takes a BaseHuman network and spits out a JUNG DirectedSparseMultigraph of Node IDs against Influence
 	 * @param network
 	 */
-	public static DirectedSparseMultigraph<BaseHuman, Double> RepastToJUNG(Network network) {
+	public static DirectedSparseMultigraph<String, Double> RepastToJUNG(Network network) {
 		
-		DirectedSparseMultigraph<BaseHuman, Double> jnet = new DirectedSparseMultigraph<BaseHuman, Double>();
+		DirectedSparseMultigraph<String, Double> jnet = new DirectedSparseMultigraph<String, Double>();
 		
-		Iterable<BaseHuman> nIter = network.getNodes();
-		for(BaseHuman bh : nIter)
+		LinkedList<BaseHuman> list = GeneralTools.getBaseHumans(network);
+		for(BaseHuman bh : list)
 		{
-			jnet.addVertex(bh);
+			jnet.addVertex(bh.getID());
 		}
 		
 		Iterable<RepastEdge<BaseHuman>> eIter = network.getEdges();
 		for(RepastEdge<BaseHuman> re : eIter)
 		{
-			Pair<BaseHuman> couple = new Pair<BaseHuman>(re.getSource(), re.getTarget());
+			Pair<String> couple = new Pair<String>(re.getSource().getID(), re.getTarget().getID());
 			
 			jnet.addEdge(re.getWeight(), couple);
 		}
