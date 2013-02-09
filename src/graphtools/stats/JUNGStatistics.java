@@ -26,7 +26,7 @@ public class JUNGStatistics {
 			avg += clusterCoeff.get(bh.getID());
 			if(clusterCoeff.get(bh.getID()) > 0.5)
 				highCCs.add(bh);
-				//System.out.println("Node " + bh.getID() + ": " + clusterCoeff.get(bh.getID()));
+			System.out.println("Node " + bh.getID() + ": " + clusterCoeff.get(bh.getID()));
 			nodeCount++;
 		}
 		avg = avg / nodeCount;

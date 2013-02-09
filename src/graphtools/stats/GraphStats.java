@@ -17,9 +17,14 @@ public class GraphStats {
 	public BaseHuman getHighClusterNode()
 	{
 		int index = (int)Math.floor(Math.random() * highClusterCoeffs.size());
-		BaseHuman rtn = highClusterCoeffs.get(index);
-		highClusterCoeffs.remove(index);
-		return rtn;
+		if(highClusterCoeffs.size() > 0)
+		{
+			BaseHuman rtn = highClusterCoeffs.get(index);
+			highClusterCoeffs.remove(index);
+			return rtn;
+		}
+		else
+			return null;
 	}
 	
 	public double getAvgClusterCoeff() {

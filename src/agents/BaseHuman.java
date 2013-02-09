@@ -184,7 +184,7 @@ public class BaseHuman implements Comparable{
 	
 	private boolean decisionTree(NeighborMetrics nm)
 	{
-		System.out.println("\t -------- DECTREE --------");
+		//System.out.println("\t -------- DECTREE --------");
 		double yesProb;
 		boolean changeMade = false;
 		//am I a smoker?
@@ -280,23 +280,23 @@ public class BaseHuman implements Comparable{
 				
 			}
 		}
-		System.out.println("\t ------ END DECTREE ------");
+		//System.out.println("\t ------ END DECTREE ------");
 		return changeMade;
 	}
 	
 	private void connectionAdjust(HashSet<NeighborStore> neighbors, NeighborMetrics nm, Network network)
 	{
-		System.out.println("\t\t ~~~~~~~ CONADD ~~~~~~~");
+		//System.out.println("\t\t ~~~~~~~ CONADD ~~~~~~~");
 		//First see if we want to add anyone
 		Iterator<NeighborStore> iter = neighbors.iterator();
 		boolean canAdd = true;
 		//We want to look for similar people or role models
 		while(iter.hasNext())
 		{
-			System.out.println("Can add? " + canAdd);
+			//System.out.println("Can add? " + canAdd);
 			NeighborStore other = iter.next();
 			double score = scoreAgainst(other.getNeighbor());
-			System.out.println(id + ": My score against " + other.getNeighbor().getID() + " is " + score);
+			//System.out.println(id + ": My score against " + other.getNeighbor().getID() + " is " + score);
 			if(score > 0.7)
 			{
 				if(network.getInDegree(this) >= maxInDegree )
@@ -344,7 +344,7 @@ public class BaseHuman implements Comparable{
 			//System.out.println(id + ": My score against " + other.getNeighbor().getID() + " is " + scoreAgainst(other.getNeighbor()));
 		}
 		
-		System.out.println("\t\t ~~~~~ END CONADD ~~~~~");
+		//System.out.println("\t\t ~~~~~ END CONADD ~~~~~");
 	}
 	
 	private RepastEdge<BaseHuman> getMinInfluence(Iterable<RepastEdge<BaseHuman>> edges)
@@ -369,7 +369,7 @@ public class BaseHuman implements Comparable{
 	
 	public double scoreAgainst(BaseHuman other)
 	{
-		System.out.println("\t\t\t +++++++ SCORE +++++++");
+		//System.out.println("\t\t\t +++++++ SCORE +++++++");
 		double score = 0;
 		
 		if(this.isSmoker() == other.isSmoker())
@@ -407,31 +407,31 @@ public class BaseHuman implements Comparable{
 			score += 0;
 		else
 			score += 5 - pctHealth * 5;
-		System.out.println("Score post health " + this.health + " " + other.getHealth() + " " + pctHealth + " " + score);
+		//System.out.println("Score post health " + this.health + " " + other.getHealth() + " " + pctHealth + " " + score);
 		//maybe change to make influenceable people stick with those who aren't influenced?
 		score += this.influenceability * 3;
-		System.out.println("Score post inf " + this.influenceability + " " + score);
+		//System.out.println("Score post inf " + this.influenceability + " " + score);
 		score += this.persuasiveness * 5;
-		System.out.println("Score post pers " + this.persuasiveness + " " + score);
+		//System.out.println("Score post pers " + this.persuasiveness + " " + score);
 		
 		double pctWill = pctDiff(other.willpower, this.willpower);
 		if(pctWill > 1)
 			score += 0;
 		else
 			score += 5 - pctWill * 5;
-		System.out.println("Score post will " + this.willpower + " " + other.getWillpower() + " " + pctWill + " " + score);
+		//System.out.println("Score post will " + this.willpower + " " + other.getWillpower() + " " + pctWill + " " + score);
 		
 		double pctSoc = pctDiff(other.sociable, this.sociable);
 		if(pctSoc > 1)
 			score += 0;
 		else
 			score += 2 - pctSoc * 2;
-		System.out.println("Score post soc " + this.sociable + " " + other.sociable + " " + pctSoc + " " + score);
+		//System.out.println("Score post soc " + this.sociable + " " + other.sociable + " " + pctSoc + " " + score);
 		//score = 5 - pctDiff(other.getHealth(), this.getHealth()) * 5;
 		//System.out.println("Social " + pctSoc);
 		
 		
-		System.out.println("\t\t\t +++++ END SCORE +++++");
+		//System.out.println("\t\t\t +++++ END SCORE +++++");
 		return score/33;
 	}
 	

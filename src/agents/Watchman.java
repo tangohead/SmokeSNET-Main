@@ -94,18 +94,21 @@ public class Watchman {
 			DirectedSparseMultigraph graph = GraphFormat.RepastToJUNG(network);
 			GraphStats gs = JUNGStatistics.GenerateStatistics(graph, GeneralTools.getBaseHumans(network));
 			System.out.println("Avg Clustering Coefficient: " + gs.getAvgClusterCoeff());
-			if(gs.getAvgClusterCoeff() > 0.15)
+			if(gs.getAvgClusterCoeff() > 0.12)
 			{
 				for(int i = 0; i < (int)(network.size()/10); i++)
 				{
 					BaseHuman tmp = gs.getHighClusterNode();
-					Iterable<RepastEdge> iter = network.getEdges(tmp);
-					for(RepastEdge e : iter)
+					if(tmp != null)
 					{
-						if(Math.random() < 0.5)
+						Iterable<RepastEdge> iter = network.getEdges(tmp);
+						for(RepastEdge e : iter)
 						{
-							System.out.println("Removing edge between " + ((BaseHuman)e.getSource()).getID() + " to " + ((BaseHuman)e.getTarget()).getID());
-							network.removeEdge(e);
+							if(Math.random() < 0.5)
+							{
+								System.out.println("Removing edge between " + ((BaseHuman)e.getSource()).getID() + " to " + ((BaseHuman)e.getTarget()).getID());
+								network.removeEdge(e);
+							}
 						}
 					}
 				}

@@ -57,7 +57,7 @@ public class ModelDevBuilder implements ContextBuilder<Object> {
 				System.out.println(asda.next().getWeight());
 		}
 		
-		Watchman watch = new Watchman(10, true, true, true, "v0.5", context, network);
+		Watchman watch = new Watchman(10, true, true, true, "v0.6", context, network);
 		context.add(watch);
 		
 		//CSVExporter.exportToCSV(network.getNodes(), "test");
