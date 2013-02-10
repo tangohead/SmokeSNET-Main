@@ -11,8 +11,6 @@ import java.util.Iterator;
 import java.util.LinkedList;
 import java.util.List;
 
-import com.sun.tools.javac.code.Type;
-
 import agents.BaseHuman;
 import agents.NeighborStore;
 import repast.simphony.context.Context;

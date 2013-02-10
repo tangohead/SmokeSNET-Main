@@ -12,6 +12,8 @@ import javax.xml.bind.JAXBContext;
 import javax.xml.bind.JAXBException;
 import javax.xml.bind.Unmarshaller;
 
+import probtools.Distributions;
+
 import agents.BaseHuman;
 
 import repast.simphony.context.Context;
@@ -75,7 +77,7 @@ public class GraphMLImporter {
 			{
 				HashMap<String, String> attrList = edge.getAttrList();
 				if(attrList.get(edgeWeightID) == null)
-					tempNetwork.addEdge(objMap.get(edge.getSource()), objMap.get(edge.getTarget()));
+					tempNetwork.addEdge(objMap.get(edge.getSource()), objMap.get(edge.getTarget()), Distributions.getNDWithLimits(0.5, 0.3, 0, 1));
 				else
 					tempNetwork.addEdge(objMap.get(edge.getSource()), objMap.get(edge.getTarget()), Double.parseDouble(attrList.get(edgeWeightID)));
 			}

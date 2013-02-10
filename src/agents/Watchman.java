@@ -111,8 +111,27 @@ public class Watchman {
 							}
 						}
 					}
+					
+					
 				}
 			}
+			for(int i = 0; i < (int)(network.size()/10); i++)
+			{
+				BaseHuman lclTmp = gs.getLocalClusterNode();
+				if(lclTmp != null)
+				{
+					Iterable<RepastEdge> iter = network.getEdges(lclTmp);
+					for(RepastEdge e : iter)
+					{
+						if(Math.random() < 0.5)
+						{
+							System.out.println("Removing edge between " + ((BaseHuman)e.getSource()).getID() + " to " + ((BaseHuman)e.getTarget()).getID());
+							network.removeEdge(e);
+						}
+					}
+				}
+			}
+			
 		}
 		System.out.println("******** END WATCHMAN *********");
 

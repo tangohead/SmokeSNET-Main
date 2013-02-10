@@ -97,22 +97,65 @@ public class ScaleFree {
 			//note params don't matter since this is the base
 			context.add(new BaseHuman("n" + i, context, network, false, false, 0, null));
 		}
+		
+		network = buildSFFoundation(context, network, nd);
 
+		//Now add the rest onto the base network
+		for( int i = startWith; i < numNodes ; i ++) {
+			context.add(new BaseHuman("n" + i, context, network, true, reciprocate, reciprocateChance, nd));
+		}
+		
+		return network;
+	}
+	
+	
+	public static Network<BaseHuman> SFOnBase(Context<Object> context, 
+			Network<BaseHuman> currNet, int numNodes, 
+			boolean reciprocate, double reciprocateChance, boolean removeOutliers,
+			NDParams nd)
+	{
+		
+		Network<BaseHuman> network = buildSFFoundation(context, currNet, nd);
+		
+		//Now add the rest onto the base network
+		for( int i = context.getObjects(BaseHuman.class).size(); i < numNodes ; i ++) {
+			context.add(new BaseHuman("n" + i, context, network, true, reciprocate, reciprocateChance, nd));
+		}
+		
+		return network;
+	}
+	
+	private static Network<BaseHuman> buildSFFoundation(Context context, Network network, NDParams nd)
+	{
 		IndexedIterable<Object> startNodes = context.getObjects(BaseHuman.class);
 		
 		//add random edges until everything has >=1 degree
 		boolean acceptableDegree = false;
+		
+		Iterable<BaseHuman> nodes = network.getNodes();
+		Iterator<BaseHuman> iter = nodes.iterator();
+		int minDegree = 9999999;
+		//get the min degree
+		while(iter.hasNext())
+		{
+			int currDegree = network.getDegree(iter.next());
+			if(currDegree < minDegree)
+				minDegree = currDegree;
+		}
+		if(minDegree > 1)
+			acceptableDegree = true;
+		
 		while(!acceptableDegree)
 		{
 			//Generate src and dest until they're different
-			int source = (int) Math.round(Math.random() * (startWith));
-			int dest = (int) Math.round(Math.random() * (startWith));
+			int source = (int) Math.round(Math.random() * (startNodes.size()));
+			int dest = (int) Math.round(Math.random() * (startNodes.size()));
 			
 			//Keep regenerating until they're different and within array bounds
-			while(source == dest || (source <= 0 || source > startWith) || (dest <= 0 || dest > startWith))
+			while(source == dest || (source <= 0 || source > startNodes.size()) || (dest <= 0 || dest > startNodes.size()))
 			{
-				source = (int) Math.round(Math.random() * (startWith));
-				dest = (int) Math.round(Math.random() * startWith);
+				source = (int) Math.round(Math.random() * (startNodes.size()));
+				dest = (int) Math.round(Math.random() * startNodes.size());
 			}
 			
 			//check if we have NDParams, if not, no weights.
@@ -124,9 +167,9 @@ public class ScaleFree {
 						(BaseHuman)startNodes.get(dest-1), 
 						Distributions.getND(nd));
 			//check for all degrees being >= 1
-			Iterable<BaseHuman> nodes = network.getNodes();
-			Iterator<BaseHuman> iter = nodes.iterator();
-			int minDegree = 999;
+			nodes = network.getNodes();
+			iter = nodes.iterator();
+			minDegree = 9999999;
 			//get the min degree
 			while(iter.hasNext())
 			{
@@ -138,13 +181,10 @@ public class ScaleFree {
 				acceptableDegree = true;
 		}
 		
-		//Now add the rest onto the base network
-		for( int i = startWith; i < numNodes ; i ++) {
-			context.add(new BaseHuman("n" + i, context, network, true, reciprocate, reciprocateChance, nd));
-		}
-		
 		return network;
 	}
+	
+	
 	
 	
 }

@@ -33,10 +33,11 @@ public class ModelDevBuilder implements ContextBuilder<Object> {
 	public Context build(Context<Object> context) {
 		// TODO Auto-generated method stub
 		context.setId("SmokeSNET-Main");
-		Network<BaseHuman> network;
+		Network<BaseHuman> network = null;
 		
 		boolean generateOnAddition = true;
-		if(generateOnAddition)
+		int mode = 1;
+		if(mode == 1)
 		{
 			NDParams nd = new NDParams(0.8, 0.4, 0, 1);
 			network = ScaleFree.createRSF(context, "TestNet", 4, 500, true, 0.8, true, nd);
@@ -44,20 +45,30 @@ public class ModelDevBuilder implements ContextBuilder<Object> {
 			context = rs.getContext();
 			network = rs.getNetwork();
 		}
-		else
+		else if (mode == 2)
 		{
 			//network = SmallWorld.generateRSW(context, "TestNet", 100, 0.5, 5);
-			RepastSummary rs = GraphMLImporter.GraphMLToRepast("sample-1356266483049-SW.graphml", "TestNet", context);
+			RepastSummary rs = GraphMLImporter.GraphMLToRepast("sd.graphml", "TestNet", context);
 			context = rs.getContext();
 			network = rs.getNetwork();
 			
-			Iterable<RepastEdge<BaseHuman>> sdf = network.getEdges();
-			Iterator<RepastEdge<BaseHuman>> asda = sdf.iterator();
-			while(asda.hasNext())
-				System.out.println(asda.next().getWeight());
+//			Iterable<RepastEdge<BaseHuman>> sdf = network.getEdges();
+//			Iterator<RepastEdge<BaseHuman>> asda = sdf.iterator();
+//			while(asda.hasNext())
+//				System.out.println(asda.next().getWeight());
 		}
-		
-		Watchman watch = new Watchman(10, true, true, true, "v0.6", context, network);
+		else if(mode == 3)
+		{
+			RepastSummary rs = GraphMLImporter.GraphMLToRepast("basetest.graphml", "TestNet", context);
+			context = rs.getContext();
+			network = rs.getNetwork();
+			NDParams nd = new NDParams(0.8, 0.4, 0, 1);
+			network = ScaleFree.SFOnBase(context, network, 500, true, 0.5, true, nd);
+			rs = GeneralTools.trimNodesByDegree(context, network, 0);
+			context = rs.getContext();
+			network = rs.getNetwork();
+		}
+		Watchman watch = new Watchman(10, true, true, true, "v0.71", context, network);
 		context.add(watch);
 		
 		//CSVExporter.exportToCSV(network.getNodes(), "test");

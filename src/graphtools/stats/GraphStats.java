@@ -7,11 +7,13 @@ import agents.BaseHuman;
 public class GraphStats {
 	double avgClusterCoeff;
 	ArrayList<BaseHuman> highClusterCoeffs;
+	ArrayList<BaseHuman> localClusterCoeffs;
 
-	GraphStats(double avgClusterCoeff, ArrayList<BaseHuman> highClusterCoeffs)
+	GraphStats(double avgClusterCoeff, ArrayList<BaseHuman> highClusterCoeffs, ArrayList<BaseHuman> localClusterCoeffs)
 	{
 		this.avgClusterCoeff = avgClusterCoeff;
 		this.highClusterCoeffs = highClusterCoeffs;
+		this.localClusterCoeffs = localClusterCoeffs;
 	}
 	
 	public BaseHuman getHighClusterNode()
@@ -21,6 +23,19 @@ public class GraphStats {
 		{
 			BaseHuman rtn = highClusterCoeffs.get(index);
 			highClusterCoeffs.remove(index);
+			return rtn;
+		}
+		else
+			return null;
+	}
+	
+	public BaseHuman getLocalClusterNode()
+	{
+		int index = (int)Math.floor(Math.random() * localClusterCoeffs.size());
+		if(localClusterCoeffs.size() > 0)
+		{
+			BaseHuman rtn = localClusterCoeffs.get(index);
+			localClusterCoeffs.remove(index);
 			return rtn;
 		}
 		else
