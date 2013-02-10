@@ -50,7 +50,7 @@ public class JUNGStatistics {
 				while(innerIter.hasNext())
 					runningTotal += clusterCoeff.get(innerIter.next());
 				runningTotal = runningTotal / (graph.getNeighborCount(node) + 1);
-				System.out.println("[NODE "+ node + "]: Local Neighbour CC is " + runningTotal);
+				//System.out.println("[NODE "+ node + "]: Local Neighbour CC is " + runningTotal);
 				if(runningTotal > SimConstants.LocalClusterCoefficientThreshold)
 					localHighCCs.add(bh);
 			}

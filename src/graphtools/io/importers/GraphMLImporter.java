@@ -5,8 +5,10 @@ import graphtools.io.graphML.GraphMLObject;
 
 import java.io.File;
 import java.util.ArrayList;
+import java.util.Collection;
 import java.util.HashMap;
 import java.util.Iterator;
+import java.util.Set;
 
 import javax.xml.bind.JAXBContext;
 import javax.xml.bind.JAXBException;
@@ -56,8 +58,19 @@ public class GraphMLImporter {
 			
 			//We know we only have weights for edges on import, so
 			String edgeWeightID = edgeKeyMap.get("edgeWeight");
+			Set<String> s = nodeKeyMap.keySet();
+			Iterator<String> si = s.iterator();
+			while(si.hasNext())
+			{
+				String k = si.next();
+				System.out.println(k + " " + nodeKeyMap.get(k));
+			}
 			for(XMLNode node : GML.getXMLNodes())
 			{
+//				Collection<String> c = nodeKeyMap.values();
+//				Iterator<String> i = c.iterator();
+//				while(i.hasNext())
+//					System.out.println(i.next());
 				context.add(new BaseHuman(context, node.getID(), node.getAttrList(), nodeKeyMap));
 			}
 			

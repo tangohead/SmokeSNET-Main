@@ -36,7 +36,7 @@ public class ModelDevBuilder implements ContextBuilder<Object> {
 		Network<BaseHuman> network = null;
 		
 		boolean generateOnAddition = true;
-		int mode = 1;
+		int mode = 2;
 		if(mode == 1)
 		{
 			NDParams nd = new NDParams(0.8, 0.4, 0, 1);
@@ -48,7 +48,7 @@ public class ModelDevBuilder implements ContextBuilder<Object> {
 		else if (mode == 2)
 		{
 			//network = SmallWorld.generateRSW(context, "TestNet", 100, 0.5, 5);
-			RepastSummary rs = GraphMLImporter.GraphMLToRepast("sd.graphml", "TestNet", context);
+			RepastSummary rs = GraphMLImporter.GraphMLToRepast("v0.8-testbase.graphml", "TestNet", context);
 			context = rs.getContext();
 			network = rs.getNetwork();
 			
@@ -68,7 +68,7 @@ public class ModelDevBuilder implements ContextBuilder<Object> {
 			context = rs.getContext();
 			network = rs.getNetwork();
 		}
-		Watchman watch = new Watchman(10, true, true, true, "v0.71", context, network);
+		Watchman watch = new Watchman(10, true, true, true, "v0.8", context, network);
 		context.add(watch);
 		
 		//CSVExporter.exportToCSV(network.getNodes(), "test");
