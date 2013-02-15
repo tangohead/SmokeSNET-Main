@@ -68,7 +68,7 @@ public class ModelDevBuilder implements ContextBuilder<Object> {
 			context = rs.getContext();
 			network = rs.getNetwork();
 		}
-		Watchman watch = new Watchman(10, true, true, true, "v0.8", context, network);
+		Watchman watch = new Watchman(10, true, true, true, "v0.9", context, network);
 		context.add(watch);
 		
 		//CSVExporter.exportToCSV(network.getNodes(), "test");
