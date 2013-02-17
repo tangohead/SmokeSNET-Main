@@ -14,6 +14,7 @@ import repast.simphony.context.Context;
 import repast.simphony.engine.schedule.ScheduledMethod;
 import repast.simphony.space.graph.Network;
 import repast.simphony.space.graph.RepastEdge;
+import repast.simphony.util.collections.IndexedIterable;
 import simconsts.Operations;
 
 import org.apache.commons.math.distribution.NormalDistributionImpl;
@@ -187,8 +188,8 @@ public class BaseHuman implements Comparable{
 		NeighborMetrics nm = new NeighborMetrics(localNeighborhood);
 		
 		statusCall();
-		if(decisionTree(nm))
-			connectionAdjust(localNeighborhood, nm, network);
+		decisionTree(nm);
+		connectionAdjust(localNeighborhood, nm, network);
 		if(this.isGivingUp())
 			this.stepsSinceGiveUp++;
 
@@ -199,14 +200,38 @@ public class BaseHuman implements Comparable{
 	private boolean decisionTree(NeighborMetrics nm)
 	{
 		//Add bypass probability for decisions
-		boolean changeMade = false;
+		boolean changeMade = false;		
 		
 		if(this.isSmoker)
 		{
 			this.health = changeWithinBounds(this.health, 0, 1, (this.smokedPerDay/this.cigLimit)/10, Operations.SUBTRACT);
 			if(this.smokedPerDay <= 5)
 			{
-				if(nm.getPcSmokes() > 0.5)
+				if(nm.getPcSmokes() > 0.3 || irrationalChoice())
+				{
+					giveUpSmoking();
+					changeMade = true;
+				}
+				else
+				{
+					if(nm.getAvgCigPerDay() > this.smokedPerDay * 1.2 || irrationalChoice())
+					{
+						this.smokedPerDay = (int)Math.round(changeWithinBounds(this.smokedPerDay, 0, this.cigLimit, (nm.getInfCigPerDay()* 0.5), Operations.ADD));
+					}
+					else if(nm.getAvgCigPerDay() < this.smokedPerDay * 0.8 || irrationalChoice())
+					{
+						this.smokedPerDay = (int)Math.round(changeWithinBounds(this.smokedPerDay, 0, this.cigLimit, (nm.getInfCigPerDay()* 0.5), Operations.SUBTRACT));
+					}
+				}
+			}
+			else if(this.smokedPerDay > 5 && this.smokedPerDay < 20)
+			{
+				if(nm.getPcGivingUp() > 0.5)
+				{
+					giveUpSmoking();
+					changeMade = true;
+				}
+				else
 				{
 					if(nm.getAvgCigPerDay() > this.smokedPerDay * 1.2 )
 					{
@@ -217,45 +242,51 @@ public class BaseHuman implements Comparable{
 						this.smokedPerDay = (int)Math.round(changeWithinBounds(this.smokedPerDay, 0, this.cigLimit, (nm.getInfCigPerDay()* 0.5), Operations.SUBTRACT));
 					}
 				}
-				else
-				{
-					if(nm.getPcGivingUp() > 0.5)
-					{
-						giveUpSmoking();
-						changeMade = true;
-					}
-				}
-			}
-			else if(this.smokedPerDay > 5 && this.smokedPerDay < 20)
-			{
-				if(nm.getAvgCigPerDay() > this.smokedPerDay * 1.2 )
-				{
-					this.smokedPerDay = (int)Math.round(changeWithinBounds(this.smokedPerDay, 0, this.cigLimit, (nm.getInfCigPerDay()* 0.5), Operations.ADD));
-				}
-				else if(nm.getAvgCigPerDay() < this.smokedPerDay * 0.8)
-				{
-					this.smokedPerDay = (int)Math.round(changeWithinBounds(this.smokedPerDay, 0, this.cigLimit, (nm.getInfCigPerDay()* 0.5), Operations.SUBTRACT));
-				}
 			}
 			else 
 			{
 				if(this.health < 0.5)
 				{
-					if(nm.getPcGivingUp() > 0.4)
+					if(nm.getPcGivingUp() > 0.4 || irrationalChoice())
 					{
 						giveUpSmoking();
 						changeMade = true;
 					}
+					else
+					{
+						if(nm.getAvgCigPerDay() > this.smokedPerDay * 1.2 )
+						{
+							this.smokedPerDay = (int)Math.round(changeWithinBounds(this.smokedPerDay, 0, this.cigLimit, (nm.getInfCigPerDay()* 0.5), Operations.ADD));
+						}
+						else if(nm.getAvgCigPerDay() < this.smokedPerDay * 0.8)
+						{
+							this.smokedPerDay = (int)Math.round(changeWithinBounds(this.smokedPerDay, 0, this.cigLimit, (nm.getInfCigPerDay()* 0.5), Operations.SUBTRACT));
+						}
+					}
 				}
 				else
 				{
-					
+					if(nm.getPcGivingUp() > 0.8 || irrationalChoice())
+					{
+						giveUpSmoking();
+						changeMade = true;
+					}
+					else
+					{
+						if(nm.getAvgCigPerDay() > this.smokedPerDay * 1.2 )
+						{
+							this.smokedPerDay = (int)Math.round(changeWithinBounds(this.smokedPerDay, 0, this.cigLimit, (nm.getInfCigPerDay()* 0.5), Operations.ADD));
+						}
+						else if(nm.getAvgCigPerDay() < this.smokedPerDay * 0.8)
+						{
+							this.smokedPerDay = (int)Math.round(changeWithinBounds(this.smokedPerDay, 0, this.cigLimit, (nm.getInfCigPerDay()* 0.5), Operations.SUBTRACT));
+						}
+					}
 				}
 			}
 		}
 		else
 		{
-			
 			if(this.givingUp)
 			{
 				this.health = changeWithinBounds(this.health, 0, 1, (this.stepsSinceGiveUp/this.giveUpStepLimit)/10, Operations.ADD);
@@ -263,9 +294,8 @@ public class BaseHuman implements Comparable{
 				{
 					//Stronger people so far, hinge on own behaviour
 					if(this.health > 0.7)
-					{
-						//weaker, hinge on others
-						if(nm.getPcSmokes() > 0.8)
+					{ 
+						if(nm.getPcSmokes() > 0.5 || irrationalChoice())
 						{
 							relapseSmoking((int)nm.getInfCigPerDay());
 							changeMade = true;
@@ -277,28 +307,48 @@ public class BaseHuman implements Comparable{
 					}
 					else
 					{
-						
+						//weaker, hinge on others
+						if(nm.getPcSmokes() > 0.8 || irrationalChoice())
+						{
+							relapseSmoking((int)nm.getInfCigPerDay());
+							changeMade = true;
+						}
+						else
+						{
+							
+						}
 					}
 				}
 				else if(this.giveUpAttempts >= 1 && this.giveUpAttempts < 5)
 				{
-					if(this.willpower > 0.7)
+					if(this.willpower < 0.5)
+					{ 
+						if(nm.getPcSmokes() > 0.5 || irrationalChoice())
+						{
+							relapseSmoking((int)nm.getInfCigPerDay());
+							changeMade = true;
+						}
+					}
+					else 
 					{
-						relapseSmoking((int)nm.getInfCigPerDay());
-						changeMade = true;
+						if(nm.getPcSmokes() > 0.8 || irrationalChoice())
+						{
+							relapseSmoking((int)nm.getInfCigPerDay());
+							changeMade = true;
+						}
 					}
 				}
 				else
 				{
 					//weaker, hinge on others
-					if(nm.getPcSmokes() > this.willpower)
+					if(nm.getPcSmokes() > 0.4 || irrationalChoice())
 					{
 						relapseSmoking((int)nm.getInfCigPerDay());
 						changeMade = true;
 					}
 					else
 					{
-						this.willpower = changeWithinBounds(this.willpower, 0, 1, (this.willpower + 0.01), Operations.MULTIPLY);
+						this.willpower = changeWithinBounds(this.willpower, 0, 1, (this.willpower + 0.01), Operations.ADD);
 						changeMade = true;
 					}
 				}
@@ -310,7 +360,7 @@ public class BaseHuman implements Comparable{
 			}
 			else
 			{
-				if(nm.getPcSmokes() > this.willpower)
+				if(nm.getPcSmokes() > 0.7 || irrationalChoice())
 				{
 					relapseSmoking((int)nm.getInfCigPerDay());
 					changeMade = true;
@@ -328,7 +378,17 @@ public class BaseHuman implements Comparable{
 	
 	private void statusCall()
 	{
-		print("Smoker: " + this.isSmoker + " Cigs: " + this.smokedPerDay + " Giving Up?: " + this.givingUp + " Steps: " + this.stepsSinceGiveUp); 
+		//print("Smoker: " + this.isSmoker + " Cigs: " + this.smokedPerDay + " Giving Up?: " + this.givingUp + " Steps: " + this.stepsSinceGiveUp); 
+	}
+	
+	private boolean irrationalChoice()
+	{
+		if(Math.random() < 0.0001)
+		{
+			print("I made an irrational choice.");
+			return true;
+		}
+		return false;
 	}
 	private void relapseSmoking(int numCigarettes)
 	{
@@ -443,7 +503,7 @@ public class BaseHuman implements Comparable{
 			NeighborStore other = iter.next();
 			double score = scoreAgainst(other.getNeighbor());
 			//System.out.println(id + ": My score against " + other.getNeighbor().getID() + " is " + score);
-			if(score > 0.7)
+			if(score > 0.65)
 			{
 				if(network.getInDegree(this) >= maxInDegree )
 				{
@@ -477,13 +537,29 @@ public class BaseHuman implements Comparable{
 				}
 				
 			}
-			else if(score < 0.3)
+			else if(score < 0.35)
 			{
 				RepastEdge<BaseHuman> ed1 = network.getEdge(other.getNeighbor(), this);
 				if(ed1 != null && Math.random() < sociable)
 				{
 					network.removeEdge(ed1);
 				}
+			}
+		}
+		
+		//Also have the chance of adding a random edge with a random influence
+		if(Math.random() < (sociable * 0.0001)  && network.getInDegree(this) < maxInDegree )
+		{
+			System.out.println("Adding a random edge");
+			IndexedIterable<BaseHuman> allNodes = (IndexedIterable<BaseHuman>) context.getObjects(BaseHuman.class);
+			BaseHuman random = allNodes.get((int)Math.round(Math.random() * (allNodes.size()-1)));
+			RepastEdge<BaseHuman> ed1 = network.getEdge(random, this);
+			if(ed1 == null && random != this && random.checkCanEdgeOut())
+			{
+				double nd = Distributions.getND(new NDParams(Math.random(), 0.3, 0, 1));
+				network.addEdge(random, this, nd);
+				print("I randomly attached to " + random.getID());
+				//System.out.println(id + ": I attached to " + other.getNeighbor().getID() + " with influence " + nd /*+ " and prob " + prob + " and points " + points*/);
 			}
 		}
 	}
@@ -542,6 +618,14 @@ public class BaseHuman implements Comparable{
 	private void print(String msg)
 	{
 		System.out.println("[NODE " + this.id + "]: "+msg);
+	}
+	
+	public boolean checkCanEdgeOut()
+	{
+		if(network.getOutDegree(this) > this.maxOutDegree)
+			return false;
+		else 
+			return true;
 	}
 	
 	private RepastEdge<BaseHuman> getMinInfluence(Iterable<RepastEdge<BaseHuman>> edges)

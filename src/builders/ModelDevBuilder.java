@@ -1,5 +1,6 @@
 package builders;
 
+import repast.simphony.parameter.*;
 import java.util.ArrayList;
 import java.util.Iterator;
 
@@ -17,6 +18,7 @@ import repast.simphony.context.space.graph.NetworkBuilder;
 import repast.simphony.context.space.graph.NetworkGenerator;
 import repast.simphony.context.space.graph.WattsBetaSmallWorldGenerator;
 import repast.simphony.dataLoader.ContextBuilder;
+import repast.simphony.engine.environment.RunEnvironment;
 import repast.simphony.space.graph.Network;
 import repast.simphony.space.graph.RepastEdge;
 import repast.simphony.util.collections.IndexedIterable;
@@ -33,14 +35,15 @@ public class ModelDevBuilder implements ContextBuilder<Object> {
 	public Context build(Context<Object> context) {
 		// TODO Auto-generated method stub
 		context.setId("SmokeSNET-Main");
+		Parameters parameters = RunEnvironment.getInstance().getParameters();
 		Network<BaseHuman> network = null;
 		
 		boolean generateOnAddition = true;
-		int mode = 2;
+		int mode = (Integer) parameters.getValue("mode");
 		if(mode == 1)
 		{
 			NDParams nd = new NDParams(0.8, 0.4, 0, 1);
-			network = ScaleFree.createRSF(context, "TestNet", 4, 500, true, 0.8, true, nd);
+			network = ScaleFree.createRSF(context, "TestNet", 4, (Integer) parameters.getValue("numNodes"), true, 0.8, true, nd);
 			RepastSummary rs = GeneralTools.trimNodesByDegree(context, network, 0);
 			context = rs.getContext();
 			network = rs.getNetwork();
@@ -51,11 +54,6 @@ public class ModelDevBuilder implements ContextBuilder<Object> {
 			RepastSummary rs = GraphMLImporter.GraphMLToRepast("v0.8-testbase.graphml", "TestNet", context);
 			context = rs.getContext();
 			network = rs.getNetwork();
-			
-//			Iterable<RepastEdge<BaseHuman>> sdf = network.getEdges();
-//			Iterator<RepastEdge<BaseHuman>> asda = sdf.iterator();
-//			while(asda.hasNext())
-//				System.out.println(asda.next().getWeight());
 		}
 		else if(mode == 3)
 		{
@@ -63,16 +61,16 @@ public class ModelDevBuilder implements ContextBuilder<Object> {
 			context = rs.getContext();
 			network = rs.getNetwork();
 			NDParams nd = new NDParams(0.8, 0.4, 0, 1);
-			network = ScaleFree.SFOnBase(context, network, 500, true, 0.5, true, nd);
+			network = ScaleFree.SFOnBase(context, network, (Integer) parameters.getValue("numNodes"), true, 0.5, true, nd);
 			rs = GeneralTools.trimNodesByDegree(context, network, 0);
 			context = rs.getContext();
 			network = rs.getNetwork();
 		}
-		Watchman watch = new Watchman(10, true, true, true, "v0.9", context, network);
-		context.add(watch);
 		
-		//CSVExporter.exportToCSV(network.getNodes(), "test");
-		//GraphConverter.repastNetworkToGraphML(context, net, "sample-"+ System.currentTimeMillis() +"-SW.graphml");
+		
+		System.out.println(parameters.getValue("numNodes"));
+		Watchman watch = new Watchman(10, true, true, true, "v0.93", context, network);
+		context.add(watch);
 		
 		return context;
 	}
