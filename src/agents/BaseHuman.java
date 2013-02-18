@@ -11,7 +11,9 @@ import java.util.Iterator;
 import java.util.Set;
 
 import repast.simphony.context.Context;
+import repast.simphony.engine.environment.RunEnvironment;
 import repast.simphony.engine.schedule.ScheduledMethod;
+import repast.simphony.parameter.Parameters;
 import repast.simphony.space.graph.Network;
 import repast.simphony.space.graph.RepastEdge;
 import repast.simphony.util.collections.IndexedIterable;
@@ -37,15 +39,15 @@ public class BaseHuman implements Comparable{
 	private double health;
 	private int smokedPerDay;
 	
+	private double stress;
+	
 	private boolean givingUp;
 	private int stepsSinceGiveUp;
 	private int giveUpAttempts;
 	
 	private double influenceability;
-	private double persuasiveness;
+	
 	private double sociable;
-	
-	
 	
 	//new attrs - leadership?
 	
@@ -68,6 +70,8 @@ public class BaseHuman implements Comparable{
 		this.id = id;
 		this.context = context;
 		this.network = network;
+
+		
 		if(Math.random() < 0.5)
 		{
 			this.isSmoker = false;
@@ -95,7 +99,7 @@ public class BaseHuman implements Comparable{
 		this.sociable = Distributions.getNDWithLimits(0.6, 0.4, 0, 1);
 		this.influenceability = Distributions.getNDWithLimits(0.5, 0.4, 0, 1);
 		
-		this.persuasiveness = Distributions.getNDWithLimits(0.5, 0.4, 0, 1);
+		this.stress = Distributions.getNDWithLimits(0.5, 0.4, 0, 1);
 		
 		//We need some heavy and light smokers, so add some in
 		double rand = Math.random();
@@ -173,9 +177,6 @@ public class BaseHuman implements Comparable{
 		keyID = keyMap.get("influenceability");
 		this.influenceability = Double.parseDouble(attrList.get(keyID));
 		
-		keyID = keyMap.get("persuasiveness");
-		this.persuasiveness = Double.parseDouble(attrList.get(keyID));
-		
 		keyID = keyMap.get("sociable");
 		this.sociable = Double.parseDouble(attrList.get(keyID));
 		
@@ -221,6 +222,8 @@ public class BaseHuman implements Comparable{
 		//Add bypass probability for decisions
 		boolean changeMade = false;		
 		
+		print("Influence: H:" + nm.getInfHealth() + " W:" + nm.getInfWillpower() + " S:" + nm.getInfIsSmokerVal());
+		
 		if(this.isSmoker)
 		{
 			this.health = changeWithinBounds(this.health, 0, 1, (this.smokedPerDay/this.cigLimit)/10, Operations.SUBTRACT);
@@ -241,7 +244,6 @@ public class BaseHuman implements Comparable{
 					{
 						this.smokedPerDay = (int)Math.round(changeWithinBounds(this.smokedPerDay, 0, this.cigLimit, (nm.getInfCigPerDay()* 0.5), Operations.SUBTRACT));
 					}
-					//print("I know smoke " + this.smokedPerDay);
 				}
 			}
 			else if(this.smokedPerDay > 10 && this.smokedPerDay < 20)
@@ -261,7 +263,6 @@ public class BaseHuman implements Comparable{
 					{
 						this.smokedPerDay = (int)Math.round(changeWithinBounds(this.smokedPerDay, 0, this.cigLimit, (nm.getInfCigPerDay()* 0.5), Operations.SUBTRACT));
 					}
-					//print("I now smoke " + this.smokedPerDay);
 				}
 			}
 			else 
@@ -283,7 +284,6 @@ public class BaseHuman implements Comparable{
 						{
 							this.smokedPerDay = (int)Math.round(changeWithinBounds(this.smokedPerDay, 0, this.cigLimit, (nm.getInfCigPerDay()* 0.5), Operations.SUBTRACT));
 						}
-						//print("I know smoke " + this.smokedPerDay);
 					}
 				}
 				else
@@ -315,7 +315,7 @@ public class BaseHuman implements Comparable{
 				if(this.giveUpAttempts == 0)
 				{
 					//Stronger people so far, hinge on own behaviour
-					if(this.health > 0.7)
+					if(this.health > nm.getInfHealth())
 					{ 
 						//maybe add willpower or some neighbourhood statistic
 						if(nm.getPcSmokes() > 0.5 || irrationalChoice())
@@ -635,7 +635,6 @@ public class BaseHuman implements Comparable{
 
 		//maybe change to make influenceable people stick with those who aren't influenced?
 		score += this.influenceability * 3;
-		score += this.persuasiveness * 5;
 		
 		double pctWill = pctDiff(other.willpower, this.willpower);
 		if(pctWill > 1)
@@ -648,7 +647,7 @@ public class BaseHuman implements Comparable{
 			score += 0;
 		else
 			score += 2 - pctSoc * 2;
-		return score/33;
+		return score/28;
 	}
 	
 	private void print(String msg)
@@ -695,13 +694,9 @@ public class BaseHuman implements Comparable{
 	//Used to modify the scale free algorithm's connection probability
 	public double compatProb(BaseHuman oth)
 	{
-		double prob = 1;
-		
-		if(isSmoker != oth.isSmoker())
-			prob *= 0.5;
-		
-		 prob *= sociable;
-		
+
+		double prob = scoreAgainst(oth);
+		//print(prob + " against " + oth.getID());
 		return prob;
 	}
 
@@ -754,7 +749,6 @@ public class BaseHuman implements Comparable{
 		rtnList.put(keyMap.get("smokedPerDay"), this.smokedPerDay);
 		rtnList.put(keyMap.get("givingUp"), this.givingUp);
 		rtnList.put(keyMap.get("stepsSinceGiveUp"), this.stepsSinceGiveUp);
-		rtnList.put(keyMap.get("persuasiveness"), this.persuasiveness);
 		rtnList.put(keyMap.get("influenceability"), this.influenceability);
 		rtnList.put(keyMap.get("sociable"), this.sociable);
 
@@ -770,122 +764,5 @@ public class BaseHuman implements Comparable{
 		
 		return this.getID().compareTo(b0.getID());
 	}
-		
 
-//	//System.out.println("\t -------- DECTREE --------");
-//	double yesProb;
-//	boolean changeMade = false;
-	
-	
-//	//basic attribute changes
-//	//persuasiveness depends on whether the person has a lot of collections and
-//	
-//	
-//	//am I a smoker?
-//	if(isSmoker)
-//	{
-//		//calculate the
-//		//should I stop?
-//		//low health == higher prob
-//		if(this.health - this.health * 0.01 > 0)
-//			this.health -= this.health * 0.01;
-//		
-//		yesProb = (1 - health) * this.willpower * nm.getPcGivingUp() *  nm.getPcSmokes();
-//		if(this.giveUpAttempts > 0)
-//			yesProb *= (1-this.giveUpAttempts)/25;
-//		
-//		
-//		print("Probability of stopping smoking is " + yesProb + ".");
-//		if(Math.random() < yesProb)
-//		{
-//			isSmoker = false;
-//			//System.out.println(id + ": I gave up smoking!");
-//			
-//			this.givingUp = true;
-//			this.stepsSinceGiveUp = 0;
-//			if(this.giveUpAttempts < 25)
-//				this.giveUpAttempts++;
-//			
-//			changeMade = true;
-//			
-//			double potentialWillpower = (1 - this.influenceability) * nm.getPcSmokes();
-//			
-//			if(potentialWillpower < 0 || potentialWillpower > 1)
-//			{
-//				double tmpWillpower;
-//				if(potentialWillpower > this.willpower)
-//				{
-//					tmpWillpower = this.willpower + potentialWillpower * 0.5;
-//					if(tmpWillpower < 1)
-//						this.willpower = tmpWillpower;
-//				}
-//				else
-//				{
-//					tmpWillpower = this.willpower - potentialWillpower * 0.5;
-//					if(tmpWillpower > 0)
-//						this.willpower = tmpWillpower;
-//				}
-//			}
-//			else
-//				this.willpower = potentialWillpower;
-//			//what effect does this have on my health?
-//			
-//		}
-//		else
-//		{
-//			//should I smoke more?
-//			if(!(this.smokedPerDay * 0.9 > nm.getInfCigPerDay() && this.smokedPerDay * 1.1 < nm.getInfCigPerDay()) &&
-//					this.health * 0.9 > nm.getInfHealth() && this.health * 1.1 < nm.getInfHealth())
-//			{
-//				changeMade = true;
-//				double zeroedChange = nm.getInfCigPerDay() - this.smokedPerDay;
-//				if(zeroedChange + this.smokedPerDay < cigLimit)
-//					this.smokedPerDay += zeroedChange * this.influenceability;
-//				//System.out.println(id + ": Changed to " + this.smokedPerDay + " cigs per day, with change " + zeroedChange);
-//			}
-//		}
-//		
-//	}
-//	else
-//	{
-//		//should I start?
-//		yesProb = health * nm.getPcSmokes() * nm.getPcGivingUp() * this.influenceability;
-//		
-//		if(this.giveUpAttempts > 0)
-//			yesProb *= (this.giveUpAttempts)/25;
-//		
-//		print("Probability of starting smoking is " + yesProb + ".");
-//		if(this.health + this.health * 0.001 < 1)
-//			this.health += this.health * 0.001;
-//		//yesProb = Math.abs(yesProb) / 3;
-//		//System.out.println(id + ": My start probability is " + yesProb);
-//		if(Math.random() < yesProb)
-//		{
-//			isSmoker = true;
-//			
-//			this.givingUp = false;
-//			this.stepsSinceGiveUp = 0;
-//			
-//			if(this.influenceability + (this.influenceability * 0.001) < 1)
-//				this.influenceability -= this.influenceability * 0.001;
-//			//System.out.println(id + ": I began up smoking!");
-//			changeMade = true;
-//			//how many?
-//			if(nm.getInfCigPerDay() < 0)
-//				smokedPerDay = 5;
-//			else
-//			{
-//				smokedPerDay = (int) Math.round(nm.getInfCigPerDay());
-//				if(smokedPerDay < 0 || smokedPerDay > cigLimit)
-//					smokedPerDay = Distributions.getIntNDWithLimits(12, 0.5, 0, cigLimit);
-//			}
-//			//System.out.println("My influence val is " + nm.getInfCigPerDay());
-//		}
-//		else
-//		{
-//			//how should I give up?
-//			this.influenceability += this.influenceability * 0.001;
-//			
-//		}
-//	}
 }
