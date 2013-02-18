@@ -97,10 +97,29 @@ public class BaseHuman implements Comparable{
 		
 		this.persuasiveness = Distributions.getNDWithLimits(0.5, 0.4, 0, 1);
 		
-		if(isSmoker)
-			this.smokedPerDay = Distributions.getIntNDWithLimits(12, 0.8, 0, 40);
+		//We need some heavy and light smokers, so add some in
+		double rand = Math.random();
+		if(rand < 0.2)
+		{
+			if(isSmoker)
+				this.smokedPerDay = Distributions.getIntNDWithLimits(5, 0.8, 0, 40);
+			else
+				this.smokedPerDay = 0;
+		}
+		else if (rand > 0.8)
+		{
+			if(isSmoker)
+				this.smokedPerDay = Distributions.getIntNDWithLimits(12, 0.8, 0, 40);
+			else
+				this.smokedPerDay = 0;
+		}
 		else
-			this.smokedPerDay = 0;
+		{
+			if(isSmoker)
+				this.smokedPerDay = Distributions.getIntNDWithLimits(20, 0.8, 0, 40);
+			else
+				this.smokedPerDay = 0;
+		}
 		//Insert code for adding to network
 		if(generateOnAddition)
 			ScaleFree.addToRSF(this, context, network, reciprocate, reciprocateChance, nd);
@@ -173,7 +192,7 @@ public class BaseHuman implements Comparable{
 	}
 	
 	
-	@ScheduledMethod(start = 1, interval = 100)
+	@ScheduledMethod(start = 1, interval = 1)
 	public void step() {
 		//insert decisions, etc
 		//decide actions
@@ -205,7 +224,7 @@ public class BaseHuman implements Comparable{
 		if(this.isSmoker)
 		{
 			this.health = changeWithinBounds(this.health, 0, 1, (this.smokedPerDay/this.cigLimit)/10, Operations.SUBTRACT);
-			if(this.smokedPerDay <= 5)
+			if(this.smokedPerDay <= 10)
 			{
 				if(nm.getPcSmokes() > 0.3 || irrationalChoice())
 				{
@@ -222,11 +241,12 @@ public class BaseHuman implements Comparable{
 					{
 						this.smokedPerDay = (int)Math.round(changeWithinBounds(this.smokedPerDay, 0, this.cigLimit, (nm.getInfCigPerDay()* 0.5), Operations.SUBTRACT));
 					}
+					//print("I know smoke " + this.smokedPerDay);
 				}
 			}
-			else if(this.smokedPerDay > 5 && this.smokedPerDay < 20)
+			else if(this.smokedPerDay > 10 && this.smokedPerDay < 20)
 			{
-				if(nm.getPcGivingUp() > 0.5)
+				if(nm.getPcGivingUp() > 0.5 || irrationalChoice())
 				{
 					giveUpSmoking();
 					changeMade = true;
@@ -241,6 +261,7 @@ public class BaseHuman implements Comparable{
 					{
 						this.smokedPerDay = (int)Math.round(changeWithinBounds(this.smokedPerDay, 0, this.cigLimit, (nm.getInfCigPerDay()* 0.5), Operations.SUBTRACT));
 					}
+					//print("I now smoke " + this.smokedPerDay);
 				}
 			}
 			else 
@@ -262,6 +283,7 @@ public class BaseHuman implements Comparable{
 						{
 							this.smokedPerDay = (int)Math.round(changeWithinBounds(this.smokedPerDay, 0, this.cigLimit, (nm.getInfCigPerDay()* 0.5), Operations.SUBTRACT));
 						}
+						//print("I know smoke " + this.smokedPerDay);
 					}
 				}
 				else
@@ -295,6 +317,7 @@ public class BaseHuman implements Comparable{
 					//Stronger people so far, hinge on own behaviour
 					if(this.health > 0.7)
 					{ 
+						//maybe add willpower or some neighbourhood statistic
 						if(nm.getPcSmokes() > 0.5 || irrationalChoice())
 						{
 							relapseSmoking((int)nm.getInfCigPerDay());
@@ -302,7 +325,8 @@ public class BaseHuman implements Comparable{
 						}
 						else
 						{
-							
+							this.willpower = changeWithinBounds(this.willpower, 0, 1, (this.willpower + 0.01), Operations.ADD);
+							changeMade = true;
 						}
 					}
 					else
@@ -315,7 +339,8 @@ public class BaseHuman implements Comparable{
 						}
 						else
 						{
-							
+							this.willpower = changeWithinBounds(this.willpower, 0, 1, (this.willpower + 0.01), Operations.ADD);
+							changeMade = true;
 						}
 					}
 				}
@@ -328,12 +353,22 @@ public class BaseHuman implements Comparable{
 							relapseSmoking((int)nm.getInfCigPerDay());
 							changeMade = true;
 						}
+						else
+						{
+							this.willpower = changeWithinBounds(this.willpower, 0, 1, (this.willpower + 0.01), Operations.ADD);
+							changeMade = true;
+						}
 					}
 					else 
 					{
 						if(nm.getPcSmokes() > 0.8 || irrationalChoice())
 						{
 							relapseSmoking((int)nm.getInfCigPerDay());
+							changeMade = true;
+						}
+						else
+						{
+							this.willpower = changeWithinBounds(this.willpower, 0, 1, (this.willpower + 0.01), Operations.ADD);
 							changeMade = true;
 						}
 					}
@@ -367,7 +402,8 @@ public class BaseHuman implements Comparable{
 				}
 				else
 				{
-					
+					this.willpower = changeWithinBounds(this.willpower, 0, 1, (this.willpower + 0.01), Operations.ADD);
+					changeMade = true;
 				}
 			}
 		}

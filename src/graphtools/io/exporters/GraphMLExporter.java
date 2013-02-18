@@ -28,7 +28,7 @@ import edu.uci.ics.jung.graph.util.Pair;
 public class GraphMLExporter {
 	public static void repastNetworkToGraphML(Context context, Network network, String filename)
 	{
-		System.out.println("Creating "  + filename + " ...");
+		//System.out.println("Creating "  + filename + " ...");
 		GraphMLObject template = new GraphMLObject();
 		
 		Iterable init = network.getNodes();
@@ -104,7 +104,7 @@ public class GraphMLExporter {
 			e.printStackTrace();
 		}
 
-		System.out.println("GraphML Creation Finished");
+		//System.out.println("GraphML Creation Finished");
 	}
 	
 	public static void JUNGGraphToGraphML(Graph<String, Long> g, String filename)

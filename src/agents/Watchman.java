@@ -50,9 +50,9 @@ public class Watchman {
 		if(dumpAttrs)
 			CSVExporter.exportToCSV(network.getNodes(), name + "-step-0");
 		
-		System.out.println("There are " + network.size() + " nodes in the graph.");
+		//System.out.println("There are " + network.size() + " nodes in the graph.");
 		LinkedList<BaseHuman> nodes = GeneralTools.getBaseHumans(network);
-		System.out.println("There are " + nodes.size() + " humans in the graph.");
+		//System.out.println("There are " + nodes.size() + " humans in the graph.");
 		
 		
 		
@@ -60,7 +60,7 @@ public class Watchman {
 		{
 			DirectedSparseMultigraph graph = GraphFormat.RepastToJUNG(network);
 			GraphStats gs = JUNGStatistics.GenerateStatistics(graph, GeneralTools.getBaseHumans(network));
-			System.out.println("Avg Clustering Coefficient: " + gs.getAvgClusterCoeff());
+			//System.out.println("Avg Clustering Coefficient: " + gs.getAvgClusterCoeff());
 		}
 	}
 	
@@ -80,7 +80,7 @@ public class Watchman {
 	
 	private void runWatch(Context context, Network network)
 	{
-		System.out.println("********** WATCHMAN ***********");
+		//System.out.println("********** WATCHMAN ***********");
 		if(generateGML)
 		{
 			GraphMLExporter.repastNetworkToGraphML(context, network, name + "-step-" + turnCount + ext);
@@ -93,7 +93,7 @@ public class Watchman {
 		{
 			DirectedSparseMultigraph graph = GraphFormat.RepastToJUNG(network);
 			GraphStats gs = JUNGStatistics.GenerateStatistics(graph, GeneralTools.getBaseHumans(network));
-			System.out.println("Avg Clustering Coefficient: " + gs.getAvgClusterCoeff());
+			//System.out.println("Avg Clustering Coefficient: " + gs.getAvgClusterCoeff());
 			if(gs.getAvgClusterCoeff() > 0.12)
 			{
 				for(int i = 0; i < (int)(network.size()/10); i++)
@@ -106,7 +106,7 @@ public class Watchman {
 						{
 							if(Math.random() < 0.5)
 							{
-								System.out.println("Removing edge between " + ((BaseHuman)e.getSource()).getID() + " to " + ((BaseHuman)e.getTarget()).getID());
+								//System.out.println("Removing edge between " + ((BaseHuman)e.getSource()).getID() + " to " + ((BaseHuman)e.getTarget()).getID());
 								network.removeEdge(e);
 							}
 						}
@@ -125,7 +125,7 @@ public class Watchman {
 					{
 						if(Math.random() < 0.5)
 						{
-							System.out.println("Removing edge between " + ((BaseHuman)e.getSource()).getID() + " to " + ((BaseHuman)e.getTarget()).getID());
+							//System.out.println("Removing edge between " + ((BaseHuman)e.getSource()).getID() + " to " + ((BaseHuman)e.getTarget()).getID());
 							network.removeEdge(e);
 						}
 					}
@@ -133,7 +133,7 @@ public class Watchman {
 			}
 			
 		}
-		System.out.println("******** END WATCHMAN *********");
+		//System.out.println("******** END WATCHMAN *********");
 
 	}
 	

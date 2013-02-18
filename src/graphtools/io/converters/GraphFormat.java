@@ -33,8 +33,8 @@ public class GraphFormat {
 			
 			jnet.addEdge(new EdgeData(re.getSource().getID() + "-" + re.getTarget().getID(), re.getWeight()), couple);
 		}
-		System.out.println("Repast Network has " + network.size() + " nodes and degree " + network.getDegree());
-		System.out.println("JUNG Graph has " + jnet.getVertexCount() + " nodes");
+		//System.out.println("Repast Network has " + network.size() + " nodes and degree " + network.getDegree());
+		//System.out.println("JUNG Graph has " + jnet.getVertexCount() + " nodes");
 		
 		return jnet;
 		
