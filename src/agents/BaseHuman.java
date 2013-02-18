@@ -222,7 +222,7 @@ public class BaseHuman implements Comparable{
 		//Add bypass probability for decisions
 		boolean changeMade = false;		
 		
-		print("Influence: H:" + nm.getInfHealth() + " W:" + nm.getInfWillpower() + " S:" + nm.getInfIsSmokerVal());
+		//print("Influence: H:" + nm.getInfHealth() + " W:" + nm.getInfWillpower() + " S:" + nm.getInfIsSmokerVal());
 		
 		if(this.isSmoker)
 		{
@@ -267,7 +267,7 @@ public class BaseHuman implements Comparable{
 			}
 			else 
 			{
-				if(this.health < 0.5)
+				if(this.health < nm.getInfHealth())
 				{
 					if(nm.getPcGivingUp() > 0.4 || irrationalChoice())
 					{
@@ -318,7 +318,7 @@ public class BaseHuman implements Comparable{
 					if(this.health > nm.getInfHealth())
 					{ 
 						//maybe add willpower or some neighbourhood statistic
-						if(nm.getPcSmokes() > 0.5 || irrationalChoice())
+						if(nm.getPcSmokes() > 0.5 || irrationalChoice()) 
 						{
 							relapseSmoking((int)nm.getInfCigPerDay());
 							changeMade = true;
@@ -346,7 +346,7 @@ public class BaseHuman implements Comparable{
 				}
 				else if(this.giveUpAttempts >= 1 && this.giveUpAttempts < 5)
 				{
-					if(this.willpower < 0.5)
+					if(this.willpower < nm.getInfWillpower())
 					{ 
 						if(nm.getPcSmokes() > 0.5 || irrationalChoice())
 						{
@@ -421,14 +421,14 @@ public class BaseHuman implements Comparable{
 	{
 		if(Math.random() < 0.0001)
 		{
-			print("I made an irrational choice.");
+			//print("I made an irrational choice.");
 			return true;
 		}
 		return false;
 	}
 	private void relapseSmoking(int numCigarettes)
 	{
-		print("I started smoking!");
+		//print("I started smoking!");
 		this.isSmoker = true;
 		this.givingUp = false;
 		this.giveUpAttempts++;
@@ -437,7 +437,7 @@ public class BaseHuman implements Comparable{
 	
 	private void giveUpSmoking()
 	{
-		print("I gave up smoking!");
+		//print("I gave up smoking!");
 		this.isSmoker = false;
 		this.givingUp = true;
 		this.giveUpAttempts++;
@@ -534,68 +534,88 @@ public class BaseHuman implements Comparable{
 		Iterator<NeighborStore> iter = neighbors.iterator();
 		boolean canAdd = true;
 		//We want to look for similar people or role models
-		while(iter.hasNext())
+		if(network.getDegree(this) > 0)
 		{
-			NeighborStore other = iter.next();
-			double score = scoreAgainst(other.getNeighbor());
-			//System.out.println(id + ": My score against " + other.getNeighbor().getID() + " is " + score);
-			if(score > 0.65)
+			while(iter.hasNext())
 			{
-				if(network.getInDegree(this) >= maxInDegree )
+				NeighborStore other = iter.next();
+				double score = scoreAgainst(other.getNeighbor());
+				//System.out.println(id + ": My score against " + other.getNeighbor().getID() + " is " + score);
+				if(score > 0.65)
 				{
-					RepastEdge<BaseHuman> removalCandidate = getMinInfluence(network.getInEdges(this));
-					//lower influence nodes more likely to be binned
-					if(Math.random() < (1 - removalCandidate.getWeight()) && removalCandidate != null)
+					if(network.getInDegree(this) >= maxInDegree )
 					{
+						RepastEdge<BaseHuman> removalCandidate = getMinInfluence(network.getInEdges(this));
+						//lower influence nodes more likely to be binned
+						if(Math.random() < (1 - removalCandidate.getWeight()) && removalCandidate != null)
+						{
+							RepastEdge<BaseHuman> ed1 = network.getEdge(other.getNeighbor(), this);
+							if(ed1 == null /*&& Math.random() < sociable*/)
+							{
+								double nd = Distributions.getND(new NDParams((score - 0.5)*2, 0.3, 0, 1));
+								network.addEdge(other.getNeighbor(), this, nd);
+								//System.out.println(id + ": I attached to " + other.getNeighbor().getID() + " with influence " + nd /*+ " and prob " + prob + " and points " + points*/);
+								network.removeEdge(removalCandidate);
+								if(!canAdd)
+									canAdd = true;
+							}
+						}
+					}
+					else if(canAdd)
+					{
+						//also check if the influencer has reached their maxOutDegree
 						RepastEdge<BaseHuman> ed1 = network.getEdge(other.getNeighbor(), this);
-						if(ed1 == null /*&& Math.random() < sociable*/)
+						if(ed1 == null && !other.getNeighbor().equals(this) && Math.random() < sociable && network.getOutDegree(other.getNeighbor()) < maxOutDegree)
 						{
 							double nd = Distributions.getND(new NDParams((score - 0.5)*2, 0.3, 0, 1));
 							network.addEdge(other.getNeighbor(), this, nd);
+							canAdd = false;
 							//System.out.println(id + ": I attached to " + other.getNeighbor().getID() + " with influence " + nd /*+ " and prob " + prob + " and points " + points*/);
-							network.removeEdge(removalCandidate);
-							if(!canAdd)
-								canAdd = true;
 						}
 					}
+					
 				}
-				else if(canAdd)
+				else if(score < 0.35)
 				{
-					//also check if the influencer has reached their maxOutDegree
 					RepastEdge<BaseHuman> ed1 = network.getEdge(other.getNeighbor(), this);
-					if(ed1 == null && !other.getNeighbor().equals(this) && Math.random() < sociable && network.getOutDegree(other.getNeighbor()) < maxOutDegree)
+					if(ed1 != null && Math.random() < sociable)
 					{
-						double nd = Distributions.getND(new NDParams((score - 0.5)*2, 0.3, 0, 1));
-						network.addEdge(other.getNeighbor(), this, nd);
-						canAdd = false;
-						//System.out.println(id + ": I attached to " + other.getNeighbor().getID() + " with influence " + nd /*+ " and prob " + prob + " and points " + points*/);
+						network.removeEdge(ed1);
 					}
 				}
-				
 			}
-			else if(score < 0.35)
+			
+			//Also have the chance of adding a random edge with a random influence
+			if(Math.random() < (sociable * 0.0001)  && network.getInDegree(this) < maxInDegree )
 			{
-				RepastEdge<BaseHuman> ed1 = network.getEdge(other.getNeighbor(), this);
-				if(ed1 != null && Math.random() < sociable)
+				//System.out.println("Adding a random edge");
+				IndexedIterable<BaseHuman> allNodes = (IndexedIterable<BaseHuman>) context.getObjects(BaseHuman.class);
+				BaseHuman random = allNodes.get((int)Math.round(Math.random() * (allNodes.size()-1)));
+				RepastEdge<BaseHuman> ed1 = network.getEdge(random, this);
+				if(ed1 == null && random != this && random.checkCanEdgeOut())
 				{
-					network.removeEdge(ed1);
+					double nd = Distributions.getND(new NDParams(Math.random(), 0.3, 0, 1));
+					network.addEdge(random, this, nd);
+					//print("I randomly attached to " + random.getID());
+					//System.out.println(id + ": I attached to " + other.getNeighbor().getID() + " with influence " + nd /*+ " and prob " + prob + " and points " + points*/);
 				}
 			}
 		}
-		
-		//Also have the chance of adding a random edge with a random influence
-		if(Math.random() < (sociable * 0.0001)  && network.getInDegree(this) < maxInDegree )
+		//if a node has become disconnected, reconnect it with a random chance
+		else
 		{
-			System.out.println("Adding a random edge");
-			IndexedIterable<BaseHuman> allNodes = (IndexedIterable<BaseHuman>) context.getObjects(BaseHuman.class);
-			BaseHuman random = allNodes.get((int)Math.round(Math.random() * (allNodes.size()-1)));
-			RepastEdge<BaseHuman> ed1 = network.getEdge(random, this);
-			if(ed1 == null && random != this && random.checkCanEdgeOut())
+			//print("I have " + network.getDegree(this) + ". Adding a random edge");
+			if(Math.random() < 0.3)
 			{
-				double nd = Distributions.getND(new NDParams(Math.random(), 0.3, 0, 1));
-				network.addEdge(random, this, nd);
-				print("I randomly attached to " + random.getID());
-				//System.out.println(id + ": I attached to " + other.getNeighbor().getID() + " with influence " + nd /*+ " and prob " + prob + " and points " + points*/);
+				IndexedIterable<BaseHuman> allNodes = (IndexedIterable<BaseHuman>) context.getObjects(BaseHuman.class);
+				BaseHuman random = allNodes.get((int)Math.round(Math.random() * (allNodes.size()-1)));
+				RepastEdge<BaseHuman> ed1 = network.getEdge(random, this);
+				if(ed1 == null && random != this && random.checkCanEdgeOut())
+				{
+					double nd = Distributions.getND(new NDParams(Math.random(), 0.3, 0, 1));
+					network.addEdge(random, this, nd);
+					//System.out.println(id + ": I attached to " + other.getNeighbor().getID() + " with influence " + nd /*+ " and prob " + prob + " and points " + points*/);
+				}
 			}
 		}
 	}
