@@ -1,25 +1,1260 @@
-WARN  [AWT-EventQueue-0] 2013-02-18 15:41:55,751 repast.simphony.scenario.ScenarioCPInitializer - Warning while parsing classpath: Empty or non-existent path '/Users/matt/git/SmokeSNET-Main/lib'.
-WARN  [AWT-EventQueue-0] 2013-02-18 15:41:55,875 repast.simphony.scenario.ScenarioLoader - While initializing classpath: Empty or non-existent path '/Users/matt/git/SmokeSNET-Main/lib'.
-cigLimit dn13
-edgeWeight de0
-isSmoker dn1
-givingUp dn5
-health dn3
-maxOutDegree dn12
-persuasiveness dn9
-id dn0
-willpower dn2
-influenceability dn8
-giveUpAttempts dn7
-sociable dn10
-smokedPerDay dn4
-maxInDegree dn11
-stepsSinceGiveUp dn6
-100
-0.00457898103717301
-0.07240589420158045
-0.07939472163543371
-0.08259237059704616
-0.07967833872774797
-0.08797681483866483
-0.1096043427097954
+WARN  [AWT-EventQueue-0] 2013-02-19 01:11:09,742 repast.simphony.scenario.ScenarioCPInitializer - Warning while parsing classpath: Empty or non-existent path 'G:\My Documents\3rd Year Project\SmokeSNET-Main\lib'.
+WARN  [AWT-EventQueue-0] 2013-02-19 01:11:09,816 repast.simphony.scenario.ScenarioLoader - While initializing classpath: Empty or non-existent path 'G:\My Documents\3rd Year Project\SmokeSNET-Main\lib'.
+500
+0.01700412321125394
+[NODE n421]: I started smoking!
+[NODE n421]: Smoker: true Cigs: 18 Giving Up?: false Steps: 0
+[NODE n304]: I started smoking!
+[NODE n304]: Smoker: true Cigs: 15 Giving Up?: false Steps: 0
+[NODE n129]: I started smoking!
+[NODE n129]: Smoker: true Cigs: 15 Giving Up?: false Steps: 0
+[NODE n129]: BRANCH 1
+	BRANCH 2b
+		BRANCH 3c
+[NODE n205]: I started smoking!
+[NODE n205]: Smoker: true Cigs: 19 Giving Up?: false Steps: 0
+[NODE n205]: BRANCH 1
+	BRANCH 2b
+		BRANCH 3d
+[NODE n246]: I started smoking!
+[NODE n246]: Smoker: true Cigs: 20 Giving Up?: false Steps: 0
+[NODE n246]: BRANCH 1
+	BRANCH 2b
+		BRANCH 3c
+[NODE n111]: I started smoking!
+[NODE n111]: Smoker: true Cigs: 11 Giving Up?: false Steps: 0
+[NODE n111]: BRANCH 1
+	BRANCH 2b
+		BRANCH 3d
+[NODE n333]: I started smoking!
+[NODE n333]: Smoker: true Cigs: 19 Giving Up?: false Steps: 0
+[NODE n333]: BRANCH 1
+	BRANCH 2a
+		BRANCH 3a
+[NODE n219]: I started smoking!
+[NODE n219]: Smoker: true Cigs: 14 Giving Up?: false Steps: 0
+[NODE n219]: BRANCH 1
+	BRANCH 2a
+		BRANCH 3a
+[NODE n475]: I started smoking!
+[NODE n475]: Smoker: true Cigs: 13 Giving Up?: false Steps: 0
+[NODE n320]: I started smoking!
+[NODE n320]: Smoker: true Cigs: 18 Giving Up?: false Steps: 0
+[NODE n1]: I gave up smoking!
+[NODE n1]: Smoker: false Cigs: 0 Giving Up?: true Steps: 0
+[NODE n447]: I started smoking!
+[NODE n447]: Smoker: true Cigs: 12 Giving Up?: false Steps: 0
+[NODE n413]: I started smoking!
+[NODE n413]: Smoker: true Cigs: 11 Giving Up?: false Steps: 0
+[NODE n108]: I started smoking!
+[NODE n108]: Smoker: true Cigs: 11 Giving Up?: false Steps: 0
+[NODE n437]: I started smoking!
+[NODE n437]: Smoker: true Cigs: 19 Giving Up?: false Steps: 0
+[NODE n68]: I started smoking!
+[NODE n68]: Smoker: true Cigs: 11 Giving Up?: false Steps: 0
+[NODE n68]: BRANCH 1
+	BRANCH 2b
+		BRANCH 3c
+[NODE n399]: I started smoking!
+[NODE n399]: Smoker: true Cigs: 13 Giving Up?: false Steps: 0
+[NODE n65]: I started smoking!
+[NODE n65]: Smoker: true Cigs: 14 Giving Up?: false Steps: 0
+[NODE n389]: I started smoking!
+[NODE n389]: Smoker: true Cigs: 11 Giving Up?: false Steps: 0
+[NODE n1]: I started smoking!
+[NODE n1]: Smoker: true Cigs: 12 Giving Up?: false Steps: 1
+[NODE n360]: I started smoking!
+[NODE n360]: Smoker: true Cigs: 12 Giving Up?: false Steps: 1
+[NODE n491]: I started smoking!
+[NODE n491]: Smoker: true Cigs: 14 Giving Up?: false Steps: 1
+[NODE n250]: I started smoking!
+[NODE n250]: Smoker: true Cigs: 12 Giving Up?: false Steps: 0
+[NODE n250]: BRANCH 1
+	BRANCH 2a
+		BRANCH 3b
+[NODE n434]: I started smoking!
+[NODE n434]: Smoker: true Cigs: 21 Giving Up?: false Steps: 2
+[NODE n374]: I started smoking!
+[NODE n374]: Smoker: true Cigs: 13 Giving Up?: false Steps: 0
+[NODE n374]: BRANCH 1
+	BRANCH 2b
+		BRANCH 3c
+[NODE n274]: I started smoking!
+[NODE n274]: Smoker: true Cigs: 15 Giving Up?: false Steps: 0
+[NODE n274]: BRANCH 1
+	BRANCH 2a
+		BRANCH 3b
+[NODE n313]: I started smoking!
+[NODE n313]: Smoker: true Cigs: 11 Giving Up?: false Steps: 0
+[NODE n313]: BRANCH 1
+	BRANCH 2a
+		BRANCH 3a
+[NODE n186]: I started smoking!
+[NODE n186]: Smoker: true Cigs: 14 Giving Up?: false Steps: 2
+[NODE n118]: I started smoking!
+[NODE n118]: Smoker: true Cigs: 20 Giving Up?: false Steps: 3
+[NODE n261]: I started smoking!
+[NODE n261]: Smoker: true Cigs: 19 Giving Up?: false Steps: 0
+[NODE n261]: BRANCH 1
+	BRANCH 2b
+		BRANCH 3c
+[NODE n47]: I started smoking!
+[NODE n47]: Smoker: true Cigs: 12 Giving Up?: false Steps: 0
+[NODE n47]: BRANCH 1
+	BRANCH 2b
+		BRANCH 3d
+[NODE n144]: I started smoking!
+[NODE n144]: Smoker: true Cigs: 12 Giving Up?: false Steps: 3
+[NODE n125]: I started smoking!
+[NODE n125]: Smoker: true Cigs: 12 Giving Up?: false Steps: 4
+[NODE n2]: I started smoking!
+[NODE n2]: Smoker: true Cigs: 12 Giving Up?: false Steps: 4
+[NODE n97]: I started smoking!
+[NODE n97]: Smoker: true Cigs: 11 Giving Up?: false Steps: 0
+[NODE n97]: BRANCH 1
+	BRANCH 2a
+		BRANCH 3a
+[NODE n193]: I started smoking!
+[NODE n193]: Smoker: true Cigs: 12 Giving Up?: false Steps: 4
+[NODE n168]: I started smoking!
+[NODE n168]: Smoker: true Cigs: 12 Giving Up?: false Steps: 4
+[NODE n472]: I started smoking!
+[NODE n472]: Smoker: true Cigs: 12 Giving Up?: false Steps: 4
+[NODE n48]: I started smoking!
+[NODE n48]: Smoker: true Cigs: 12 Giving Up?: false Steps: 0
+[NODE n48]: BRANCH 1
+	BRANCH 2a
+		BRANCH 3b
+[NODE n355]: I started smoking!
+[NODE n355]: Smoker: true Cigs: 16 Giving Up?: false Steps: 0
+[NODE n355]: BRANCH 1
+	BRANCH 2b
+		BRANCH 3d
+[NODE n87]: I started smoking!
+[NODE n87]: Smoker: true Cigs: 16 Giving Up?: false Steps: 0
+[NODE n87]: BRANCH 1
+	BRANCH 2b
+		BRANCH 3c
+[NODE n135]: I started smoking!
+[NODE n135]: Smoker: true Cigs: 16 Giving Up?: false Steps: 50
+[NODE n281]: I started smoking!
+[NODE n281]: Smoker: true Cigs: 14 Giving Up?: false Steps: 0
+[NODE n281]: BRANCH 1
+	BRANCH 2b
+		BRANCH 3d
+[NODE n164]: I started smoking!
+[NODE n164]: Smoker: true Cigs: 15 Giving Up?: false Steps: 50
+[NODE n164]: BRANCH 1
+	BRANCH 2a
+		BRANCH 3b
+[NODE n479]: I started smoking!
+[NODE n479]: Smoker: true Cigs: 0 Giving Up?: false Steps: 50
+[NODE n479]: BRANCH 1
+	BRANCH 2b
+		BRANCH 3d
+[NODE n462]: I started smoking!
+[NODE n462]: Smoker: true Cigs: 12 Giving Up?: false Steps: 0
+[NODE n462]: BRANCH 1
+	BRANCH 2a
+		BRANCH 3b
+[NODE n215]: I gave up smoking!
+[NODE n215]: Smoker: false Cigs: 0 Giving Up?: true Steps: 0
+[NODE n215]: I started smoking!
+[NODE n215]: Smoker: true Cigs: 15 Giving Up?: false Steps: 1
+[NODE n258]: I started smoking!
+[NODE n258]: Smoker: true Cigs: 14 Giving Up?: false Steps: 0
+[NODE n258]: BRANCH 1
+	BRANCH 2a
+		BRANCH 3b
+[NODE n444]: I started smoking!
+[NODE n444]: Smoker: true Cigs: 0 Giving Up?: false Steps: 0
+[NODE n444]: BRANCH 1
+	BRANCH 2b
+		BRANCH 3d
+[NODE n355]: I gave up smoking!
+[NODE n355]: Smoker: false Cigs: 0 Giving Up?: true Steps: 0
+[NODE n355]: I started smoking!
+[NODE n355]: Smoker: true Cigs: 13 Giving Up?: false Steps: 1
+[NODE n220]: I gave up smoking!
+[NODE n220]: Smoker: false Cigs: 0 Giving Up?: true Steps: 0
+[NODE n220]: I started smoking!
+[NODE n220]: Smoker: true Cigs: 12 Giving Up?: false Steps: 1
+[NODE n59]: I gave up smoking!
+[NODE n59]: Smoker: false Cigs: 0 Giving Up?: true Steps: 0
+[NODE n59]: I started smoking!
+[NODE n59]: Smoker: true Cigs: 12 Giving Up?: false Steps: 1
+[NODE n303]: I started smoking!
+[NODE n303]: Smoker: true Cigs: 0 Giving Up?: false Steps: 0
+[NODE n303]: BRANCH 1
+	BRANCH 2b
+		BRANCH 3d
+[NODE n120]: I started smoking!
+[NODE n120]: Smoker: true Cigs: 13 Giving Up?: false Steps: 0
+[NODE n120]: BRANCH 1
+	BRANCH 2b
+		BRANCH 3d
+[NODE n438]: I gave up smoking!
+[NODE n438]: Smoker: false Cigs: 0 Giving Up?: true Steps: 0
+[NODE n438]: I started smoking!
+[NODE n438]: Smoker: true Cigs: 14 Giving Up?: false Steps: 1
+[NODE n295]: I gave up smoking!
+[NODE n295]: Smoker: false Cigs: 0 Giving Up?: true Steps: 0
+[NODE n295]: I started smoking!
+[NODE n295]: Smoker: true Cigs: 12 Giving Up?: false Steps: 1
+0.017070509924399867
+[NODE n87]: I gave up smoking!
+[NODE n87]: Smoker: false Cigs: 0 Giving Up?: true Steps: 0
+[NODE n87]: I started smoking!
+[NODE n87]: Smoker: true Cigs: 13 Giving Up?: false Steps: 1
+[NODE n181]: I gave up smoking!
+[NODE n181]: Smoker: false Cigs: 0 Giving Up?: true Steps: 0
+[NODE n181]: I started smoking!
+[NODE n181]: Smoker: true Cigs: 11 Giving Up?: false Steps: 1
+[NODE n47]: I gave up smoking!
+[NODE n47]: Smoker: false Cigs: 0 Giving Up?: true Steps: 0
+[NODE n47]: I started smoking!
+[NODE n47]: Smoker: true Cigs: 12 Giving Up?: false Steps: 1
+[NODE n304]: I gave up smoking!
+[NODE n304]: Smoker: false Cigs: 0 Giving Up?: true Steps: 0
+[NODE n304]: I started smoking!
+[NODE n304]: Smoker: true Cigs: 12 Giving Up?: false Steps: 1
+[NODE n66]: I started smoking!
+[NODE n66]: Smoker: true Cigs: 11 Giving Up?: false Steps: 0
+[NODE n66]: BRANCH 1
+	BRANCH 2b
+		BRANCH 3d
+[NODE n320]: I gave up smoking!
+[NODE n320]: Smoker: false Cigs: 0 Giving Up?: true Steps: 0
+[NODE n320]: I started smoking!
+[NODE n320]: Smoker: true Cigs: 13 Giving Up?: false Steps: 1
+0.01515653142977621
+[NODE n17]: I started smoking!
+[NODE n17]: Smoker: true Cigs: 13 Giving Up?: false Steps: 50
+[NODE n17]: BRANCH 1
+	BRANCH 2a
+		BRANCH 3b
+[NODE n445]: I started smoking!
+[NODE n445]: Smoker: true Cigs: 11 Giving Up?: false Steps: 0
+[NODE n445]: BRANCH 1
+	BRANCH 2a
+		BRANCH 3b
+[NODE n303]: I gave up smoking!
+[NODE n303]: Smoker: false Cigs: 0 Giving Up?: true Steps: 0
+[NODE n212]: I started smoking!
+[NODE n212]: Smoker: true Cigs: 15 Giving Up?: false Steps: 50
+[NODE n212]: BRANCH 1
+	BRANCH 2a
+		BRANCH 3b
+[NODE n236]: I started smoking!
+[NODE n236]: Smoker: true Cigs: 11 Giving Up?: false Steps: 50
+[NODE n236]: BRANCH 1
+	BRANCH 2b
+		BRANCH 3d
+[NODE n478]: I gave up smoking!
+[NODE n478]: Smoker: false Cigs: 0 Giving Up?: true Steps: 0
+[NODE n478]: I started smoking!
+[NODE n478]: Smoker: true Cigs: 12 Giving Up?: false Steps: 1
+[NODE n129]: I gave up smoking!
+[NODE n129]: Smoker: false Cigs: 0 Giving Up?: true Steps: 0
+[NODE n129]: I started smoking!
+[NODE n129]: Smoker: true Cigs: 12 Giving Up?: false Steps: 1
+[NODE n363]: I started smoking!
+[NODE n363]: Smoker: true Cigs: 12 Giving Up?: false Steps: 0
+[NODE n363]: BRANCH 1
+	BRANCH 2b
+		BRANCH 3d
+[NODE n14]: I started smoking!
+[NODE n14]: Smoker: true Cigs: 10 Giving Up?: false Steps: 0
+[NODE n14]: BRANCH 1
+	BRANCH 2a
+		BRANCH 3b
+[NODE n411]: I started smoking!
+[NODE n411]: Smoker: true Cigs: 7 Giving Up?: false Steps: 0
+[NODE n411]: BRANCH 1
+	BRANCH 2b
+		BRANCH 3d
+[NODE n194]: I started smoking!
+[NODE n194]: Smoker: true Cigs: 0 Giving Up?: false Steps: 50
+[NODE n194]: BRANCH 1
+	BRANCH 2b
+		BRANCH 3d
+[NODE n164]: I gave up smoking!
+[NODE n164]: Smoker: false Cigs: 0 Giving Up?: true Steps: 50
+[NODE n164]: I started smoking!
+[NODE n164]: Smoker: true Cigs: 10 Giving Up?: false Steps: 51
+[NODE n227]: I started smoking!
+[NODE n227]: Smoker: true Cigs: 16 Giving Up?: false Steps: 0
+[NODE n227]: BRANCH 1
+	BRANCH 2b
+		BRANCH 3d
+[NODE n374]: I gave up smoking!
+[NODE n374]: Smoker: false Cigs: 0 Giving Up?: true Steps: 0
+[NODE n374]: I started smoking!
+[NODE n374]: Smoker: true Cigs: 12 Giving Up?: false Steps: 1
+[NODE n389]: I gave up smoking!
+[NODE n389]: Smoker: false Cigs: 0 Giving Up?: true Steps: 0
+[NODE n389]: I started smoking!
+[NODE n389]: Smoker: true Cigs: 12 Giving Up?: false Steps: 1
+0.023720128911779766
+[NODE n413]: I gave up smoking!
+[NODE n413]: Smoker: false Cigs: 0 Giving Up?: true Steps: 0
+[NODE n413]: I started smoking!
+[NODE n413]: Smoker: true Cigs: 11 Giving Up?: false Steps: 1
+[NODE n65]: I gave up smoking!
+[NODE n65]: Smoker: false Cigs: 0 Giving Up?: true Steps: 0
+[NODE n65]: I started smoking!
+[NODE n65]: Smoker: true Cigs: 13 Giving Up?: false Steps: 1
+[NODE n270]: I gave up smoking!
+[NODE n270]: Smoker: false Cigs: 0 Giving Up?: true Steps: 0
+[NODE n270]: I started smoking!
+[NODE n270]: Smoker: true Cigs: 12 Giving Up?: false Steps: 1
+[NODE n58]: I gave up smoking!
+[NODE n58]: Smoker: false Cigs: 0 Giving Up?: true Steps: 0
+[NODE n58]: I started smoking!
+[NODE n58]: Smoker: true Cigs: 12 Giving Up?: false Steps: 1
+[NODE n348]: I started smoking!
+[NODE n348]: Smoker: true Cigs: 0 Giving Up?: false Steps: 50
+[NODE n348]: BRANCH 1
+	BRANCH 2a
+		BRANCH 3b
+[NODE n320]: I gave up smoking!
+[NODE n320]: Smoker: false Cigs: 0 Giving Up?: true Steps: 1
+[NODE n320]: I started smoking!
+[NODE n320]: Smoker: true Cigs: 13 Giving Up?: false Steps: 2
+[NODE n44]: I gave up smoking!
+[NODE n44]: Smoker: false Cigs: 0 Giving Up?: true Steps: 0
+[NODE n44]: I started smoking!
+[NODE n44]: Smoker: true Cigs: 12 Giving Up?: false Steps: 1
+[NODE n348]: I gave up smoking!
+[NODE n348]: Smoker: false Cigs: 0 Giving Up?: true Steps: 50
+[NODE n479]: I gave up smoking!
+[NODE n479]: Smoker: false Cigs: 0 Giving Up?: true Steps: 50
+[NODE n479]: I started smoking!
+[NODE n479]: Smoker: true Cigs: 12 Giving Up?: false Steps: 51
+0.03134476234286481
+[NODE n482]: I gave up smoking!
+[NODE n482]: Smoker: false Cigs: 0 Giving Up?: true Steps: 0
+[NODE n482]: I started smoking!
+[NODE n482]: Smoker: true Cigs: 12 Giving Up?: false Steps: 1
+[NODE n315]: I started smoking!
+[NODE n315]: Smoker: true Cigs: 0 Giving Up?: false Steps: 0
+[NODE n315]: BRANCH 1
+	BRANCH 2b
+		BRANCH 3d
+[NODE n315]: I gave up smoking!
+[NODE n315]: Smoker: false Cigs: 0 Giving Up?: true Steps: 0
+[NODE n475]: I gave up smoking!
+[NODE n475]: Smoker: false Cigs: 0 Giving Up?: true Steps: 0
+[NODE n475]: I started smoking!
+[NODE n475]: Smoker: true Cigs: 12 Giving Up?: false Steps: 1
+[NODE n191]: I gave up smoking!
+[NODE n191]: Smoker: false Cigs: 0 Giving Up?: true Steps: 0
+[NODE n191]: I started smoking!
+[NODE n191]: Smoker: true Cigs: 11 Giving Up?: false Steps: 1
+[NODE n179]: I started smoking!
+[NODE n179]: Smoker: true Cigs: 0 Giving Up?: false Steps: 0
+[NODE n179]: BRANCH 1
+	BRANCH 2b
+		BRANCH 3d
+[NODE n141]: I gave up smoking!
+[NODE n141]: Smoker: false Cigs: 0 Giving Up?: true Steps: 0
+[NODE n141]: I started smoking!
+[NODE n141]: Smoker: true Cigs: 14 Giving Up?: false Steps: 1
+[NODE n194]: I gave up smoking!
+[NODE n194]: Smoker: false Cigs: 0 Giving Up?: true Steps: 50
+[NODE n482]: I gave up smoking!
+[NODE n482]: Smoker: false Cigs: 0 Giving Up?: true Steps: 1
+[NODE n482]: I started smoking!
+[NODE n482]: Smoker: true Cigs: 12 Giving Up?: false Steps: 2
+[NODE n66]: I gave up smoking!
+[NODE n66]: Smoker: false Cigs: 0 Giving Up?: true Steps: 0
+[NODE n482]: I gave up smoking!
+[NODE n482]: Smoker: false Cigs: 0 Giving Up?: true Steps: 2
+[NODE n482]: I started smoking!
+[NODE n482]: Smoker: true Cigs: 12 Giving Up?: false Steps: 3
+[NODE n360]: I gave up smoking!
+[NODE n360]: Smoker: false Cigs: 0 Giving Up?: true Steps: 1
+[NODE n360]: I started smoking!
+[NODE n360]: Smoker: true Cigs: 12 Giving Up?: false Steps: 2
+[NODE n185]: I started smoking!
+[NODE n185]: Smoker: true Cigs: 0 Giving Up?: false Steps: 0
+[NODE n185]: BRANCH 1
+	BRANCH 2b
+		BRANCH 3d
+0.022778440408421433
+[NODE n47]: I gave up smoking!
+[NODE n47]: Smoker: false Cigs: 0 Giving Up?: true Steps: 1
+[NODE n47]: I started smoking!
+[NODE n47]: Smoker: true Cigs: 12 Giving Up?: false Steps: 2
+[NODE n5]: I started smoking!
+[NODE n5]: Smoker: true Cigs: 0 Giving Up?: false Steps: 50
+[NODE n5]: BRANCH 1
+	BRANCH 2b
+		BRANCH 3d
+[NODE n485]: I gave up smoking!
+[NODE n485]: Smoker: false Cigs: 0 Giving Up?: true Steps: 0
+[NODE n273]: I started smoking!
+[NODE n273]: Smoker: true Cigs: 0 Giving Up?: false Steps: 0
+[NODE n273]: BRANCH 1
+	BRANCH 2b
+		BRANCH 3d
+[NODE n190]: I started smoking!
+[NODE n190]: Smoker: true Cigs: 12 Giving Up?: false Steps: 0
+[NODE n190]: BRANCH 1
+	BRANCH 2a
+		BRANCH 3b
+[NODE n122]: I started smoking!
+[NODE n122]: Smoker: true Cigs: 10 Giving Up?: false Steps: 0
+[NODE n122]: BRANCH 1
+	BRANCH 2b
+		BRANCH 3d
+[NODE n469]: I gave up smoking!
+[NODE n469]: Smoker: false Cigs: 0 Giving Up?: true Steps: 0
+[NODE n68]: I gave up smoking!
+[NODE n68]: Smoker: false Cigs: 0 Giving Up?: true Steps: 0
+[NODE n68]: I started smoking!
+[NODE n68]: Smoker: true Cigs: 12 Giving Up?: false Steps: 1
+[NODE n479]: I gave up smoking!
+[NODE n479]: Smoker: false Cigs: 0 Giving Up?: true Steps: 51
+[NODE n479]: I started smoking!
+[NODE n479]: Smoker: true Cigs: 12 Giving Up?: false Steps: 52
+[NODE n485]: I started smoking!
+[NODE n485]: Smoker: true Cigs: 14 Giving Up?: false Steps: 50
+[NODE n485]: BRANCH 1
+	BRANCH 2b
+		BRANCH 3d
+[NODE n171]: I started smoking!
+[NODE n171]: Smoker: true Cigs: 0 Giving Up?: false Steps: 0
+[NODE n171]: BRANCH 1
+	BRANCH 2b
+		BRANCH 3d
+[NODE n387]: I started smoking!
+[NODE n387]: Smoker: true Cigs: 13 Giving Up?: false Steps: 0
+[NODE n387]: BRANCH 1
+	BRANCH 2b
+		BRANCH 3d
+[NODE n8]: I started smoking!
+[NODE n8]: Smoker: true Cigs: 13 Giving Up?: false Steps: 0
+[NODE n8]: BRANCH 1
+	BRANCH 2a
+		BRANCH 3b
+[NODE n328]: I started smoking!
+[NODE n328]: Smoker: true Cigs: 13 Giving Up?: false Steps: 0
+[NODE n328]: BRANCH 1
+	BRANCH 2a
+		BRANCH 3b
+[NODE n374]: I gave up smoking!
+[NODE n374]: Smoker: false Cigs: 0 Giving Up?: true Steps: 1
+[NODE n374]: I started smoking!
+[NODE n374]: Smoker: true Cigs: 12 Giving Up?: false Steps: 2
+[NODE n438]: I gave up smoking!
+[NODE n438]: Smoker: false Cigs: 0 Giving Up?: true Steps: 1
+[NODE n438]: I started smoking!
+[NODE n438]: Smoker: true Cigs: 13 Giving Up?: false Steps: 2
+[NODE n171]: I gave up smoking!
+[NODE n171]: Smoker: false Cigs: 0 Giving Up?: true Steps: 0
+[NODE n224]: I started smoking!
+[NODE n224]: Smoker: true Cigs: 12 Giving Up?: false Steps: 0
+[NODE n224]: BRANCH 1
+	BRANCH 2a
+		BRANCH 3b
+[NODE n194]: I started smoking!
+[NODE n194]: Smoker: true Cigs: 0 Giving Up?: false Steps: 51
+[NODE n194]: BRANCH 1
+	BRANCH 2b
+		BRANCH 3d
+[NODE n236]: I gave up smoking!
+[NODE n236]: Smoker: false Cigs: 0 Giving Up?: true Steps: 50
+[NODE n236]: I started smoking!
+[NODE n236]: Smoker: true Cigs: 12 Giving Up?: false Steps: 51
+0.03876593804677296
+[NODE n305]: I started smoking!
+[NODE n305]: Smoker: true Cigs: 0 Giving Up?: false Steps: 0
+[NODE n305]: BRANCH 1
+	BRANCH 2a
+		BRANCH 3b
+[NODE n432]: I started smoking!
+[NODE n432]: Smoker: true Cigs: 0 Giving Up?: false Steps: 0
+[NODE n432]: BRANCH 1
+	BRANCH 2b
+		BRANCH 3d
+[NODE n228]: I started smoking!
+[NODE n228]: Smoker: true Cigs: 0 Giving Up?: false Steps: 0
+[NODE n228]: BRANCH 1
+	BRANCH 2b
+		BRANCH 3d
+[NODE n477]: I started smoking!
+[NODE n477]: Smoker: true Cigs: 0 Giving Up?: false Steps: 0
+[NODE n477]: BRANCH 1
+	BRANCH 2a
+		BRANCH 3b
+[NODE n452]: I started smoking!
+[NODE n452]: Smoker: true Cigs: 0 Giving Up?: false Steps: 0
+[NODE n452]: BRANCH 1
+	BRANCH 2a
+		BRANCH 3b
+[NODE n139]: I started smoking!
+[NODE n139]: Smoker: true Cigs: 12 Giving Up?: false Steps: 0
+[NODE n139]: BRANCH 1
+	BRANCH 2a
+		BRANCH 3b
+[NODE n188]: I started smoking!
+[NODE n188]: Smoker: true Cigs: 11 Giving Up?: false Steps: 0
+[NODE n188]: BRANCH 1
+	BRANCH 2a
+		BRANCH 3b
+[NODE n243]: I started smoking!
+[NODE n243]: Smoker: true Cigs: 11 Giving Up?: false Steps: 50
+[NODE n243]: BRANCH 1
+	BRANCH 2b
+		BRANCH 3d
+[NODE n365]: I started smoking!
+[NODE n365]: Smoker: true Cigs: 0 Giving Up?: false Steps: 50
+[NODE n365]: BRANCH 1
+	BRANCH 2b
+		BRANCH 3d
+[NODE n358]: I started smoking!
+[NODE n358]: Smoker: true Cigs: 10 Giving Up?: false Steps: 0
+[NODE n358]: BRANCH 1
+	BRANCH 2a
+		BRANCH 3b
+[NODE n13]: I gave up smoking!
+[NODE n13]: Smoker: false Cigs: 0 Giving Up?: true Steps: 0
+[NODE n13]: I started smoking!
+[NODE n13]: Smoker: true Cigs: 8 Giving Up?: false Steps: 1
+[NODE n203]: I gave up smoking!
+[NODE n203]: Smoker: false Cigs: 0 Giving Up?: true Steps: 0
+[NODE n203]: I started smoking!
+[NODE n203]: Smoker: true Cigs: 12 Giving Up?: false Steps: 1
+[NODE n268]: I gave up smoking!
+[NODE n268]: Smoker: false Cigs: 0 Giving Up?: true Steps: 0
+[NODE n268]: I started smoking!
+[NODE n268]: Smoker: true Cigs: 12 Giving Up?: false Steps: 1
+[NODE n268]: I gave up smoking!
+[NODE n268]: Smoker: false Cigs: 0 Giving Up?: true Steps: 1
+[NODE n268]: I started smoking!
+[NODE n268]: Smoker: true Cigs: 12 Giving Up?: false Steps: 2
+[NODE n3]: I gave up smoking!
+[NODE n3]: Smoker: false Cigs: 0 Giving Up?: true Steps: 0
+[NODE n3]: I started smoking!
+[NODE n3]: Smoker: true Cigs: 12 Giving Up?: false Steps: 1
+0.04525884299129081
+[NODE n66]: I started smoking!
+[NODE n66]: Smoker: true Cigs: 12 Giving Up?: false Steps: 50
+[NODE n66]: BRANCH 1
+	BRANCH 2b
+		BRANCH 3d
+[NODE n148]: I started smoking!
+[NODE n148]: Smoker: true Cigs: 12 Giving Up?: false Steps: 0
+[NODE n148]: BRANCH 1
+	BRANCH 2b
+		BRANCH 3d
+[NODE n243]: I gave up smoking!
+[NODE n243]: Smoker: false Cigs: 0 Giving Up?: true Steps: 50
+[NODE n243]: I started smoking!
+[NODE n243]: Smoker: true Cigs: 13 Giving Up?: false Steps: 51
+[NODE n498]: I started smoking!
+[NODE n498]: Smoker: true Cigs: 0 Giving Up?: false Steps: 0
+[NODE n498]: BRANCH 1
+	BRANCH 2b
+		BRANCH 3d
+[NODE n303]: I started smoking!
+[NODE n303]: Smoker: true Cigs: 0 Giving Up?: false Steps: 50
+[NODE n303]: BRANCH 1
+	BRANCH 2b
+		BRANCH 3d
+[NODE n409]: I started smoking!
+[NODE n409]: Smoker: true Cigs: 0 Giving Up?: false Steps: 50
+[NODE n409]: BRANCH 1
+	BRANCH 2b
+		BRANCH 3d
+[NODE n348]: I started smoking!
+[NODE n348]: Smoker: true Cigs: 0 Giving Up?: false Steps: 51
+[NODE n348]: BRANCH 1
+	BRANCH 2a
+		BRANCH 3b
+[NODE n360]: I gave up smoking!
+[NODE n360]: Smoker: false Cigs: 0 Giving Up?: true Steps: 2
+[NODE n360]: I started smoking!
+[NODE n360]: Smoker: true Cigs: 9 Giving Up?: false Steps: 3
+[NODE n365]: I gave up smoking!
+[NODE n365]: Smoker: false Cigs: 0 Giving Up?: true Steps: 50
+[NODE n365]: I started smoking!
+[NODE n365]: Smoker: true Cigs: 13 Giving Up?: false Steps: 51
+[NODE n228]: I gave up smoking!
+[NODE n228]: Smoker: false Cigs: 0 Giving Up?: true Steps: 0
+[NODE n452]: I gave up smoking!
+[NODE n452]: Smoker: false Cigs: 0 Giving Up?: true Steps: 0
+[NODE n477]: I gave up smoking!
+[NODE n477]: Smoker: false Cigs: 0 Giving Up?: true Steps: 0
+[NODE n348]: I gave up smoking!
+[NODE n348]: Smoker: false Cigs: 0 Giving Up?: true Steps: 51
+[NODE n228]: I started smoking!
+[NODE n228]: Smoker: true Cigs: 0 Giving Up?: false Steps: 1
+[NODE n477]: I started smoking!
+[NODE n477]: Smoker: true Cigs: 0 Giving Up?: false Steps: 1
+[NODE n348]: I started smoking!
+[NODE n348]: Smoker: true Cigs: 0 Giving Up?: false Steps: 52
+[NODE n452]: I started smoking!
+[NODE n452]: Smoker: true Cigs: 0 Giving Up?: false Steps: 2
+[NODE n112]: I started smoking!
+[NODE n112]: Smoker: true Cigs: 13 Giving Up?: false Steps: 0
+[NODE n112]: BRANCH 1
+	BRANCH 2a
+		BRANCH 3b
+[NODE n16]: I started smoking!
+[NODE n16]: Smoker: true Cigs: 9 Giving Up?: false Steps: 50
+[NODE n16]: BRANCH 1
+	BRANCH 2a
+		BRANCH 3b
+[NODE n131]: I started smoking!
+[NODE n131]: Smoker: true Cigs: 10 Giving Up?: false Steps: 0
+[NODE n131]: BRANCH 1
+	BRANCH 2b
+		BRANCH 3d
+[NODE n490]: I started smoking!
+[NODE n490]: Smoker: true Cigs: 9 Giving Up?: false Steps: 50
+[NODE n490]: BRANCH 1
+	BRANCH 2b
+		BRANCH 3d
+[NODE n24]: I gave up smoking!
+[NODE n24]: Smoker: false Cigs: 0 Giving Up?: true Steps: 0
+[NODE n24]: I started smoking!
+[NODE n24]: Smoker: true Cigs: 13 Giving Up?: false Steps: 1
+[NODE n134]: I gave up smoking!
+[NODE n134]: Smoker: false Cigs: 0 Giving Up?: true Steps: 0
+[NODE n134]: I started smoking!
+[NODE n134]: Smoker: true Cigs: 12 Giving Up?: false Steps: 1
+0.04456862281719967
+[NODE n413]: I gave up smoking!
+[NODE n413]: Smoker: false Cigs: 0 Giving Up?: true Steps: 1
+[NODE n413]: I started smoking!
+[NODE n413]: Smoker: true Cigs: 8 Giving Up?: false Steps: 2
+[NODE n400]: I gave up smoking!
+[NODE n400]: Smoker: false Cigs: 0 Giving Up?: true Steps: 0
+[NODE n400]: I started smoking!
+[NODE n400]: Smoker: true Cigs: 12 Giving Up?: false Steps: 1
+[NODE n253]: I gave up smoking!
+[NODE n253]: Smoker: false Cigs: 0 Giving Up?: true Steps: 0
+[NODE n253]: I started smoking!
+[NODE n253]: Smoker: true Cigs: 12 Giving Up?: false Steps: 1
+[NODE n125]: I gave up smoking!
+[NODE n125]: Smoker: false Cigs: 0 Giving Up?: true Steps: 4
+[NODE n125]: I started smoking!
+[NODE n125]: Smoker: true Cigs: 9 Giving Up?: false Steps: 5
+[NODE n387]: I gave up smoking!
+[NODE n387]: Smoker: false Cigs: 0 Giving Up?: true Steps: 0
+[NODE n387]: I started smoking!
+[NODE n387]: Smoker: true Cigs: 12 Giving Up?: false Steps: 1
+[NODE n392]: I gave up smoking!
+[NODE n392]: Smoker: false Cigs: 0 Giving Up?: true Steps: 0
+[NODE n392]: I started smoking!
+[NODE n392]: Smoker: true Cigs: 11 Giving Up?: false Steps: 1
+[NODE n118]: I gave up smoking!
+[NODE n118]: Smoker: false Cigs: 0 Giving Up?: true Steps: 3
+[NODE n118]: I started smoking!
+[NODE n118]: Smoker: true Cigs: 12 Giving Up?: false Steps: 4
+[NODE n243]: I gave up smoking!
+[NODE n243]: Smoker: false Cigs: 0 Giving Up?: true Steps: 51
+[NODE n243]: I started smoking!
+[NODE n243]: Smoker: true Cigs: 13 Giving Up?: false Steps: 52
+[NODE n194]: I gave up smoking!
+[NODE n194]: Smoker: false Cigs: 0 Giving Up?: true Steps: 51
+0.04456862281719967
+[NODE n475]: I gave up smoking!
+[NODE n475]: Smoker: false Cigs: 0 Giving Up?: true Steps: 1
+[NODE n475]: I started smoking!
+[NODE n475]: Smoker: true Cigs: 12 Giving Up?: false Steps: 2
+[NODE n273]: I gave up smoking!
+[NODE n273]: Smoker: false Cigs: 0 Giving Up?: true Steps: 0
+[NODE n389]: I gave up smoking!
+[NODE n389]: Smoker: false Cigs: 0 Giving Up?: true Steps: 1
+[NODE n389]: I started smoking!
+[NODE n389]: Smoker: true Cigs: 12 Giving Up?: false Steps: 2
+[NODE n168]: I gave up smoking!
+[NODE n168]: Smoker: false Cigs: 0 Giving Up?: true Steps: 4
+[NODE n168]: I started smoking!
+[NODE n168]: Smoker: true Cigs: 13 Giving Up?: false Steps: 5
+[NODE n171]: I started smoking!
+[NODE n171]: Smoker: true Cigs: 0 Giving Up?: false Steps: 50
+[NODE n171]: BRANCH 1
+	BRANCH 2b
+		BRANCH 3d
+[NODE n303]: I gave up smoking!
+[NODE n303]: Smoker: false Cigs: 0 Giving Up?: true Steps: 50
+[NODE n303]: I started smoking!
+[NODE n303]: Smoker: true Cigs: 0 Giving Up?: false Steps: 51
+[NODE n134]: I gave up smoking!
+[NODE n134]: Smoker: false Cigs: 0 Giving Up?: true Steps: 1
+[NODE n134]: I started smoking!
+[NODE n134]: Smoker: true Cigs: 11 Giving Up?: false Steps: 2
+[NODE n87]: I gave up smoking!
+[NODE n87]: Smoker: false Cigs: 0 Giving Up?: true Steps: 1
+[NODE n87]: I started smoking!
+[NODE n87]: Smoker: true Cigs: 12 Giving Up?: false Steps: 2
+[NODE n408]: I gave up smoking!
+[NODE n408]: Smoker: false Cigs: 0 Giving Up?: true Steps: 0
+[NODE n408]: I started smoking!
+[NODE n408]: Smoker: true Cigs: 11 Giving Up?: false Steps: 1
+[NODE n363]: I gave up smoking!
+[NODE n363]: Smoker: false Cigs: 0 Giving Up?: true Steps: 0
+[NODE n363]: I started smoking!
+[NODE n363]: Smoker: true Cigs: 11 Giving Up?: false Steps: 1
+[NODE n68]: I gave up smoking!
+[NODE n68]: Smoker: false Cigs: 0 Giving Up?: true Steps: 1
+[NODE n68]: I started smoking!
+[NODE n68]: Smoker: true Cigs: 12 Giving Up?: false Steps: 2
+[NODE n109]: I started smoking!
+[NODE n109]: Smoker: true Cigs: 12 Giving Up?: false Steps: 0
+[NODE n109]: BRANCH 1
+	BRANCH 2b
+		BRANCH 3d
+[NODE n313]: I gave up smoking!
+[NODE n313]: Smoker: false Cigs: 0 Giving Up?: true Steps: 0
+[NODE n313]: I started smoking!
+[NODE n313]: Smoker: true Cigs: 11 Giving Up?: false Steps: 1
+[NODE n125]: I gave up smoking!
+[NODE n125]: Smoker: false Cigs: 0 Giving Up?: true Steps: 5
+[NODE n125]: I started smoking!
+[NODE n125]: Smoker: true Cigs: 9 Giving Up?: false Steps: 6
+0.04063229559814
+[NODE n3]: I gave up smoking!
+[NODE n3]: Smoker: false Cigs: 0 Giving Up?: true Steps: 1
+[NODE n3]: I started smoking!
+[NODE n3]: Smoker: true Cigs: 12 Giving Up?: false Steps: 2
+[NODE n3]: I gave up smoking!
+[NODE n3]: Smoker: false Cigs: 0 Giving Up?: true Steps: 2
+[NODE n3]: I started smoking!
+[NODE n3]: Smoker: true Cigs: 12 Giving Up?: false Steps: 3
+[NODE n68]: I gave up smoking!
+[NODE n68]: Smoker: false Cigs: 0 Giving Up?: true Steps: 2
+[NODE n68]: I started smoking!
+[NODE n68]: Smoker: true Cigs: 12 Giving Up?: false Steps: 3
+[NODE n243]: I gave up smoking!
+[NODE n243]: Smoker: false Cigs: 0 Giving Up?: true Steps: 52
+[NODE n243]: I started smoking!
+[NODE n243]: Smoker: true Cigs: 13 Giving Up?: false Steps: 53
+[NODE n122]: I gave up smoking!
+[NODE n122]: Smoker: false Cigs: 0 Giving Up?: true Steps: 0
+[NODE n122]: I started smoking!
+[NODE n122]: Smoker: true Cigs: 12 Giving Up?: false Steps: 1
+[NODE n42]: I gave up smoking!
+[NODE n42]: Smoker: false Cigs: 0 Giving Up?: true Steps: 0
+[NODE n42]: I started smoking!
+[NODE n42]: Smoker: true Cigs: 11 Giving Up?: false Steps: 1
+[NODE n138]: I gave up smoking!
+[NODE n138]: Smoker: false Cigs: 0 Giving Up?: true Steps: 0
+[NODE n138]: I started smoking!
+[NODE n138]: Smoker: true Cigs: 12 Giving Up?: false Steps: 1
+[NODE n183]: I gave up smoking!
+[NODE n183]: Smoker: false Cigs: 0 Giving Up?: true Steps: 0
+[NODE n183]: I started smoking!
+[NODE n183]: Smoker: true Cigs: 11 Giving Up?: false Steps: 1
+[NODE n413]: I gave up smoking!
+[NODE n413]: Smoker: false Cigs: 0 Giving Up?: true Steps: 2
+[NODE n413]: I started smoking!
+[NODE n413]: Smoker: true Cigs: 11 Giving Up?: false Steps: 3
+[NODE n125]: I gave up smoking!
+[NODE n125]: Smoker: false Cigs: 0 Giving Up?: true Steps: 6
+[NODE n125]: I started smoking!
+[NODE n125]: Smoker: true Cigs: 9 Giving Up?: false Steps: 7
+[NODE n83]: I gave up smoking!
+[NODE n83]: Smoker: false Cigs: 0 Giving Up?: true Steps: 0
+[NODE n83]: I started smoking!
+[NODE n83]: Smoker: true Cigs: 12 Giving Up?: false Steps: 1
+[NODE n409]: I gave up smoking!
+[NODE n409]: Smoker: false Cigs: 0 Giving Up?: true Steps: 50
+[NODE n409]: I started smoking!
+[NODE n409]: Smoker: true Cigs: 0 Giving Up?: false Steps: 51
+[NODE n409]: I gave up smoking!
+[NODE n409]: Smoker: false Cigs: 0 Giving Up?: true Steps: 51
+[NODE n409]: I started smoking!
+[NODE n409]: Smoker: true Cigs: 0 Giving Up?: false Steps: 52
+[NODE n18]: I gave up smoking!
+[NODE n18]: Smoker: false Cigs: 0 Giving Up?: true Steps: 0
+[NODE n18]: I started smoking!
+[NODE n18]: Smoker: true Cigs: 11 Giving Up?: false Steps: 1
+0.04305102914440775
+[NODE n14]: I gave up smoking!
+[NODE n14]: Smoker: false Cigs: 0 Giving Up?: true Steps: 0
+[NODE n14]: I started smoking!
+[NODE n14]: Smoker: true Cigs: 12 Giving Up?: false Steps: 1
+[NODE n111]: I gave up smoking!
+[NODE n111]: Smoker: false Cigs: 0 Giving Up?: true Steps: 0
+[NODE n111]: I started smoking!
+[NODE n111]: Smoker: true Cigs: 12 Giving Up?: false Steps: 1
+[NODE n379]: I gave up smoking!
+[NODE n379]: Smoker: false Cigs: 0 Giving Up?: true Steps: 0
+[NODE n300]: I started smoking!
+[NODE n300]: Smoker: true Cigs: 15 Giving Up?: false Steps: 0
+[NODE n300]: BRANCH 1
+	BRANCH 2b
+		BRANCH 3d
+[NODE n146]: I started smoking!
+[NODE n146]: Smoker: true Cigs: 15 Giving Up?: false Steps: 50
+[NODE n146]: BRANCH 1
+	BRANCH 2b
+		BRANCH 3d
+[NODE n481]: I started smoking!
+[NODE n481]: Smoker: true Cigs: 14 Giving Up?: false Steps: 0
+[NODE n481]: BRANCH 1
+	BRANCH 2a
+		BRANCH 3b
+[NODE n108]: I gave up smoking!
+[NODE n108]: Smoker: false Cigs: 0 Giving Up?: true Steps: 0
+[NODE n409]: I gave up smoking!
+[NODE n409]: Smoker: false Cigs: 0 Giving Up?: true Steps: 52
+[NODE n409]: I started smoking!
+[NODE n409]: Smoker: true Cigs: 0 Giving Up?: false Steps: 53
+[NODE n438]: I gave up smoking!
+[NODE n438]: Smoker: false Cigs: 0 Giving Up?: true Steps: 2
+[NODE n438]: I started smoking!
+[NODE n438]: Smoker: true Cigs: 13 Giving Up?: false Steps: 3
+0.04074688167896996
+[NODE n389]: I gave up smoking!
+[NODE n389]: Smoker: false Cigs: 0 Giving Up?: true Steps: 2
+[NODE n389]: I started smoking!
+[NODE n389]: Smoker: true Cigs: 12 Giving Up?: false Steps: 3
+[NODE n112]: I gave up smoking!
+[NODE n112]: Smoker: false Cigs: 0 Giving Up?: true Steps: 0
+[NODE n112]: I started smoking!
+[NODE n112]: Smoker: true Cigs: 13 Giving Up?: false Steps: 1
+[NODE n485]: I gave up smoking!
+[NODE n485]: Smoker: false Cigs: 0 Giving Up?: true Steps: 50
+[NODE n485]: I started smoking!
+[NODE n485]: Smoker: true Cigs: 13 Giving Up?: false Steps: 51
+[NODE n183]: I gave up smoking!
+[NODE n183]: Smoker: false Cigs: 0 Giving Up?: true Steps: 1
+[NODE n183]: I started smoking!
+[NODE n183]: Smoker: true Cigs: 11 Giving Up?: false Steps: 2
+[NODE n304]: I gave up smoking!
+[NODE n304]: Smoker: false Cigs: 0 Giving Up?: true Steps: 1
+[NODE n304]: I started smoking!
+[NODE n304]: Smoker: true Cigs: 12 Giving Up?: false Steps: 2
+0.05241532076676389
+[NODE n363]: I gave up smoking!
+[NODE n363]: Smoker: false Cigs: 0 Giving Up?: true Steps: 1
+[NODE n354]: I gave up smoking!
+[NODE n354]: Smoker: false Cigs: 0 Giving Up?: true Steps: 0
+[NODE n134]: I gave up smoking!
+[NODE n134]: Smoker: false Cigs: 0 Giving Up?: true Steps: 2
+[NODE n134]: I started smoking!
+[NODE n134]: Smoker: true Cigs: 11 Giving Up?: false Steps: 3
+[NODE n379]: I started smoking!
+[NODE n379]: Smoker: true Cigs: 13 Giving Up?: false Steps: 50
+[NODE n379]: BRANCH 1
+	BRANCH 2b
+		BRANCH 3d
+[NODE n193]: I gave up smoking!
+[NODE n193]: Smoker: false Cigs: 0 Giving Up?: true Steps: 4
+[NODE n193]: I started smoking!
+[NODE n193]: Smoker: true Cigs: 9 Giving Up?: false Steps: 5
+[NODE n437]: I gave up smoking!
+[NODE n437]: Smoker: false Cigs: 0 Giving Up?: true Steps: 0
+[NODE n437]: I started smoking!
+[NODE n437]: Smoker: true Cigs: 11 Giving Up?: false Steps: 1
+[NODE n322]: I gave up smoking!
+[NODE n322]: Smoker: false Cigs: 0 Giving Up?: true Steps: 0
+[NODE n322]: I started smoking!
+[NODE n322]: Smoker: true Cigs: 13 Giving Up?: false Steps: 1
+[NODE n482]: I gave up smoking!
+[NODE n482]: Smoker: false Cigs: 0 Giving Up?: true Steps: 3
+[NODE n482]: I started smoking!
+[NODE n482]: Smoker: true Cigs: 12 Giving Up?: false Steps: 4
+[NODE n194]: I started smoking!
+[NODE n194]: Smoker: true Cigs: 0 Giving Up?: false Steps: 52
+[NODE n194]: BRANCH 1
+	BRANCH 2b
+		BRANCH 3d
+[NODE n120]: I gave up smoking!
+[NODE n120]: Smoker: false Cigs: 0 Giving Up?: true Steps: 0
+[NODE n120]: I started smoking!
+[NODE n120]: Smoker: true Cigs: 12 Giving Up?: false Steps: 1
+[NODE n479]: I gave up smoking!
+[NODE n479]: Smoker: false Cigs: 0 Giving Up?: true Steps: 52
+[NODE n479]: I started smoking!
+[NODE n479]: Smoker: true Cigs: 11 Giving Up?: false Steps: 53
+[NODE n437]: I gave up smoking!
+[NODE n437]: Smoker: false Cigs: 0 Giving Up?: true Steps: 1
+[NODE n437]: I started smoking!
+[NODE n437]: Smoker: true Cigs: 11 Giving Up?: false Steps: 2
+[NODE n477]: I gave up smoking!
+[NODE n477]: Smoker: false Cigs: 0 Giving Up?: true Steps: 1
+[NODE n477]: I started smoking!
+[NODE n477]: Smoker: true Cigs: 6 Giving Up?: false Steps: 2
+[NODE n5]: I gave up smoking!
+[NODE n5]: Smoker: false Cigs: 0 Giving Up?: true Steps: 50
+[NODE n5]: I started smoking!
+[NODE n5]: Smoker: true Cigs: 12 Giving Up?: false Steps: 51
+0.04175032377217362
+[NODE n63]: I gave up smoking!
+[NODE n63]: Smoker: false Cigs: 0 Giving Up?: true Steps: 0
+[NODE n63]: I started smoking!
+[NODE n63]: Smoker: true Cigs: 10 Giving Up?: false Steps: 1
+[NODE n68]: I gave up smoking!
+[NODE n68]: Smoker: false Cigs: 0 Giving Up?: true Steps: 3
+[NODE n68]: I started smoking!
+[NODE n68]: Smoker: true Cigs: 11 Giving Up?: false Steps: 4
+[NODE n112]: I gave up smoking!
+[NODE n112]: Smoker: false Cigs: 0 Giving Up?: true Steps: 1
+[NODE n112]: I started smoking!
+[NODE n112]: Smoker: true Cigs: 13 Giving Up?: false Steps: 2
+[NODE n374]: I gave up smoking!
+[NODE n374]: Smoker: false Cigs: 0 Giving Up?: true Steps: 2
+[NODE n374]: I started smoking!
+[NODE n374]: Smoker: true Cigs: 12 Giving Up?: false Steps: 3
+[NODE n363]: I started smoking!
+[NODE n363]: Smoker: true Cigs: 0 Giving Up?: false Steps: 50
+[NODE n363]: BRANCH 1
+	BRANCH 2b
+		BRANCH 3d
+[NODE n18]: I gave up smoking!
+[NODE n18]: Smoker: false Cigs: 0 Giving Up?: true Steps: 1
+[NODE n18]: I started smoking!
+[NODE n18]: Smoker: true Cigs: 11 Giving Up?: false Steps: 2
+[NODE n131]: I gave up smoking!
+[NODE n131]: Smoker: false Cigs: 0 Giving Up?: true Steps: 0
+[NODE n131]: I started smoking!
+[NODE n131]: Smoker: true Cigs: 12 Giving Up?: false Steps: 1
+[NODE n49]: I gave up smoking!
+[NODE n49]: Smoker: false Cigs: 0 Giving Up?: true Steps: 0
+[NODE n49]: I started smoking!
+[NODE n49]: Smoker: true Cigs: 10 Giving Up?: false Steps: 1
+[NODE n479]: I gave up smoking!
+[NODE n479]: Smoker: false Cigs: 0 Giving Up?: true Steps: 53
+[NODE n479]: I started smoking!
+[NODE n479]: Smoker: true Cigs: 10 Giving Up?: false Steps: 54
+[NODE n462]: I gave up smoking!
+[NODE n462]: Smoker: false Cigs: 0 Giving Up?: true Steps: 0
+[NODE n462]: I started smoking!
+[NODE n462]: Smoker: true Cigs: 11 Giving Up?: false Steps: 1
+[NODE n5]: I gave up smoking!
+[NODE n5]: Smoker: false Cigs: 0 Giving Up?: true Steps: 51
+[NODE n5]: I started smoking!
+[NODE n5]: Smoker: true Cigs: 5 Giving Up?: false Steps: 52
+[NODE n146]: I gave up smoking!
+[NODE n146]: Smoker: false Cigs: 0 Giving Up?: true Steps: 50
+[NODE n146]: I started smoking!
+[NODE n146]: Smoker: true Cigs: 12 Giving Up?: false Steps: 51
+0.0272708247765456
+[NODE n318]: I gave up smoking!
+[NODE n318]: Smoker: false Cigs: 0 Giving Up?: true Steps: 0
+[NODE n210]: I gave up smoking!
+[NODE n210]: Smoker: false Cigs: 0 Giving Up?: true Steps: 0
+[NODE n210]: I started smoking!
+[NODE n210]: Smoker: true Cigs: 11 Giving Up?: false Steps: 1
+[NODE n24]: I gave up smoking!
+[NODE n24]: Smoker: false Cigs: 0 Giving Up?: true Steps: 1
+[NODE n24]: I started smoking!
+[NODE n24]: Smoker: true Cigs: 12 Giving Up?: false Steps: 2
+[NODE n273]: I started smoking!
+[NODE n273]: Smoker: true Cigs: 12 Giving Up?: false Steps: 50
+[NODE n273]: BRANCH 1
+	BRANCH 2b
+		BRANCH 3d
+[NODE n356]: I gave up smoking!
+[NODE n356]: Smoker: false Cigs: 0 Giving Up?: true Steps: 0
+[NODE n356]: I started smoking!
+[NODE n356]: Smoker: true Cigs: 11 Giving Up?: false Steps: 1
+[NODE n490]: I gave up smoking!
+[NODE n490]: Smoker: false Cigs: 0 Giving Up?: true Steps: 50
+[NODE n490]: I started smoking!
+[NODE n490]: Smoker: true Cigs: 11 Giving Up?: false Steps: 51
+0.026333804807267564
+[NODE n400]: I gave up smoking!
+[NODE n400]: Smoker: false Cigs: 0 Giving Up?: true Steps: 1
+[NODE n400]: I started smoking!
+[NODE n400]: Smoker: true Cigs: 11 Giving Up?: false Steps: 2
+[NODE n318]: I started smoking!
+[NODE n318]: Smoker: true Cigs: 0 Giving Up?: false Steps: 50
+[NODE n318]: BRANCH 1
+	BRANCH 2b
+		BRANCH 3d
+[NODE n243]: I gave up smoking!
+[NODE n243]: Smoker: false Cigs: 0 Giving Up?: true Steps: 53
+[NODE n243]: I started smoking!
+[NODE n243]: Smoker: true Cigs: 11 Giving Up?: false Steps: 54
+[NODE n475]: I gave up smoking!
+[NODE n475]: Smoker: false Cigs: 0 Giving Up?: true Steps: 2
+[NODE n475]: I started smoking!
+[NODE n475]: Smoker: true Cigs: 10 Giving Up?: false Steps: 3
+[NODE n261]: I gave up smoking!
+[NODE n261]: Smoker: false Cigs: 0 Giving Up?: true Steps: 0
+[NODE n261]: I started smoking!
+[NODE n261]: Smoker: true Cigs: 11 Giving Up?: false Steps: 1
+[NODE n210]: I gave up smoking!
+[NODE n210]: Smoker: false Cigs: 0 Giving Up?: true Steps: 1
+[NODE n210]: I started smoking!
+[NODE n210]: Smoker: true Cigs: 9 Giving Up?: false Steps: 2
+[NODE n478]: I gave up smoking!
+[NODE n478]: Smoker: false Cigs: 0 Giving Up?: true Steps: 1
+[NODE n478]: I started smoking!
+[NODE n478]: Smoker: true Cigs: 12 Giving Up?: false Steps: 2
+[NODE n44]: I gave up smoking!
+[NODE n44]: Smoker: false Cigs: 0 Giving Up?: true Steps: 1
+[NODE n44]: I started smoking!
+[NODE n44]: Smoker: true Cigs: 12 Giving Up?: false Steps: 2
+[NODE n63]: I gave up smoking!
+[NODE n63]: Smoker: false Cigs: 0 Giving Up?: true Steps: 1
+[NODE n63]: I started smoking!
+[NODE n63]: Smoker: true Cigs: 11 Giving Up?: false Steps: 2
+[NODE n112]: I gave up smoking!
+[NODE n112]: Smoker: false Cigs: 0 Giving Up?: true Steps: 2
+[NODE n112]: I started smoking!
+[NODE n112]: Smoker: true Cigs: 12 Giving Up?: false Steps: 3
+[NODE n58]: I gave up smoking!
+[NODE n58]: Smoker: false Cigs: 0 Giving Up?: true Steps: 1
+[NODE n58]: I started smoking!
+[NODE n58]: Smoker: true Cigs: 11 Giving Up?: false Steps: 2
+0.030479175565541552
+[NODE n18]: I gave up smoking!
+[NODE n18]: Smoker: false Cigs: 0 Giving Up?: true Steps: 2
+[NODE n18]: I started smoking!
+[NODE n18]: Smoker: true Cigs: 11 Giving Up?: false Steps: 3
+[NODE n253]: I gave up smoking!
+[NODE n253]: Smoker: false Cigs: 0 Giving Up?: true Steps: 1
+[NODE n253]: I started smoking!
+[NODE n253]: Smoker: true Cigs: 12 Giving Up?: false Steps: 2
+[NODE n246]: I gave up smoking!
+[NODE n246]: Smoker: false Cigs: 0 Giving Up?: true Steps: 0
+[NODE n452]: I gave up smoking!
+[NODE n452]: Smoker: false Cigs: 0 Giving Up?: true Steps: 2
+[NODE n452]: I started smoking!
+[NODE n452]: Smoker: true Cigs: 7 Giving Up?: false Steps: 3
+[NODE n250]: I gave up smoking!
+[NODE n250]: Smoker: false Cigs: 0 Giving Up?: true Steps: 0
+[NODE n250]: I started smoking!
+[NODE n250]: Smoker: true Cigs: 11 Giving Up?: false Steps: 1
+[NODE n27]: I started smoking!
+[NODE n27]: Smoker: true Cigs: 9 Giving Up?: false Steps: 50
+[NODE n27]: BRANCH 1
+	BRANCH 2a
+		BRANCH 3b
+[NODE n131]: I gave up smoking!
+[NODE n131]: Smoker: false Cigs: 0 Giving Up?: true Steps: 1
+[NODE n131]: I started smoking!
+[NODE n131]: Smoker: true Cigs: 11 Giving Up?: false Steps: 2
+[NODE n65]: I gave up smoking!
+[NODE n65]: Smoker: false Cigs: 0 Giving Up?: true Steps: 1
+[NODE n65]: I started smoking!
+[NODE n65]: Smoker: true Cigs: 10 Giving Up?: false Steps: 2
+[NODE n19]: I gave up smoking!
+[NODE n19]: Smoker: false Cigs: 0 Giving Up?: true Steps: 0
+[NODE n19]: I started smoking!
+[NODE n19]: Smoker: true Cigs: 11 Giving Up?: false Steps: 1
+0.029235205425136777
+[NODE n413]: I gave up smoking!
+[NODE n413]: Smoker: false Cigs: 0 Giving Up?: true Steps: 3
+[NODE n413]: I started smoking!
+[NODE n413]: Smoker: true Cigs: 10 Giving Up?: false Steps: 4
+[NODE n253]: I gave up smoking!
+[NODE n253]: Smoker: false Cigs: 0 Giving Up?: true Steps: 2
+[NODE n253]: I started smoking!
+[NODE n253]: Smoker: true Cigs: 12 Giving Up?: false Steps: 3
+[NODE n281]: I gave up smoking!
+[NODE n281]: Smoker: false Cigs: 0 Giving Up?: true Steps: 0
+[NODE n281]: I started smoking!
+[NODE n281]: Smoker: true Cigs: 11 Giving Up?: false Steps: 1
+[NODE n113]: I gave up smoking!
+[NODE n113]: Smoker: false Cigs: 0 Giving Up?: true Steps: 0
+[NODE n113]: I started smoking!
+[NODE n113]: Smoker: true Cigs: 11 Giving Up?: false Steps: 1
+[NODE n215]: I gave up smoking!
+[NODE n215]: Smoker: false Cigs: 0 Giving Up?: true Steps: 1
+[NODE n215]: I started smoking!
+[NODE n215]: Smoker: true Cigs: 11 Giving Up?: false Steps: 2
+[NODE n243]: I gave up smoking!
+[NODE n243]: Smoker: false Cigs: 0 Giving Up?: true Steps: 54
+[NODE n243]: I started smoking!
+[NODE n243]: Smoker: true Cigs: 11 Giving Up?: false Steps: 55
+[NODE n179]: I gave up smoking!
+[NODE n179]: Smoker: false Cigs: 0 Giving Up?: true Steps: 0
+[NODE n179]: I started smoking!
+[NODE n179]: Smoker: true Cigs: 9 Giving Up?: false Steps: 1
+[NODE n63]: I gave up smoking!
+[NODE n63]: Smoker: false Cigs: 0 Giving Up?: true Steps: 2
+[NODE n63]: I started smoking!
+[NODE n63]: Smoker: true Cigs: 10 Giving Up?: false Steps: 3
+[NODE n220]: I gave up smoking!
+[NODE n220]: Smoker: false Cigs: 0 Giving Up?: true Steps: 1
+[NODE n220]: I started smoking!
+[NODE n220]: Smoker: true Cigs: 11 Giving Up?: false Steps: 2
+[NODE n303]: I gave up smoking!
+[NODE n303]: Smoker: false Cigs: 0 Giving Up?: true Steps: 51
+[NODE n303]: I started smoking!
+[NODE n303]: Smoker: true Cigs: 0 Giving Up?: false Steps: 52
+[NODE n490]: I gave up smoking!
+[NODE n490]: Smoker: false Cigs: 0 Giving Up?: true Steps: 51
+[NODE n490]: I started smoking!
+[NODE n490]: Smoker: true Cigs: 10 Giving Up?: false Steps: 52
+[NODE n387]: I gave up smoking!
+[NODE n387]: Smoker: false Cigs: 0 Giving Up?: true Steps: 1
+[NODE n387]: I started smoking!
+[NODE n387]: Smoker: true Cigs: 11 Giving Up?: false Steps: 2
+[NODE n146]: I gave up smoking!
+[NODE n146]: Smoker: false Cigs: 0 Giving Up?: true Steps: 51
+[NODE n146]: I started smoking!
+[NODE n146]: Smoker: true Cigs: 12 Giving Up?: false Steps: 52
+0.029379946554597768
+[NODE n354]: I started smoking!
+[NODE n354]: Smoker: true Cigs: 0 Giving Up?: false Steps: 50
+[NODE n354]: BRANCH 1
+	BRANCH 2b
+		BRANCH 3d
+[NODE n146]: I gave up smoking!
+[NODE n146]: Smoker: false Cigs: 0 Giving Up?: true Steps: 52
+[NODE n146]: I started smoking!
+[NODE n146]: Smoker: true Cigs: 12 Giving Up?: false Steps: 53
+[NODE n144]: I gave up smoking!
+[NODE n144]: Smoker: false Cigs: 0 Giving Up?: true Steps: 3
+[NODE n144]: I started smoking!
+[NODE n144]: Smoker: true Cigs: 11 Giving Up?: false Steps: 4
+[NODE n27]: I gave up smoking!
+[NODE n27]: Smoker: false Cigs: 0 Giving Up?: true Steps: 50
+[NODE n27]: I started smoking!
+[NODE n27]: Smoker: true Cigs: 10 Giving Up?: false Steps: 51
+[NODE n411]: I gave up smoking!
+[NODE n411]: Smoker: false Cigs: 0 Giving Up?: true Steps: 0
+[NODE n411]: I started smoking!
+[NODE n411]: Smoker: true Cigs: 11 Giving Up?: false Steps: 1
+[NODE n49]: I gave up smoking!
+[NODE n49]: Smoker: false Cigs: 0 Giving Up?: true Steps: 1
+[NODE n49]: I started smoking!
+[NODE n49]: Smoker: true Cigs: 10 Giving Up?: false Steps: 2
+[NODE n246]: I started smoking!
+[NODE n246]: Smoker: true Cigs: 0 Giving Up?: false Steps: 50
+[NODE n246]: BRANCH 1
+	BRANCH 2b
+		BRANCH 3d
+0.04715037777523937
+[NODE n5]: I gave up smoking!
+[NODE n5]: Smoker: false Cigs: 0 Giving Up?: true Steps: 52
+[NODE n5]: I started smoking!
+[NODE n5]: Smoker: true Cigs: 11 Giving Up?: false Steps: 53
+[NODE n389]: I gave up smoking!
+[NODE n389]: Smoker: false Cigs: 0 Giving Up?: true Steps: 3
+[NODE n389]: I started smoking!
+[NODE n389]: Smoker: true Cigs: 10 Giving Up?: false Steps: 4
+[NODE n139]: I gave up smoking!
+[NODE n139]: Smoker: false Cigs: 0 Giving Up?: true Steps: 0
+[NODE n139]: I started smoking!
+[NODE n139]: Smoker: true Cigs: 10 Giving Up?: false Steps: 1
+[NODE n1]: I gave up smoking!
+[NODE n1]: Smoker: false Cigs: 0 Giving Up?: true Steps: 1
+[NODE n1]: I started smoking!
+[NODE n1]: Smoker: true Cigs: 10 Giving Up?: false Steps: 2
+[NODE n111]: I gave up smoking!
+[NODE n111]: Smoker: false Cigs: 0 Giving Up?: true Steps: 1
+[NODE n111]: I started smoking!
+[NODE n111]: Smoker: true Cigs: 11 Giving Up?: false Steps: 2
+[NODE n261]: I gave up smoking!
+[NODE n261]: Smoker: false Cigs: 0 Giving Up?: true Steps: 1
+[NODE n261]: I started smoking!
+[NODE n261]: Smoker: true Cigs: 11 Giving Up?: false Steps: 2
+[NODE n490]: I gave up smoking!
+[NODE n490]: Smoker: false Cigs: 0 Giving Up?: true Steps: 52
+[NODE n490]: I started smoking!
+[NODE n490]: Smoker: true Cigs: 10 Giving Up?: false Steps: 53
+[NODE n305]: I gave up smoking!
+[NODE n305]: Smoker: false Cigs: 0 Giving Up?: true Steps: 0
+[NODE n305]: I started smoking!
+[NODE n305]: Smoker: true Cigs: 0 Giving Up?: false Steps: 1
+[NODE n193]: I gave up smoking!
+[NODE n193]: Smoker: false Cigs: 0 Giving Up?: true Steps: 5
+[NODE n193]: I started smoking!
+[NODE n193]: Smoker: true Cigs: 9 Giving Up?: false Steps: 6
+0.04153803313063666
+[NODE n171]: I gave up smoking!
+[NODE n171]: Smoker: false Cigs: 0 Giving Up?: true Steps: 50
+[NODE n171]: I started smoking!
+[NODE n171]: Smoker: true Cigs: 9 Giving Up?: false Steps: 51
+[NODE n179]: I gave up smoking!
+[NODE n179]: Smoker: false Cigs: 0 Giving Up?: true Steps: 1
+[NODE n179]: I started smoking!
+[NODE n179]: Smoker: true Cigs: 9 Giving Up?: false Steps: 2
+[NODE n482]: I gave up smoking!
+[NODE n482]: Smoker: false Cigs: 0 Giving Up?: true Steps: 4
+[NODE n482]: I started smoking!
+[NODE n482]: Smoker: true Cigs: 12 Giving Up?: false Steps: 5
+[NODE n171]: I gave up smoking!
+[NODE n171]: Smoker: false Cigs: 0 Giving Up?: true Steps: 51
+[NODE n171]: I started smoking!
+[NODE n171]: Smoker: true Cigs: 9 Giving Up?: false Steps: 52
+[NODE n65]: I gave up smoking!
+[NODE n65]: Smoker: false Cigs: 0 Giving Up?: true Steps: 2
+[NODE n65]: I started smoking!
+[NODE n65]: Smoker: true Cigs: 10 Giving Up?: false Steps: 3
+[NODE n267]: I gave up smoking!
+[NODE n267]: Smoker: false Cigs: 0 Giving Up?: true Steps: 0
+[NODE n267]: I started smoking!
+[NODE n267]: Smoker: true Cigs: 11 Giving Up?: false Steps: 1
+[NODE n203]: I gave up smoking!
+[NODE n203]: Smoker: false Cigs: 0 Giving Up?: true Steps: 1
+[NODE n203]: I started smoking!
+[NODE n203]: Smoker: true Cigs: 10 Giving Up?: false Steps: 2
+[NODE n87]: I gave up smoking!
+[NODE n87]: Smoker: false Cigs: 0 Giving Up?: true Steps: 2
+[NODE n87]: I started smoking!
+[NODE n87]: Smoker: true Cigs: 11 Giving Up?: false Steps: 3
+[NODE n44]: I gave up smoking!
+[NODE n44]: Smoker: false Cigs: 0 Giving Up?: true Steps: 2
+[NODE n44]: I started smoking!
+[NODE n44]: Smoker: true Cigs: 12 Giving Up?: false Steps: 3
+[NODE n477]: I gave up smoking!
+[NODE n477]: Smoker: false Cigs: 0 Giving Up?: true Steps: 2
+[NODE n477]: I started smoking!
+[NODE n477]: Smoker: true Cigs: 6 Giving Up?: false Steps: 3
+[NODE n113]: I gave up smoking!
+[NODE n113]: Smoker: false Cigs: 0 Giving Up?: true Steps: 1
+[NODE n113]: I started smoking!
+[NODE n113]: Smoker: true Cigs: 10 Giving Up?: false Steps: 2
+[NODE n295]: I gave up smoking!
+[NODE n295]: Smoker: false Cigs: 0 Giving Up?: true Steps: 1
+[NODE n295]: I started smoking!
+[NODE n295]: Smoker: true Cigs: 10 Giving Up?: false Steps: 2
+[NODE n175]: I gave up smoking!
+[NODE n175]: Smoker: false Cigs: 0 Giving Up?: true Steps: 0
+[NODE n175]: I started smoking!
+[NODE n175]: Smoker: true Cigs: 10 Giving Up?: false Steps: 1
+0.04200258649841584
+[NODE n408]: I gave up smoking!
+[NODE n408]: Smoker: false Cigs: 0 Giving Up?: true Steps: 1
+[NODE n408]: I started smoking!
+[NODE n408]: Smoker: true Cigs: 11 Giving Up?: false Steps: 2
+[NODE n193]: I gave up smoking!
+[NODE n193]: Smoker: false Cigs: 0 Giving Up?: true Steps: 6
+[NODE n193]: I started smoking!
+[NODE n193]: Smoker: true Cigs: 9 Giving Up?: false Steps: 7
+[NODE n112]: I gave up smoking!
+[NODE n112]: Smoker: false Cigs: 0 Giving Up?: true Steps: 3
+[NODE n112]: I started smoking!
+[NODE n112]: Smoker: true Cigs: 12 Giving Up?: false Steps: 4
+[NODE n139]: I gave up smoking!
+[NODE n139]: Smoker: false Cigs: 0 Giving Up?: true Steps: 1
+[NODE n139]: I started smoking!
+[NODE n139]: Smoker: true Cigs: 10 Giving Up?: false Steps: 2
+[NODE n164]: I gave up smoking!
+[NODE n164]: Smoker: false Cigs: 0 Giving Up?: true Steps: 51
+[NODE n164]: I started smoking!
+[NODE n164]: Smoker: true Cigs: 11 Giving Up?: false Steps: 52
+[NODE n66]: I gave up smoking!
+[NODE n66]: Smoker: false Cigs: 0 Giving Up?: true Steps: 50
+[NODE n66]: I started smoking!
+[NODE n66]: Smoker: true Cigs: 12 Giving Up?: false Steps: 51
+[NODE n354]: I gave up smoking!
+[NODE n354]: Smoker: false Cigs: 0 Giving Up?: true Steps: 50
+[NODE n413]: I gave up smoking!
+[NODE n413]: Smoker: false Cigs: 0 Giving Up?: true Steps: 4
+[NODE n413]: I started smoking!
+[NODE n413]: Smoker: true Cigs: 11 Giving Up?: false Steps: 5
+0.037684753793486354
+[NODE n191]: I gave up smoking!
+[NODE n191]: Smoker: false Cigs: 0 Giving Up?: true Steps: 1
+[NODE n191]: I started smoking!
+[NODE n191]: Smoker: true Cigs: 11 Giving Up?: false Steps: 2
+[NODE n441]: I gave up smoking!
+[NODE n441]: Smoker: false Cigs: 0 Giving Up?: true Steps: 0
+[NODE n441]: I started smoking!
+[NODE n441]: Smoker: true Cigs: 12 Giving Up?: false Steps: 1
+[NODE n374]: I gave up smoking!
+[NODE n374]: Smoker: false Cigs: 0 Giving Up?: true Steps: 3

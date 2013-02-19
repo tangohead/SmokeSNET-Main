@@ -8,6 +8,9 @@
 	<parameter name="mode" displayName="Loading Mode" type="int" defaultValue="2" />
 	<parameter name="numNodes" displayName="Number of Nodes" type="int" defaultValue="100" />
 	
+	<parameter name="pSmokes" displayName="Probability of Being a Smoker" type="double" defaultValue="0.5" />
+	<parameter name="pGiveUp" displayName="Probability of Giving Up" type="double" defaultValue="0.5" />
+	
 	
 </parameters>
 
