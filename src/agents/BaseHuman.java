@@ -726,7 +726,7 @@ public class BaseHuman implements Comparable{
 	
 	private void print(String msg)
 	{
-		System.out.println("[NODE " + this.id + "]: "+msg);
+		//System.out.println("[NODE " + this.id + "]: "+msg);
 	}
 	
 	public boolean checkCanEdgeOut()
