@@ -1,5 +1,5 @@
-WARN  [AWT-EventQueue-0] 2013-02-20 12:37:47,507 repast.simphony.scenario.ScenarioCPInitializer - Warning while parsing classpath: Empty or non-existent path 'G:\My Documents\3rd Year Project\SmokeSNET-Main\lib'.
-WARN  [AWT-EventQueue-0] 2013-02-20 12:37:47,581 repast.simphony.scenario.ScenarioLoader - While initializing classpath: Empty or non-existent path 'G:\My Documents\3rd Year Project\SmokeSNET-Main\lib'.
+WARN  [AWT-EventQueue-0] 2013-02-20 15:08:08,550 repast.simphony.scenario.ScenarioCPInitializer - Warning while parsing classpath: Empty or non-existent path '/Users/matt/git/SmokeSNET-Main/lib'.
+WARN  [AWT-EventQueue-0] 2013-02-20 15:08:08,668 repast.simphony.scenario.ScenarioLoader - While initializing classpath: Empty or non-existent path '/Users/matt/git/SmokeSNET-Main/lib'.
 cigLimit dn13
 edgeWeight de0
 isSmoker dn1
@@ -17,198 +17,277 @@ maxInDegree dn11
 stepsSinceGiveUp dn6
 100
 0.00457898103717301
-[NODE n192]: I started smoking!
-[NODE n192]: Smoker: true Cigs: 11 Giving Up?: false Steps: 0
-[NODE n373]: I started smoking!
-[NODE n373]: Smoker: true Cigs: 11 Giving Up?: false Steps: 0
-[NODE n289]: I started smoking!
-[NODE n289]: Smoker: true Cigs: 12 Giving Up?: false Steps: 0
-[NODE n387]: I started smoking!
-[NODE n387]: Smoker: true Cigs: 12 Giving Up?: false Steps: 0
-[NODE n90]: I started smoking!
-[NODE n90]: Smoker: true Cigs: 12 Giving Up?: false Steps: 0
-[NODE n197]: I started smoking!
-[NODE n197]: Smoker: true Cigs: 11 Giving Up?: false Steps: 0
-[NODE n202]: I started smoking!
-[NODE n202]: Smoker: true Cigs: 12 Giving Up?: false Steps: 0
-[NODE n49]: I started smoking!
-[NODE n49]: Smoker: true Cigs: 12 Giving Up?: false Steps: 0
-[NODE n403]: I started smoking!
-[NODE n403]: Smoker: true Cigs: 12 Giving Up?: false Steps: 0
-[NODE n403]: BRANCH 1
-	BRANCH 2b
-		BRANCH 3c
-[NODE n477]: I started smoking!
-[NODE n477]: Smoker: true Cigs: 12 Giving Up?: false Steps: 0
-[NODE n477]: BRANCH 1
-	BRANCH 2b
-		BRANCH 3c
-[NODE n322]: I started smoking!
-[NODE n322]: Smoker: true Cigs: 11 Giving Up?: false Steps: 0
-[NODE n367]: I started smoking!
-[NODE n367]: Smoker: true Cigs: 11 Giving Up?: false Steps: 0
-[NODE n3]: I started smoking!
-[NODE n3]: Smoker: true Cigs: 12 Giving Up?: false Steps: 0
-[NODE n3]: BRANCH 1
-	BRANCH 2b
-		BRANCH 3c
-[NODE n186]: I started smoking!
-[NODE n186]: Smoker: true Cigs: 11 Giving Up?: false Steps: 0
-[NODE n186]: BRANCH 1
-	BRANCH 2b
-		BRANCH 3c
-[NODE n51]: I started smoking!
-[NODE n51]: Smoker: true Cigs: 11 Giving Up?: false Steps: 0
-[NODE n35]: I started smoking!
-[NODE n35]: Smoker: true Cigs: 11 Giving Up?: false Steps: 0
-[NODE n35]: BRANCH 1
-	BRANCH 2b
-		BRANCH 3c
-[NODE n295]: I started smoking!
-[NODE n295]: Smoker: true Cigs: 12 Giving Up?: false Steps: 0
-[NODE n399]: I started smoking!
-[NODE n399]: Smoker: true Cigs: 12 Giving Up?: false Steps: 0
-[NODE n23]: I started smoking!
-[NODE n23]: Smoker: true Cigs: 11 Giving Up?: false Steps: 0
-[NODE n23]: BRANCH 1
-	BRANCH 2b
-		BRANCH 3c
-[NODE n58]: I started smoking!
-[NODE n58]: Smoker: true Cigs: 12 Giving Up?: false Steps: 0
-[NODE n58]: BRANCH 1
-	BRANCH 2b
-		BRANCH 3c
-[NODE n154]: I started smoking!
-[NODE n154]: Smoker: true Cigs: 11 Giving Up?: false Steps: 0
-[NODE n154]: BRANCH 1
-	BRANCH 2b
-		BRANCH 3c
-[NODE n161]: I started smoking!
-[NODE n161]: Smoker: true Cigs: 12 Giving Up?: false Steps: 0
-[NODE n161]: BRANCH 1
-	BRANCH 2a
-		BRANCH 3b
-[NODE n415]: I started smoking!
-[NODE n415]: Smoker: true Cigs: 11 Giving Up?: false Steps: 0
-[NODE n415]: BRANCH 1
-	BRANCH 2a
-		BRANCH 3b
-[NODE n93]: I started smoking!
-[NODE n93]: Smoker: true Cigs: 11 Giving Up?: false Steps: 2
-[NODE n12]: I started smoking!
-[NODE n12]: Smoker: true Cigs: 11 Giving Up?: false Steps: 2
-[NODE n250]: I started smoking!
-[NODE n250]: Smoker: true Cigs: 11 Giving Up?: false Steps: 0
-[NODE n250]: BRANCH 1
-	BRANCH 2a
-		BRANCH 3a
-[NODE n97]: I started smoking!
-[NODE n97]: Smoker: true Cigs: 0 Giving Up?: false Steps: 0
-[NODE n97]: BRANCH 1
-	BRANCH 2b
-		BRANCH 3d
-[NODE n334]: I gave up smoking!
-[NODE n334]: Smoker: false Cigs: 0 Giving Up?: true Steps: 0
-[NODE n240]: I started smoking!
-[NODE n240]: Smoker: true Cigs: 0 Giving Up?: false Steps: 0
-[NODE n240]: BRANCH 1
-	BRANCH 2b
-		BRANCH 3d
-[NODE n110]: I started smoking!
-[NODE n110]: Smoker: true Cigs: 11 Giving Up?: false Steps: 50
-[NODE n110]: BRANCH 1
-	BRANCH 2b
-		BRANCH 3d
-[NODE n183]: I gave up smoking!
-[NODE n183]: Smoker: false Cigs: 0 Giving Up?: true Steps: 0
-[NODE n183]: I started smoking!
-[NODE n183]: Smoker: true Cigs: 11 Giving Up?: false Steps: 1
-[NODE n187]: I started smoking!
-[NODE n187]: Smoker: true Cigs: 12 Giving Up?: false Steps: 0
-[NODE n187]: BRANCH 1
-	BRANCH 2a
-		BRANCH 3b
-[NODE n58]: I gave up smoking!
-[NODE n58]: Smoker: false Cigs: 0 Giving Up?: true Steps: 0
-[NODE n311]: I started smoking!
-[NODE n311]: Smoker: true Cigs: 0 Giving Up?: false Steps: 0
-[NODE n311]: BRANCH 1
-	BRANCH 2b
-		BRANCH 3d
-[NODE n372]: I gave up smoking!
-[NODE n372]: Smoker: false Cigs: 0 Giving Up?: true Steps: 0
-[NODE n35]: I gave up smoking!
-[NODE n35]: Smoker: false Cigs: 0 Giving Up?: true Steps: 0
-[NODE n35]: I started smoking!
-[NODE n35]: Smoker: true Cigs: 11 Giving Up?: false Steps: 1
-[NODE n1]: I gave up smoking!
-[NODE n1]: Smoker: false Cigs: 0 Giving Up?: true Steps: 0
-[NODE n1]: I started smoking!
-[NODE n1]: Smoker: true Cigs: 12 Giving Up?: false Steps: 1
-[NODE n39]: I started smoking!
-[NODE n39]: Smoker: true Cigs: 12 Giving Up?: false Steps: 0
-[NODE n39]: BRANCH 1
-	BRANCH 2b
-		BRANCH 3d
-[NODE n432]: I gave up smoking!
-[NODE n432]: Smoker: false Cigs: 0 Giving Up?: true Steps: 0
-[NODE n414]: I started smoking!
-[NODE n414]: Smoker: true Cigs: 11 Giving Up?: false Steps: 50
-[NODE n414]: BRANCH 1
-	BRANCH 2a
-		BRANCH 3b
-[NODE n127]: I gave up smoking!
-[NODE n127]: Smoker: false Cigs: 0 Giving Up?: true Steps: 0
-[NODE n127]: I started smoking!
-[NODE n127]: Smoker: true Cigs: 15 Giving Up?: false Steps: 1
 ********** WATCHMAN ***********
-0.0022203102961493274
-Avg Clustering Coefficient: 0.0022203102961493274
+0.0034483014926279185
+Avg Clustering Coefficient: 0.0034483014926279185
 ******** END WATCHMAN *********
-[NODE n464]: I started smoking!
-[NODE n464]: Smoker: true Cigs: 12 Giving Up?: false Steps: 0
-[NODE n464]: BRANCH 1
-	BRANCH 2b
-		BRANCH 3d
-[NODE n232]: I started smoking!
-[NODE n232]: Smoker: true Cigs: 12 Giving Up?: false Steps: 0
-[NODE n232]: BRANCH 1
-	BRANCH 2a
-		BRANCH 3b
-[NODE n81]: I started smoking!
-[NODE n81]: Smoker: true Cigs: 9 Giving Up?: false Steps: 0
-[NODE n81]: BRANCH 1
-	BRANCH 2b
-		BRANCH 3d
-[NODE n350]: I started smoking!
-[NODE n350]: Smoker: true Cigs: 0 Giving Up?: false Steps: 50
-[NODE n350]: BRANCH 1
-	BRANCH 2b
-		BRANCH 3d
-[NODE n465]: I gave up smoking!
-[NODE n465]: Smoker: false Cigs: 0 Giving Up?: true Steps: 0
-[NODE n465]: I started smoking!
-[NODE n465]: Smoker: true Cigs: 10 Giving Up?: false Steps: 1
-[NODE n153]: I started smoking!
-[NODE n153]: Smoker: true Cigs: 11 Giving Up?: false Steps: 0
-[NODE n153]: BRANCH 1
-	BRANCH 2b
-		BRANCH 3d
-[NODE n373]: I gave up smoking!
-[NODE n373]: Smoker: false Cigs: 0 Giving Up?: true Steps: 0
-[NODE n373]: I started smoking!
-[NODE n373]: Smoker: true Cigs: 11 Giving Up?: false Steps: 1
-[NODE n322]: I gave up smoking!
-[NODE n322]: Smoker: false Cigs: 0 Giving Up?: true Steps: 0
-[NODE n322]: I started smoking!
-[NODE n322]: Smoker: true Cigs: 10 Giving Up?: false Steps: 1
-[NODE n377]: I started smoking!
-[NODE n377]: Smoker: true Cigs: 0 Giving Up?: false Steps: 0
-[NODE n377]: BRANCH 1
-	BRANCH 2a
-		BRANCH 3b
-[NODE n422]: I started smoking!
-[NODE n422]: Smoker: true Cigs: 3 Giving Up?: false Steps: 0
-[NODE n422]: BRANCH 1
-	BRANCH 2a
-		BRANCH 3b
+********** WATCHMAN ***********
+0.0034483014926279185
+Avg Clustering Coefficient: 0.0034483014926279185
+******** END WATCHMAN *********
+********** WATCHMAN ***********
+0.003901368094762844
+Avg Clustering Coefficient: 0.003901368094762844
+******** END WATCHMAN *********
+********** WATCHMAN ***********
+0.014271388491402583
+Avg Clustering Coefficient: 0.014271388491402583
+******** END WATCHMAN *********
+********** WATCHMAN ***********
+0.01471504421456141
+Avg Clustering Coefficient: 0.01471504421456141
+******** END WATCHMAN *********
+********** WATCHMAN ***********
+0.02071601603185976
+Avg Clustering Coefficient: 0.02071601603185976
+******** END WATCHMAN *********
+********** WATCHMAN ***********
+0.01974419873351185
+Avg Clustering Coefficient: 0.01974419873351185
+******** END WATCHMAN *********
+********** WATCHMAN ***********
+0.015002940758460358
+Avg Clustering Coefficient: 0.015002940758460358
+******** END WATCHMAN *********
+********** WATCHMAN ***********
+0.015550210948587691
+Avg Clustering Coefficient: 0.015550210948587691
+******** END WATCHMAN *********
+********** WATCHMAN ***********
+0.01521007489416592
+Avg Clustering Coefficient: 0.01521007489416592
+******** END WATCHMAN *********
+********** WATCHMAN ***********
+0.01723968779334404
+Avg Clustering Coefficient: 0.01723968779334404
+******** END WATCHMAN *********
+********** WATCHMAN ***********
+0.01123871597604569
+Avg Clustering Coefficient: 0.01123871597604569
+******** END WATCHMAN *********
+********** WATCHMAN ***********
+0.020514759712395296
+Avg Clustering Coefficient: 0.020514759712395296
+******** END WATCHMAN *********
+********** WATCHMAN ***********
+0.014610233399705713
+Avg Clustering Coefficient: 0.014610233399705713
+******** END WATCHMAN *********
+********** WATCHMAN ***********
+0.014610233399705713
+Avg Clustering Coefficient: 0.014610233399705713
+******** END WATCHMAN *********
+********** WATCHMAN ***********
+0.014180946852550965
+Avg Clustering Coefficient: 0.014180946852550965
+******** END WATCHMAN *********
+********** WATCHMAN ***********
+0.014103643203818746
+Avg Clustering Coefficient: 0.014103643203818746
+******** END WATCHMAN *********
+cigLimit dn13
+edgeWeight de0
+isSmoker dn1
+givingUp dn5
+health dn3
+maxOutDegree dn12
+persuasiveness dn9
+id dn0
+willpower dn2
+influenceability dn8
+giveUpAttempts dn7
+sociable dn10
+smokedPerDay dn4
+maxInDegree dn11
+stepsSinceGiveUp dn6
+100
+0.00457898103717301
+********** WATCHMAN ***********
+0.0034870356951363264
+Avg Clustering Coefficient: 0.0034870356951363264
+******** END WATCHMAN *********
+********** WATCHMAN ***********
+0.0034870356951363264
+Avg Clustering Coefficient: 0.0034870356951363264
+******** END WATCHMAN *********
+********** WATCHMAN ***********
+0.008091020146059552
+Avg Clustering Coefficient: 0.008091020146059552
+******** END WATCHMAN *********
+********** WATCHMAN ***********
+0.0130229929351752
+Avg Clustering Coefficient: 0.0130229929351752
+******** END WATCHMAN *********
+********** WATCHMAN ***********
+0.016529395496199608
+Avg Clustering Coefficient: 0.016529395496199608
+******** END WATCHMAN *********
+********** WATCHMAN ***********
+0.018715984417482408
+Avg Clustering Coefficient: 0.018715984417482408
+******** END WATCHMAN *********
+********** WATCHMAN ***********
+0.02096232084749231
+Avg Clustering Coefficient: 0.02096232084749231
+******** END WATCHMAN *********
+********** WATCHMAN ***********
+0.019601776629805234
+Avg Clustering Coefficient: 0.019601776629805234
+******** END WATCHMAN *********
+********** WATCHMAN ***********
+0.019724829513962563
+Avg Clustering Coefficient: 0.019724829513962563
+******** END WATCHMAN *********
+********** WATCHMAN ***********
+0.020048145653605232
+Avg Clustering Coefficient: 0.020048145653605232
+******** END WATCHMAN *********
+********** WATCHMAN ***********
+0.021882450804236907
+Avg Clustering Coefficient: 0.021882450804236907
+******** END WATCHMAN *********
+********** WATCHMAN ***********
+0.022250931529860497
+Avg Clustering Coefficient: 0.022250931529860497
+******** END WATCHMAN *********
+********** WATCHMAN ***********
+0.0333728311721683
+Avg Clustering Coefficient: 0.0333728311721683
+******** END WATCHMAN *********
+********** WATCHMAN ***********
+0.03582783574562896
+Avg Clustering Coefficient: 0.03582783574562896
+******** END WATCHMAN *********
+cigLimit dn13
+edgeWeight de0
+isSmoker dn1
+givingUp dn5
+health dn3
+maxOutDegree dn12
+persuasiveness dn9
+id dn0
+willpower dn2
+influenceability dn8
+giveUpAttempts dn7
+sociable dn10
+smokedPerDay dn4
+maxInDegree dn11
+stepsSinceGiveUp dn6
+100
+0.00457898103717301
+********** WATCHMAN ***********
+0.006735677048911037
+Avg Clustering Coefficient: 0.006735677048911037
+******** END WATCHMAN *********
+********** WATCHMAN ***********
+0.0023806016854323133
+Avg Clustering Coefficient: 0.0023806016854323133
+******** END WATCHMAN *********
+********** WATCHMAN ***********
+0.0023806016854323133
+Avg Clustering Coefficient: 0.0023806016854323133
+******** END WATCHMAN *********
+********** WATCHMAN ***********
+0.005964177973090234
+Avg Clustering Coefficient: 0.005964177973090234
+******** END WATCHMAN *********
+********** WATCHMAN ***********
+0.013893540194169142
+Avg Clustering Coefficient: 0.013893540194169142
+******** END WATCHMAN *********
+********** WATCHMAN ***********
+0.015982947385617147
+Avg Clustering Coefficient: 0.015982947385617147
+******** END WATCHMAN *********
+********** WATCHMAN ***********
+0.020036419423783067
+Avg Clustering Coefficient: 0.020036419423783067
+******** END WATCHMAN *********
+********** WATCHMAN ***********
+0.01956180976060667
+Avg Clustering Coefficient: 0.01956180976060667
+******** END WATCHMAN *********
+********** WATCHMAN ***********
+0.028550114539727774
+Avg Clustering Coefficient: 0.028550114539727774
+******** END WATCHMAN *********
+********** WATCHMAN ***********
+0.03483850228330628
+Avg Clustering Coefficient: 0.03483850228330628
+******** END WATCHMAN *********
+********** WATCHMAN ***********
+0.03361955149952956
+Avg Clustering Coefficient: 0.03361955149952956
+******** END WATCHMAN *********
+********** WATCHMAN ***********
+0.038928471604368034
+Avg Clustering Coefficient: 0.038928471604368034
+******** END WATCHMAN *********
+********** WATCHMAN ***********
+0.03777874764552042
+Avg Clustering Coefficient: 0.03777874764552042
+******** END WATCHMAN *********
+********** WATCHMAN ***********
+0.03928101521921657
+Avg Clustering Coefficient: 0.03928101521921657
+******** END WATCHMAN *********
+********** WATCHMAN ***********
+0.04914766698183724
+Avg Clustering Coefficient: 0.04914766698183724
+******** END WATCHMAN *********
+100
+0.09202020202020203
+500
+0.028740237379075856
+********** WATCHMAN ***********
+0.0134577912508947
+Avg Clustering Coefficient: 0.0134577912508947
+******** END WATCHMAN *********
+********** WATCHMAN ***********
+0.021132415477243063
+Avg Clustering Coefficient: 0.021132415477243063
+******** END WATCHMAN *********
+********** WATCHMAN ***********
+0.01415275146309629
+Avg Clustering Coefficient: 0.01415275146309629
+******** END WATCHMAN *********
+********** WATCHMAN ***********
+0.01415275146309629
+Avg Clustering Coefficient: 0.01415275146309629
+******** END WATCHMAN *********
+********** WATCHMAN ***********
+0.01415275146309629
+Avg Clustering Coefficient: 0.01415275146309629
+******** END WATCHMAN *********
+********** WATCHMAN ***********
+0.0063366595090733014
+Avg Clustering Coefficient: 0.0063366595090733014
+******** END WATCHMAN *********
+********** WATCHMAN ***********
+0.0063366595090733014
+Avg Clustering Coefficient: 0.0063366595090733014
+******** END WATCHMAN *********
+********** WATCHMAN ***********
+0.008216070680680481
+Avg Clustering Coefficient: 0.008216070680680481
+******** END WATCHMAN *********
+********** WATCHMAN ***********
+0.00963478989250314
+Avg Clustering Coefficient: 0.00963478989250314
+******** END WATCHMAN *********
+********** WATCHMAN ***********
+0.020715249662618083
+Avg Clustering Coefficient: 0.020715249662618083
+******** END WATCHMAN *********
+********** WATCHMAN ***********
+0.028066695151994607
+Avg Clustering Coefficient: 0.028066695151994607
+******** END WATCHMAN *********
+********** WATCHMAN ***********
+0.029030706880466207
+Avg Clustering Coefficient: 0.029030706880466207
+******** END WATCHMAN *********
+********** WATCHMAN ***********
+0.03524509342153151
+Avg Clustering Coefficient: 0.03524509342153151
+******** END WATCHMAN *********

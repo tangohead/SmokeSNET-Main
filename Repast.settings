@@ -9,12 +9,12 @@
     <int>5</int>
     <string>SettingsFileName</string>
     <string>Repast.settings</string>
-    <string>SettingsRegistryId</string>
-    <string>Repast.registry</string>
+    <string>LastLoadedScenario</string>
+    <string>/Users/matt/git/SmokeSNET-Main/SmokeSNET-Main.rs</string>
     <string>*ORA.home</string>
     <string>/Applications/ORA/</string>
-    <string>LastLoadedScenario</string>
-    <string>G:\My Documents\3rd Year Project\SmokeSNET-Main\SmokeSNET-Main.rs</string>
+    <string>SettingsRegistryId</string>
+    <string>Repast.registry</string>
     <string>*ORA.licenseAccepted</string>
     <boolean>true</boolean>
   </hashtable>

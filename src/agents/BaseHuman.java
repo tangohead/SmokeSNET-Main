@@ -18,6 +18,7 @@ import repast.simphony.space.graph.Network;
 import repast.simphony.space.graph.RepastEdge;
 import repast.simphony.util.collections.IndexedIterable;
 import simconsts.Operations;
+import simconsts.SimConstants;
 
 import org.apache.commons.math.distribution.NormalDistributionImpl;
 
@@ -51,10 +52,7 @@ public class BaseHuman implements Comparable{
 	
 	//new attrs - leadership?
 	
-	private int maxInDegree = 10;
-	private int maxOutDegree = 10;
-	private int cigLimit = 70;
-	private int giveUpStepLimit = 50;
+
 	
 	/**
 	 * Constructor for scale free networks
@@ -95,9 +93,9 @@ public class BaseHuman implements Comparable{
 		
 		this.giveUpAttempts = 0;
 		
-		this.willpower = Distributions.getNDWithLimits(0.5, 0.8, 0, 1);
-		this.health = Distributions.getNDWithLimits(0.7, 0.2, 0, 1);
-		this.sociable = Distributions.getNDWithLimits(0.6, 0.4, 0, 1);
+		this.willpower = Distributions.getNDWithLimits(SimConstants.WillpowerMean, SimConstants.WillpowerSD, 0, 1);
+		this.health = Distributions.getNDWithLimits(SimConstants.HealthMean, SimConstants.HealthSD, 0, 1);
+		this.sociable = Distributions.getNDWithLimits(SimConstants.SociableMean, SimConstants.SociableSD, 0, 1);
 		this.influenceability = Distributions.getNDWithLimits(0.5, 0.4, 0, 1);
 		
 		this.stress = Distributions.getNDWithLimits(0.5, 0.4, 0, 1);
@@ -227,7 +225,7 @@ public class BaseHuman implements Comparable{
 		
 		if(this.isSmoker)
 		{
-			this.health = changeWithinBounds(this.health, 0, 1, (this.smokedPerDay/this.cigLimit)/10, Operations.SUBTRACT);
+			this.health = changeWithinBounds(this.health, 0, 1, (this.smokedPerDay/SimConstants.cigLimit)/10, Operations.SUBTRACT);
 			if(this.smokedPerDay <= 10)
 			{
 				if(this.giveUpAttempts > 1)
@@ -259,13 +257,13 @@ public class BaseHuman implements Comparable{
 			{
 				if(this.health < nm.getInfHealth())
 				{
-					if(nm.getAvgCigPerDay() > this.smokedPerDay * 1.2 || irrationalChoice())
+					if(nm.getAvgCigPerDay() > this.smokedPerDay * SimConstants.SmokerPerDayUpperPct || irrationalChoice())
 					{
-						this.smokedPerDay = (int)Math.round(changeWithinBounds(this.smokedPerDay, 0, this.cigLimit, (nm.getInfCigPerDay()* 0.5), Operations.ADD));
+						this.smokedPerDay = (int)Math.round(changeWithinBounds(this.smokedPerDay, 0, SimConstants.cigLimit, (nm.getInfCigPerDay()* 0.5), Operations.ADD));
 					}
-					else if(nm.getAvgCigPerDay() < this.smokedPerDay * 0.8 || irrationalChoice())
+					else if(nm.getAvgCigPerDay() < this.smokedPerDay * SimConstants.SmokerPerDayLowerPct || irrationalChoice())
 					{
-						this.smokedPerDay = (int)Math.round(changeWithinBounds(this.smokedPerDay, 0, this.cigLimit, (nm.getInfCigPerDay()* 0.5), Operations.SUBTRACT));
+						this.smokedPerDay = (int)Math.round(changeWithinBounds(this.smokedPerDay, 0, SimConstants.cigLimit, (nm.getInfCigPerDay()* 0.5), Operations.SUBTRACT));
 					}
 				}
 				else if(irrationalChoice())
@@ -303,7 +301,7 @@ public class BaseHuman implements Comparable{
 		{
 			if(this.givingUp)
 			{
-				this.health = changeWithinBounds(this.health, 0, 1, (this.stepsSinceGiveUp/this.giveUpStepLimit)/10, Operations.ADD);
+				this.health = changeWithinBounds(this.health, 0, 1, (this.stepsSinceGiveUp/SimConstants.giveUpStepLimit)/10, Operations.ADD);
 				if(this.giveUpAttempts == 0)
 				{
 					//perhaps incorporate the number of people giving up, as sort of a group mentality thing
@@ -382,7 +380,7 @@ public class BaseHuman implements Comparable{
 					}
 				}
 				//completely arbitrary
-				if(this.stepsSinceGiveUp >= this.giveUpStepLimit)
+				if(this.stepsSinceGiveUp >= SimConstants.giveUpStepLimit)
 				{
 					this.givingUp = false;
 				}
@@ -440,13 +438,13 @@ public class BaseHuman implements Comparable{
 			}
 			else
 			{
-				if(nm.getAvgCigPerDay() > this.smokedPerDay * 1.2 || irrationalChoice())
+				if(nm.getAvgCigPerDay() > this.smokedPerDay * SimConstants.SmokerPerDayUpperPct || irrationalChoice())
 				{
-					this.smokedPerDay = (int)Math.round(changeWithinBounds(this.smokedPerDay, 0, this.cigLimit, (nm.getInfCigPerDay()* 0.5), Operations.ADD));
+					this.smokedPerDay = (int)Math.round(changeWithinBounds(this.smokedPerDay, 0, SimConstants.cigLimit, (nm.getInfCigPerDay()* 0.5), Operations.ADD));
 				}
-				else if(nm.getAvgCigPerDay() < this.smokedPerDay * 0.8 || irrationalChoice())
+				else if(nm.getAvgCigPerDay() < this.smokedPerDay * SimConstants.SmokerPerDayUpperPct || irrationalChoice())
 				{
-					this.smokedPerDay = (int)Math.round(changeWithinBounds(this.smokedPerDay, 0, this.cigLimit, (nm.getInfCigPerDay()* 0.5), Operations.SUBTRACT));
+					this.smokedPerDay = (int)Math.round(changeWithinBounds(this.smokedPerDay, 0, SimConstants.cigLimit, (nm.getInfCigPerDay()* 0.5), Operations.SUBTRACT));
 				}
 			}
 		}
@@ -471,7 +469,7 @@ public class BaseHuman implements Comparable{
 	
 	private boolean irrationalChoice()
 	{
-		if(Math.random() < 0.0001)
+		if(Math.random() < SimConstants.IrrationalChance)
 		{
 			//print("I made an irrational choice.");
 			return true;
@@ -595,9 +593,9 @@ public class BaseHuman implements Comparable{
 				NeighborStore other = iter.next();
 				double score = scoreAgainst(other.getNeighbor());
 				//System.out.println(id + ": My score against " + other.getNeighbor().getID() + " is " + score);
-				if(score > 0.7)
+				if(score > SimConstants.ConnectionScoreAddBound)
 				{
-					if(network.getInDegree(this) >= maxInDegree )
+					if(network.getInDegree(this) >= SimConstants.maxInDegree )
 					{
 						RepastEdge<BaseHuman> removalCandidate = getMinInfluence(network.getInEdges(this));
 						//lower influence nodes more likely to be binned
@@ -619,17 +617,17 @@ public class BaseHuman implements Comparable{
 					{
 						//also check if the influencer has reached their maxOutDegree
 						RepastEdge<BaseHuman> ed1 = network.getEdge(other.getNeighbor(), this);
-						if(ed1 == null && !other.getNeighbor().equals(this) && Math.random() < sociable && network.getOutDegree(other.getNeighbor()) < maxOutDegree)
+						if(ed1 == null && !other.getNeighbor().equals(this) && Math.random() < sociable && network.getOutDegree(other.getNeighbor()) < SimConstants.maxOutDegree)
 						{
 							double nd = Distributions.getND(new NDParams((score - 0.5)*2, 0.3, 0, 1));
 							network.addEdge(other.getNeighbor(), this, nd);
 							canAdd = false;
-							//System.out.println(id + ": I attached to " + other.getNeighbor().getID() + " with influence " + nd /*+ " and prob " + prob + " and points " + points*/);
+							System.out.println(id + ": I attached to " + other.getNeighbor().getID() + " with influence " + nd /*+ " and prob " + prob + " and points " + points*/);
 						}
 					}
 					
 				}
-				else if(score < 0.3)
+				else if(score < SimConstants.ConnectionScoreRemoveBound)
 				{
 					RepastEdge<BaseHuman> ed1 = network.getEdge(other.getNeighbor(), this);
 					if(ed1 != null && Math.random() < sociable)
@@ -640,7 +638,7 @@ public class BaseHuman implements Comparable{
 			}
 			
 			//Also have the chance of adding a random edge with a random influence
-			if(Math.random() < (sociable * 0.0001)  && network.getInDegree(this) < maxInDegree )
+			if(Math.random() < (sociable * 0.0001)  && network.getInDegree(this) < SimConstants.maxInDegree )
 			{
 				//System.out.println("Adding a random edge");
 				IndexedIterable<BaseHuman> allNodes = (IndexedIterable<BaseHuman>) context.getObjects(BaseHuman.class);
@@ -731,7 +729,7 @@ public class BaseHuman implements Comparable{
 	
 	public boolean checkCanEdgeOut()
 	{
-		if(network.getOutDegree(this) > this.maxOutDegree)
+		if(network.getOutDegree(this) > SimConstants.maxOutDegree)
 			return false;
 		else 
 			return true;

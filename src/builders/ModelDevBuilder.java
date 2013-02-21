@@ -69,7 +69,7 @@ public class ModelDevBuilder implements ContextBuilder<Object> {
 		
 		
 		System.out.println(parameters.getValue("numNodes"));
-		Watchman watch = new Watchman(10, true, true, true, "v0.97-big", context, network);
+		Watchman watch = new Watchman(10, true, true, true, "v0.97", context, network);
 		context.add(watch);
 		
 		return context;
