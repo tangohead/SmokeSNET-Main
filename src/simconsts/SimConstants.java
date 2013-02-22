@@ -26,6 +26,10 @@ public class SimConstants {
 	public final static double SociableMean = 0.6;
 	public final static double SociableSD = 0.4;
 	
-	public final static int SmokedPerDayMean = 5;
+	public final static int SmokedPerDayLowerMean = 5;
+	public final static int SmokedPerDayMidMean = 12;
+	public final static int SmokedPerDayUpperMean = 20;
+	public final static double SmokedPerDaySD = 0.8;
 	
+	public final static int LocalNeighborhoodHops = 2;
 }

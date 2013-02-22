@@ -80,7 +80,7 @@ public class BaseHuman implements Comparable{
 			else
 			{
 				this.givingUp = true;
-				this.stepsSinceGiveUp = (int) Math.random() * 100;
+				this.stepsSinceGiveUp = (int) Math.random() * 50;
 			}
 		}
 		else
@@ -105,21 +105,21 @@ public class BaseHuman implements Comparable{
 		if(rand < 0.2)
 		{
 			if(isSmoker)
-				this.smokedPerDay = Distributions.getIntNDWithLimits(5, 0.8, 0, 40);
+				this.smokedPerDay = Distributions.getIntNDWithLimits(SimConstants.SmokedPerDayLowerMean, SimConstants.SmokedPerDaySD, 0, 40);
 			else
 				this.smokedPerDay = 0;
 		}
 		else if (rand > 0.8)
 		{
 			if(isSmoker)
-				this.smokedPerDay = Distributions.getIntNDWithLimits(12, 0.8, 0, 40);
+				this.smokedPerDay = Distributions.getIntNDWithLimits(SimConstants.SmokedPerDayMidMean, SimConstants.SmokedPerDaySD, 0, 40);
 			else
 				this.smokedPerDay = 0;
 		}
 		else
 		{
 			if(isSmoker)
-				this.smokedPerDay = Distributions.getIntNDWithLimits(20, 0.8, 0, 40);
+				this.smokedPerDay = Distributions.getIntNDWithLimits(SimConstants.SmokedPerDayUpperMean, SimConstants.SmokedPerDaySD, 0, 40);
 			else
 				this.smokedPerDay = 0;
 		}
@@ -202,7 +202,7 @@ public class BaseHuman implements Comparable{
 		//we probabably want to get nodes within a local network (2 or 3 hops)
 		//to see if anyone random is worth picking.
 		
-		HashSet<NeighborStore> localNeighborhood = GeneralTools.getUniqueWithinHops(context, network, this, 2, true);
+		HashSet<NeighborStore> localNeighborhood = GeneralTools.getUniqueWithinHops(context, network, this, SimConstants.LocalNeighborhoodHops, true);
 		
 		NeighborMetrics nm = new NeighborMetrics(localNeighborhood);
 		
@@ -232,11 +232,11 @@ public class BaseHuman implements Comparable{
 				{
 					if(this.health < nm.getInfHealth())
 					{
-						endDecision(true, 0.4, nm);
+						endDecision(true, 0.5, nm);
 					}	
 					else
 					{
-						endDecision(true, 0.6, nm);
+						endDecision(true, 0.7, nm);
 					}
 				}
 				else
@@ -464,7 +464,7 @@ public class BaseHuman implements Comparable{
 	}
 	private void statusCall()
 	{
-		print("Smoker: " + this.isSmoker + " Cigs: " + this.smokedPerDay + " Giving Up?: " + this.givingUp + " Steps: " + this.stepsSinceGiveUp); 
+		//print("Smoker: " + this.isSmoker + " Cigs: " + this.smokedPerDay + " Giving Up?: " + this.givingUp + " Steps: " + this.stepsSinceGiveUp); 
 	}
 	
 	private boolean irrationalChoice()
@@ -638,7 +638,8 @@ public class BaseHuman implements Comparable{
 			}
 			
 			//Also have the chance of adding a random edge with a random influence
-			if(Math.random() < (sociable * 0.0001)  && network.getInDegree(this) < SimConstants.maxInDegree )
+			//print("soc"+(sociable * 0.0001));
+			if(Math.random() < (sociable * 0.000001)  && network.getInDegree(this) < SimConstants.maxInDegree )
 			{
 				//System.out.println("Adding a random edge");
 				IndexedIterable<BaseHuman> allNodes = (IndexedIterable<BaseHuman>) context.getObjects(BaseHuman.class);
@@ -648,7 +649,7 @@ public class BaseHuman implements Comparable{
 				{
 					double nd = Distributions.getND(new NDParams(Math.random(), 0.3, 0, 1));
 					network.addEdge(random, this, nd);
-					//print("I randomly attached to " + random.getID());
+					print("I randomly attached to " + random.getID());
 					//System.out.println(id + ": I attached to " + other.getNeighbor().getID() + " with influence " + nd /*+ " and prob " + prob + " and points " + points*/);
 				}
 			}
@@ -659,15 +660,15 @@ public class BaseHuman implements Comparable{
 			//print("I have " + network.getDegree(this) + ". Adding a random edge");
 			if(Math.random() < 0.3)
 			{
-//				IndexedIterable<BaseHuman> allNodes = (IndexedIterable<BaseHuman>) context.getObjects(BaseHuman.class);
-//				BaseHuman random = allNodes.get((int)Math.round(Math.random() * (allNodes.size()-1)));
-//				RepastEdge<BaseHuman> ed1 = network.getEdge(random, this);
-//				if(ed1 == null && random != this && random.checkCanEdgeOut())
-//				{
-//					double nd = Distributions.getND(new NDParams(Math.random(), 0.3, 0, 1));
-//					network.addEdge(random, this, nd);
-//					//System.out.println(id + ": I attached to " + other.getNeighbor().getID() + " with influence " + nd /*+ " and prob " + prob + " and points " + points*/);
-//				}
+				IndexedIterable<BaseHuman> allNodes = (IndexedIterable<BaseHuman>) context.getObjects(BaseHuman.class);
+				BaseHuman random = allNodes.get((int)Math.round(Math.random() * (allNodes.size()-1)));
+				RepastEdge<BaseHuman> ed1 = network.getEdge(random, this);
+				if(ed1 == null && random != this && random.checkCanEdgeOut())
+				{
+					double nd = Distributions.getND(new NDParams(Math.random(), 0.3, 0, 1));
+					network.addEdge(random, this, nd);
+					System.out.println(id + ": I attached to " + random.getID() + " with influence " + nd /*+ " and prob " + prob + " and points " + points*/);
+				}
 			}
 		}
 	}
@@ -724,7 +725,7 @@ public class BaseHuman implements Comparable{
 	
 	private void print(String msg)
 	{
-		//System.out.println("[NODE " + this.id + "]: "+msg);
+		System.out.println("[NODE " + this.id + "]: "+msg);
 	}
 	
 	public boolean checkCanEdgeOut()
