@@ -25,7 +25,7 @@
       <null/>
     </entry>
   </editedNetStyles>
-  <frequency>ON_NEW</frequency>
+  <frequency>AT_INTERVAL</frequency>
   <schedParams>
     <start>1.0</start>
     <interval>1.0</interval>
