@@ -1,2 +1,2752 @@
-WARN  [AWT-EventQueue-0] 2013-02-28 01:05:17,539 repast.simphony.scenario.ScenarioCPInitializer - Warning while parsing classpath: Empty or non-existent path 'G:\My Documents\3rd Year Project\SmokeSNET-Main\lib'.
-WARN  [AWT-EventQueue-0] 2013-02-28 01:05:17,613 repast.simphony.scenario.ScenarioLoader - While initializing classpath: Empty or non-existent path 'G:\My Documents\3rd Year Project\SmokeSNET-Main\lib'.
+WARN  [AWT-EventQueue-0] 2013-03-02 20:26:17,892 repast.simphony.scenario.ScenarioCPInitializer - Warning while parsing classpath: Empty or non-existent path '/Users/matt/git/SmokeSNET-Main/lib'.
+WARN  [AWT-EventQueue-0] 2013-03-02 20:26:18,046 repast.simphony.scenario.ScenarioLoader - While initializing classpath: Empty or non-existent path '/Users/matt/git/SmokeSNET-Main/lib'.
+1000
+0.015493603512036692
+[NODE n227]: I gave up smoking!
+[NODE n840]: I gave up smoking!
+[NODE n986]: I started smoking!
+[NODE n244]: I started smoking!
+[NODE n264]: I gave up smoking!
+[NODE n290]: I gave up smoking!
+[NODE n737]: I gave up smoking!
+[NODE n383]: I started smoking!
+[NODE n619]: I gave up smoking!
+[NODE n543]: I started smoking!
+[NODE n543]: BRANCH 1
+	BRANCH 2b
+		BRANCH 3c
+[NODE n43]: I gave up smoking!
+[NODE n473]: I started smoking!
+[NODE n615]: I gave up smoking!
+[NODE n426]: I gave up smoking!
+[NODE n306]: I gave up smoking!
+[NODE n432]: I gave up smoking!
+[NODE n311]: I gave up smoking!
+[NODE n992]: I started smoking!
+[NODE n233]: I gave up smoking!
+[NODE n18]: I gave up smoking!
+[NODE n522]: I gave up smoking!
+[NODE n964]: I gave up smoking!
+[NODE n385]: I gave up smoking!
+[NODE n327]: I gave up smoking!
+[NODE n671]: I gave up smoking!
+[NODE n727]: I started smoking!
+[NODE n727]: BRANCH 1
+	BRANCH 2a
+		BRANCH 3a
+[NODE n605]: I gave up smoking!
+[NODE n799]: I gave up smoking!
+n395: I attached to n94 with influence 0.3898933408633033
+[NODE n872]: I gave up smoking!
+[NODE n535]: I started smoking!
+[NODE n535]: BRANCH 1
+	BRANCH 2b
+		BRANCH 3d
+[NODE n552]: I started smoking!
+[NODE n552]: BRANCH 1
+	BRANCH 2b
+		BRANCH 3c
+[NODE n800]: I started smoking!
+[NODE n800]: BRANCH 1
+	BRANCH 2b
+		BRANCH 3d
+[NODE n362]: I started smoking!
+[NODE n362]: BRANCH 1
+	BRANCH 2b
+		BRANCH 3d
+[NODE n697]: I started smoking!
+[NODE n697]: BRANCH 1
+	BRANCH 2b
+		BRANCH 3d
+[NODE n407]: I started smoking!
+[NODE n407]: BRANCH 1
+	BRANCH 2b
+		BRANCH 3d
+[NODE n178]: I started smoking!
+[NODE n178]: BRANCH 1
+	BRANCH 2a
+		BRANCH 3b
+[NODE n405]: I started smoking!
+[NODE n405]: BRANCH 1
+	BRANCH 2b
+		BRANCH 3d
+[NODE n178]: I gave up smoking!
+[NODE n144]: I gave up smoking!
+[NODE n144]: I started smoking!
+[NODE n289]: I started smoking!
+[NODE n289]: BRANCH 1
+	BRANCH 2a
+		BRANCH 3b
+[NODE n878]: I started smoking!
+[NODE n878]: BRANCH 1
+	BRANCH 2a
+		BRANCH 3b
+[NODE n571]: I started smoking!
+[NODE n571]: BRANCH 1
+	BRANCH 2b
+		BRANCH 3d
+[NODE n405]: I gave up smoking!
+[NODE n924]: I started smoking!
+[NODE n924]: BRANCH 1
+	BRANCH 2b
+		BRANCH 3d
+[NODE n432]: I started smoking!
+[NODE n432]: BRANCH 1
+	BRANCH 2b
+		BRANCH 3d
+[NODE n10]: I started smoking!
+[NODE n10]: BRANCH 1
+	BRANCH 2b
+		BRANCH 3d
+[NODE n203]: I started smoking!
+[NODE n203]: BRANCH 1
+	BRANCH 2a
+		BRANCH 3b
+********** WATCHMAN ***********
+0.014038018847456233
+Avg Clustering Coefficient: 0.014038018847456233
+******** END WATCHMAN *********
+[NODE n837]: I started smoking!
+[NODE n837]: BRANCH 1
+	BRANCH 2b
+		BRANCH 3d
+[NODE n859]: I started smoking!
+[NODE n859]: BRANCH 1
+	BRANCH 2b
+		BRANCH 3d
+[NODE n854]: I started smoking!
+[NODE n854]: BRANCH 1
+	BRANCH 2a
+		BRANCH 3b
+[NODE n107]: I started smoking!
+[NODE n107]: BRANCH 1
+	BRANCH 2a
+		BRANCH 3b
+[NODE n299]: I started smoking!
+[NODE n299]: BRANCH 1
+	BRANCH 2a
+		BRANCH 3b
+[NODE n803]: I started smoking!
+[NODE n803]: BRANCH 1
+	BRANCH 2a
+		BRANCH 3b
+[NODE n388]: I started smoking!
+[NODE n388]: BRANCH 1
+	BRANCH 2b
+		BRANCH 3d
+[NODE n667]: I started smoking!
+[NODE n667]: BRANCH 1
+	BRANCH 2b
+		BRANCH 3d
+[NODE n767]: I started smoking!
+[NODE n767]: BRANCH 1
+	BRANCH 2a
+		BRANCH 3b
+[NODE n499]: I started smoking!
+[NODE n499]: BRANCH 1
+	BRANCH 2b
+		BRANCH 3d
+[NODE n827]: I started smoking!
+[NODE n827]: BRANCH 1
+	BRANCH 2b
+		BRANCH 3d
+[NODE n470]: I started smoking!
+[NODE n470]: BRANCH 1
+	BRANCH 2a
+		BRANCH 3b
+[NODE n3]: I started smoking!
+[NODE n3]: BRANCH 1
+	BRANCH 2a
+		BRANCH 3b
+[NODE n850]: I started smoking!
+[NODE n850]: BRANCH 1
+	BRANCH 2a
+		BRANCH 3b
+[NODE n732]: I started smoking!
+[NODE n732]: BRANCH 1
+	BRANCH 2b
+		BRANCH 3d
+[NODE n467]: I gave up smoking!
+[NODE n467]: I started smoking!
+[NODE n276]: I started smoking!
+[NODE n276]: BRANCH 1
+	BRANCH 2b
+		BRANCH 3d
+[NODE n649]: I started smoking!
+[NODE n649]: BRANCH 1
+	BRANCH 2b
+		BRANCH 3d
+[NODE n961]: I started smoking!
+[NODE n961]: BRANCH 1
+	BRANCH 2b
+		BRANCH 3d
+[NODE n645]: I started smoking!
+[NODE n645]: BRANCH 1
+	BRANCH 2b
+		BRANCH 3d
+[NODE n758]: I started smoking!
+[NODE n758]: BRANCH 1
+	BRANCH 2b
+		BRANCH 3d
+[NODE n120]: I started smoking!
+[NODE n120]: BRANCH 1
+	BRANCH 2a
+		BRANCH 3b
+[NODE n735]: I started smoking!
+[NODE n735]: BRANCH 1
+	BRANCH 2b
+		BRANCH 3d
+[NODE n106]: I started smoking!
+[NODE n106]: BRANCH 1
+	BRANCH 2a
+		BRANCH 3b
+[NODE n770]: I started smoking!
+[NODE n770]: BRANCH 1
+	BRANCH 2b
+		BRANCH 3d
+[NODE n961]: I gave up smoking!
+[NODE n875]: I started smoking!
+[NODE n875]: BRANCH 1
+	BRANCH 2a
+		BRANCH 3b
+[NODE n985]: I started smoking!
+[NODE n985]: BRANCH 1
+	BRANCH 2a
+		BRANCH 3b
+[NODE n272]: I started smoking!
+[NODE n272]: BRANCH 1
+	BRANCH 2b
+		BRANCH 3d
+[NODE n275]: I started smoking!
+[NODE n275]: BRANCH 1
+	BRANCH 2a
+		BRANCH 3b
+[NODE n824]: I gave up smoking!
+[NODE n486]: I started smoking!
+[NODE n486]: BRANCH 1
+	BRANCH 2a
+		BRANCH 3b
+[NODE n684]: I started smoking!
+[NODE n684]: BRANCH 1
+	BRANCH 2b
+		BRANCH 3d
+[NODE n161]: I started smoking!
+[NODE n161]: BRANCH 1
+	BRANCH 2b
+		BRANCH 3d
+[NODE n529]: I started smoking!
+[NODE n529]: BRANCH 1
+	BRANCH 2b
+		BRANCH 3d
+[NODE n852]: I gave up smoking!
+[NODE n671]: I started smoking!
+[NODE n671]: BRANCH 1
+	BRANCH 2b
+		BRANCH 3d
+[NODE n462]: I gave up smoking!
+[NODE n652]: I started smoking!
+[NODE n652]: BRANCH 1
+	BRANCH 2a
+		BRANCH 3b
+[NODE n627]: I started smoking!
+[NODE n627]: BRANCH 1
+	BRANCH 2b
+		BRANCH 3d
+[NODE n655]: I started smoking!
+[NODE n655]: BRANCH 1
+	BRANCH 2b
+		BRANCH 3d
+[NODE n395]: I started smoking!
+[NODE n395]: BRANCH 1
+	BRANCH 2b
+		BRANCH 3d
+[NODE n732]: I gave up smoking!
+[NODE n252]: I gave up smoking!
+[NODE n499]: I gave up smoking!
+[NODE n931]: I started smoking!
+[NODE n931]: BRANCH 1
+	BRANCH 2b
+		BRANCH 3d
+********** WATCHMAN ***********
+0.014038018847456233
+Avg Clustering Coefficient: 0.014038018847456233
+******** END WATCHMAN *********
+[NODE n931]: I gave up smoking!
+[NODE n410]: I gave up smoking!
+[NODE n824]: I started smoking!
+[NODE n824]: BRANCH 1
+	BRANCH 2b
+		BRANCH 3d
+[NODE n137]: I started smoking!
+[NODE n137]: BRANCH 1
+	BRANCH 2b
+		BRANCH 3d
+[NODE n564]: I started smoking!
+[NODE n564]: BRANCH 1
+	BRANCH 2a
+		BRANCH 3b
+[NODE n383]: I gave up smoking!
+[NODE n362]: I gave up smoking!
+[NODE n362]: I started smoking!
+[NODE n83]: I started smoking!
+[NODE n83]: BRANCH 1
+	BRANCH 2b
+		BRANCH 3d
+[NODE n171]: I started smoking!
+[NODE n171]: BRANCH 1
+	BRANCH 2a
+		BRANCH 3b
+[NODE n237]: I gave up smoking!
+[NODE n231]: I gave up smoking!
+[NODE n829]: I started smoking!
+[NODE n829]: BRANCH 1
+	BRANCH 2b
+		BRANCH 3d
+[NODE n137]: I gave up smoking!
+[NODE n985]: I gave up smoking!
+[NODE n643]: I started smoking!
+[NODE n643]: BRANCH 1
+	BRANCH 2b
+		BRANCH 3d
+[NODE n792]: I started smoking!
+[NODE n792]: BRANCH 1
+	BRANCH 2a
+		BRANCH 3b
+[NODE n916]: I started smoking!
+[NODE n916]: BRANCH 1
+	BRANCH 2a
+		BRANCH 3b
+[NODE n843]: I started smoking!
+[NODE n843]: BRANCH 1
+	BRANCH 2b
+		BRANCH 3d
+[NODE n957]: I started smoking!
+[NODE n957]: BRANCH 1
+	BRANCH 2b
+		BRANCH 3d
+[NODE n880]: I started smoking!
+[NODE n880]: BRANCH 1
+	BRANCH 2a
+		BRANCH 3b
+[NODE n852]: I started smoking!
+[NODE n852]: BRANCH 1
+	BRANCH 2b
+		BRANCH 3d
+[NODE n341]: I started smoking!
+[NODE n341]: BRANCH 1
+	BRANCH 2b
+		BRANCH 3d
+[NODE n314]: I started smoking!
+[NODE n314]: BRANCH 1
+	BRANCH 2b
+		BRANCH 3d
+[NODE n158]: I started smoking!
+[NODE n158]: BRANCH 1
+	BRANCH 2a
+		BRANCH 3b
+[NODE n359]: I started smoking!
+[NODE n359]: BRANCH 1
+	BRANCH 2b
+		BRANCH 3d
+[NODE n272]: I gave up smoking!
+[NODE n564]: I gave up smoking!
+[NODE n655]: I gave up smoking!
+[NODE n52]: I started smoking!
+[NODE n52]: BRANCH 1
+	BRANCH 2a
+		BRANCH 3b
+[NODE n697]: I gave up smoking!
+[NODE n276]: I gave up smoking!
+********** WATCHMAN ***********
+0.014038018847456233
+Avg Clustering Coefficient: 0.014038018847456233
+******** END WATCHMAN *********
+[NODE n113]: I started smoking!
+[NODE n113]: BRANCH 1
+	BRANCH 2b
+		BRANCH 3d
+[NODE n242]: I started smoking!
+[NODE n242]: BRANCH 1
+	BRANCH 2a
+		BRANCH 3b
+[NODE n36]: I started smoking!
+[NODE n36]: BRANCH 1
+	BRANCH 2a
+		BRANCH 3b
+[NODE n410]: I started smoking!
+[NODE n410]: BRANCH 1
+	BRANCH 2b
+		BRANCH 3d
+[NODE n1]: I started smoking!
+[NODE n1]: BRANCH 1
+	BRANCH 2b
+		BRANCH 3d
+[NODE n734]: I started smoking!
+[NODE n734]: BRANCH 1
+	BRANCH 2b
+		BRANCH 3d
+[NODE n351]: I started smoking!
+[NODE n351]: BRANCH 1
+	BRANCH 2b
+		BRANCH 3d
+[NODE n32]: I started smoking!
+[NODE n32]: BRANCH 1
+	BRANCH 2b
+		BRANCH 3d
+[NODE n318]: I started smoking!
+[NODE n318]: BRANCH 1
+	BRANCH 2a
+		BRANCH 3b
+[NODE n922]: I started smoking!
+[NODE n922]: BRANCH 1
+	BRANCH 2a
+		BRANCH 3b
+[NODE n469]: I started smoking!
+[NODE n469]: BRANCH 1
+	BRANCH 2b
+		BRANCH 3d
+[NODE n275]: I gave up smoking!
+[NODE n275]: I started smoking!
+[NODE n590]: I started smoking!
+[NODE n590]: BRANCH 1
+	BRANCH 2a
+		BRANCH 3b
+[NODE n883]: I started smoking!
+[NODE n883]: BRANCH 1
+	BRANCH 2b
+		BRANCH 3d
+[NODE n486]: I gave up smoking!
+[NODE n314]: I gave up smoking!
+[NODE n158]: I gave up smoking!
+[NODE n155]: I started smoking!
+[NODE n155]: BRANCH 1
+	BRANCH 2b
+		BRANCH 3d
+[NODE n671]: I gave up smoking!
+[NODE n0]: I started smoking!
+[NODE n0]: BRANCH 1
+	BRANCH 2a
+		BRANCH 3b
+n197: I attached to n301 with influence 0.512143651187809
+[NODE n724]: I started smoking!
+[NODE n724]: BRANCH 1
+	BRANCH 2a
+		BRANCH 3b
+[NODE n63]: I gave up smoking!
+[NODE n770]: I gave up smoking!
+[NODE n477]: I started smoking!
+[NODE n477]: BRANCH 1
+	BRANCH 2b
+		BRANCH 3d
+[NODE n383]: I started smoking!
+[NODE n383]: BRANCH 1
+	BRANCH 2b
+		BRANCH 3d
+[NODE n113]: I gave up smoking!
+[NODE n889]: I started smoking!
+[NODE n889]: BRANCH 1
+	BRANCH 2a
+		BRANCH 3b
+[NODE n328]: I randomly attached to n608
+[NODE n99]: I started smoking!
+[NODE n99]: BRANCH 1
+	BRANCH 2a
+		BRANCH 3b
+[NODE n896]: I started smoking!
+[NODE n896]: BRANCH 1
+	BRANCH 2a
+		BRANCH 3b
+[NODE n31]: I started smoking!
+[NODE n31]: BRANCH 1
+	BRANCH 2b
+		BRANCH 3d
+[NODE n841]: I started smoking!
+[NODE n841]: BRANCH 1
+	BRANCH 2b
+		BRANCH 3d
+[NODE n152]: I started smoking!
+[NODE n152]: BRANCH 1
+	BRANCH 2a
+		BRANCH 3b
+********** WATCHMAN ***********
+0.014523927496630189
+Avg Clustering Coefficient: 0.014523927496630189
+******** END WATCHMAN *********
+[NODE n791]: I gave up smoking!
+[NODE n791]: I started smoking!
+[NODE n377]: I started smoking!
+[NODE n377]: BRANCH 1
+	BRANCH 2a
+		BRANCH 3b
+[NODE n159]: I started smoking!
+[NODE n159]: BRANCH 1
+	BRANCH 2b
+		BRANCH 3d
+[NODE n75]: I started smoking!
+[NODE n75]: BRANCH 1
+	BRANCH 2a
+		BRANCH 3b
+[NODE n342]: I started smoking!
+[NODE n342]: BRANCH 1
+	BRANCH 2b
+		BRANCH 3d
+[NODE n995]: I gave up smoking!
+[NODE n995]: I started smoking!
+[NODE n452]: I started smoking!
+[NODE n452]: BRANCH 1
+	BRANCH 2b
+		BRANCH 3d
+[NODE n352]: I started smoking!
+[NODE n352]: BRANCH 1
+	BRANCH 2b
+		BRANCH 3d
+[NODE n362]: I gave up smoking!
+[NODE n362]: I started smoking!
+[NODE n290]: I started smoking!
+[NODE n290]: BRANCH 1
+	BRANCH 2a
+		BRANCH 3b
+[NODE n724]: I gave up smoking!
+[NODE n724]: I started smoking!
+[NODE n423]: I started smoking!
+[NODE n423]: BRANCH 1
+	BRANCH 2b
+		BRANCH 3d
+[NODE n913]: I started smoking!
+[NODE n913]: BRANCH 1
+	BRANCH 2a
+		BRANCH 3b
+[NODE n674]: I started smoking!
+[NODE n674]: BRANCH 1
+	BRANCH 2b
+		BRANCH 3d
+[NODE n320]: I started smoking!
+[NODE n320]: BRANCH 1
+	BRANCH 2b
+		BRANCH 3d
+[NODE n590]: I gave up smoking!
+[NODE n432]: I gave up smoking!
+[NODE n432]: I started smoking!
+[NODE n469]: I gave up smoking!
+[NODE n469]: I started smoking!
+[NODE n992]: I gave up smoking!
+[NODE n992]: I started smoking!
+[NODE n349]: I started smoking!
+[NODE n349]: BRANCH 1
+	BRANCH 2b
+		BRANCH 3d
+[NODE n734]: I gave up smoking!
+[NODE n866]: I gave up smoking!
+[NODE n60]: I started smoking!
+[NODE n60]: BRANCH 1
+	BRANCH 2b
+		BRANCH 3d
+n227: I attached to n931 with influence 0.7818184032565787
+n652: I attached to n60 with influence 0.6653326429279272
+[NODE n126]: I started smoking!
+[NODE n126]: BRANCH 1
+	BRANCH 2a
+		BRANCH 3b
+[NODE n829]: I gave up smoking!
+[NODE n43]: I started smoking!
+[NODE n43]: BRANCH 1
+	BRANCH 2b
+		BRANCH 3d
+[NODE n264]: I started smoking!
+[NODE n264]: BRANCH 1
+	BRANCH 2a
+		BRANCH 3b
+[NODE n10]: I gave up smoking!
+[NODE n339]: I started smoking!
+[NODE n339]: BRANCH 1
+	BRANCH 2b
+		BRANCH 3d
+[NODE n490]: I started smoking!
+[NODE n490]: BRANCH 1
+	BRANCH 2b
+		BRANCH 3d
+[NODE n619]: I started smoking!
+[NODE n619]: BRANCH 1
+	BRANCH 2b
+		BRANCH 3d
+[NODE n789]: I started smoking!
+[NODE n789]: BRANCH 1
+	BRANCH 2a
+		BRANCH 3b
+[NODE n499]: I started smoking!
+[NODE n499]: BRANCH 1
+	BRANCH 2b
+		BRANCH 3d
+[NODE n675]: I started smoking!
+[NODE n675]: BRANCH 1
+	BRANCH 2b
+		BRANCH 3d
+[NODE n306]: I started smoking!
+[NODE n306]: BRANCH 1
+	BRANCH 2a
+		BRANCH 3b
+[NODE n361]: I started smoking!
+[NODE n361]: BRANCH 1
+	BRANCH 2a
+		BRANCH 3b
+[NODE n964]: I started smoking!
+[NODE n964]: BRANCH 1
+	BRANCH 2a
+		BRANCH 3b
+[NODE n320]: I gave up smoking!
+[NODE n120]: I gave up smoking!
+********** WATCHMAN ***********
+0.015069509137807965
+Avg Clustering Coefficient: 0.015069509137807965
+******** END WATCHMAN *********
+[NODE n237]: I started smoking!
+[NODE n237]: BRANCH 1
+	BRANCH 2b
+		BRANCH 3d
+[NODE n255]: I started smoking!
+[NODE n255]: BRANCH 1
+	BRANCH 2a
+		BRANCH 3b
+[NODE n38]: I started smoking!
+[NODE n38]: BRANCH 1
+	BRANCH 2b
+		BRANCH 3d
+[NODE n231]: I started smoking!
+[NODE n231]: BRANCH 1
+	BRANCH 2b
+		BRANCH 3d
+[NODE n349]: I gave up smoking!
+[NODE n349]: I started smoking!
+[NODE n992]: I gave up smoking!
+[NODE n652]: I gave up smoking!
+[NODE n264]: I gave up smoking!
+[NODE n787]: I started smoking!
+[NODE n787]: BRANCH 1
+	BRANCH 2b
+		BRANCH 3d
+[NODE n416]: I gave up smoking!
+[NODE n986]: I gave up smoking!
+[NODE n837]: I gave up smoking!
+[NODE n1]: I gave up smoking!
+[NODE n796]: I started smoking!
+[NODE n796]: BRANCH 1
+	BRANCH 2b
+		BRANCH 3d
+[NODE n383]: I gave up smoking!
+[NODE n998]: I started smoking!
+[NODE n998]: BRANCH 1
+	BRANCH 2b
+		BRANCH 3d
+[NODE n301]: I started smoking!
+[NODE n301]: BRANCH 1
+	BRANCH 2b
+		BRANCH 3d
+[NODE n206]: I started smoking!
+[NODE n206]: BRANCH 1
+	BRANCH 2a
+		BRANCH 3b
+[NODE n47]: I started smoking!
+[NODE n47]: BRANCH 1
+	BRANCH 2b
+		BRANCH 3d
+[NODE n883]: I gave up smoking!
+[NODE n751]: I gave up smoking!
+[NODE n751]: I started smoking!
+[NODE n156]: I started smoking!
+[NODE n156]: BRANCH 1
+	BRANCH 2a
+		BRANCH 3b
+[NODE n675]: I gave up smoking!
+[NODE n306]: I gave up smoking!
+[NODE n964]: I gave up smoking!
+[NODE n829]: I started smoking!
+[NODE n829]: BRANCH 1
+	BRANCH 2b
+		BRANCH 3d
+[NODE n695]: I started smoking!
+[NODE n695]: BRANCH 1
+	BRANCH 2b
+		BRANCH 3d
+[NODE n52]: I gave up smoking!
+[NODE n883]: I started smoking!
+[NODE n883]: BRANCH 1
+	BRANCH 2b
+		BRANCH 3d
+[NODE n52]: I started smoking!
+[NODE n673]: I started smoking!
+[NODE n673]: BRANCH 1
+	BRANCH 2b
+		BRANCH 3d
+[NODE n349]: I gave up smoking!
+[NODE n349]: I started smoking!
+[NODE n474]: I started smoking!
+[NODE n474]: BRANCH 1
+	BRANCH 2a
+		BRANCH 3b
+[NODE n255]: I gave up smoking!
+[NODE n255]: I started smoking!
+[NODE n190]: I started smoking!
+[NODE n190]: BRANCH 1
+	BRANCH 2a
+		BRANCH 3b
+[NODE n2]: I started smoking!
+[NODE n2]: BRANCH 1
+	BRANCH 2b
+		BRANCH 3d
+[NODE n714]: I started smoking!
+[NODE n714]: BRANCH 1
+	BRANCH 2a
+		BRANCH 3b
+[NODE n106]: I gave up smoking!
+[NODE n850]: I gave up smoking!
+[NODE n359]: I gave up smoking!
+[NODE n359]: I started smoking!
+[NODE n974]: I started smoking!
+[NODE n974]: BRANCH 1
+	BRANCH 2a
+		BRANCH 3b
+[NODE n432]: I gave up smoking!
+[NODE n859]: I gave up smoking!
+[NODE n859]: I started smoking!
+********** WATCHMAN ***********
+0.015069509137807965
+Avg Clustering Coefficient: 0.015069509137807965
+******** END WATCHMAN *********
+[NODE n791]: I gave up smoking!
+[NODE n791]: I started smoking!
+[NODE n36]: I gave up smoking!
+[NODE n36]: I started smoking!
+[NODE n675]: I started smoking!
+[NODE n675]: BRANCH 1
+	BRANCH 2b
+		BRANCH 3d
+[NODE n306]: I started smoking!
+[NODE n306]: BRANCH 1
+	BRANCH 2a
+		BRANCH 3b
+[NODE n964]: I started smoking!
+[NODE n964]: BRANCH 1
+	BRANCH 2a
+		BRANCH 3b
+[NODE n922]: I gave up smoking!
+[NODE n922]: I started smoking!
+[NODE n442]: I started smoking!
+[NODE n442]: BRANCH 1
+	BRANCH 2b
+		BRANCH 3d
+[NODE n655]: I started smoking!
+[NODE n655]: BRANCH 1
+	BRANCH 2b
+		BRANCH 3d
+[NODE n394]: I gave up smoking!
+[NODE n493]: I gave up smoking!
+[NODE n152]: I gave up smoking!
+[NODE n148]: I started smoking!
+[NODE n148]: BRANCH 1
+	BRANCH 2b
+		BRANCH 3d
+[NODE n487]: I started smoking!
+[NODE n487]: BRANCH 1
+	BRANCH 2a
+		BRANCH 3b
+[NODE n129]: I gave up smoking!
+[NODE n129]: I started smoking!
+[NODE n931]: I started smoking!
+[NODE n931]: BRANCH 1
+	BRANCH 2b
+		BRANCH 3d
+[NODE n791]: I gave up smoking!
+[NODE n791]: I started smoking!
+[NODE n206]: I gave up smoking!
+[NODE n206]: I started smoking!
+[NODE n349]: I gave up smoking!
+[NODE n349]: I started smoking!
+[NODE n159]: I gave up smoking!
+[NODE n916]: I gave up smoking!
+[NODE n916]: I started smoking!
+[NODE n237]: I gave up smoking!
+[NODE n798]: I started smoking!
+[NODE n798]: BRANCH 1
+	BRANCH 2a
+		BRANCH 3b
+[NODE n417]: I started smoking!
+[NODE n417]: BRANCH 1
+	BRANCH 2b
+		BRANCH 3d
+[NODE n240]: I started smoking!
+[NODE n240]: BRANCH 1
+	BRANCH 2a
+		BRANCH 3b
+[NODE n33]: I started smoking!
+[NODE n33]: BRANCH 1
+	BRANCH 2b
+		BRANCH 3d
+[NODE n996]: I started smoking!
+[NODE n996]: BRANCH 1
+	BRANCH 2b
+		BRANCH 3d
+[NODE n964]: I gave up smoking!
+[NODE n964]: I started smoking!
+********** WATCHMAN ***********
+0.015069509137807965
+Avg Clustering Coefficient: 0.015069509137807965
+******** END WATCHMAN *********
+[NODE n880]: I gave up smoking!
+[NODE n880]: I started smoking!
+[NODE n108]: I started smoking!
+[NODE n108]: BRANCH 1
+	BRANCH 2a
+		BRANCH 3b
+[NODE n824]: I gave up smoking!
+[NODE n200]: I started smoking!
+[NODE n200]: BRANCH 1
+	BRANCH 2a
+		BRANCH 3b
+[NODE n968]: I started smoking!
+[NODE n968]: BRANCH 1
+	BRANCH 2a
+		BRANCH 3b
+[NODE n854]: I gave up smoking!
+[NODE n854]: I started smoking!
+[NODE n360]: I started smoking!
+[NODE n360]: BRANCH 1
+	BRANCH 2b
+		BRANCH 3d
+[NODE n924]: I gave up smoking!
+[NODE n474]: I gave up smoking!
+[NODE n351]: I gave up smoking!
+[NODE n474]: I started smoking!
+[NODE n99]: I gave up smoking!
+[NODE n99]: I started smoking!
+[NODE n486]: I started smoking!
+[NODE n486]: BRANCH 1
+	BRANCH 2a
+		BRANCH 3b
+[NODE n423]: I gave up smoking!
+[NODE n913]: I gave up smoking!
+[NODE n924]: I started smoking!
+[NODE n924]: BRANCH 1
+	BRANCH 2b
+		BRANCH 3d
+[NODE n627]: I gave up smoking!
+[NODE n627]: I started smoking!
+[NODE n774]: I started smoking!
+[NODE n774]: BRANCH 1
+	BRANCH 2a
+		BRANCH 3b
+[NODE n94]: I started smoking!
+[NODE n94]: BRANCH 1
+	BRANCH 2b
+		BRANCH 3d
+[NODE n889]: I gave up smoking!
+[NODE n590]: I started smoking!
+[NODE n590]: BRANCH 1
+	BRANCH 2a
+		BRANCH 3b
+[NODE n1]: I started smoking!
+[NODE n1]: BRANCH 1
+	BRANCH 2b
+		BRANCH 3d
+[NODE n979]: I started smoking!
+[NODE n979]: BRANCH 1
+	BRANCH 2b
+		BRANCH 3d
+[NODE n565]: I started smoking!
+[NODE n565]: BRANCH 1
+	BRANCH 2a
+		BRANCH 3b
+[NODE n995]: I gave up smoking!
+[NODE n995]: I started smoking!
+[NODE n654]: I started smoking!
+[NODE n654]: BRANCH 1
+	BRANCH 2b
+		BRANCH 3d
+[NODE n423]: I started smoking!
+[NODE n423]: BRANCH 1
+	BRANCH 2b
+		BRANCH 3d
+[NODE n913]: I started smoking!
+[NODE n913]: BRANCH 1
+	BRANCH 2a
+		BRANCH 3b
+[NODE n190]: I gave up smoking!
+[NODE n190]: I started smoking!
+[NODE n891]: I started smoking!
+[NODE n891]: BRANCH 1
+	BRANCH 2b
+		BRANCH 3d
+[NODE n564]: I started smoking!
+[NODE n564]: BRANCH 1
+	BRANCH 2a
+		BRANCH 3b
+[NODE n737]: I started smoking!
+[NODE n737]: BRANCH 1
+	BRANCH 2b
+		BRANCH 3d
+[NODE n231]: I gave up smoking!
+[NODE n231]: I started smoking!
+[NODE n655]: I gave up smoking!
+********** WATCHMAN ***********
+0.015069509137807965
+Avg Clustering Coefficient: 0.015069509137807965
+******** END WATCHMAN *********
+[NODE n121]: I started smoking!
+[NODE n121]: BRANCH 1
+	BRANCH 2b
+		BRANCH 3d
+[NODE n615]: I started smoking!
+[NODE n615]: BRANCH 1
+	BRANCH 2b
+		BRANCH 3d
+[NODE n123]: I started smoking!
+[NODE n123]: BRANCH 1
+	BRANCH 2a
+		BRANCH 3b
+n123: I attached to n3 with influence 0.9265903329074299
+[NODE n301]: I gave up smoking!
+[NODE n301]: I started smoking!
+[NODE n227]: I started smoking!
+[NODE n227]: BRANCH 1
+	BRANCH 2b
+		BRANCH 3d
+[NODE n542]: I started smoking!
+[NODE n542]: BRANCH 1
+	BRANCH 2a
+		BRANCH 3b
+[NODE n750]: I started smoking!
+[NODE n750]: BRANCH 1
+	BRANCH 2b
+		BRANCH 3d
+[NODE n493]: I started smoking!
+[NODE n493]: BRANCH 1
+	BRANCH 2b
+		BRANCH 3d
+[NODE n7]: I started smoking!
+[NODE n7]: BRANCH 1
+	BRANCH 2b
+		BRANCH 3d
+[NODE n159]: I started smoking!
+[NODE n159]: BRANCH 1
+	BRANCH 2b
+		BRANCH 3d
+[NODE n522]: I started smoking!
+[NODE n522]: BRANCH 1
+	BRANCH 2b
+		BRANCH 3d
+[NODE n168]: I started smoking!
+[NODE n168]: BRANCH 1
+	BRANCH 2b
+		BRANCH 3d
+[NODE n344]: I started smoking!
+[NODE n344]: BRANCH 1
+	BRANCH 2a
+		BRANCH 3b
+[NODE n872]: I started smoking!
+[NODE n872]: BRANCH 1
+	BRANCH 2a
+		BRANCH 3b
+[NODE n992]: I started smoking!
+[NODE n992]: BRANCH 1
+	BRANCH 2b
+		BRANCH 3d
+[NODE n383]: I started smoking!
+[NODE n383]: BRANCH 1
+	BRANCH 2b
+		BRANCH 3d
+[NODE n840]: I started smoking!
+[NODE n840]: BRANCH 1
+	BRANCH 2a
+		BRANCH 3b
+[NODE n927]: I started smoking!
+[NODE n927]: BRANCH 1
+	BRANCH 2a
+		BRANCH 3b
+[NODE n685]: I started smoking!
+[NODE n685]: BRANCH 1
+	BRANCH 2a
+		BRANCH 3b
+[NODE n237]: I started smoking!
+[NODE n237]: BRANCH 1
+	BRANCH 2b
+		BRANCH 3d
+[NODE n99]: I gave up smoking!
+[NODE n99]: I started smoking!
+[NODE n620]: I started smoking!
+[NODE n620]: BRANCH 1
+	BRANCH 2a
+		BRANCH 3b
+[NODE n605]: I started smoking!
+[NODE n605]: BRANCH 1
+	BRANCH 2b
+		BRANCH 3d
+[NODE n594]: I gave up smoking!
+[NODE n594]: I started smoking!
+[NODE n584]: I started smoking!
+[NODE n584]: BRANCH 1
+	BRANCH 2a
+		BRANCH 3b
+[NODE n622]: I started smoking!
+[NODE n622]: BRANCH 1
+	BRANCH 2a
+		BRANCH 3b
+[NODE n769]: I started smoking!
+[NODE n769]: BRANCH 1
+	BRANCH 2b
+		BRANCH 3d
+[NODE n919]: I gave up smoking!
+[NODE n919]: I started smoking!
+[NODE n957]: I gave up smoking!
+[NODE n508]: I started smoking!
+[NODE n508]: BRANCH 1
+	BRANCH 2a
+		BRANCH 3b
+[NODE n727]: I gave up smoking!
+[NODE n727]: I started smoking!
+[NODE n52]: I gave up smoking!
+[NODE n318]: I gave up smoking!
+[NODE n388]: I gave up smoking!
+[NODE n52]: I started smoking!
+[NODE n922]: I gave up smoking!
+[NODE n318]: I started smoking!
+[NODE n388]: I started smoking!
+[NODE n922]: I started smoking!
+[NODE n543]: I gave up smoking!
+[NODE n543]: I started smoking!
+[NODE n90]: I started smoking!
+[NODE n90]: BRANCH 1
+	BRANCH 2b
+		BRANCH 3d
+[NODE n889]: I started smoking!
+[NODE n889]: BRANCH 1
+	BRANCH 2a
+		BRANCH 3b
+[NODE n49]: I gave up smoking!
+[NODE n325]: I started smoking!
+[NODE n325]: BRANCH 1
+	BRANCH 2a
+		BRANCH 3b
+[NODE n251]: I started smoking!
+[NODE n251]: BRANCH 1
+	BRANCH 2a
+		BRANCH 3b
+[NODE n910]: I started smoking!
+[NODE n910]: BRANCH 1
+	BRANCH 2a
+		BRANCH 3b
+[NODE n767]: I gave up smoking!
+[NODE n767]: I started smoking!
+[NODE n377]: I gave up smoking!
+[NODE n377]: I started smoking!
+[NODE n732]: I started smoking!
+[NODE n732]: BRANCH 1
+	BRANCH 2b
+		BRANCH 3d
+[NODE n405]: I started smoking!
+[NODE n405]: BRANCH 1
+	BRANCH 2b
+		BRANCH 3d
+[NODE n327]: I started smoking!
+[NODE n327]: BRANCH 1
+	BRANCH 2b
+		BRANCH 3d
+[NODE n875]: I gave up smoking!
+[NODE n875]: I started smoking!
+[NODE n961]: I started smoking!
+[NODE n961]: BRANCH 1
+	BRANCH 2b
+		BRANCH 3d
+[NODE n363]: I started smoking!
+[NODE n363]: BRANCH 1
+	BRANCH 2b
+		BRANCH 3d
+[NODE n317]: I started smoking!
+[NODE n317]: BRANCH 1
+	BRANCH 2a
+		BRANCH 3b
+[NODE n771]: I started smoking!
+[NODE n771]: BRANCH 1
+	BRANCH 2b
+		BRANCH 3d
+[NODE n393]: I gave up smoking!
+[NODE n393]: I started smoking!
+[NODE n362]: I gave up smoking!
+[NODE n362]: I started smoking!
+[NODE n117]: I gave up smoking!
+[NODE n803]: I gave up smoking!
+[NODE n328]: I started smoking!
+[NODE n328]: BRANCH 1
+	BRANCH 2b
+		BRANCH 3d
+[NODE n200]: I gave up smoking!
+********** WATCHMAN ***********
+0.015378723732736844
+Avg Clustering Coefficient: 0.015378723732736844
+******** END WATCHMAN *********
+[NODE n486]: I gave up smoking!
+[NODE n486]: I started smoking!
+[NODE n57]: I started smoking!
+[NODE n57]: BRANCH 1
+	BRANCH 2a
+		BRANCH 3b
+[NODE n973]: I started smoking!
+[NODE n973]: BRANCH 1
+	BRANCH 2b
+		BRANCH 3d
+[NODE n671]: I started smoking!
+[NODE n671]: BRANCH 1
+	BRANCH 2b
+		BRANCH 3d
+[NODE n646]: I started smoking!
+[NODE n646]: BRANCH 1
+	BRANCH 2a
+		BRANCH 3b
+[NODE n363]: I gave up smoking!
+[NODE n363]: I started smoking!
+[NODE n206]: I gave up smoking!
+[NODE n206]: I started smoking!
+[NODE n499]: I gave up smoking!
+[NODE n158]: I started smoking!
+[NODE n158]: BRANCH 1
+	BRANCH 2a
+		BRANCH 3b
+[NODE n432]: I started smoking!
+[NODE n432]: BRANCH 1
+	BRANCH 2b
+		BRANCH 3d
+[NODE n154]: I started smoking!
+[NODE n154]: BRANCH 1
+	BRANCH 2b
+		BRANCH 3d
+[NODE n440]: I started smoking!
+[NODE n440]: BRANCH 1
+	BRANCH 2b
+		BRANCH 3d
+[NODE n522]: I gave up smoking!
+[NODE n522]: I started smoking!
+[NODE n241]: I started smoking!
+[NODE n241]: BRANCH 1
+	BRANCH 2a
+		BRANCH 3b
+[NODE n799]: I started smoking!
+[NODE n799]: BRANCH 1
+	BRANCH 2b
+		BRANCH 3d
+[NODE n161]: I gave up smoking!
+[NODE n646]: I gave up smoking!
+[NODE n646]: I started smoking!
+[NODE n787]: I gave up smoking!
+[NODE n584]: I gave up smoking!
+[NODE n584]: I started smoking!
+[NODE n758]: I gave up smoking!
+[NODE n159]: I gave up smoking!
+[NODE n159]: I started smoking!
+[NODE n522]: I gave up smoking!
+[NODE n522]: I started smoking!
+[NODE n43]: I gave up smoking!
+[NODE n673]: I gave up smoking!
+[NODE n791]: I gave up smoking!
+[NODE n791]: I started smoking!
+[NODE n36]: I gave up smoking!
+[NODE n36]: I started smoking!
+[NODE n121]: I gave up smoking!
+[NODE n615]: I gave up smoking!
+[NODE n866]: I started smoking!
+[NODE n866]: BRANCH 1
+	BRANCH 2a
+		BRANCH 3b
+[NODE n891]: I gave up smoking!
+[NODE n499]: I started smoking!
+[NODE n499]: BRANCH 1
+	BRANCH 2b
+		BRANCH 3d
+[NODE n529]: I gave up smoking!
+[NODE n854]: I gave up smoking!
+[NODE n854]: I started smoking!
+[NODE n157]: I started smoking!
+[NODE n157]: BRANCH 1
+	BRANCH 2a
+		BRANCH 3b
+[NODE n332]: I gave up smoking!
+[NODE n404]: I gave up smoking!
+[NODE n404]: I started smoking!
+[NODE n751]: I gave up smoking!
+[NODE n751]: I started smoking!
+[NODE n896]: I gave up smoking!
+[NODE n896]: I started smoking!
+********** WATCHMAN ***********
+0.015378723732736844
+Avg Clustering Coefficient: 0.015378723732736844
+******** END WATCHMAN *********
+[NODE n210]: I started smoking!
+[NODE n210]: BRANCH 1
+	BRANCH 2b
+		BRANCH 3d
+[NODE n667]: I gave up smoking!
+[NODE n667]: I started smoking!
+[NODE n699]: I gave up smoking!
+[NODE n33]: I gave up smoking!
+[NODE n33]: I started smoking!
+[NODE n910]: I gave up smoking!
+[NODE n910]: I started smoking!
+[NODE n964]: I gave up smoking!
+[NODE n964]: I started smoking!
+[NODE n643]: I gave up smoking!
+[NODE n843]: I gave up smoking!
+[NODE n822]: I gave up smoking!
+[NODE n792]: I gave up smoking!
+[NODE n822]: I started smoking!
+[NODE n339]: I gave up smoking!
+[NODE n789]: I gave up smoking!
+[NODE n789]: I started smoking!
+[NODE n18]: I started smoking!
+[NODE n18]: BRANCH 1
+	BRANCH 2a
+		BRANCH 3b
+n620: I attached to n18 with influence 0.6592413506735257
+[NODE n928]: I started smoking!
+[NODE n928]: BRANCH 1
+	BRANCH 2b
+		BRANCH 3d
+[NODE n299]: I gave up smoking!
+[NODE n487]: I gave up smoking!
+[NODE n487]: I started smoking!
+[NODE n299]: I started smoking!
+[NODE n792]: I started smoking!
+[NODE n792]: BRANCH 1
+	BRANCH 2a
+		BRANCH 3b
+[NODE n363]: I gave up smoking!
+[NODE n363]: I started smoking!
+[NODE n565]: I gave up smoking!
+[NODE n565]: I started smoking!
+[NODE n806]: I started smoking!
+[NODE n806]: BRANCH 1
+	BRANCH 2b
+		BRANCH 3d
+[NODE n769]: I gave up smoking!
+[NODE n769]: I started smoking!
+[NODE n49]: I started smoking!
+[NODE n49]: BRANCH 1
+	BRANCH 2a
+		BRANCH 3b
+[NODE n385]: I started smoking!
+[NODE n385]: BRANCH 1
+	BRANCH 2a
+		BRANCH 3b
+[NODE n916]: I gave up smoking!
+[NODE n916]: I started smoking!
+[NODE n693]: I gave up smoking!
+[NODE n693]: I started smoking!
+[NODE n608]: I gave up smoking!
+[NODE n608]: I started smoking!
+********** WATCHMAN ***********
+0.015412357600957181
+Avg Clustering Coefficient: 0.015412357600957181
+******** END WATCHMAN *********
+[NODE n605]: I gave up smoking!
+[NODE n241]: I gave up smoking!
+[NODE n799]: I gave up smoking!
+[NODE n649]: I gave up smoking!
+[NODE n200]: I started smoking!
+[NODE n200]: BRANCH 1
+	BRANCH 2b
+		BRANCH 3d
+[NODE n1]: I gave up smoking!
+[NODE n470]: I gave up smoking!
+[NODE n1]: I started smoking!
+[NODE n470]: I started smoking!
+[NODE n922]: I gave up smoking!
+[NODE n922]: I started smoking!
+[NODE n47]: I gave up smoking!
+[NODE n47]: I started smoking!
+[NODE n571]: I gave up smoking!
+[NODE n571]: I started smoking!
+[NODE n237]: I gave up smoking!
+[NODE n237]: I started smoking!
+[NODE n714]: I gave up smoking!
+[NODE n714]: I started smoking!
+[NODE n349]: I gave up smoking!
+[NODE n724]: I gave up smoking!
+[NODE n724]: I started smoking!
+[NODE n306]: I gave up smoking!
+[NODE n306]: I started smoking!
+[NODE n850]: I started smoking!
+[NODE n850]: BRANCH 1
+	BRANCH 2a
+		BRANCH 3b
+[NODE n200]: I gave up smoking!
+[NODE n986]: I started smoking!
+[NODE n986]: BRANCH 1
+	BRANCH 2a
+		BRANCH 3b
+[NODE n998]: I gave up smoking!
+[NODE n803]: I started smoking!
+[NODE n803]: BRANCH 1
+	BRANCH 2a
+		BRANCH 3b
+[NODE n672]: I started smoking!
+[NODE n672]: BRANCH 1
+	BRANCH 2b
+		BRANCH 3d
+[NODE n939]: I started smoking!
+[NODE n939]: BRANCH 1
+	BRANCH 2a
+		BRANCH 3b
+[NODE n240]: I gave up smoking!
+[NODE n240]: I started smoking!
+[NODE n38]: I gave up smoking!
+[NODE n204]: I started smoking!
+[NODE n204]: BRANCH 1
+	BRANCH 2a
+		BRANCH 3b
+[NODE n190]: I gave up smoking!
+[NODE n190]: I started smoking!
+[NODE n252]: I started smoking!
+[NODE n252]: BRANCH 1
+	BRANCH 2a
+		BRANCH 3b
+[NODE n798]: I gave up smoking!
+[NODE n798]: I started smoking!
+[NODE n697]: I started smoking!
+[NODE n697]: BRANCH 1
+	BRANCH 2b
+		BRANCH 3d
+[NODE n774]: I gave up smoking!
+[NODE n774]: I started smoking!
+[NODE n423]: I gave up smoking!
+[NODE n913]: I gave up smoking!
+[NODE n210]: I gave up smoking!
+[NODE n584]: I gave up smoking!
+[NODE n584]: I started smoking!
+********** WATCHMAN ***********
+0.015412357600957181
+Avg Clustering Coefficient: 0.015412357600957181
+******** END WATCHMAN *********
+[NODE n727]: I gave up smoking!
+[NODE n727]: I started smoking!
+[NODE n672]: I gave up smoking!
+[NODE n672]: I started smoking!
+[NODE n816]: I started smoking!
+[NODE n816]: BRANCH 1
+	BRANCH 2b
+		BRANCH 3d
+[NODE n939]: I gave up smoking!
+[NODE n939]: I started smoking!
+[NODE n385]: I gave up smoking!
+[NODE n417]: I gave up smoking!
+[NODE n381]: I started smoking!
+[NODE n381]: BRANCH 1
+	BRANCH 2a
+		BRANCH 3b
+[NODE n210]: I started smoking!
+[NODE n210]: BRANCH 1
+	BRANCH 2b
+		BRANCH 3d
+[NODE n605]: I started smoking!
+[NODE n605]: BRANCH 1
+	BRANCH 2b
+		BRANCH 3d
+[NODE n510]: I started smoking!
+[NODE n510]: BRANCH 1
+	BRANCH 2a
+		BRANCH 3b
+[NODE n835]: I started smoking!
+[NODE n835]: BRANCH 1
+	BRANCH 2a
+		BRANCH 3b
+[NODE n468]: I started smoking!
+[NODE n468]: BRANCH 1
+	BRANCH 2a
+		BRANCH 3b
+[NODE n859]: I gave up smoking!
+[NODE n859]: I started smoking!
+[NODE n552]: I gave up smoking!
+[NODE n1]: I gave up smoking!
+[NODE n1]: I started smoking!
+[NODE n750]: I gave up smoking!
+[NODE n750]: I started smoking!
+[NODE n835]: I gave up smoking!
+[NODE n835]: I started smoking!
+[NODE n913]: I started smoking!
+[NODE n913]: BRANCH 1
+	BRANCH 2a
+		BRANCH 3b
+[NODE n462]: I started smoking!
+[NODE n462]: BRANCH 1
+	BRANCH 2b
+		BRANCH 3d
+[NODE n265]: I started smoking!
+[NODE n265]: BRANCH 1
+	BRANCH 2b
+		BRANCH 3d
+[NODE n460]: I started smoking!
+[NODE n460]: BRANCH 1
+	BRANCH 2b
+		BRANCH 3d
+[NODE n837]: I started smoking!
+[NODE n837]: BRANCH 1
+	BRANCH 2b
+		BRANCH 3d
+[NODE n875]: I gave up smoking!
+[NODE n875]: I started smoking!
+[NODE n123]: I gave up smoking!
+[NODE n123]: I started smoking!
+[NODE n652]: I started smoking!
+[NODE n652]: BRANCH 1
+	BRANCH 2b
+		BRANCH 3d
+[NODE n362]: I gave up smoking!
+[NODE n351]: I started smoking!
+[NODE n351]: BRANCH 1
+	BRANCH 2a
+		BRANCH 3b
+[NODE n32]: I gave up smoking!
+[NODE n32]: I started smoking!
+********** WATCHMAN ***********
+0.015412357600957181
+Avg Clustering Coefficient: 0.015412357600957181
+******** END WATCHMAN *********
+[NODE n593]: I started smoking!
+[NODE n593]: BRANCH 1
+	BRANCH 2b
+		BRANCH 3d
+[NODE n106]: I started smoking!
+[NODE n106]: BRANCH 1
+	BRANCH 2a
+		BRANCH 3b
+[NODE n751]: I gave up smoking!
+[NODE n499]: I gave up smoking!
+[NODE n751]: I started smoking!
+[NODE n590]: I gave up smoking!
+[NODE n590]: I started smoking!
+[NODE n605]: I gave up smoking!
+[NODE n301]: I gave up smoking!
+[NODE n301]: I started smoking!
+[NODE n467]: I gave up smoking!
+[NODE n467]: I started smoking!
+[NODE n789]: I gave up smoking!
+[NODE n789]: I started smoking!
+[NODE n889]: I gave up smoking!
+[NODE n889]: I started smoking!
+[NODE n55]: I started smoking!
+[NODE n55]: BRANCH 1
+	BRANCH 2b
+		BRANCH 3d
+[NODE n836]: I started smoking!
+[NODE n836]: BRANCH 1
+	BRANCH 2b
+		BRANCH 3d
+[NODE n872]: I gave up smoking!
+[NODE n927]: I gave up smoking!
+[NODE n872]: I started smoking!
+[NODE n927]: I started smoking!
+[NODE n791]: I gave up smoking!
+[NODE n791]: I started smoking!
+[NODE n469]: I gave up smoking!
+[NODE n469]: I started smoking!
+[NODE n872]: I gave up smoking!
+[NODE n872]: I started smoking!
+[NODE n816]: I gave up smoking!
+[NODE n289]: I gave up smoking!
+[NODE n289]: I started smoking!
+[NODE n889]: I gave up smoking!
+[NODE n889]: I started smoking!
+[NODE n252]: I gave up smoking!
+[NODE n252]: I started smoking!
+[NODE n251]: I gave up smoking!
+[NODE n251]: I started smoking!
+[NODE n673]: I started smoking!
+[NODE n673]: BRANCH 1
+	BRANCH 2b
+		BRANCH 3d
+[NODE n985]: I started smoking!
+[NODE n985]: BRANCH 1
+	BRANCH 2a
+		BRANCH 3b
+[NODE n38]: I started smoking!
+[NODE n38]: BRANCH 1
+	BRANCH 2b
+		BRANCH 3d
+[NODE n696]: I started smoking!
+[NODE n696]: BRANCH 1
+	BRANCH 2b
+		BRANCH 3d
+[NODE n377]: I gave up smoking!
+[NODE n377]: I started smoking!
+[NODE n843]: I started smoking!
+[NODE n843]: BRANCH 1
+	BRANCH 2b
+		BRANCH 3d
+********** WATCHMAN ***********
+0.015412357600957181
+Avg Clustering Coefficient: 0.015412357600957181
+******** END WATCHMAN *********
+[NODE n352]: I gave up smoking!
+[NODE n352]: I started smoking!
+[NODE n3]: I gave up smoking!
+[NODE n3]: I started smoking!
+[NODE n188]: I gave up smoking!
+[NODE n352]: I gave up smoking!
+[NODE n352]: I started smoking!
+[NODE n361]: I gave up smoking!
+[NODE n361]: I started smoking!
+[NODE n791]: I gave up smoking!
+[NODE n791]: I started smoking!
+[NODE n542]: I gave up smoking!
+[NODE n542]: I started smoking!
+[NODE n535]: I gave up smoking!
+[NODE n535]: I started smoking!
+[NODE n735]: I gave up smoking!
+[NODE n735]: I started smoking!
+[NODE n148]: I gave up smoking!
+[NODE n148]: I started smoking!
+[NODE n896]: I gave up smoking!
+[NODE n896]: I started smoking!
+[NODE n924]: I gave up smoking!
+[NODE n889]: I gave up smoking!
+[NODE n889]: I started smoking!
+[NODE n394]: I started smoking!
+[NODE n394]: BRANCH 1
+	BRANCH 2b
+		BRANCH 3d
+n432: I attached to n1 with influence 0.6152766437342925
+n154: I attached to n381 with influence 0.4521833445487666
+[NODE n112]: I started smoking!
+[NODE n112]: BRANCH 1
+	BRANCH 2a
+		BRANCH 3b
+[NODE n615]: I started smoking!
+[NODE n615]: BRANCH 1
+	BRANCH 2b
+		BRANCH 3d
+[NODE n913]: I gave up smoking!
+[NODE n203]: I gave up smoking!
+[NODE n866]: I gave up smoking!
+[NODE n985]: I gave up smoking!
+[NODE n204]: I gave up smoking!
+[NODE n486]: I gave up smoking!
+[NODE n486]: I started smoking!
+[NODE n996]: I gave up smoking!
+[NODE n362]: I started smoking!
+[NODE n362]: BRANCH 1
+	BRANCH 2b
+		BRANCH 3d
+[NODE n388]: I gave up smoking!
+[NODE n388]: I started smoking!
+[NODE n146]: I started smoking!
+[NODE n146]: BRANCH 1
+	BRANCH 2b
+		BRANCH 3d
+[NODE n847]: I started smoking!
+[NODE n847]: BRANCH 1
+	BRANCH 2b
+		BRANCH 3d
+[NODE n332]: I started smoking!
+[NODE n332]: BRANCH 1
+	BRANCH 2a
+		BRANCH 3b
+[NODE n833]: I started smoking!
+[NODE n833]: BRANCH 1
+	BRANCH 2b
+		BRANCH 3d
+[NODE n685]: I gave up smoking!
+n833: I attached to n359 with influence 0.03240714745204304
+[NODE n758]: I started smoking!
+[NODE n758]: BRANCH 1
+	BRANCH 2b
+		BRANCH 3d
+[NODE n161]: I started smoking!
+[NODE n161]: BRANCH 1
+	BRANCH 2b
+		BRANCH 3d
+[NODE n468]: I gave up smoking!
+[NODE n474]: I gave up smoking!
+[NODE n474]: I started smoking!
+[NODE n735]: I gave up smoking!
+********** WATCHMAN ***********
+0.016222205349580437
+Avg Clustering Coefficient: 0.016222205349580437
+******** END WATCHMAN *********
+[NODE n735]: I started smoking!
+[NODE n841]: I gave up smoking!
+[NODE n841]: I started smoking!
+[NODE n303]: I started smoking!
+[NODE n303]: BRANCH 1
+	BRANCH 2a
+		BRANCH 3b
+[NODE n327]: I gave up smoking!
+[NODE n799]: I started smoking!
+[NODE n799]: BRANCH 1
+	BRANCH 2b
+		BRANCH 3d
+[NODE n998]: I started smoking!
+[NODE n998]: BRANCH 1
+	BRANCH 2b
+		BRANCH 3d
+[NODE n996]: I started smoking!
+[NODE n996]: BRANCH 1
+	BRANCH 2b
+		BRANCH 3d
+[NODE n320]: I started smoking!
+[NODE n320]: BRANCH 1
+	BRANCH 2b
+		BRANCH 3d
+[NODE n120]: I started smoking!
+[NODE n120]: BRANCH 1
+	BRANCH 2a
+		BRANCH 3b
+[NODE n735]: I gave up smoking!
+[NODE n735]: I started smoking!
+[NODE n242]: I gave up smoking!
+[NODE n242]: I started smoking!
+[NODE n913]: I started smoking!
+[NODE n913]: BRANCH 1
+	BRANCH 2a
+		BRANCH 3b
+[NODE n137]: I started smoking!
+[NODE n137]: BRANCH 1
+	BRANCH 2b
+		BRANCH 3d
+[NODE n405]: I gave up smoking!
+[NODE n405]: I started smoking!
+[NODE n395]: I gave up smoking!
+[NODE n426]: I started smoking!
+[NODE n426]: BRANCH 1
+	BRANCH 2a
+		BRANCH 3b
+[NODE n385]: I started smoking!
+[NODE n385]: BRANCH 1
+	BRANCH 2a
+		BRANCH 3b
+[NODE n120]: I gave up smoking!
+[NODE n120]: I started smoking!
+[NODE n210]: I gave up smoking!
+[NODE n896]: I gave up smoking!
+[NODE n896]: I started smoking!
+[NODE n188]: I started smoking!
+[NODE n188]: BRANCH 1
+	BRANCH 2b
+		BRANCH 3d
+[NODE n203]: I started smoking!
+[NODE n203]: BRANCH 1
+	BRANCH 2a
+		BRANCH 3b
+[NODE n106]: I gave up smoking!
+[NODE n106]: I started smoking!
+[NODE n38]: I gave up smoking!
+[NODE n251]: I gave up smoking!
+[NODE n38]: I started smoking!
+[NODE n251]: I started smoking!
+[NODE n829]: I gave up smoking!
+[NODE n829]: I started smoking!
+[NODE n829]: BRANCH 1
+	BRANCH 2b
+		BRANCH 3d
+[NODE n622]: I gave up smoking!
+[NODE n622]: I started smoking!
+[NODE n3]: I gave up smoking!
+[NODE n3]: I started smoking!
+[NODE n882]: I started smoking!
+[NODE n882]: BRANCH 1
+	BRANCH 2a
+		BRANCH 3b
+[NODE n233]: I started smoking!
+[NODE n233]: BRANCH 1
+	BRANCH 2b
+		BRANCH 3d
+[NODE n440]: I gave up smoking!
+[NODE n440]: I started smoking!
+[NODE n998]: I gave up smoking!
+[NODE n112]: I gave up smoking!
+[NODE n112]: I started smoking!
+********** WATCHMAN ***********
+0.016222205349580437
+Avg Clustering Coefficient: 0.016222205349580437
+******** END WATCHMAN *********
+[NODE n774]: I gave up smoking!
+[NODE n774]: I started smoking!
+[NODE n416]: I started smoking!
+[NODE n416]: BRANCH 1
+	BRANCH 2b
+		BRANCH 3d
+[NODE n714]: I gave up smoking!
+[NODE n714]: I started smoking!
+[NODE n806]: I gave up smoking!
+[NODE n806]: I started smoking!
+[NODE n968]: I gave up smoking!
+[NODE n968]: I started smoking!
+[NODE n977]: I started smoking!
+[NODE n977]: BRANCH 1
+	BRANCH 2b
+		BRANCH 3d
+[NODE n816]: I started smoking!
+[NODE n816]: BRANCH 1
+	BRANCH 2b
+		BRANCH 3d
+[NODE n791]: I gave up smoking!
+[NODE n791]: I started smoking!
+[NODE n932]: I started smoking!
+[NODE n932]: BRANCH 1
+	BRANCH 2b
+		BRANCH 3d
+[NODE n2]: I gave up smoking!
+[NODE n2]: I started smoking!
+[NODE n674]: I gave up smoking!
+[NODE n328]: I gave up smoking!
+[NODE n328]: I started smoking!
+[NODE n452]: I gave up smoking!
+[NODE n732]: I gave up smoking!
+[NODE n453]: I gave up smoking!
+[NODE n882]: I gave up smoking!
+[NODE n882]: I started smoking!
+[NODE n332]: I gave up smoking!
+[NODE n332]: I started smoking!
+[NODE n916]: I gave up smoking!
+[NODE n916]: I started smoking!
+[NODE n24]: I started smoking!
+[NODE n24]: BRANCH 1
+	BRANCH 2b
+		BRANCH 3d
+[NODE n43]: I started smoking!
+[NODE n43]: BRANCH 1
+	BRANCH 2b
+		BRANCH 3d
+[NODE n388]: I gave up smoking!
+[NODE n388]: I started smoking!
+[NODE n816]: I gave up smoking!
+[NODE n816]: I started smoking!
+[NODE n63]: I started smoking!
+[NODE n63]: BRANCH 1
+	BRANCH 2b
+		BRANCH 3d
+[NODE n11]: I started smoking!
+[NODE n11]: BRANCH 1
+	BRANCH 2a
+		BRANCH 3b
+[NODE n693]: I gave up smoking!
+[NODE n693]: I started smoking!
+[NODE n924]: I started smoking!
+[NODE n924]: BRANCH 1
+	BRANCH 2b
+		BRANCH 3d
+[NODE n332]: I gave up smoking!
+[NODE n332]: I started smoking!
+[NODE n108]: I gave up smoking!
+[NODE n108]: I started smoking!
+[NODE n11]: I gave up smoking!
+[NODE n11]: I started smoking!
+[NODE n882]: I gave up smoking!
+[NODE n882]: I started smoking!
+[NODE n252]: I gave up smoking!
+[NODE n252]: I started smoking!
+[NODE n32]: I gave up smoking!
+[NODE n32]: I started smoking!
+[NODE n866]: I started smoking!
+[NODE n866]: BRANCH 1
+	BRANCH 2a
+		BRANCH 3b
+[NODE n675]: I gave up smoking!
+[NODE n171]: I gave up smoking!
+[NODE n171]: I started smoking!
+[NODE n328]: I gave up smoking!
+[NODE n328]: I started smoking!
+[NODE n126]: I gave up smoking!
+[NODE n126]: I started smoking!
+********** WATCHMAN ***********
+0.016222205349580437
+Avg Clustering Coefficient: 0.016222205349580437
+******** END WATCHMAN *********
+[NODE n646]: I gave up smoking!
+[NODE n646]: I started smoking!
+[NODE n227]: I gave up smoking!
+[NODE n995]: I gave up smoking!
+[NODE n995]: I started smoking!
+[NODE n467]: I gave up smoking!
+[NODE n328]: I gave up smoking!
+[NODE n328]: I started smoking!
+[NODE n931]: I gave up smoking!
+[NODE n816]: I gave up smoking!
+[NODE n816]: I started smoking!
+[NODE n914]: I gave up smoking!
+[NODE n914]: I started smoking!
+[NODE n144]: I gave up smoking!
+[NODE n144]: I started smoking!
+[NODE n155]: I gave up smoking!
+[NODE n155]: I started smoking!
+[NODE n113]: I started smoking!
+[NODE n113]: BRANCH 1
+	BRANCH 2b
+		BRANCH 3d
+[NODE n782]: I started smoking!
+[NODE n782]: BRANCH 1
+	BRANCH 2a
+		BRANCH 3b
+[NODE n619]: I gave up smoking!
+[NODE n619]: I started smoking!
+[NODE n992]: I gave up smoking!
+[NODE n992]: I started smoking!
+[NODE n493]: I gave up smoking!
+[NODE n758]: I gave up smoking!
+[NODE n8]: I gave up smoking!
+[NODE n8]: I started smoking!
+[NODE n362]: I gave up smoking!
+[NODE n914]: I gave up smoking!
+[NODE n914]: I started smoking!
+[NODE n643]: I started smoking!
+[NODE n643]: BRANCH 1
+	BRANCH 2b
+		BRANCH 3d
+[NODE n306]: I gave up smoking!
+[NODE n382]: I started smoking!
+[NODE n382]: BRANCH 1
+	BRANCH 2a
+		BRANCH 3b
+n866: I attached to n382 with influence 0.5734698288146822
+[NODE n344]: I gave up smoking!
+[NODE n344]: I started smoking!
+[NODE n190]: I gave up smoking!
+[NODE n190]: I started smoking!
+[NODE n474]: I gave up smoking!
+[NODE n474]: I started smoking!
+[NODE n973]: I gave up smoking!
+[NODE n973]: I started smoking!
+[NODE n157]: I gave up smoking!
+[NODE n157]: I started smoking!
+[NODE n390]: I started smoking!
+[NODE n390]: BRANCH 1
+	BRANCH 2a
+		BRANCH 3b
+[NODE n800]: I gave up smoking!
+[NODE n580]: I started smoking!
+[NODE n580]: BRANCH 1
+	BRANCH 2a
+		BRANCH 3b
+********** WATCHMAN ***********
+0.016222205349580437
+Avg Clustering Coefficient: 0.016222205349580437
+******** END WATCHMAN *********
+[NODE n638]: I started smoking!
+[NODE n638]: BRANCH 1
+	BRANCH 2b
+		BRANCH 3d
+[NODE n605]: I started smoking!
+[NODE n605]: BRANCH 1
+	BRANCH 2b
+		BRANCH 3d
+[NODE n467]: I started smoking!
+[NODE n467]: BRANCH 1
+	BRANCH 2b
+		BRANCH 3d
+[NODE n697]: I gave up smoking!
+[NODE n244]: I gave up smoking!
+[NODE n244]: I started smoking!
+[NODE n486]: I gave up smoking!
+[NODE n486]: I started smoking!
+[NODE n460]: I gave up smoking!
+[NODE n460]: I started smoking!
+[NODE n605]: I gave up smoking!
+[NODE n910]: I gave up smoking!
+[NODE n910]: I started smoking!
+[NODE n440]: I gave up smoking!
+[NODE n440]: I started smoking!
+[NODE n571]: I gave up smoking!
+[NODE n571]: I started smoking!
+[NODE n296]: I started smoking!
+[NODE n296]: BRANCH 1
+	BRANCH 2b
+		BRANCH 3d
+[NODE n622]: I gave up smoking!
+[NODE n622]: I started smoking!
+[NODE n880]: I gave up smoking!
+[NODE n880]: I started smoking!
+[NODE n112]: I gave up smoking!
+[NODE n112]: I started smoking!
+[NODE n387]: I started smoking!
+[NODE n387]: BRANCH 1
+	BRANCH 2a
+		BRANCH 3b
+[NODE n135]: I started smoking!
+[NODE n135]: BRANCH 1
+	BRANCH 2b
+		BRANCH 3d
+[NODE n264]: I started smoking!
+[NODE n264]: BRANCH 1
+	BRANCH 2a
+		BRANCH 3b
+[NODE n84]: I started smoking!
+[NODE n84]: BRANCH 1
+	BRANCH 2a
+		BRANCH 3b
+[NODE n650]: I started smoking!
+[NODE n650]: BRANCH 1
+	BRANCH 2b
+		BRANCH 3d
+n135: I attached to n7 with influence 0.8990355490628521
+[NODE n276]: I started smoking!
+[NODE n276]: BRANCH 1
+	BRANCH 2b
+		BRANCH 3d
+[NODE n142]: I started smoking!
+[NODE n142]: BRANCH 1
+	BRANCH 2b
+		BRANCH 3d
+[NODE n175]: I started smoking!
+[NODE n175]: BRANCH 1
+	BRANCH 2b
+		BRANCH 3d
+n508: I attached to n84 with influence 0.4597295983227614
+[NODE n99]: I gave up smoking!
+[NODE n99]: I started smoking!
+[NODE n123]: I gave up smoking!
+[NODE n123]: I started smoking!
+********** WATCHMAN ***********
+0.017015856143231232
+Avg Clustering Coefficient: 0.017015856143231232
+******** END WATCHMAN *********
+[NODE n477]: I gave up smoking!
+[NODE n477]: I started smoking!
+[NODE n43]: I gave up smoking!
+[NODE n43]: I started smoking!
+[NODE n880]: I gave up smoking!
+[NODE n880]: I started smoking!
+[NODE n699]: I started smoking!
+[NODE n699]: BRANCH 1
+	BRANCH 2b
+		BRANCH 3d
+[NODE n655]: I started smoking!
+[NODE n655]: BRANCH 1
+	BRANCH 2b
+		BRANCH 3d
+[NODE n174]: I started smoking!
+[NODE n174]: BRANCH 1
+	BRANCH 2b
+		BRANCH 3d
+n341: I attached to n174 with influence 0.8591305368874054
+[NODE n272]: I started smoking!
+[NODE n272]: BRANCH 1
+	BRANCH 2b
+		BRANCH 3d
+[NODE n468]: I started smoking!
+[NODE n468]: BRANCH 1
+	BRANCH 2a
+		BRANCH 3b
+[NODE n405]: I gave up smoking!
+[NODE n590]: I gave up smoking!
+[NODE n590]: I started smoking!
+[NODE n251]: I gave up smoking!
+[NODE n251]: I started smoking!
+[NODE n601]: I started smoking!
+[NODE n601]: BRANCH 1
+	BRANCH 2b
+		BRANCH 3d
+[NODE n931]: I started smoking!
+[NODE n931]: BRANCH 1
+	BRANCH 2b
+		BRANCH 3d
+[NODE n4]: I started smoking!
+[NODE n4]: BRANCH 1
+	BRANCH 2b
+		BRANCH 3d
+[NODE n178]: I started smoking!
+[NODE n178]: BRANCH 1
+	BRANCH 2a
+		BRANCH 3b
+[NODE n411]: I started smoking!
+[NODE n411]: BRANCH 1
+	BRANCH 2a
+		BRANCH 3b
+[NODE n90]: I gave up smoking!
+[NODE n774]: I gave up smoking!
+[NODE n108]: I gave up smoking!
+[NODE n674]: I started smoking!
+[NODE n674]: BRANCH 1
+	BRANCH 2b
+		BRANCH 3d
+[NODE n154]: I gave up smoking!
+[NODE n154]: I started smoking!
+[NODE n38]: I gave up smoking!
+[NODE n38]: I started smoking!
+[NODE n724]: I gave up smoking!
+[NODE n724]: I started smoking!
+[NODE n383]: I gave up smoking!
+[NODE n383]: I started smoking!
+[NODE n490]: I gave up smoking!
+[NODE n490]: I started smoking!
+[NODE n883]: I randomly attached to n222
+[NODE n866]: I gave up smoking!
+[NODE n866]: I started smoking!
+[NODE n352]: I gave up smoking!
+[NODE n112]: I gave up smoking!
+[NODE n112]: I started smoking!
+[NODE n791]: I gave up smoking!
+[NODE n791]: I started smoking!
+[NODE n407]: I gave up smoking!
+[NODE n407]: I started smoking!
+[NODE n226]: I started smoking!
+[NODE n226]: BRANCH 1
+	BRANCH 2a
+		BRANCH 3b
+[NODE n363]: I gave up smoking!
+[NODE n363]: I started smoking!
+[NODE n806]: I gave up smoking!
+[NODE n806]: I started smoking!
+[NODE n382]: I gave up smoking!
+[NODE n382]: I started smoking!
+********** WATCHMAN ***********
+0.017720423684533467
+Avg Clustering Coefficient: 0.017720423684533467
+******** END WATCHMAN *********
+[NODE n973]: I gave up smoking!
+[NODE n973]: I started smoking!
+[NODE n508]: I gave up smoking!
+[NODE n508]: I started smoking!
+[NODE n394]: I gave up smoking!
+[NODE n2]: I gave up smoking!
+[NODE n411]: I gave up smoking!
+[NODE n411]: I started smoking!
+[NODE n2]: I started smoking!
+[NODE n883]: I gave up smoking!
+[NODE n883]: I started smoking!
+[NODE n979]: I gave up smoking!
+[NODE n979]: I started smoking!
+[NODE n382]: I gave up smoking!
+[NODE n382]: I started smoking!
+[NODE n142]: I gave up smoking!
+[NODE n142]: I started smoking!
+[NODE n919]: I gave up smoking!
+[NODE n919]: I started smoking!
+[NODE n837]: I gave up smoking!
+[NODE n674]: I gave up smoking!
+[NODE n552]: I started smoking!
+[NODE n552]: BRANCH 1
+	BRANCH 2b
+		BRANCH 3d
+[NODE n462]: I gave up smoking!
+[NODE n385]: I gave up smoking!
+[NODE n385]: I started smoking!
+[NODE n411]: I gave up smoking!
+[NODE n411]: I started smoking!
+[NODE n264]: I gave up smoking!
+[NODE n264]: I started smoking!
+[NODE n350]: I gave up smoking!
+[NODE n203]: I gave up smoking!
+[NODE n552]: I gave up smoking!
+[NODE n638]: I gave up smoking!
+[NODE n889]: I gave up smoking!
+[NODE n63]: I gave up smoking!
+[NODE n241]: I started smoking!
+[NODE n241]: BRANCH 1
+	BRANCH 2a
+		BRANCH 3b
+[NODE n49]: I gave up smoking!
+[NODE n206]: I gave up smoking!
+[NODE n206]: I started smoking!
+[NODE n8]: I gave up smoking!
+[NODE n8]: I started smoking!
+[NODE n328]: I gave up smoking!
+[NODE n328]: I started smoking!
+[NODE n121]: I started smoking!
+[NODE n121]: BRANCH 1
+	BRANCH 2b
+		BRANCH 3d
+[NODE n889]: I started smoking!
+[NODE n889]: BRANCH 1
+	BRANCH 2a
+		BRANCH 3b
+[NODE n992]: I gave up smoking!
+[NODE n992]: I started smoking!
+[NODE n645]: I gave up smoking!
+[NODE n645]: I started smoking!
+[NODE n113]: I gave up smoking!
+[NODE n113]: I started smoking!
+[NODE n931]: I gave up smoking!
+[NODE n931]: I started smoking!
+[NODE n349]: I started smoking!
+[NODE n349]: BRANCH 1
+	BRANCH 2b
+		BRANCH 3d
+********** WATCHMAN ***********
+0.017720423684533467
+Avg Clustering Coefficient: 0.017720423684533467
+******** END WATCHMAN *********
+[NODE n473]: I gave up smoking!
+[NODE n473]: I started smoking!
+[NODE n36]: I gave up smoking!
+[NODE n36]: I started smoking!
+[NODE n252]: I randomly attached to n117
+[NODE n395]: I started smoking!
+[NODE n395]: BRANCH 1
+	BRANCH 2b
+		BRANCH 3d
+[NODE n94]: I gave up smoking!
+[NODE n94]: I started smoking!
+[NODE n31]: I gave up smoking!
+[NODE n137]: I gave up smoking!
+[NODE n732]: I started smoking!
+[NODE n732]: BRANCH 1
+	BRANCH 2b
+		BRANCH 3d
+[NODE n432]: I gave up smoking!
+[NODE n847]: I gave up smoking!
+[NODE n332]: I gave up smoking!
+[NODE n148]: I gave up smoking!
+[NODE n148]: I started smoking!
+[NODE n829]: I gave up smoking!
+[NODE n796]: I gave up smoking!
+[NODE n796]: I started smoking!
+[NODE n693]: I gave up smoking!
+[NODE n693]: I started smoking!
+[NODE n417]: I started smoking!
+[NODE n417]: BRANCH 1
+	BRANCH 2b
+		BRANCH 3d
+[NODE n405]: I started smoking!
+[NODE n405]: BRANCH 1
+	BRANCH 2b
+		BRANCH 3d
+[NODE n693]: I gave up smoking!
+[NODE n693]: I started smoking!
+[NODE n411]: I gave up smoking!
+[NODE n411]: I started smoking!
+[NODE n800]: I started smoking!
+[NODE n800]: BRANCH 1
+	BRANCH 2b
+		BRANCH 3d
+[NODE n233]: I gave up smoking!
+[NODE n693]: I gave up smoking!
+[NODE n693]: I started smoking!
+[NODE n977]: I gave up smoking!
+[NODE n407]: I gave up smoking!
+[NODE n816]: I gave up smoking!
+********** WATCHMAN ***********
+0.017720423684533467
+Avg Clustering Coefficient: 0.017720423684533467
+******** END WATCHMAN *********
+[NODE n175]: I gave up smoking!
+[NODE n175]: I started smoking!
+[NODE n771]: I gave up smoking!
+[NODE n771]: I started smoking!
+[NODE n928]: I gave up smoking!
+[NODE n243]: I started smoking!
+[NODE n243]: BRANCH 1
+	BRANCH 2a
+		BRANCH 3b
+[NODE n529]: I started smoking!
+[NODE n529]: BRANCH 1
+	BRANCH 2b
+		BRANCH 3d
+[NODE n349]: I gave up smoking!
+[NODE n106]: I gave up smoking!
+[NODE n735]: I gave up smoking!
+[NODE n106]: I started smoking!
+[NODE n735]: I started smoking!
+[NODE n833]: I gave up smoking!
+[NODE n859]: I gave up smoking!
+[NODE n107]: I gave up smoking!
+[NODE n107]: I started smoking!
+[NODE n619]: I gave up smoking!
+[NODE n619]: I started smoking!
+[NODE n137]: I started smoking!
+[NODE n137]: BRANCH 1
+	BRANCH 2b
+		BRANCH 3d
+[NODE n8]: I gave up smoking!
+[NODE n8]: I started smoking!
+[NODE n800]: I gave up smoking!
+[NODE n543]: I gave up smoking!
+[NODE n543]: I started smoking!
+[NODE n674]: I started smoking!
+[NODE n674]: BRANCH 1
+	BRANCH 2b
+		BRANCH 3d
+[NODE n290]: I gave up smoking!
+[NODE n255]: I gave up smoking!
+[NODE n255]: I started smoking!
+[NODE n789]: I gave up smoking!
+[NODE n311]: I started smoking!
+[NODE n311]: BRANCH 1
+	BRANCH 2a
+		BRANCH 3b
+[NODE n998]: I started smoking!
+[NODE n998]: BRANCH 1
+	BRANCH 2b
+		BRANCH 3d
+[NODE n622]: I gave up smoking!
+[NODE n622]: I started smoking!
+[NODE n490]: I gave up smoking!
+[NODE n490]: I started smoking!
+[NODE n854]: I gave up smoking!
+[NODE n854]: I started smoking!
+[NODE n383]: I gave up smoking!
+[NODE n914]: I gave up smoking!
+[NODE n914]: I started smoking!
+[NODE n960]: I started smoking!
+[NODE n960]: BRANCH 1
+	BRANCH 2b
+		BRANCH 3d
+[NODE n350]: I started smoking!
+[NODE n350]: BRANCH 1
+	BRANCH 2a
+		BRANCH 3b
+[NODE n49]: I started smoking!
+[NODE n49]: BRANCH 1
+	BRANCH 2a
+		BRANCH 3b
+[NODE n440]: I gave up smoking!
+[NODE n440]: I started smoking!
+********** WATCHMAN ***********
+0.017720423684533467
+Avg Clustering Coefficient: 0.017720423684533467
+******** END WATCHMAN *********
+[NODE n318]: I gave up smoking!
+[NODE n318]: I started smoking!
+[NODE n841]: I gave up smoking!
+[NODE n542]: I gave up smoking!
+[NODE n542]: I started smoking!
+[NODE n148]: I gave up smoking!
+[NODE n148]: I started smoking!
+[NODE n542]: I gave up smoking!
+[NODE n542]: I started smoking!
+[NODE n227]: I started smoking!
+[NODE n227]: BRANCH 1
+	BRANCH 2b
+		BRANCH 3d
+[NODE n361]: I gave up smoking!
+[NODE n350]: I gave up smoking!
+[NODE n350]: I started smoking!
+[NODE n423]: I started smoking!
+[NODE n423]: BRANCH 1
+	BRANCH 2b
+		BRANCH 3d
+[NODE n42]: I started smoking!
+[NODE n42]: BRANCH 1
+	BRANCH 2b
+		BRANCH 3d
+[NODE n222]: I started smoking!
+[NODE n222]: BRANCH 1
+	BRANCH 2b
+		BRANCH 3d
+[NODE n889]: I gave up smoking!
+[NODE n275]: I gave up smoking!
+[NODE n275]: I started smoking!
+[NODE n385]: I randomly attached to n318
+[NODE n311]: I gave up smoking!
+[NODE n620]: I gave up smoking!
+[NODE n242]: I gave up smoking!
+[NODE n242]: I started smoking!
+[NODE n109]: I started smoking!
+[NODE n109]: BRANCH 1
+	BRANCH 2a
+		BRANCH 3b
+[NODE n237]: I gave up smoking!
+[NODE n771]: I gave up smoking!
+[NODE n771]: I started smoking!
+[NODE n889]: I started smoking!
+[NODE n889]: BRANCH 1
+	BRANCH 2a
+		BRANCH 3b
+[NODE n732]: I gave up smoking!
+[NODE n363]: I gave up smoking!
+[NODE n363]: I started smoking!
+[NODE n381]: I gave up smoking!
+[NODE n381]: I started smoking!
+[NODE n782]: I gave up smoking!
+[NODE n782]: I started smoking!
+[NODE n841]: I started smoking!
+[NODE n841]: BRANCH 1
+	BRANCH 2b
+		BRANCH 3d
+[NODE n854]: I gave up smoking!
+[NODE n854]: I started smoking!
+[NODE n290]: I started smoking!
+[NODE n290]: BRANCH 1
+	BRANCH 2a
+		BRANCH 3b
+[NODE n49]: I gave up smoking!
+[NODE n49]: I started smoking!
+[NODE n171]: I gave up smoking!
+[NODE n171]: I started smoking!
+[NODE n510]: I gave up smoking!
+[NODE n510]: I started smoking!
+[NODE n654]: I gave up smoking!
+********** WATCHMAN ***********
+0.017720423684533467
+Avg Clustering Coefficient: 0.017720423684533467
+******** END WATCHMAN *********
+[NODE n190]: I gave up smoking!
+[NODE n190]: I started smoking!
+[NODE n490]: I gave up smoking!
+[NODE n693]: I gave up smoking!
+[NODE n693]: I started smoking!
+[NODE n31]: I started smoking!
+[NODE n31]: BRANCH 1
+	BRANCH 2b
+		BRANCH 3d
+[NODE n995]: I gave up smoking!
+[NODE n995]: I started smoking!
+[NODE n233]: I started smoking!
+[NODE n233]: BRANCH 1
+	BRANCH 2b
+		BRANCH 3d
+[NODE n255]: I gave up smoking!
+[NODE n255]: I started smoking!
+[NODE n158]: I gave up smoking!
+[NODE n60]: I gave up smoking!
+[NODE n60]: I started smoking!
+n272: I attached to n60 with influence 0.3726258943881397
+n272: I attached to n7 with influence 0.3083500782148047
+[NODE n177]: I started smoking!
+[NODE n177]: BRANCH 1
+	BRANCH 2a
+		BRANCH 3b
+[NODE n799]: I gave up smoking!
+[NODE n750]: I gave up smoking!
+[NODE n750]: I started smoking!
+[NODE n939]: I gave up smoking!
+[NODE n939]: I started smoking!
+[NODE n843]: I gave up smoking!
+[NODE n843]: I started smoking!
+[NODE n363]: I gave up smoking!
+[NODE n363]: I started smoking!
+[NODE n974]: I gave up smoking!
+[NODE n974]: I started smoking!
+[NODE n8]: I gave up smoking!
+[NODE n8]: I started smoking!
+[NODE n107]: I gave up smoking!
+[NODE n107]: I started smoking!
+[NODE n18]: I gave up smoking!
+[NODE n580]: I gave up smoking!
+[NODE n18]: I started smoking!
+[NODE n580]: I started smoking!
+[NODE n342]: I gave up smoking!
+[NODE n735]: I gave up smoking!
+[NODE n735]: I started smoking!
+[NODE n231]: I gave up smoking!
+[NODE n231]: I started smoking!
+[NODE n508]: I gave up smoking!
+[NODE n508]: I started smoking!
+********** WATCHMAN ***********
+0.019432179344825065
+Avg Clustering Coefficient: 0.019432179344825065
+******** END WATCHMAN *********
+[NODE n866]: I gave up smoking!
+[NODE n866]: I started smoking!
+[NODE n156]: I gave up smoking!
+[NODE n156]: I started smoking!
+[NODE n789]: I started smoking!
+[NODE n789]: BRANCH 1
+	BRANCH 2a
+		BRANCH 3b
+[NODE n486]: I gave up smoking!
+[NODE n486]: I started smoking!
+[NODE n564]: I gave up smoking!
+[NODE n564]: I started smoking!
+[NODE n968]: I gave up smoking!
+[NODE n968]: I started smoking!
+[NODE n242]: I gave up smoking!
+[NODE n242]: I started smoking!
+[NODE n252]: I gave up smoking!
+[NODE n252]: I started smoking!
+[NODE n932]: I gave up smoking!
+[NODE n510]: I gave up smoking!
+[NODE n510]: I started smoking!
+[NODE n852]: I gave up smoking!
+[NODE n852]: I started smoking!
+[NODE n655]: I gave up smoking!
+[NODE n299]: I gave up smoking!
+[NODE n299]: I started smoking!
+[NODE n791]: I gave up smoking!
+[NODE n791]: I started smoking!
+[NODE n299]: I gave up smoking!
+[NODE n299]: I started smoking!
+[NODE n0]: I gave up smoking!
+[NODE n0]: I started smoking!
+[NODE n584]: I gave up smoking!
+[NODE n584]: I started smoking!
+[NODE n106]: I gave up smoking!
+[NODE n106]: I started smoking!
+[NODE n390]: I gave up smoking!
+[NODE n939]: I gave up smoking!
+[NODE n390]: I started smoking!
+[NODE n939]: I started smoking!
+[NODE n3]: I gave up smoking!
+[NODE n3]: I started smoking!
+[NODE n697]: I started smoking!
+[NODE n697]: BRANCH 1
+	BRANCH 2b
+		BRANCH 3d
+[NODE n83]: I gave up smoking!
+[NODE n83]: I started smoking!
+[NODE n473]: I gave up smoking!
+[NODE n473]: I started smoking!
+[NODE n654]: I started smoking!
+[NODE n654]: BRANCH 1
+	BRANCH 2b
+		BRANCH 3d
+[NODE n314]: I started smoking!
+[NODE n314]: BRANCH 1
+	BRANCH 2b
+		BRANCH 3d
+[NODE n158]: I started smoking!
+[NODE n158]: BRANCH 1
+	BRANCH 2a
+		BRANCH 3b
+[NODE n685]: I started smoking!
+[NODE n685]: BRANCH 1
+	BRANCH 2a
+		BRANCH 3b
+[NODE n931]: I gave up smoking!
+[NODE n931]: I started smoking!
+[NODE n416]: I gave up smoking!
+[NODE n986]: I gave up smoking!
+[NODE n83]: I gave up smoking!
+[NODE n83]: I started smoking!
+[NODE n605]: I started smoking!
+[NODE n605]: BRANCH 1
+	BRANCH 2b
+		BRANCH 3d
+[NODE n649]: I started smoking!
+[NODE n649]: BRANCH 1
+	BRANCH 2b
+		BRANCH 3d
+[NODE n799]: I started smoking!
+[NODE n799]: BRANCH 1
+	BRANCH 2b
+		BRANCH 3d
+[NODE n693]: I gave up smoking!
+[NODE n693]: I started smoking!
+[NODE n362]: I started smoking!
+[NODE n362]: BRANCH 1
+	BRANCH 2b
+		BRANCH 3d
+********** WATCHMAN ***********
+0.019432179344825065
+Avg Clustering Coefficient: 0.019432179344825065
+******** END WATCHMAN *********
+[NODE n168]: I gave up smoking!
+[NODE n168]: I started smoking!
+[NODE n129]: I gave up smoking!
+[NODE n200]: I started smoking!
+[NODE n200]: BRANCH 1
+	BRANCH 2b
+		BRANCH 3d
+[NODE n275]: I gave up smoking!
+[NODE n275]: I started smoking!
+[NODE n296]: I gave up smoking!
+[NODE n859]: I started smoking!
+[NODE n859]: BRANCH 1
+	BRANCH 2b
+		BRANCH 3d
+[NODE n137]: I gave up smoking!
+[NODE n242]: I gave up smoking!
+[NODE n242]: I started smoking!
+[NODE n352]: I started smoking!
+[NODE n352]: BRANCH 1
+	BRANCH 2b
+		BRANCH 3d
+[NODE n931]: I gave up smoking!
+[NODE n931]: I started smoking!
+[NODE n276]: I gave up smoking!
+[NODE n63]: I started smoking!
+[NODE n63]: BRANCH 1
+	BRANCH 2b
+		BRANCH 3d
+[NODE n362]: I gave up smoking!
+[NODE n60]: I gave up smoking!
+[NODE n60]: I started smoking!
+[NODE n423]: I gave up smoking!
+[NODE n913]: I gave up smoking!
+[NODE n891]: I started smoking!
+[NODE n891]: BRANCH 1
+	BRANCH 2b
+		BRANCH 3d
+[NODE n822]: I gave up smoking!
+[NODE n822]: I started smoking!
+[NODE n349]: I started smoking!
+[NODE n349]: BRANCH 1
+	BRANCH 2b
+		BRANCH 3d
+[NODE n385]: I gave up smoking!
+[NODE n385]: I started smoking!
+[NODE n979]: I gave up smoking!
+[NODE n979]: I started smoking!
+[NODE n605]: I gave up smoking!
+[NODE n210]: I started smoking!
+[NODE n210]: BRANCH 1
+	BRANCH 2b
+		BRANCH 3d
+[NODE n481]: I started smoking!
+[NODE n481]: BRANCH 1
+	BRANCH 2a
+		BRANCH 3b
+[NODE n124]: I started smoking!
+[NODE n124]: BRANCH 1
+	BRANCH 2a
+		BRANCH 3b
+[NODE n619]: I gave up smoking!
+[NODE n200]: I gave up smoking!
+[NODE n685]: I gave up smoking!
+[NODE n840]: I gave up smoking!
+[NODE n840]: I started smoking!
+[NODE n841]: I gave up smoking!
+[NODE n387]: I gave up smoking!
+[NODE n650]: I gave up smoking!
+[NODE n650]: I started smoking!
+[NODE n33]: I gave up smoking!
+[NODE n33]: I started smoking!
+[NODE n200]: I started smoking!
+[NODE n200]: BRANCH 1
+	BRANCH 2b
+		BRANCH 3d
+[NODE n685]: I started smoking!
+[NODE n685]: BRANCH 1
+	BRANCH 2a
+		BRANCH 3b
+********** WATCHMAN ***********
+0.019432179344825065
+Avg Clustering Coefficient: 0.019432179344825065
+******** END WATCHMAN *********
+[NODE n913]: I started smoking!
+[NODE n913]: BRANCH 1
+	BRANCH 2a
+		BRANCH 3b
+[NODE n928]: I started smoking!
+[NODE n928]: BRANCH 1
+	BRANCH 2b
+		BRANCH 3d
+[NODE n244]: I gave up smoking!
+[NODE n244]: I started smoking!
+[NODE n0]: I gave up smoking!
+[NODE n0]: I started smoking!
+[NODE n891]: I gave up smoking!
+[NODE n226]: I gave up smoking!
+[NODE n226]: I started smoking!
+[NODE n175]: I gave up smoking!
+[NODE n175]: I started smoking!
+[NODE n608]: I gave up smoking!
+[NODE n608]: I started smoking!
+[NODE n3]: I gave up smoking!
+[NODE n3]: I started smoking!
+[NODE n362]: I started smoking!
+[NODE n362]: BRANCH 1
+	BRANCH 2b
+		BRANCH 3d
+[NODE n302]: I started smoking!
+[NODE n302]: BRANCH 1
+	BRANCH 2b
+		BRANCH 3d
+[NODE n986]: I started smoking!
+[NODE n986]: BRANCH 1
+	BRANCH 2a
+		BRANCH 3b
+[NODE n529]: I gave up smoking!
+[NODE n957]: I started smoking!
+[NODE n957]: BRANCH 1
+	BRANCH 2b
+		BRANCH 3d
+[NODE n470]: I gave up smoking!
+[NODE n470]: I started smoking!
+[NODE n932]: I started smoking!
+[NODE n932]: BRANCH 1
+	BRANCH 2b
+		BRANCH 3d
+[NODE n299]: I gave up smoking!
+[NODE n299]: I started smoking!
+[NODE n619]: I started smoking!
+[NODE n619]: BRANCH 1
+	BRANCH 2b
+		BRANCH 3d
+[NODE n619]: I gave up smoking!
+[NODE n442]: I gave up smoking!
+[NODE n109]: I gave up smoking!
+[NODE n109]: I started smoking!
+[NODE n824]: I started smoking!
+[NODE n824]: BRANCH 1
+	BRANCH 2b
+		BRANCH 3d
+[NODE n244]: I gave up smoking!
+[NODE n360]: I gave up smoking!
+[NODE n360]: I started smoking!
+[NODE n175]: I gave up smoking!
+[NODE n175]: I started smoking!
+[NODE n203]: I started smoking!
+[NODE n203]: BRANCH 1
+	BRANCH 2a
+		BRANCH 3b
+[NODE n203]: I gave up smoking!
+********** WATCHMAN ***********
+0.019432179344825065
+Avg Clustering Coefficient: 0.019432179344825065
+******** END WATCHMAN *********
+[NODE n405]: I gave up smoking!
+[NODE n395]: I gave up smoking!
+[NODE n264]: I gave up smoking!
+[NODE n377]: I gave up smoking!
+[NODE n264]: I started smoking!
+[NODE n362]: I gave up smoking!
+[NODE n866]: I gave up smoking!
+[NODE n866]: I started smoking!
+[NODE n120]: I gave up smoking!
+[NODE n120]: I started smoking!
+[NODE n204]: I started smoking!
+[NODE n204]: BRANCH 1
+	BRANCH 2a
+		BRANCH 3b
+[NODE n1]: I gave up smoking!
+[NODE n1]: I started smoking!
+[NODE n327]: I started smoking!
+[NODE n327]: BRANCH 1
+	BRANCH 2b
+		BRANCH 3d
+[NODE n960]: I gave up smoking!
+[NODE n301]: I gave up smoking!
+[NODE n301]: I started smoking!
+[NODE n410]: I gave up smoking!
+[NODE n410]: I started smoking!
+[NODE n394]: I started smoking!
+[NODE n394]: BRANCH 1
+	BRANCH 2b
+		BRANCH 3d
+[NODE n538]: I started smoking!
+[NODE n538]: BRANCH 1
+	BRANCH 2a
+		BRANCH 3b
+[NODE n552]: I started smoking!
+[NODE n552]: BRANCH 1
+	BRANCH 2b
+		BRANCH 3d
+[NODE n750]: I gave up smoking!
+[NODE n750]: I started smoking!
+[NODE n252]: I gave up smoking!
+[NODE n252]: I started smoking!
+[NODE n508]: I gave up smoking!
+[NODE n508]: I started smoking!
+[NODE n468]: I gave up smoking!
+[NODE n468]: I started smoking!
+[NODE n771]: I gave up smoking!
+[NODE n771]: I started smoking!
+[NODE n242]: I gave up smoking!
+[NODE n242]: I started smoking!
+[NODE n363]: I gave up smoking!
+[NODE n363]: I started smoking!
+[NODE n142]: I gave up smoking!
+[NODE n142]: I started smoking!
+[NODE n350]: I gave up smoking!
+[NODE n226]: I gave up smoking!
+[NODE n226]: I started smoking!
+[NODE n251]: I gave up smoking!
+[NODE n727]: I gave up smoking!
+[NODE n251]: I started smoking!
+[NODE n727]: I started smoking!
+[NODE n891]: I started smoking!
+[NODE n891]: BRANCH 1
+	BRANCH 2b
+		BRANCH 3d
+[NODE n78]: I gave up smoking!
+[NODE n78]: I started smoking!
+[NODE n655]: I started smoking!
+[NODE n655]: BRANCH 1
+	BRANCH 2b
+		BRANCH 3d
+[NODE n998]: I gave up smoking!
+[NODE n543]: I gave up smoking!
+[NODE n928]: I gave up smoking!
+********** WATCHMAN ***********
+0.019432179344825065
+Avg Clustering Coefficient: 0.019432179344825065
+******** END WATCHMAN *********
+[NODE n275]: I gave up smoking!
+[NODE n275]: I started smoking!
+[NODE n841]: I started smoking!
+[NODE n841]: BRANCH 1
+	BRANCH 2b
+		BRANCH 3d
+[NODE n324]: I randomly attached to n90
+[NODE n693]: I gave up smoking!
+[NODE n693]: I started smoking!
+[NODE n619]: I started smoking!
+[NODE n619]: BRANCH 1
+	BRANCH 2b
+		BRANCH 3d
+[NODE n24]: I gave up smoking!
+[NODE n43]: I gave up smoking!
+[NODE n859]: I gave up smoking!
+[NODE n859]: I started smoking!
+[NODE n469]: I gave up smoking!
+[NODE n490]: I started smoking!
+[NODE n490]: BRANCH 1
+	BRANCH 2b
+		BRANCH 3d
+[NODE n469]: I started smoking!
+[NODE n977]: I started smoking!
+[NODE n977]: BRANCH 1
+	BRANCH 2b
+		BRANCH 3d
+[NODE n407]: I started smoking!
+[NODE n407]: BRANCH 1
+	BRANCH 2b
+		BRANCH 3d
+[NODE n816]: I started smoking!
+[NODE n816]: BRANCH 1
+	BRANCH 2b
+		BRANCH 3d
+[NODE n467]: I gave up smoking!
+[NODE n891]: I gave up smoking!
+[NODE n240]: I gave up smoking!
+[NODE n240]: I started smoking!
+[NODE n796]: I gave up smoking!
+[NODE n796]: I started smoking!
+[NODE n311]: I started smoking!
+[NODE n311]: BRANCH 1
+	BRANCH 2a
+		BRANCH 3b
+[NODE n327]: I gave up smoking!
+[NODE n792]: I gave up smoking!
+[NODE n792]: I started smoking!
+[NODE n11]: I gave up smoking!
+[NODE n11]: I started smoking!
+[NODE n800]: I started smoking!
+[NODE n800]: BRANCH 1
+	BRANCH 2b
+		BRANCH 3d
+[NODE n120]: I gave up smoking!
+[NODE n120]: I started smoking!
+[NODE n453]: I started smoking!
+[NODE n453]: BRANCH 1
+	BRANCH 2b
+		BRANCH 3d
+[NODE n508]: I gave up smoking!
+[NODE n508]: I started smoking!
+[NODE n799]: I gave up smoking!
+[NODE n361]: I started smoking!
+[NODE n361]: BRANCH 1
+	BRANCH 2a
+		BRANCH 3b
+[NODE n979]: I gave up smoking!
+[NODE n979]: I started smoking!
+[NODE n931]: I gave up smoking!
+[NODE n931]: I started smoking!
+[NODE n985]: I started smoking!
+[NODE n985]: BRANCH 1
+	BRANCH 2a
+		BRANCH 3b
+********** WATCHMAN ***********
+0.01935119456996274
+Avg Clustering Coefficient: 0.01935119456996274
+******** END WATCHMAN *********
+[NODE n108]: I started smoking!
+[NODE n108]: BRANCH 1
+	BRANCH 2a
+		BRANCH 3b
+[NODE n178]: I gave up smoking!
+[NODE n178]: I started smoking!
+[NODE n866]: I gave up smoking!
+[NODE n866]: I started smoking!
+[NODE n847]: I started smoking!
+[NODE n847]: BRANCH 1
+	BRANCH 2b
+		BRANCH 3d
+[NODE n332]: I started smoking!
+[NODE n332]: BRANCH 1
+	BRANCH 2a
+		BRANCH 3b
