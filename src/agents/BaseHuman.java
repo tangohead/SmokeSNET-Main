@@ -52,8 +52,6 @@ public class BaseHuman implements Comparable{
 	
 	//new attrs - leadership?
 	
-
-	
 	/**
 	 * Constructor for scale free networks
 	 * @param id
@@ -494,10 +492,12 @@ public class BaseHuman implements Comparable{
 	// CHANGE THE PCT STUFF TO INFLUENCE PCT
 	private void endDecision(boolean giveUp, double compPct, NeighborMetrics nm)
 	{
+		//Also look at non smokers
 		if(giveUp)
 		{
-			if(nm.getPcGivingUp() > compPct || irrationalChoice())
+			if(nm.getInfPcGivingUp() > compPct || irrationalChoice())
 			{
+				print(nm.getInfPcGivingUp() + " against " + compPct);
 				giveUpSmoking();
 				this.willpower = changeWithinBounds(this.willpower, 0, 1, (this.willpower * 0.01), Operations.ADD);
 			}
@@ -522,8 +522,9 @@ public class BaseHuman implements Comparable{
 		}
 		else
 		{
-			if(nm.getPcSmokes() > compPct || irrationalChoice())
+			if(nm.getInfPcSmokes() > compPct || irrationalChoice())
 			{
+				print(nm.getInfCigPerDay() + " against " + compPct);
 				relapseSmoking((int)nm.getInfCigPerDay());
 				this.willpower = changeWithinBounds(this.willpower, 0, 1, (this.willpower * 0.01), Operations.SUBTRACT);
 			}

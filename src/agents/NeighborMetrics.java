@@ -17,6 +17,14 @@ public class NeighborMetrics {
 	private double infPcSmokes;
 	private double infPcGivingUp;
 	
+	public double getInfPcSmokes() {
+		return infPcSmokes;
+	}
+
+	public double getInfPcGivingUp() {
+		return infPcGivingUp;
+	}
+
 	//count metrics
 	private double pcSmokes;
 	private double pcGivingUp;
@@ -81,6 +89,11 @@ public class NeighborMetrics {
 			
 			infPcGivingUp = numInfGiveUp / influenceSum;
 			infPcSmokes = smokerInfluenceSum / influenceSum; 
+//			System.out.println("0 " + smokerInfluenceSum + " " + influenceSum);
+//			System.out.println("1 " + numInfGiveUp + " " + influenceSum);
+//			System.out.println("0 " + infPcGivingUp);
+//			System.out.println("1 " + infPcSmokes);
+		
 		}
 		
 	}
