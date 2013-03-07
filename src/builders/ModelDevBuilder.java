@@ -51,13 +51,38 @@ public class ModelDevBuilder implements ContextBuilder<Object> {
 		else if (mode == 2)
 		{
 			//network = SmallWorld.generateRSW(context, "TestNet", 100, 0.5, 5);
-			RepastSummary rs = GraphMLImporter.GraphMLToRepast("SIMBASE.graphml", "TestNet", context);
+			RepastSummary rs = GraphMLImporter.GraphMLToRepast("SIMBASE.graphml", "TestNet", context, true, false);
 			context = rs.getContext();
 			network = rs.getNetwork();
 		}
-		else if(mode == 3)
+		else if (mode == 3)
 		{
-			RepastSummary rs = GraphMLImporter.GraphMLToRepast("basetest.graphml", "TestNet", context);
+			//network = SmallWorld.generateRSW(context, "TestNet", 100, 0.5, 5);
+			RepastSummary rs = GraphMLImporter.GraphMLToRepast("SIMBASE.graphml", "TestNet", context, false, false);
+			context = rs.getContext();
+			network = rs.getNetwork();
+		}
+		else if (mode == 4)
+		{
+			//network = SmallWorld.generateRSW(context, "TestNet", 100, 0.5, 5);
+			RepastSummary rs = GraphMLImporter.GraphMLToRepast("SIMBASE.graphml", "TestNet", context, false, true);
+			context = rs.getContext();
+			network = rs.getNetwork();
+		}
+		else if(mode == 5)
+		{
+			RepastSummary rs = GraphMLImporter.GraphMLToRepast("basetest.graphml", "TestNet", context, true, false);
+			context = rs.getContext();
+			network = rs.getNetwork();
+			NDParams nd = new NDParams(0.8, 0.4, 0, 1);
+			network = ScaleFree.SFOnBase(context, network, (Integer) parameters.getValue("numNodes"), true, 0.5, true, nd);
+			rs = GeneralTools.trimNodesByDegree(context, network, 0);
+			context = rs.getContext();
+			network = rs.getNetwork();
+		}
+		else if(mode == 6)
+		{
+			RepastSummary rs = GraphMLImporter.GraphMLToRepast("basetest.graphml", "TestNet", context, false, false);
 			context = rs.getContext();
 			network = rs.getNetwork();
 			NDParams nd = new NDParams(0.8, 0.4, 0, 1);
@@ -67,9 +92,12 @@ public class ModelDevBuilder implements ContextBuilder<Object> {
 			network = rs.getNetwork();
 		}
 		
+		String outputFile = (String) parameters.getValue("outName");
+		if(outputFile.length() == 0)
+			outputFile = "TEST-000";
 		
 		System.out.println(parameters.getValue("numNodes"));
-		Watchman watch = new Watchman(10, true, true, true, "SIM-001", context, network);
+		Watchman watch = new Watchman(10, true, true, true, outputFile, context, network);
 		context.add(watch);
 		
 		return context;

@@ -14,6 +14,9 @@ public class NeighborMetrics {
 	private double infIsSmokerVal;
 	private boolean infIsSmoker;
 	
+	private double infPcSmokes;
+	private double infPcGivingUp;
+	
 	//count metrics
 	private double pcSmokes;
 	private double pcGivingUp;
@@ -26,6 +29,7 @@ public class NeighborMetrics {
 		double influenceSum = 0;
 		double smokerInfluenceSum = 0, nonSmokerInfluenceSum = 0;
 		int numSmokers = 0;
+		double numInfSmokers = 0, numInfGiveUp = 0;
 		for(NeighborStore ns : neighborhood)
 		{
 			if(ns.getNeighbor().isSmoker())
@@ -36,7 +40,7 @@ public class NeighborMetrics {
 			infHealth += ns.getRelativeInfluence() * ns.getNeighbor().getHealth();
 			infCigPerDay += ns.getRelativeInfluence() * ns.getNeighbor().getSmokedPerDay();
 			
-			
+			//do +1*inf
 			
 			influenceSum += ns.getRelativeInfluence();
 			
@@ -50,7 +54,10 @@ public class NeighborMetrics {
 			else
 				nonSmokerInfluenceSum += ns.getRelativeInfluence();
 			if(ns.getNeighbor().isGivingUp())
+			{
 				pcGivingUp++;
+				numInfGiveUp += ns.getRelativeInfluence();
+			}
 		}
 		
 		if(neighborhood.size() > 0)
@@ -71,6 +78,9 @@ public class NeighborMetrics {
 			
 			pcSmokes /= neighborhood.size();
 			pcGivingUp /= neighborhood.size();
+			
+			infPcGivingUp = numInfGiveUp / influenceSum;
+			infPcSmokes = smokerInfluenceSum / influenceSum; 
 		}
 		
 	}

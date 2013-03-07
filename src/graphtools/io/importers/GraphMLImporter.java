@@ -15,6 +15,7 @@ import javax.xml.bind.JAXBException;
 import javax.xml.bind.Unmarshaller;
 
 import probtools.Distributions;
+import probtools.NDParams;
 
 import agents.BaseHuman;
 
@@ -34,7 +35,7 @@ public class GraphMLImporter {
 	 * @param context
 	 * @return
 	 */
-	public static RepastSummary GraphMLToRepast(String filename, String graphName, Context context)
+	public static RepastSummary GraphMLToRepast(String filename, String graphName, Context context, boolean loadNetworkOnly, boolean loadAttrsOnly)
 	{
 		try {
 			File file = new File(filename);
@@ -71,7 +72,17 @@ public class GraphMLImporter {
 //				Iterator<String> i = c.iterator();
 //				while(i.hasNext())
 //					System.out.println(i.next());
-				context.add(new BaseHuman(context, node.getID(), node.getAttrList(), nodeKeyMap));
+				if(loadNetworkOnly)
+				{
+					NDParams nd = new NDParams(0.8, 0.4, 0, 1);
+					context.add(new BaseHuman(node.getID(), context, tempNetwork, false, false, 0, nd));
+				}
+				else if(loadAttrsOnly)
+				{
+					context.add(new BaseHuman(context, node.getID(), node.getAttrList(), nodeKeyMap, true));
+				}
+				else
+					context.add(new BaseHuman(context, node.getID(), node.getAttrList(), nodeKeyMap, false));
 			}
 			
 			//now generate a hashmap of objects to look up when adding edges

@@ -149,14 +149,81 @@ public class BaseHuman implements Comparable{
 	/**
 	 * Constructor for graphML importer
 	 */
-	public BaseHuman(Context context, String id, HashMap<String, String> attrList, HashMap<String, String> keyMap)
+	public BaseHuman(Context context, String id, HashMap<String, String> attrList, HashMap<String, String> keyMap, boolean attrLoadOnly)
 	{
 		this.id = id;
 		this.context = context;
 		String keyID = "";
 		
-		keyID = keyMap.get("isSmoker");
-		this.isSmoker = Boolean.parseBoolean(attrList.get(keyID));
+		Parameters parameters = RunEnvironment.getInstance().getParameters();
+		
+		if(!attrLoadOnly)
+		{
+			keyID = keyMap.get("isSmoker");
+			this.isSmoker = Boolean.parseBoolean(attrList.get(keyID));
+			
+			keyID = keyMap.get("smokedPerDay");
+			this.smokedPerDay = Integer.parseInt(attrList.get(keyID));
+			
+			keyID = keyMap.get("givingUp");
+			this.givingUp = Boolean.parseBoolean(attrList.get(keyID));
+			
+			keyID = keyMap.get("stepsSinceGiveUp");
+			this.stepsSinceGiveUp = Integer.parseInt(attrList.get(keyID));
+		}
+		else
+		{
+			if(Math.random() > (Double)parameters.getValue("pSmokes"))
+			{
+				this.isSmoker = false;
+				//Some people are giving up
+				if(Math.random() < (Double)parameters.getValue("pGiveUp"))
+					this.givingUp = false;
+				else
+				{
+					this.givingUp = true;
+					this.stepsSinceGiveUp = (int) Math.random() * 50;
+				}
+			}
+			else
+			{
+				this.isSmoker = true;
+				this.givingUp = false;
+				this.stepsSinceGiveUp = 0;
+				
+			}
+		}
+		
+		if(this.isSmoker && this.smokedPerDay <= 0)
+		{
+			//We need some heavy and light smokers, so add some in
+			double rand = Math.random();
+			if(rand < 0.2)
+			{
+				if(isSmoker)
+					this.smokedPerDay = Distributions.getIntNDWithLimits(SimConstants.SmokedPerDayLowerMean, SimConstants.SmokedPerDaySD, 0, 40);
+				else
+					this.smokedPerDay = 0;
+			}
+			else if (rand > 0.8)
+			{
+				if(isSmoker)
+					this.smokedPerDay = Distributions.getIntNDWithLimits(SimConstants.SmokedPerDayMidMean, SimConstants.SmokedPerDaySD, 0, 40);
+				else
+					this.smokedPerDay = 0;
+			}
+			else
+			{
+				if(isSmoker)
+					this.smokedPerDay = Distributions.getIntNDWithLimits(SimConstants.SmokedPerDayUpperMean, SimConstants.SmokedPerDaySD, 0, 40);
+				else
+					this.smokedPerDay = 0;
+			}
+		}
+		else if(!this.isSmoker && this.smokedPerDay > 0)
+		{
+			this.smokedPerDay = 0;
+		}
 		
 		keyID = keyMap.get("willpower");
 		this.willpower = Double.parseDouble(attrList.get(keyID));
@@ -164,14 +231,6 @@ public class BaseHuman implements Comparable{
 		keyID = keyMap.get("health");
 		this.health = Double.parseDouble(attrList.get(keyID));
 		
-		keyID = keyMap.get("smokedPerDay");
-		this.smokedPerDay = Integer.parseInt(attrList.get(keyID));
-		
-		keyID = keyMap.get("givingUp");
-		this.givingUp = Boolean.parseBoolean(attrList.get(keyID));
-		
-		keyID = keyMap.get("stepsSinceGiveUp");
-		this.stepsSinceGiveUp = Integer.parseInt(attrList.get(keyID));
 		
 		keyID = keyMap.get("influenceability");
 		this.influenceability = Double.parseDouble(attrList.get(keyID));
@@ -180,6 +239,7 @@ public class BaseHuman implements Comparable{
 		this.sociable = Double.parseDouble(attrList.get(keyID));
 		
 	}
+	
 	
 	/**
 	 * Sets the network of the node. Should only be used after a small world generation/GraphML
@@ -309,11 +369,11 @@ public class BaseHuman implements Comparable{
 					{
 						if(this.health > nm.getInfHealth())
 						{ 
-							endDecision(false, 0.3, nm);
+							endDecision(false, 0.5, nm);
 						}
 						else
 						{
-							endDecision(false, 0.6, nm);
+							endDecision(false, 0.7, nm);
 						}
 					}
 					else
@@ -321,7 +381,7 @@ public class BaseHuman implements Comparable{
 						//Stronger people so far, hinge on own behaviour
 						if(this.health > nm.getInfHealth())
 						{ 
-							endDecision(false, 0.5, nm);
+							endDecision(false, 0.6, nm);
 						}
 						else
 						{
@@ -421,13 +481,17 @@ public class BaseHuman implements Comparable{
 					print(path);
 			}
 			
-			if(this.isSmoker)
-				this.willpower = changeWithinBounds(this.willpower, 0, 1, (this.willpower * 0.01), Operations.SUBTRACT);
+//			if(this.isSmoker)
+//				this.willpower = changeWithinBounds(this.willpower, 0, 1, (this.willpower * 0.01), Operations.SUBTRACT);
 		}
 		
 		return changeMade;
 	}
 	
+	
+	// HEY YOU
+	//*********************************************
+	// CHANGE THE PCT STUFF TO INFLUENCE PCT
 	private void endDecision(boolean giveUp, double compPct, NeighborMetrics nm)
 	{
 		if(giveUp)
@@ -435,17 +499,25 @@ public class BaseHuman implements Comparable{
 			if(nm.getPcGivingUp() > compPct || irrationalChoice())
 			{
 				giveUpSmoking();
+				this.willpower = changeWithinBounds(this.willpower, 0, 1, (this.willpower * 0.01), Operations.ADD);
 			}
 			else
 			{
 				if(nm.getAvgCigPerDay() > this.smokedPerDay * SimConstants.SmokerPerDayUpperPct || irrationalChoice())
 				{
 					this.smokedPerDay = (int)Math.round(changeWithinBounds(this.smokedPerDay, 0, SimConstants.cigLimit, (nm.getInfCigPerDay()* 0.5), Operations.ADD));
+					this.willpower = changeWithinBounds(this.willpower, 0, 1, (this.willpower * 0.01), Operations.SUBTRACT);
 				}
 				else if(nm.getAvgCigPerDay() < this.smokedPerDay * SimConstants.SmokerPerDayUpperPct || irrationalChoice())
 				{
 					this.smokedPerDay = (int)Math.round(changeWithinBounds(this.smokedPerDay, 0, SimConstants.cigLimit, (nm.getInfCigPerDay()* 0.5), Operations.SUBTRACT));
+					this.willpower = changeWithinBounds(this.willpower, 0, 1, (this.willpower * 0.01), Operations.SUBTRACT);
 				}
+				else
+				{
+					this.willpower = changeWithinBounds(this.willpower, 0, 1, (this.willpower * 0.01), Operations.ADD);
+				}
+				
 			}
 		}
 		else
@@ -453,6 +525,7 @@ public class BaseHuman implements Comparable{
 			if(nm.getPcSmokes() > compPct || irrationalChoice())
 			{
 				relapseSmoking((int)nm.getInfCigPerDay());
+				this.willpower = changeWithinBounds(this.willpower, 0, 1, (this.willpower * 0.01), Operations.SUBTRACT);
 			}
 			else
 			{

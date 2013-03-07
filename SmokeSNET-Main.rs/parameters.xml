@@ -6,6 +6,12 @@
 						converter="repast.simphony.parameter.StringConverterFactory$IntConverter"
 									
 		/>
+				<parameter name="outName" displayName="Output Filename" type="java.lang.String" 
+						defaultValue="" 
+						isReadOnly="false" 
+						converter="repast.simphony.parameter.StringConverterFactory$StringStringConverter"
+									
+		/>
 				<parameter name="numNodes" displayName="Number of Nodes" type="int" 
 						defaultValue="100" 
 						isReadOnly="false" 

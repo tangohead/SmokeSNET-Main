@@ -1,5 +1,7 @@
 package agents;
 import edu.uci.ics.jung.algorithms.metrics.*;
+
+import java.io.File;
 import java.util.HashMap;
 import java.util.LinkedList;
 import java.util.Map;
@@ -54,13 +56,39 @@ public class Watchman {
 		LinkedList<BaseHuman> nodes = GeneralTools.getBaseHumans(network);
 		//System.out.println("There are " + nodes.size() + " humans in the graph.");
 		
-		
+		boolean success = (new File(name)).mkdirs();
+		if(!success)
+			System.out.println("[NOTICE]: Output directory cannot be created. Assuming it exists.");
 		
 		if(networkGuard)
 		{
 			DirectedSparseMultigraph graph = GraphFormat.RepastToJUNG(network);
 			GraphStats gs = JUNGStatistics.GenerateStatistics(graph, GeneralTools.getBaseHumans(network));
-			//System.out.println("Avg Clustering Coefficient: " + gs.getAvgClusterCoeff());
+			System.out.println("Avg Clustering Coefficient: " + gs.getAvgClusterCoeff());
+			
+			LinkedList<BaseHuman> l = GeneralTools.getBaseHumans(network);
+			double smokeCount = 0;
+			double giveUpCount = 0;
+			double humanCount = 0;
+			double avgWillpower = 0;
+			double avgSPD = 0;
+			for(BaseHuman h : l)
+			{
+				if(h.isSmoker())
+					smokeCount++;
+				if(h.isGivingUp())
+					giveUpCount++;
+				avgWillpower += h.getWillpower();
+				avgSPD += h.getSmokedPerDay();
+				humanCount++;
+			}
+			
+			System.out.println("[STAT]: Number of humans is " + humanCount);
+			System.out.println("[STAT]: Percentage of network that smokes is " + (smokeCount / humanCount) * 100 + "%");
+			System.out.println("[STAT]: Percentage of network that are giving up is " + (giveUpCount / humanCount) * 100 + "%");
+			System.out.println("[STAT]: Percentage of network that are NS/NGU is " + ((humanCount-giveUpCount-smokeCount) / humanCount) * 100 + "%");
+			System.out.println("[STAT]: Average willpower " + (avgWillpower / humanCount));
+			System.out.println("[STAT]: Average smoker per day " + (avgSPD / smokeCount));
 		}
 	}
 	
@@ -83,11 +111,11 @@ public class Watchman {
 		System.out.println("********** WATCHMAN ***********");
 		if(generateGML)
 		{
-			GraphMLExporter.repastNetworkToGraphML(context, network, name + "-step-" + turnCount + ext);
+			GraphMLExporter.repastNetworkToGraphML(context, network, name + "/" + name + "-step-" + turnCount + ext);
 		}
 		if(dumpAttrs)
 		{
-			CSVExporter.exportToCSV(network.getNodes(), name + "-step-" + turnCount);
+			CSVExporter.exportToCSV(network.getNodes(), name + "/" + name + "-step-" + turnCount);
 		}
 		if(networkGuard)
 		{
@@ -132,7 +160,25 @@ public class Watchman {
 				}
 			}
 			
+			LinkedList<BaseHuman> l = GeneralTools.getBaseHumans(network);
+			double smokeCount = 0;
+			double giveUpCount = 0;
+			double humanCount = 0;
+			for(BaseHuman h : l)
+			{
+				if(h.isSmoker())
+					smokeCount++;
+				if(h.isGivingUp())
+					giveUpCount++;
+				humanCount++;
+			}
+			
+			System.out.println("[STAT]: Number of humans is " + humanCount);
+			System.out.println("[STAT]: Percentage of network that smokes is " + (smokeCount / humanCount) * 100 + "%");
+			System.out.println("[STAT]: Percentage of network that are giving up is " + (giveUpCount / humanCount) * 100 + "%");
+			System.out.println("[STAT]: Percentage of network that are NS/NGU is " + ((humanCount-giveUpCount-smokeCount) / humanCount) * 100 + "%");
 		}
+		
 		System.out.println("******** END WATCHMAN *********");
 
 	}
