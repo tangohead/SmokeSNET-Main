@@ -31,6 +31,27 @@ import graphtools.io.graphML.XMLNodeKey;
 import graphtools.samplers.GeneralTools;
 
 public class BaseHuman implements Comparable{
+	
+	static int rtA1 = 0, rtA2 = 0;
+	//--------------------------------
+	static int rtA1a = 0, rtA1b = 0, rtA1c = 0;	
+	//--------------------------------
+	static int rtA1a1 = 0, rtA1a2 = 0;
+	static int rtA1b1 = 0, rtA1b2 = 0;
+	static int rtA1c1 = 0, rtA1c2 = 0;
+	//---------------------------------
+	static int rtA1a1a = 0, rtA1a1b = 0;
+	static int rtA1a2a = 0, rtA1a2b = 0;
+	
+	static int rtA1b1a = 0, rtA1b1b = 0;
+
+	static int rtA1c1a = 0, rtA1c1b = 0;
+	static int rtA1c2a = 0, rtA1c2b = 0;
+	//---------------------------------
+	 
+	static int rtA2a = 0, rtA2b = 0;
+	static int rt
+	
 	String id;
 	private Context<?> context;
 	private Network<BaseHuman> network;
@@ -262,9 +283,11 @@ public class BaseHuman implements Comparable{
 		
 		HashSet<NeighborStore> localNeighborhood = GeneralTools.getUniqueWithinHops(context, network, this, SimConstants.LocalNeighborhoodHops, true);
 		
+		//print("Calculating Decision Metrics");
 		NeighborMetrics nm = new NeighborMetrics(localNeighborhood);
 		
 		//statusCall();
+		
 		decisionTree(nm);
 		connectionAdjust(localNeighborhood, nm, network);
 		if(this.isGivingUp())
@@ -283,82 +306,103 @@ public class BaseHuman implements Comparable{
 		
 		if(this.isSmoker)
 		{
+			rtA1++;
 			this.health = changeWithinBounds(this.health, 0, 1, (this.smokedPerDay/SimConstants.cigLimit)/10, Operations.SUBTRACT);
 			if(this.smokedPerDay <= 10)
 			{
+				rtA1a++;
 				if(this.giveUpAttempts > 1)
 				{
+					rtA1a1++;
 					if(this.health < nm.getInfHealth())
 					{
-						endDecision(true, 0.5, nm);
+						rtA1a1a++;
+						endDecision(true, 0.6, nm);
 					}	
 					else
 					{
-						endDecision(true, 0.7, nm);
-					}
-				}
-				else
-				{
-					if(this.health < nm.getInfHealth())
-					{
-						endDecision(true, 0.3, nm);
-					}	
-					else
-					{
-						endDecision(true, 0.5, nm);
-					}
-				}
-				
-				
-			}
-			else if(this.smokedPerDay > 10 && this.smokedPerDay < 20)
-			{
-				if(this.health < nm.getInfHealth())
-				{
-					if(nm.getAvgCigPerDay() > this.smokedPerDay * SimConstants.SmokerPerDayUpperPct || irrationalChoice())
-					{
-						this.smokedPerDay = (int)Math.round(changeWithinBounds(this.smokedPerDay, 0, SimConstants.cigLimit, (nm.getInfCigPerDay()* 0.5), Operations.ADD));
-					}
-					else if(nm.getAvgCigPerDay() < this.smokedPerDay * SimConstants.SmokerPerDayLowerPct || irrationalChoice())
-					{
-						this.smokedPerDay = (int)Math.round(changeWithinBounds(this.smokedPerDay, 0, SimConstants.cigLimit, (nm.getInfCigPerDay()* 0.5), Operations.SUBTRACT));
-					}
-				}
-				else if(irrationalChoice())
-				{
-					giveUpSmoking();
-				}
-			}
-			else 
-			{
-				if(this.willpower < 0.7)
-				{
-					if(this.health < nm.getInfHealth())
-					{
-						endDecision(true, 0.4, nm);
-					}
-					else
-					{
+						rtA1a1b++;
 						endDecision(true, 0.8, nm);
 					}
 				}
 				else
 				{
+					rtA1a2++;
 					if(this.health < nm.getInfHealth())
 					{
-						endDecision(true, 0.2, nm);
+						rtA1a2a++;
+						endDecision(true, 0.5, nm);
+					}	
+					else
+					{
+						rtA1a2b++;
+						endDecision(true, 0.7, nm);
+					}
+				}
+				
+			}
+			else if(this.smokedPerDay > 10 && this.smokedPerDay < 20)
+			{
+				rtA1b++;
+				if(this.health < nm.getInfHealth())
+				{
+					rtA1b1++;
+					if(nm.getAvgCigPerDay() > this.smokedPerDay * SimConstants.SmokerPerDayUpperPct || irrationalChoice())
+					{
+						rtA1b1a++;
+						this.smokedPerDay = (int)Math.round(changeWithinBounds(this.smokedPerDay, 0, SimConstants.cigLimit, (nm.getInfCigPerDay()* 0.5), Operations.ADD));
+					}
+					else if(nm.getAvgCigPerDay() < this.smokedPerDay * SimConstants.SmokerPerDayLowerPct || irrationalChoice())
+					{
+						rtA1b1a++;
+						this.smokedPerDay = (int)Math.round(changeWithinBounds(this.smokedPerDay, 0, SimConstants.cigLimit, (nm.getInfCigPerDay()* 0.5), Operations.SUBTRACT));
+					}
+				}
+				else if(irrationalChoice())
+				{
+					rtA1b2++;
+					giveUpSmoking();
+				}
+			}
+			else 
+			{
+				rtA1c++;
+				if(this.willpower < 0.7)
+				{
+					rtA1c1++;
+					if(this.health < nm.getInfHealth())
+					{
+						rtA1c1a++;
+						endDecision(true, 0.4, nm);
 					}
 					else
 					{
+						rtA1c1b++;
 						endDecision(true, 0.6, nm);
+					}
+				}
+				else
+				{
+					rtA1c2++;
+					if(this.health < nm.getInfHealth())
+					{
+						rtA1c2a++;
+						endDecision(true, 0.6, nm);
+					}
+					else
+					{
+						rtA1c2b++;
+						endDecision(true, 0.8, nm);
 					}
 				}
 			}
 		}
 		else
 		{
+			rtA2++;
 			if(this.givingUp)
 			{
+				
 				this.health = changeWithinBounds(this.health, 0, 1, (this.stepsSinceGiveUp/SimConstants.giveUpStepLimit)/10, Operations.ADD);
 				if(this.giveUpAttempts == 0)
 				{
@@ -404,11 +448,11 @@ public class BaseHuman implements Comparable{
 					{
 						if(this.willpower < nm.getInfWillpower())
 						{
-							endDecision(false, 0.3, nm);
+							endDecision(false, 0.4, nm);
 						}
 						else 
 						{
-							endDecision(false, 0.5, nm);
+							endDecision(false, 0.6, nm);
 						}
 					}
 				}
@@ -467,12 +511,12 @@ public class BaseHuman implements Comparable{
 					if(this.willpower < 0.4)
 					{
 						path += "\n\t\tBRANCH 3c";
-						endDecision(false, 0.5, nm);
+						endDecision(false, 0.7, nm);
 					}
 					else
 					{
 						path += "\n\t\tBRANCH 3d";
-						endDecision(false, 0.7, nm);
+						endDecision(false, 0.9, nm);
 					}
 				}
 				if(this.isSmoker)
@@ -497,7 +541,7 @@ public class BaseHuman implements Comparable{
 		{
 			if(nm.getInfPcGivingUp() > compPct || irrationalChoice())
 			{
-				print(nm.getInfPcGivingUp() + " against " + compPct);
+				///print((compPct) + " against " + nm.getInfPcGivingUp());
 				giveUpSmoking();
 				this.willpower = changeWithinBounds(this.willpower, 0, 1, (this.willpower * 0.01), Operations.ADD);
 			}
@@ -524,7 +568,7 @@ public class BaseHuman implements Comparable{
 		{
 			if(nm.getInfPcSmokes() > compPct || irrationalChoice())
 			{
-				print(nm.getInfCigPerDay() + " against " + compPct);
+				print(nm.getInfPcSmokes() + " against " + compPct);
 				relapseSmoking((int)nm.getInfCigPerDay());
 				this.willpower = changeWithinBounds(this.willpower, 0, 1, (this.willpower * 0.01), Operations.SUBTRACT);
 			}
