@@ -160,6 +160,62 @@ public class Watchman {
 				}
 			}
 			
+			System.out.println("Branch 1: " + BaseHuman.rtA1);
+			System.out.println("\tBranch 1.1: " + BaseHuman.rtA1a);
+			System.out.println("\t\tBranch 1.1.1: " + BaseHuman.rtA1a1);
+			System.out.println("\t\t\tBranch 1.1.1.1: " + BaseHuman.rtA1a1a);
+			System.out.println("\t\t\tBranch 1.1.1.2: " + BaseHuman.rtA1a1b);
+			System.out.println("\t\tBranch 1.1.2: " + BaseHuman.rtA1a2);
+			System.out.println("\t\t\tBranch 1.1.2.1: " + BaseHuman.rtA1a2a);
+			System.out.println("\t\t\tBranch 1.1.2.2: " + BaseHuman.rtA1a2b);
+			
+			System.out.println("\tBranch 1.2: " + BaseHuman.rtA1b);
+			System.out.println("\t\tBranch 1.2.1: " + BaseHuman.rtA1b1);
+			System.out.println("\t\t\tBranch 1.2.1.1: " + BaseHuman.rtA1b1a);
+			System.out.println("\t\t\tBranch 1.2.1.2: " + BaseHuman.rtA1b1b);
+			System.out.println("\t\tBranch 1.2.2: " + BaseHuman.rtA1b2);
+			System.out.println("\tBranch 1.3: " + BaseHuman.rtA1c);
+			System.out.println("\t\tBranch 1.3.1: " + BaseHuman.rtA1c1);
+			System.out.println("\t\t\tBranch 1.3.1.1: " + BaseHuman.rtA1c1a);
+			System.out.println("\t\t\tBranch 1.3.1.2: " + BaseHuman.rtA1c1b);
+			System.out.println("\t\tBranch 1.3.2: " + BaseHuman.rtA1c2);
+			System.out.println("\t\t\tBranch 1.3.2.1: " + BaseHuman.rtA1c2a);
+			System.out.println("\t\t\tBranch 1.3.2.2: " + BaseHuman.rtA1c2b);
+		
+			System.out.println("Branch 2: " + BaseHuman.rtA2);
+			System.out.println("\tBranch 2.1: " + BaseHuman.rtA2a);
+			System.out.println("\t\tBranch 2.1.1: " + BaseHuman.rtA2a1);
+			System.out.println("\t\t\tBranch 2.1.1.1: " + BaseHuman.rtA2a1A);
+			System.out.println("\t\t\tBranch 2.1.1.1.1: " + BaseHuman.rtA2a1A1);
+			System.out.println("\t\t\tBranch 2.1.1.1.2: " + BaseHuman.rtA2a1A2);
+			System.out.println("\t\t\tBranch 2.1.1.2: " + BaseHuman.rtA2a1B);
+			System.out.println("\t\t\tBranch 2.1.1.2.1: " + BaseHuman.rtA2a1B1);
+			System.out.println("\t\t\tBranch 2.1.1.2.2: " + BaseHuman.rtA2a1B2);
+			System.out.println("\t\tBranch 2.1.2: " + BaseHuman.rtA2a2);
+			System.out.println("\t\t\tBranch 2.1.2.1: " + BaseHuman.rtA2a2A);
+			System.out.println("\t\t\tBranch 2.1.2.1.1: " + BaseHuman.rtA2a2A1);
+			System.out.println("\t\t\tBranch 2.1.2.1.2: " + BaseHuman.rtA2a2A2);
+			System.out.println("\t\t\tBranch 2.1.2.2: " + BaseHuman.rtA2a2B);
+			System.out.println("\t\t\tBranch 2.1.2.2.1: " + BaseHuman.rtA2a2B1);
+			System.out.println("\t\t\tBranch 2.1.2.2.2: " + BaseHuman.rtA2a2B2);
+			System.out.println("\t\tBranch 2.1.3: " + BaseHuman.rtA2a3);
+			System.out.println("\t\t\tBranch 2.1.3.1: " + BaseHuman.rtA2a3A);
+			System.out.println("\t\t\tBranch 2.1.3.1.1: " + BaseHuman.rtA2a3A1);
+			System.out.println("\t\t\tBranch 2.1.3.1.2: " + BaseHuman.rtA2a3A2);
+			System.out.println("\t\t\tBranch 2.1.3.2: " + BaseHuman.rtA2a3B);
+			System.out.println("\t\t\tBranch 2.1.3.2.1: " + BaseHuman.rtA2a3B1);
+			System.out.println("\t\t\tBranch 2.1.3.2.2: " + BaseHuman.rtA2a3B2);
+
+			System.out.println("\tBranch 2.2: " + BaseHuman.rtA2b);
+			System.out.println("\t\tBranch 2.2.1: " + BaseHuman.rtA2b1);
+			System.out.println("\t\t\tBranch 2.2.1.1: " + BaseHuman.rtA2b1A);
+			System.out.println("\t\t\tBranch 2.2.1.2: " + BaseHuman.rtA2b1B);
+			System.out.println("\t\tBranch 2.2.2: " + BaseHuman.rtA1b2);
+			System.out.println("\t\t\tBranch 2.2.2.1: " + BaseHuman.rtA2b2A);
+			System.out.println("\t\t\tBranch 2.2.2.2: " + BaseHuman.rtA2b2B); 
+
+		
+			
 			LinkedList<BaseHuman> l = GeneralTools.getBaseHumans(network);
 			double smokeCount = 0;
 			double giveUpCount = 0;
@@ -183,7 +239,7 @@ public class Watchman {
 
 	}
 	
-	@ScheduledMethod(start = 1, interval = 100)
+	@ScheduledMethod(start = 1, interval = 1)
 	public void step() {
 		checkWatch();
 	}

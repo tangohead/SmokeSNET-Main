@@ -50,7 +50,17 @@ public class BaseHuman implements Comparable{
 	//---------------------------------
 	 
 	static int rtA2a = 0, rtA2b = 0;
-	static int rt
+	static int rtA2a1 = 0, rtA2a2 = 0, rtA2a3 = 0;
+	static int rtA2a1A = 0, rtA2a1B = 0;
+	static int rtA2a1A1 = 0, rtA2a1A2 = 0, rtA2a1B1 = 0, rtA2a1B2 = 0;
+	static int rtA2a2A = 0, rtA2a2B = 0;
+	static int rtA2a2A1 = 0, rtA2a2A2 = 0, rtA2a2B1 = 0, rtA2a2B2 = 0;
+	static int rtA2a3A = 0, rtA2a3B = 0;
+	static int rtA2a3A1 = 0, rtA2a3A2 = 0, rtA2a3B1 = 0, rtA2a3B2 = 0;
+	
+	static int rtA2b1 = 0, rtA2b2 = 0;
+	static int rtA2b1A = 0, rtA2b1B = 0;
+	static int rtA2b2A = 0, rtA2b2B = 0;
 	
 	String id;
 	private Context<?> context;
@@ -402,81 +412,102 @@ public class BaseHuman implements Comparable{
 			rtA2++;
 			if(this.givingUp)
 			{
-				
+				rtA2a++;
 				this.health = changeWithinBounds(this.health, 0, 1, (this.stepsSinceGiveUp/SimConstants.giveUpStepLimit)/10, Operations.ADD);
 				if(this.giveUpAttempts == 0)
 				{
+					rtA2a1++;
 					//perhaps incorporate the number of people giving up, as sort of a group mentality thing
 					if(this.willpower < nm.getInfWillpower())
 					{
+						rtA2a1A++;
 						if(this.health > nm.getInfHealth())
 						{ 
+							rtA2a1A1++;
 							endDecision(false, 0.5, nm);
 						}
 						else
 						{
+							rtA2a1A2++;
 							endDecision(false, 0.7, nm);
 						}
 					}
 					else
 					{
+						rtA2a1B++;
 						//Stronger people so far, hinge on own behaviour
 						if(this.health > nm.getInfHealth())
 						{ 
+							rtA2a1B1++;
 							endDecision(false, 0.6, nm);
 						}
 						else
 						{
+							rtA2a1B2++;
 							endDecision(false, 0.8, nm);
 						}
 					}
 				}
 				else if(this.giveUpAttempts >= 1 && this.giveUpAttempts < 5)
 				{
+					rtA2a2++;
 					if(nm.getPcGivingUp() > 0.5)
 					{
+						rtA2a2A++;
 						if(this.willpower < nm.getInfWillpower())
 						{
+							rtA2a2A1++;
 							endDecision(false, 0.5, nm);
 						}
 						else 
 						{
+							rtA2a2A2++;
 							endDecision(false, 0.8, nm);
 						}
 					}
 					else
 					{
+						rtA2a2B++;
 						if(this.willpower < nm.getInfWillpower())
 						{
+							rtA2a2B1++;
 							endDecision(false, 0.4, nm);
 						}
 						else 
 						{
+							rtA2a2B1++;
 							endDecision(false, 0.6, nm);
 						}
 					}
 				}
 				else
 				{
+					rtA2a3++;
 					if(nm.getPcGivingUp() > 0.8)
 					{
+						rtA2a3A++;
 						if(this.health < nm.getInfHealth())
 						{
+							rtA2a3A1++;
 							endDecision(false, 0.5, nm);
 						}
 						else 
 						{
+							rtA2a3A2++;
 							endDecision(false, 0.8, nm);
 						}
 					}
 					else
 					{
+						rtA2a3B++;
 						if(this.health < nm.getInfHealth())
 						{
+							rtA2a3B1++;
 							endDecision(false, 0.3, nm);
 						}
 						else 
 						{
+							rtA2a3B1++;
 							endDecision(false, 0.5, nm);
 						}
 					}
@@ -489,38 +520,45 @@ public class BaseHuman implements Comparable{
 			}
 			else
 			{
-				String path = "";
-				path += "BRANCH 1";
+				rtA2b++;
+				//String path = "";
+				//path += "BRANCH 1";
 				if(this.health < nm.getInfHealth())
 				{
-					path += "\n\tBRANCH 2a";
+					rtA2b1++;
+					//path += "\n\tBRANCH 2a";
 					if(this.willpower < 0.3)
 					{
-						path += "\n\t\tBRANCH 3a";
+						rtA2b1A++;
+						//path += "\n\t\tBRANCH 3a";
 						endDecision(false, 0.6, nm);
 					}
 					else
 					{
-						path += "\n\t\tBRANCH 3b";
+						rtA2b1B++;
+						//path += "\n\t\tBRANCH 3b";
 						endDecision(false, 0.8, nm);
 					}
 				}
 				else
 				{
-					path += "\n\tBRANCH 2b";
+					rtA2b2++;
+					//path += "\n\tBRANCH 2b";
 					if(this.willpower < 0.4)
 					{
-						path += "\n\t\tBRANCH 3c";
+						rtA2b2A++;
+						//path += "\n\t\tBRANCH 3c";
 						endDecision(false, 0.7, nm);
 					}
 					else
 					{
-						path += "\n\t\tBRANCH 3d";
+						rtA2b2A++;
+						//path += "\n\t\tBRANCH 3d";
 						endDecision(false, 0.9, nm);
 					}
 				}
-				if(this.isSmoker)
-					print(path);
+				//if(this.isSmoker)
+					//print(path);
 			}
 			
 //			if(this.isSmoker)
