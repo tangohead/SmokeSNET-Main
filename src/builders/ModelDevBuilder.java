@@ -97,7 +97,7 @@ public class ModelDevBuilder implements ContextBuilder<Object> {
 			outputFile = "TEST-000";
 		
 		System.out.println(parameters.getValue("numNodes"));
-		Watchman watch = new Watchman(10, true, true, true, outputFile, context, network);
+		Watchman watch = new Watchman(100, true, true, true, outputFile, context, network);
 		context.add(watch);
 		
 		return context;

@@ -318,7 +318,7 @@ public class BaseHuman implements Comparable{
 		{
 			rtA1++;
 			this.health = changeWithinBounds(this.health, 0, 1, (this.smokedPerDay/SimConstants.cigLimit)/10, Operations.SUBTRACT);
-			if(this.smokedPerDay <= 10)
+			if(this.smokedPerDay <= 5)
 			{
 				rtA1a++;
 				if(this.giveUpAttempts > 1)
@@ -351,7 +351,7 @@ public class BaseHuman implements Comparable{
 				}
 				
 			}
-			else if(this.smokedPerDay > 10 && this.smokedPerDay < 20)
+			else if(this.smokedPerDay > 5 && this.smokedPerDay < 15)
 			{
 				rtA1b++;
 				if(this.health < nm.getInfHealth())
@@ -577,7 +577,7 @@ public class BaseHuman implements Comparable{
 		//Also look at non smokers
 		if(giveUp)
 		{
-			if(nm.getInfPcGivingUp() > compPct || irrationalChoice())
+			if((nm.getInfPcGivingUp() > compPct && Math.random()  > 0.75) || irrationalChoice())
 			{
 				///print((compPct) + " against " + nm.getInfPcGivingUp());
 				giveUpSmoking();
@@ -604,8 +604,9 @@ public class BaseHuman implements Comparable{
 		}
 		else
 		{
-			if(nm.getInfPcSmokes() > compPct || irrationalChoice())
+			if((nm.getInfPcSmokes() > compPct && Math.random()  > 0.75) || irrationalChoice())
 			{
+				statusCall();
 				print(nm.getInfPcSmokes() + " against " + compPct);
 				relapseSmoking((int)nm.getInfCigPerDay());
 				this.willpower = changeWithinBounds(this.willpower, 0, 1, (this.willpower * 0.01), Operations.SUBTRACT);
@@ -620,7 +621,7 @@ public class BaseHuman implements Comparable{
 	}
 	private void statusCall()
 	{
-		//print("Smoker: " + this.isSmoker + " Cigs: " + this.smokedPerDay + " Giving Up?: " + this.givingUp + " Steps: " + this.stepsSinceGiveUp); 
+		print("Smoker: " + this.isSmoker + " Cigs: " + this.smokedPerDay + " Giving Up?: " + this.givingUp + " Steps: " + this.stepsSinceGiveUp); 
 	}
 	
 	private boolean irrationalChoice()
@@ -639,7 +640,7 @@ public class BaseHuman implements Comparable{
 		this.givingUp = false;
 		this.giveUpAttempts++;
 		this.smokedPerDay = numCigarettes;
-		statusCall();
+		//statusCall();
 	}
 	
 	private void giveUpSmoking()
@@ -649,7 +650,7 @@ public class BaseHuman implements Comparable{
 		this.givingUp = true;
 		this.giveUpAttempts++;
 		this.smokedPerDay = 0;
-		statusCall();
+		//statusCall();
 	}
 	
 	private double changeWithinBounds(double base, double lower, double upper, double change, Operations op)
