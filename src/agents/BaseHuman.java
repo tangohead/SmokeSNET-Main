@@ -125,7 +125,7 @@ public class BaseHuman implements Comparable{
 		this.willpower = Distributions.getNDWithLimits(SimConstants.WillpowerMean, SimConstants.WillpowerSD, 0, 1);
 		this.health = Distributions.getNDWithLimits(SimConstants.HealthMean, SimConstants.HealthSD, 0, 1);
 		this.sociable = Distributions.getNDWithLimits(SimConstants.SociableMean, SimConstants.SociableSD, 0, 1);
-		this.influenceability = Distributions.getNDWithLimits(0.5, 0.4, 0, 1);
+		this.influenceability = Distributions.getNDWithLimits(0.9, 0.4, 0, 1);
 		
 		this.stress = Distributions.getNDWithLimits(0.5, 0.4, 0, 1);
 		
@@ -577,7 +577,7 @@ public class BaseHuman implements Comparable{
 		//Also look at non smokers
 		if(giveUp)
 		{
-			if((nm.getInfPcGivingUp() > compPct && Math.random()  > 0.75) || irrationalChoice())
+			if((nm.getInfPcGivingUp() > compPct && Math.random()  > this.influenceability) || irrationalChoice())
 			{
 				///print((compPct) + " against " + nm.getInfPcGivingUp());
 				giveUpSmoking();
@@ -604,7 +604,7 @@ public class BaseHuman implements Comparable{
 		}
 		else
 		{
-			if((nm.getInfPcSmokes() > compPct && Math.random()  > 0.75) || irrationalChoice())
+			if((nm.getInfPcSmokes() > compPct && Math.random()  > this.influenceability) || irrationalChoice())
 			{
 				statusCall();
 				print(nm.getInfPcSmokes() + " against " + compPct);
