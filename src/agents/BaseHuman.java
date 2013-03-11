@@ -546,7 +546,7 @@ public class BaseHuman implements Comparable{
 					rtA2b2++;
 					//path += "\n\tBRANCH 2b";
 					//print("I am here!");
-					if(this.willpower < 0.4)
+					if(this.willpower < 0.2)
 					{
 						rtA2b2A++;
 						//path += "\n\t\tBRANCH 3c";

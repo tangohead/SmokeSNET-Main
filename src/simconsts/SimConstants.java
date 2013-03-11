@@ -17,7 +17,7 @@ public class SimConstants {
 	public final static double SmokerPerDayUpperPct = 1.2;
 	public final static double SmokerPerDayLowerPct = 0.8;
 	
-	public final static double WillpowerMean = 0.8;
+	public final static double WillpowerMean = 0.4;
 	public final static double WillpowerSD = 2;
 	
 	public final static double HealthMean = 0.7;
