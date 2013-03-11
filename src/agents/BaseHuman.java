@@ -71,7 +71,8 @@ public class BaseHuman implements Comparable{
 	private double health;
 	private int smokedPerDay;
 	
-	private double stress;
+	private int turnsSinceLastChange;
+	
 	
 	private boolean givingUp;
 	private int stepsSinceGiveUp;
@@ -119,7 +120,7 @@ public class BaseHuman implements Comparable{
 			this.stepsSinceGiveUp = 0;
 			
 		}
-		
+		this.turnsSinceLastChange = 0;
 		this.giveUpAttempts = 0;
 		
 		this.willpower = Distributions.getNDWithLimits(SimConstants.WillpowerMean, SimConstants.WillpowerSD, 0, 1);
@@ -127,7 +128,7 @@ public class BaseHuman implements Comparable{
 		this.sociable = Distributions.getNDWithLimits(SimConstants.SociableMean, SimConstants.SociableSD, 0, 1);
 		this.influenceability = Distributions.getNDWithLimits(0.9, 0.4, 0, 1);
 		
-		this.stress = Distributions.getNDWithLimits(0.5, 0.4, 0, 1);
+		//this.stress = Distributions.getNDWithLimits(0.5, 0.4, 0, 1);
 		
 		//We need some heavy and light smokers, so add some in
 		double rand = Math.random();
@@ -302,8 +303,8 @@ public class BaseHuman implements Comparable{
 		connectionAdjust(localNeighborhood, nm, network);
 		if(this.isGivingUp())
 			this.stepsSinceGiveUp++;
+		this.turnsSinceLastChange++;
 
-		
 	}
 	
 	
@@ -317,7 +318,7 @@ public class BaseHuman implements Comparable{
 		if(this.isSmoker)
 		{
 			rtA1++;
-			this.health = changeWithinBounds(this.health, 0, 1, (this.smokedPerDay/SimConstants.cigLimit)/10, Operations.SUBTRACT);
+			this.health = changeWithinBounds(this.health, 0, 1, (this.smokedPerDay/SimConstants.cigLimit)/1000, Operations.SUBTRACT);
 			if(this.smokedPerDay <= 5)
 			{
 				rtA1a++;
@@ -351,7 +352,7 @@ public class BaseHuman implements Comparable{
 				}
 				
 			}
-			else if(this.smokedPerDay > 5 && this.smokedPerDay < 15)
+			else if(this.smokedPerDay > 10 && this.smokedPerDay < 20)
 			{
 				rtA1b++;
 				if(this.health < nm.getInfHealth())
@@ -413,7 +414,7 @@ public class BaseHuman implements Comparable{
 			if(this.givingUp)
 			{
 				rtA2a++;
-				this.health = changeWithinBounds(this.health, 0, 1, (this.stepsSinceGiveUp/SimConstants.giveUpStepLimit)/10, Operations.ADD);
+				this.health = changeWithinBounds(this.health, 0, 1, (this.stepsSinceGiveUp/SimConstants.giveUpStepLimit)/1000, Operations.ADD);
 				if(this.giveUpAttempts == 0)
 				{
 					rtA2a1++;
@@ -451,7 +452,7 @@ public class BaseHuman implements Comparable{
 				else if(this.giveUpAttempts >= 1 && this.giveUpAttempts < 5)
 				{
 					rtA2a2++;
-					if(nm.getPcGivingUp() > 0.5)
+					if(nm.getPcGivingUp() > 0.5 || (1 - (nm.getPcGivingUp() + nm.getPcSmokes())) > 0.5)
 					{
 						rtA2a2A++;
 						if(this.willpower < nm.getInfWillpower())
@@ -544,11 +545,12 @@ public class BaseHuman implements Comparable{
 				{
 					rtA2b2++;
 					//path += "\n\tBRANCH 2b";
+					//print("I am here!");
 					if(this.willpower < 0.4)
 					{
 						rtA2b2A++;
 						//path += "\n\t\tBRANCH 3c";
-						endDecision(false, 0.7, nm);
+						//endDecision(false, 0.8, nm);
 					}
 					else
 					{
@@ -577,47 +579,71 @@ public class BaseHuman implements Comparable{
 		//Also look at non smokers
 		if(giveUp)
 		{
-			if((nm.getInfPcGivingUp() > compPct && Math.random()  > this.influenceability) || irrationalChoice())
+			if((nm.getInfPcGivingUp() > compPct && Math.random() > this.influenceability) || irrationalChoice())
 			{
 				///print((compPct) + " against " + nm.getInfPcGivingUp());
-				giveUpSmoking();
-				this.willpower = changeWithinBounds(this.willpower, 0, 1, (this.willpower * 0.01), Operations.ADD);
+				if(Math.random() < getTurnsProb())
+				{
+					giveUpSmoking();
+					this.turnsSinceLastChange = 0;
+				}
+//				if(Math.random() < this.influenceability)
+//					this.willpower = changeWithinBounds(this.willpower, 0, 1, (this.willpower * 0.0001), Operations.ADD);
 			}
 			else
 			{
 				if(nm.getAvgCigPerDay() > this.smokedPerDay * SimConstants.SmokerPerDayUpperPct || irrationalChoice())
 				{
 					this.smokedPerDay = (int)Math.round(changeWithinBounds(this.smokedPerDay, 0, SimConstants.cigLimit, (nm.getInfCigPerDay()* 0.5), Operations.ADD));
-					this.willpower = changeWithinBounds(this.willpower, 0, 1, (this.willpower * 0.01), Operations.SUBTRACT);
+					//this.willpower = changeWithinBounds(this.willpower, 0, 1, (this.willpower * 0.0001), Operations.SUBTRACT);
 				}
 				else if(nm.getAvgCigPerDay() < this.smokedPerDay * SimConstants.SmokerPerDayUpperPct || irrationalChoice())
 				{
 					this.smokedPerDay = (int)Math.round(changeWithinBounds(this.smokedPerDay, 0, SimConstants.cigLimit, (nm.getInfCigPerDay()* 0.5), Operations.SUBTRACT));
-					this.willpower = changeWithinBounds(this.willpower, 0, 1, (this.willpower * 0.01), Operations.SUBTRACT);
+					//this.willpower = changeWithinBounds(this.willpower, 0, 1, (this.willpower * 0.0001), Operations.SUBTRACT);
 				}
-				else
-				{
-					this.willpower = changeWithinBounds(this.willpower, 0, 1, (this.willpower * 0.01), Operations.ADD);
-				}
+//				else
+//				{
+//					if(Math.random() < this.influenceability)
+//						this.willpower = changeWithinBounds(this.willpower, 0, 1, (this.willpower * 0.0001), Operations.ADD);
+//				}
 				
 			}
 		}
 		else
 		{
+			//print((compPct) + " against " + nm.getInfPcSmokes());
 			if((nm.getInfPcSmokes() > compPct && Math.random()  > this.influenceability) || irrationalChoice())
 			{
 				statusCall();
 				print(nm.getInfPcSmokes() + " against " + compPct);
-				relapseSmoking((int)nm.getInfCigPerDay());
-				this.willpower = changeWithinBounds(this.willpower, 0, 1, (this.willpower * 0.01), Operations.SUBTRACT);
+				if(Math.random() < getTurnsProb())
+				{
+					relapseSmoking((int)nm.getInfCigPerDay());
+					this.turnsSinceLastChange = 0;
+				}
+				
+				if(Math.random() < this.influenceability)
+					this.willpower = changeWithinBounds(this.willpower, 0, 1, (this.willpower * 0.00001), Operations.SUBTRACT);
 			}
 			else
 			{
 				//Do something.
-				this.willpower = changeWithinBounds(this.willpower, 0, 1, (this.willpower * 0.01), Operations.ADD);
+				if(Math.random() < this.influenceability)
+					this.willpower = changeWithinBounds(this.willpower, 0, 1, (this.willpower * 0.00001), Operations.ADD);
 			}
 		}
 		
+	}
+	
+	private double getTurnsProb()
+	{
+		if(this.turnsSinceLastChange == 0)
+			return 0.01;
+		else
+		{
+			return (1-(1/this.turnsSinceLastChange));
+		}
 	}
 	private void statusCall()
 	{
@@ -796,7 +822,7 @@ public class BaseHuman implements Comparable{
 			
 			//Also have the chance of adding a random edge with a random influence
 			//print("soc"+(sociable * 0.0001));
-			if(Math.random() < (sociable * 0.000001)  && network.getInDegree(this) < SimConstants.maxInDegree )
+			if(Math.random() < (sociable * 0.00002)  && network.getInDegree(this) < SimConstants.maxInDegree )
 			{
 				//System.out.println("Adding a random edge");
 				IndexedIterable<BaseHuman> allNodes = (IndexedIterable<BaseHuman>) context.getObjects(BaseHuman.class);

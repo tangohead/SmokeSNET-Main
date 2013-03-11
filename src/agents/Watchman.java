@@ -210,7 +210,7 @@ public class Watchman {
 			System.out.println("\t\tBranch 2.2.1: " + BaseHuman.rtA2b1);
 			System.out.println("\t\t\tBranch 2.2.1.1: " + BaseHuman.rtA2b1A);
 			System.out.println("\t\t\tBranch 2.2.1.2: " + BaseHuman.rtA2b1B);
-			System.out.println("\t\tBranch 2.2.2: " + BaseHuman.rtA1b2);
+			System.out.println("\t\tBranch 2.2.2: " + BaseHuman.rtA2b2A);
 			System.out.println("\t\t\tBranch 2.2.2.1: " + BaseHuman.rtA2b2A);
 			System.out.println("\t\t\tBranch 2.2.2.2: " + BaseHuman.rtA2b2B); 
 
