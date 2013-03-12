@@ -89,6 +89,7 @@ public class NeighborMetrics {
 			
 			infPcGivingUp = numInfGiveUp / influenceSum;
 			infPcSmokes = smokerInfluenceSum / influenceSum; 
+			infPcSmokes *= Math.random();
 //			System.out.println("-------------------");
 //			System.out.println("0 " + smokerInfluenceSum + " " + influenceSum + " " + infPcSmokes);
 //			System.out.println("1 " + numInfGiveUp + " " + influenceSum + " " + infPcGivingUp);

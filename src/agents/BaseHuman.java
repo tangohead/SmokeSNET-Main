@@ -352,10 +352,10 @@ public class BaseHuman implements Comparable{
 				}
 				
 			}
-			else if(this.smokedPerDay > 10 && this.smokedPerDay < 20)
+			else if(this.smokedPerDay > 5 && this.smokedPerDay < 15)
 			{
 				rtA1b++;
-				if(this.health < nm.getInfHealth())
+				if(this.health > nm.getInfHealth())
 				{
 					rtA1b1++;
 					if(nm.getAvgCigPerDay() > this.smokedPerDay * SimConstants.SmokerPerDayUpperPct || irrationalChoice())
@@ -369,10 +369,18 @@ public class BaseHuman implements Comparable{
 						this.smokedPerDay = (int)Math.round(changeWithinBounds(this.smokedPerDay, 0, SimConstants.cigLimit, (nm.getInfCigPerDay()* 0.5), Operations.SUBTRACT));
 					}
 				}
-				else if(irrationalChoice())
+				else
 				{
-					rtA1b2++;
-					giveUpSmoking();
+					if(this.willpower < nm.getInfWillpower())
+					{
+						rtA1a2a++;
+						endDecision(true, 0.7, nm);
+					}	
+					else
+					{
+						rtA1a2b++;
+						endDecision(true, 0.8, nm);
+					}
 				}
 			}
 			else 
@@ -425,12 +433,12 @@ public class BaseHuman implements Comparable{
 						if(this.health > nm.getInfHealth())
 						{ 
 							rtA2a1A1++;
-							endDecision(false, 0.5, nm);
+							endDecision(false, 0.65, nm);
 						}
 						else
 						{
 							rtA2a1A2++;
-							endDecision(false, 0.7, nm);
+							endDecision(false, 0.85, nm);
 						}
 					}
 					else
@@ -440,30 +448,30 @@ public class BaseHuman implements Comparable{
 						if(this.health > nm.getInfHealth())
 						{ 
 							rtA2a1B1++;
-							endDecision(false, 0.6, nm);
+							endDecision(false, 0.75, nm);
 						}
 						else
 						{
 							rtA2a1B2++;
-							endDecision(false, 0.8, nm);
+							endDecision(false, 0.95, nm);
 						}
 					}
 				}
 				else if(this.giveUpAttempts >= 1 && this.giveUpAttempts < 5)
 				{
 					rtA2a2++;
-					if(nm.getPcGivingUp() > 0.5 || (1 - (nm.getPcGivingUp() + nm.getPcSmokes())) > 0.5)
+					if(nm.getPcGivingUp() > 0.3 || (1 - (nm.getPcGivingUp() + nm.getPcSmokes())) > 0.3)
 					{
 						rtA2a2A++;
 						if(this.willpower < nm.getInfWillpower())
 						{
 							rtA2a2A1++;
-							endDecision(false, 0.5, nm);
+							endDecision(false, 0.65, nm);
 						}
 						else 
 						{
 							rtA2a2A2++;
-							endDecision(false, 0.8, nm);
+							endDecision(false, 0.95, nm);
 						}
 					}
 					else
@@ -472,12 +480,12 @@ public class BaseHuman implements Comparable{
 						if(this.willpower < nm.getInfWillpower())
 						{
 							rtA2a2B1++;
-							endDecision(false, 0.4, nm);
+							endDecision(false, 0.55, nm);
 						}
 						else 
 						{
 							rtA2a2B1++;
-							endDecision(false, 0.6, nm);
+							endDecision(false, 0.75, nm);
 						}
 					}
 				}
@@ -490,12 +498,12 @@ public class BaseHuman implements Comparable{
 						if(this.health < nm.getInfHealth())
 						{
 							rtA2a3A1++;
-							endDecision(false, 0.5, nm);
+							endDecision(false, 0.65, nm);
 						}
 						else 
 						{
 							rtA2a3A2++;
-							endDecision(false, 0.8, nm);
+							endDecision(false, 0.85, nm);
 						}
 					}
 					else
@@ -504,12 +512,12 @@ public class BaseHuman implements Comparable{
 						if(this.health < nm.getInfHealth())
 						{
 							rtA2a3B1++;
-							endDecision(false, 0.3, nm);
+							endDecision(false, 0.45, nm);
 						}
 						else 
 						{
 							rtA2a3B1++;
-							endDecision(false, 0.5, nm);
+							endDecision(false, 0.75, nm);
 						}
 					}
 				}
@@ -532,31 +540,31 @@ public class BaseHuman implements Comparable{
 					{
 						rtA2b1A++;
 						//path += "\n\t\tBRANCH 3a";
-						endDecision(false, 0.6, nm);
+						endDecision(false, 0.8, nm);
 					}
 					else
 					{
 						rtA2b1B++;
 						//path += "\n\t\tBRANCH 3b";
-						endDecision(false, 0.8, nm);
+						endDecision(false, 0.9, nm);
 					}
 				}
 				else
 				{
 					rtA2b2++;
 					//path += "\n\tBRANCH 2b";
-					//print("I am here!");
-					if(this.willpower < 0.2)
+					//print("I am here! " + this.willpower);
+					if(this.willpower < 0.4)
 					{
 						rtA2b2A++;
 						//path += "\n\t\tBRANCH 3c";
-						//endDecision(false, 0.8, nm);
+						endDecision(false, 0.85, nm);
 					}
 					else
 					{
-						rtA2b2A++;
+						rtA2b2B++;
 						//path += "\n\t\tBRANCH 3d";
-						endDecision(false, 0.9, nm);
+						endDecision(false, 0.95, nm);
 					}
 				}
 				//if(this.isSmoker)
@@ -579,7 +587,7 @@ public class BaseHuman implements Comparable{
 		//Also look at non smokers
 		if(giveUp)
 		{
-			if((nm.getInfPcGivingUp() > compPct && Math.random() > this.influenceability) || irrationalChoice())
+			if((nm.getInfPcGivingUp() > compPct || (1 - (nm.getPcGivingUp() + nm.getPcSmokes()) > compPct+(compPct * 0.2)) && Math.random() > this.influenceability) || irrationalChoice())
 			{
 				///print((compPct) + " against " + nm.getInfPcGivingUp());
 				if(Math.random() < getTurnsProb())
@@ -613,7 +621,7 @@ public class BaseHuman implements Comparable{
 		else
 		{
 			//print((compPct) + " against " + nm.getInfPcSmokes());
-			if((nm.getInfPcSmokes() > compPct && Math.random()  > this.influenceability) || irrationalChoice())
+			if((nm.getInfPcSmokes() > compPct && Math.random() > this.influenceability) || irrationalChoice())
 			{
 				statusCall();
 				print(nm.getInfPcSmokes() + " against " + compPct);
@@ -639,15 +647,15 @@ public class BaseHuman implements Comparable{
 	private double getTurnsProb()
 	{
 		if(this.turnsSinceLastChange == 0)
-			return 0.01;
+			return 0.0001;
 		else
 		{
-			return (1-(1/this.turnsSinceLastChange));
+			return (1-(1/this.turnsSinceLastChange/1000));
 		}
 	}
 	private void statusCall()
 	{
-		print("Smoker: " + this.isSmoker + " Cigs: " + this.smokedPerDay + " Giving Up?: " + this.givingUp + " Steps: " + this.stepsSinceGiveUp); 
+		//print("Smoker: " + this.isSmoker + " Cigs: " + this.smokedPerDay + " Giving Up?: " + this.givingUp + " Steps: " + this.stepsSinceGiveUp); 
 	}
 	
 	private boolean irrationalChoice()
@@ -661,7 +669,7 @@ public class BaseHuman implements Comparable{
 	}
 	private void relapseSmoking(int numCigarettes)
 	{
-		print("I started smoking!");
+		//print("I started smoking!");
 		this.isSmoker = true;
 		this.givingUp = false;
 		this.giveUpAttempts++;
@@ -671,7 +679,7 @@ public class BaseHuman implements Comparable{
 	
 	private void giveUpSmoking()
 	{
-		print("I gave up smoking!");
+		//print("I gave up smoking!");
 		this.isSmoker = false;
 		this.givingUp = true;
 		this.giveUpAttempts++;
