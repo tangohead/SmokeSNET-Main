@@ -23,7 +23,7 @@ public class test {
 			System.out.println(field.getName());
 		}*/
 		//AnalysisTools.repastNetworkToGraphML(context, net, "test.graphml");
-		StanfordParser sp = new StanfordParser("G:\\My Documents\\3rd Year Project\\SmokeSNET-Main\\import\\soc-Slashdot0811.txt");
+		StanfordParser sp = new StanfordParser("/Users/matt/git/SmokeSNET-Main/import/soc-Slashdot0811.txt");
 		sp.Parse();
 		
 		Graph<String, Long> testGraph;
@@ -43,7 +43,7 @@ public class test {
 	/*	for(int i = 0; i < 3; i++)
 		{*/
 			
-			Graph<String, Long> sampledGraph = DepthFirst.SnowballSampler(testGraph, 4000);
+			Graph<String, Long> sampledGraph = DepthFirst.SnowballSampler(testGraph, 7500);
 			
 			System.out.println("Nodes: " + sampledGraph.getVertexCount());
 			

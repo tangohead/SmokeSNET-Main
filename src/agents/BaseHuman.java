@@ -587,7 +587,7 @@ public class BaseHuman implements Comparable{
 		//Also look at non smokers
 		if(giveUp)
 		{
-			if((nm.getInfPcGivingUp() > compPct || (1 - (nm.getPcGivingUp() + nm.getPcSmokes()) > compPct+(compPct * 0.2)) && Math.random() > this.influenceability) || irrationalChoice())
+			if((nm.getInfPcGivingUp() > compPct || (1 - (nm.getPcGivingUp() + nm.getPcSmokes()) > compPct+(compPct * 0.2)) && Math.random() < this.influenceability) || irrationalChoice())
 			{
 				///print((compPct) + " against " + nm.getInfPcGivingUp());
 				if(Math.random() < getTurnsProb())
@@ -605,7 +605,7 @@ public class BaseHuman implements Comparable{
 					this.smokedPerDay = (int)Math.round(changeWithinBounds(this.smokedPerDay, 0, SimConstants.cigLimit, (nm.getInfCigPerDay()* 0.5), Operations.ADD));
 					//this.willpower = changeWithinBounds(this.willpower, 0, 1, (this.willpower * 0.0001), Operations.SUBTRACT);
 				}
-				else if(nm.getAvgCigPerDay() < this.smokedPerDay * SimConstants.SmokerPerDayUpperPct || irrationalChoice())
+				else if(nm.getAvgCigPerDay() < this.smokedPerDay * SimConstants.SmokerPerDayLowerPct || irrationalChoice())
 				{
 					this.smokedPerDay = (int)Math.round(changeWithinBounds(this.smokedPerDay, 0, SimConstants.cigLimit, (nm.getInfCigPerDay()* 0.5), Operations.SUBTRACT));
 					//this.willpower = changeWithinBounds(this.willpower, 0, 1, (this.willpower * 0.0001), Operations.SUBTRACT);
@@ -621,7 +621,7 @@ public class BaseHuman implements Comparable{
 		else
 		{
 			//print((compPct) + " against " + nm.getInfPcSmokes());
-			if((nm.getInfPcSmokes() > compPct && Math.random() > this.influenceability) || irrationalChoice())
+			if((nm.getInfPcSmokes() > compPct && Math.random() < this.influenceability) || irrationalChoice())
 			{
 				statusCall();
 				print(nm.getInfPcSmokes() + " against " + compPct);

@@ -51,7 +51,7 @@ public class ModelDevBuilder implements ContextBuilder<Object> {
 		else if (mode == 2)
 		{
 			//network = SmallWorld.generateRSW(context, "TestNet", 100, 0.5, 5);
-			RepastSummary rs = GraphMLImporter.GraphMLToRepast("SWG2.graphml", "TestNet", context, true, false);
+			RepastSummary rs = GraphMLImporter.GraphMLToRepast("import/SNS-2790-email.graphml", "TestNet", context, true, false);
 			context = rs.getContext();
 			network = rs.getNetwork();
 		}
@@ -65,7 +65,7 @@ public class ModelDevBuilder implements ContextBuilder<Object> {
 		else if (mode == 4)
 		{
 			//network = SmallWorld.generateRSW(context, "TestNet", 100, 0.5, 5);
-			RepastSummary rs = GraphMLImporter.GraphMLToRepast("SIMBASE.graphml", "TestNet", context, false, true);
+			RepastSummary rs = GraphMLImporter.GraphMLToRepast("import/Imported-SD-Email-step-0.graphml", "TestNet", context, false, true);
 			context = rs.getContext();
 			network = rs.getNetwork();
 		}

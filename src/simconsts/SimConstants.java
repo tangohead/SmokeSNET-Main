@@ -32,6 +32,8 @@ public class SimConstants {
 	public final static double SmokedPerDaySD = 0.8;
 	
 	public final static int LocalNeighborhoodHops = 2;
+	
+	public final static double WatchmanClusterRemoveThreshold = 0.12;
 }
 
 //public final static double ClusterCoefficientThreshold = 0.07;
