@@ -105,7 +105,7 @@ public class BaseHuman implements Comparable{
 		{
 			this.isSmoker = false;
 			//Some people are giving up
-			if(Math.random() < (Double)parameters.getValue("pGiveUp"))
+			if(Math.random() > (Double)parameters.getValue("pGiveUp"))
 				this.givingUp = false;
 			else
 			{
@@ -207,7 +207,7 @@ public class BaseHuman implements Comparable{
 			{
 				this.isSmoker = false;
 				//Some people are giving up
-				if(Math.random() < (Double)parameters.getValue("pGiveUp"))
+				if(Math.random() > (Double)parameters.getValue("pGiveUp"))
 					this.givingUp = false;
 				else
 				{
@@ -916,7 +916,7 @@ public class BaseHuman implements Comparable{
 	
 	private void print(String msg)
 	{
-		System.out.println("[NODE " + this.id + "]: "+msg);
+		//System.out.println("[NODE " + this.id + "]: "+msg);
 	}
 	
 	public boolean checkCanEdgeOut()

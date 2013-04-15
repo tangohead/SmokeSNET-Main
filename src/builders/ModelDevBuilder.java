@@ -65,7 +65,7 @@ public class ModelDevBuilder implements ContextBuilder<Object> {
 		else if (mode == 4)
 		{
 			//network = SmallWorld.generateRSW(context, "TestNet", 100, 0.5, 5);
-			RepastSummary rs = GraphMLImporter.GraphMLToRepast("import/Imported-SD-Email-step-0.graphml", "TestNet", context, false, true);
+			RepastSummary rs = GraphMLImporter.GraphMLToRepast("SIMBASE.graphml", "TestNet", context, false, true);
 			context = rs.getContext();
 			network = rs.getNetwork();
 		}
